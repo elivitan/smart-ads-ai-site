@@ -321,8 +321,29 @@ footer{border-top:1px solid var(--border);padding:48px 24px}
     <p>Questions about privacy: <a href="mailto:privacy@smart-ad-sai.com">privacy@smart-ad-sai.com</a></p>
   </div>
 </div>
+<div id="page-contact" class="page">
+  <div class="legal-page">
+    <h1>Contact Us</h1>
+    <p class="legal-date">We'd love to hear from you.</p>
+    <h2>Support</h2>
+    <p>For technical support, questions about your account, or help with campaigns:</p>
+    <p><strong>Email:</strong> <a href="mailto:support@smart-ad-sai.com">support@smart-ad-sai.com</a></p>
+    <h2>Privacy &amp; Data Requests</h2>
+    <p>For GDPR requests, data deletion, or privacy-related inquiries:</p>
+    <p><strong>Email:</strong> <a href="mailto:privacy@smart-ad-sai.com">privacy@smart-ad-sai.com</a></p>
+    <h2>Legal</h2>
+    <p>For legal inquiries or terms of service questions:</p>
+    <p><strong>Email:</strong> <a href="mailto:legal@smart-ad-sai.com">legal@smart-ad-sai.com</a></p>
+    <h2>Business Hours</h2>
+    <p>We typically respond within 24 hours, Monday through Friday.</p>
+  </div>
+</div>
+```
 
-<div id="page-terms" class="page">
+עכשיו חפש בnavigation את השורה:
+```
+<a href="#" onclick="showPage('about')">About</a>
+if(['about','privacy','terms'].includes(h))showPage(h)
   <div class="legal-page">
     <h1>Terms of Service</h1>
     <p class="legal-date">Last updated: March 7, 2026</p>
