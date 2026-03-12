@@ -1,120 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Company - Smart Ads AI</title><meta name="description" content="Company - Smart Ads AI">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%236c5ce7'/><path d='M18 4L10 18h5l-1 10 8-14h-5z' fill='white'/></svg>">
-  <link rel="canonical" href="https://smart-ad-sai.com/company.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #050510; --surface: #0f0f24; --surface-2: #171733;
-      --border: rgba(255,255,255,.08); --text: #e8e8f0; --text-dim: rgba(255,255,255,.5);
-      --accent: #6366f1; --accent-light: #818cf8; --accent-glow: rgba(99,102,241,.25);
-      --green: #22c55e; --radius: 16px;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
-    a { color: var(--accent-light); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(5,5,16,.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 14px 0; }
-    nav .container { display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-size: 18px; font-weight: 800; color: #fff; letter-spacing: -0.5px; text-decoration: none; }
-    .logo:hover { text-decoration: none; }
-    .logo em { font-style: normal; color: var(--accent-light); }
-    .nav-links { display: flex; gap: 28px; align-items: center; }
-    .nav-links a { color: var(--text-dim); font-size: 14px; font-weight: 500; text-decoration: none; transition: color .2s; }
-    .nav-links a:hover { color: #fff; text-decoration: none; }
-    .nav-cta { background: var(--accent); color: #fff !important; padding: 8px 20px; border-radius: 10px; font-weight: 700; font-size: 13px; transition: all .2s; }
-    .nav-cta:hover { background: var(--accent-light); transform: translateY(-1px); text-decoration: none !important; }
-    section { padding: 80px 0; }
-    .section-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-light); margin-bottom: 12px; }
-    section h2 { font-size: clamp(28px, 3.5vw, 40px); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; line-height: 1.2; }
-    section .section-desc { font-size: 16px; color: var(--text-dim); max-width: 600px; margin-bottom: 48px; }
-    .legal-page { padding: 120px 0 80px; }
-    .legal-page h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
-    .legal-page .updated { font-size: 13px; color: var(--text-dim); margin-bottom: 32px; }
-    .legal-page h2 { font-size: 20px; font-weight: 700; margin-top: 32px; margin-bottom: 12px; }
-    .legal-page p, .legal-page li { font-size: 15px; color: var(--text-dim); line-height: 1.8; margin-bottom: 12px; }
-    .legal-page ul { padding-left: 20px; }
-    .company-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px; }
-    .company-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
-    .company-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; color: var(--accent-light); }
-    .company-detail { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
-    .company-detail:last-child { border-bottom: none; }
-    .company-detail .cd-label { color: var(--text-dim); }
-    .company-detail .cd-value { font-weight: 600; }
-    footer { border-top: 1px solid var(--border); padding: 48px 0 32px; margin-top: 40px; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
-    .footer-brand .logo { margin-bottom: 8px; display: inline-block; }
-    .footer-brand p { font-size: 13px; color: var(--text-dim); }
-    .footer-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; color: rgba(255,255,255,.6); }
-    .footer-col a { display: block; font-size: 14px; color: var(--text-dim); padding: 4px 0; text-decoration: none; }
-    .footer-col a:hover { color: #fff; }
-    .footer-bottom { border-top: 1px solid var(--border); padding-top: 20px; font-size: 12px; color: rgba(255,255,255,.3); text-align: center; }
-    @media (max-width: 768px) { .nav-links { display: none; } .company-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } }
-  </style>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company — Smart Ads AI | About Us</title>
+    <meta name="description" content="Smart Ads AI is an advertising technology startup building AI-powered Google Ads automation for Shopify merchants.">
+    <link rel="canonical" href="https://smart-ad-sai.com/company.html">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/shared.css">
 </head>
 <body>
-<nav>
-  <div class="container">
-    <a href="/" class="logo">Smart Ads <em>AI</em></a>
-    <div class="nav-links">
-      <a href="/#features">Features</a>
-      <a href="/#product">Product</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/company.html">Company</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/cdn-cgi/l/email-protection#6d1e181d1d021f192d1e000c1f19400c09401e0c04430e0200" class="nav-cta">Get Started</a>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">Smart Ads <span>AI</span></a>
+        <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/product.html">Product</a></li>
+            <li><a href="/demo.html">Demo</a></li>
+            <li><a href="/pricing.html">Pricing</a></li>
+            <li><a href="/company.html" class="active">Company</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="mailto:legal@smart-ad-sai.com" class="nav-cta">Get Started</a></li>
+        </ul>
     </div>
-  </div>
 </nav>
-<section class="legal-page">
-  <div class="container">
-    <h1>Company</h1>
-    <p class="updated">Building the future of e-commerce advertising.</p>
-    <div class="company-grid">
-      <div class="company-card">
-        <h3>Company Information</h3>
-        <div class="company-detail"><span class="cd-label">Legal Name</span><span class="cd-value">Smart Ads AI Ltd.</span></div>
-        <div class="company-detail"><span class="cd-label">Incorporated</span><span class="cd-value">Delaware, United States</span></div>
-        <div class="company-detail"><span class="cd-label">Address</span><span class="cd-value">9404 North Loop East Freeway, Houston, TX</span></div>
-        <div class="company-detail"><span class="cd-label">Phone</span><span class="cd-value">+1 (848) 222-3264</span></div>
-        <div class="company-detail"><span class="cd-label">Founded</span><span class="cd-value">2026</span></div>
-        <div class="company-detail"><span class="cd-label">Industry</span><span class="cd-value">Advertising Technology (AdTech)</span></div>
-        <div class="company-detail"><span class="cd-label">Focus</span><span class="cd-value">AI-Powered Google Ads Automation</span></div>
-      </div>
-      <div class="company-card">
-        <h3>Contact &amp; Support</h3>
-        <div class="company-detail"><span class="cd-label">General</span><span class="cd-value"><a href="/cdn-cgi/l/email-protection#dfacaaafafb0adab9facb2beadabf2bebbf2acbeb6f1bcb0b2"><span class="__cf_email__" data-cfemail="c1b2b4b1b1aeb3b581b2aca0b3b5eca0a5ecb2a0a8efa2aeac">[email&#160;protected]</span></a></span></div>
-        <div class="company-detail"><span class="cd-label">Privacy</span><span class="cd-value"><a href="/cdn-cgi/l/email-protection#d3a3a1baa5b2b0aa93a0beb2a1a7feb2b7fea0b2bafdb0bcbe"><span class="__cf_email__" data-cfemail="1b6b69726d7a78625b68767a696f367a7f36687a7235787476">[email&#160;protected]</span></a></span></div>
-        <div class="company-detail"><span class="cd-label">Legal</span><span class="cd-value"><a href="/cdn-cgi/l/email-protection#472b2220262b07342a2635336a26236a34262e6924282a"><span class="__cf_email__" data-cfemail="402c2527212c00332d2132346d21246d3321296e232f2d">[email&#160;protected]</span></a></span></div>
-        <div class="company-detail"><span class="cd-label">Response Time</span><span class="cd-value">Within 24 hours</span></div>
-        <div class="company-detail"><span class="cd-label">Business Hours</span><span class="cd-value">Mon&ndash;Fri, 9am&ndash;6pm EST</span></div>
-      </div>
+
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="hero-badge">About Us</div>
+        <h1>Building the Future of E‑Commerce Advertising</h1>
+        <p>Smart Ads AI is an advertising technology startup on a mission to democratize Google Ads for every Shopify merchant.</p>
     </div>
-    <h2>Our Mission</h2>
-    <p>We believe every Shopify merchant deserves access to the same advertising intelligence that big brands and agencies use &mdash; without the big brand budget. Smart Ads AI automates the entire Google Ads workflow using artificial intelligence, from competitor research to campaign launch.</p>
-    <h2>What We Build</h2>
-    <p>Smart Ads AI is a Shopify embedded application that connects to a merchant's store, analyzes their products and competitive landscape, and creates optimized Google Ads campaigns. The platform uses Anthropic's Claude AI for intelligent ad copy generation, real-time search engine data for competitor analysis, and the Google Ads API for campaign management.</p>
-    <h2>Technology &amp; Security</h2>
-    <p>Our platform is built with enterprise-grade security: OAuth 2.0 authentication for Google Ads, encrypted database on Supabase (PostgreSQL), HTTPS-only data transmission, and full compliance with Google's API Services User Data Policy. We never store Google passwords and merchants can disconnect at any time.</p>
-  </div>
 </section>
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="/" class="logo">Smart Ads <em>AI</em></a>
-        <p>AI-powered Google Ads automation<br>for Shopify merchants.</p>
-        <p style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.25)">Smart Ads AI Ltd. &bull; Delaware, USA</p>
-      </div>
-      <div class="footer-col"><h4>Product</h4><a href="/#features">Features</a><a href="/#product">Product Demo</a><a href="/#pricing">Pricing</a><a href="/#api-usage">API Usage</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="/company.html">About Us</a><a href="/contact.html">Contact</a><a href="/company.html">Security</a></div>
-      <div class="footer-col"><h4>Legal</h4><a hr
+
+<section class="section">
+    <div class="section-inner">
+        <div class="info-grid">
+            <div>
+                <table class="info-table">
+                    <tr><td>Legal Name</td><td>Smart Ads AI Ltd.</td></tr>
+                    <tr><td>Incorporated</td><td>Israel</td></tr>
+                    <tr><td>Headquarters</td><td>Nahal Besor 10/7, Beit Shemesh, Israel</td></tr>
+                    <tr><td>Phone</td><td>+972-58-486-9778</td></tr>
+                    <tr><td>Founded</td><td>2025</td></tr>
+                    <tr><td>Industry</td><td>Advertising Technology (AdTech)</td></tr>
+                    <tr><td>Focus</td><td>AI-Powered Google Ads Automation</td></tr>
+                    <tr><td>Platform</td><td>Shopify Embedded App</td></tr>
+                </table>
+            </div>
+            <div>
+                <table class="info-table">
+                    <tr><td>Email</td><td><a href="mailto:legal@smart-ad-sai.com" style="color:var(--accent); text-decoration:none;">legal@smart-ad-sai.com</a></td></tr>
+                    <tr><td>Response Time</td><td>Within 24 hours</td></tr>
+                    <tr><td>Business Hours</td><td>Mon–Fri, 9am–6pm EST</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background:var(--surface);">
+    <div class="section-inner">
+        <div class="mission-block">
+            <h3>Our Mission</h3>
+            <p>We believe every Shopify merchant deserves access to the same advertising intelligence that big brands and agencies use — without the big brand budget. Traditional Google Ads management requires either expensive agency fees ($2,000–$10,000/month) or deep technical expertise that most small business owners don't have.</p>
+            <p>Smart Ads AI changes that equation. Our platform automates the entire Google Ads workflow using artificial intelligence — from competitive research to campaign launch — making professional-grade advertising accessible to any Shopify store owner.</p>
+        </div>
+
+        <div class="mission-block">
+            <h3>What We Build</h3>
+            <p>Smart Ads AI is a Shopify embedded application that connects to a merchant's store, analyzes their products and competitive landscape, and creates optimized Google Ads campaigns. The platform uses Anthropic's Claude AI for intelligent ad copy generation, real-time search engine data for competitor analysis, and the Google Ads API for direct campaign management.</p>
+            <p>Our app lives inside the Shopify admin dashboard — merchants never leave their familiar environment. Products sync automatically, competitors are analyzed in real time, and campaigns are created in paused mode so merchants always maintain full control.</p>
+        </div>
+
+        <div class="mission-block" id="security">
+            <h3>Technology &amp; Security</h3>
+            <p>Our platform is built with enterprise-grade security and modern technology standards:</p>
+            <p><strong>Authentication &amp; Authorization:</strong> OAuth 2.0 for Google Ads API access. Shopify session tokens for app authentication. No passwords are ever stored.</p>
+            <p><strong>Data Security:</strong> PostgreSQL database hosted on Supabase with encryption at rest. All data transmitted over HTTPS with TLS 1.2+ encryption. Redis caching layer via Upstash with encrypted connections.</p>
+            <p><strong>Compliance:</strong> Full compliance with Google Ads API Terms of Service, Google API Services User Data Policy, Shopify App Store requirements, and applicable data protection regulations.</p>
+            <p><strong>Infrastructure:</strong> Sentry for real-time error monitoring and performance tracking. GitHub Actions for automated CI/CD pipeline. Rate limiting on all API endpoints to prevent abuse.</p>
+            <p><strong>Data Handling:</strong> We access only product catalog data from Shopify (titles, descriptions, prices, images). We never access customer PII, payment information, or order details. Merchants can disconnect at any time, immediately revoking all data access.</p>
+        </div>
+
+        <div class="mission-block">
+            <h3>Our Approach to Google Ads</h3>
+            <p>Unlike tools that simply automate bidding or provide keyword suggestions, Smart Ads AI takes a holistic approach. We analyze your entire competitive landscape before generating a single ad. Every keyword recommendation, headline, and budget suggestion is backed by real data — not assumptions.</p>
+            <p>Crucially, we believe merchants should always be in control. That's why every campaign is created in <strong>paused mode</strong>. No ad goes live, no budget is spent, and no changes are made to your Google Ads account without your explicit approval. You can review, edit, or reject any recommendation.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Want to learn more?</h2>
+    <p>Get in touch with our team or explore the product in detail.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="/contact.html" class="btn btn-white">Contact Us →</a>
+        <a href="/product.html" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">Product Details</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">Smart Ads <span>AI</span></div>
+                <p class="footer-desc">AI-powered Google Ads automation for Shopify merchants.</p>
+                <p style="font-size:.8125rem; margin-top:12px;">Smart Ads AI Ltd.<br>Nahal Besor 10/7, Beit Shemesh, Israel<br>+972-58-486-9778</p>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <a href="/product.html">How It Works</a>
+                <a href="/demo.html">Live Demo</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/#api-usage">API Usage</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/company.html">About Us</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/company.html#security">Security</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Smart Ads AI Ltd. All rights reserved.</span>
+            <div class="footer-legal">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

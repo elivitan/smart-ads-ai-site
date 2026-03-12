@@ -1,112 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service - Smart Ads AI</title><meta name="description" content="Terms of Service - Smart Ads AI">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='16' fill='%236c5ce7'/><path d='M18 4L10 18h5l-1 10 8-14h-5z' fill='white'/></svg>">
-  <link rel="canonical" href="https://smart-ad-sai.com/terms.html">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..800;1,9..40,300..800&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #050510; --surface: #0f0f24; --surface-2: #171733;
-      --border: rgba(255,255,255,.08); --text: #e8e8f0; --text-dim: rgba(255,255,255,.5);
-      --accent: #6366f1; --accent-light: #818cf8; --accent-glow: rgba(99,102,241,.25);
-      --green: #22c55e; --radius: 16px;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
-    a { color: var(--accent-light); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(5,5,16,.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); padding: 14px 0; }
-    nav .container { display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-size: 18px; font-weight: 800; color: #fff; letter-spacing: -0.5px; text-decoration: none; }
-    .logo:hover { text-decoration: none; }
-    .logo em { font-style: normal; color: var(--accent-light); }
-    .nav-links { display: flex; gap: 28px; align-items: center; }
-    .nav-links a { color: var(--text-dim); font-size: 14px; font-weight: 500; text-decoration: none; transition: color .2s; }
-    .nav-links a:hover { color: #fff; text-decoration: none; }
-    .nav-cta { background: var(--accent); color: #fff !important; padding: 8px 20px; border-radius: 10px; font-weight: 700; font-size: 13px; transition: all .2s; }
-    .nav-cta:hover { background: var(--accent-light); transform: translateY(-1px); text-decoration: none !important; }
-    section { padding: 80px 0; }
-    .section-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-light); margin-bottom: 12px; }
-    section h2 { font-size: clamp(28px, 3.5vw, 40px); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; line-height: 1.2; }
-    section .section-desc { font-size: 16px; color: var(--text-dim); max-width: 600px; margin-bottom: 48px; }
-    .legal-page { padding: 120px 0 80px; }
-    .legal-page h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
-    .legal-page .updated { font-size: 13px; color: var(--text-dim); margin-bottom: 32px; }
-    .legal-page h2 { font-size: 20px; font-weight: 700; margin-top: 32px; margin-bottom: 12px; }
-    .legal-page p, .legal-page li { font-size: 15px; color: var(--text-dim); line-height: 1.8; margin-bottom: 12px; }
-    .legal-page ul { padding-left: 20px; }
-    .company-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 32px; }
-    .company-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
-    .company-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; color: var(--accent-light); }
-    .company-detail { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
-    .company-detail:last-child { border-bottom: none; }
-    .company-detail .cd-label { color: var(--text-dim); }
-    .company-detail .cd-value { font-weight: 600; }
-    footer { border-top: 1px solid var(--border); padding: 48px 0 32px; margin-top: 40px; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 32px; }
-    .footer-brand .logo { margin-bottom: 8px; display: inline-block; }
-    .footer-brand p { font-size: 13px; color: var(--text-dim); }
-    .footer-col h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; color: rgba(255,255,255,.6); }
-    .footer-col a { display: block; font-size: 14px; color: var(--text-dim); padding: 4px 0; text-decoration: none; }
-    .footer-col a:hover { color: #fff; }
-    .footer-bottom { border-top: 1px solid var(--border); padding-top: 20px; font-size: 12px; color: rgba(255,255,255,.3); text-align: center; }
-    @media (max-width: 768px) { .nav-links { display: none; } .company-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } }
-  </style>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Smart Ads AI</title>
+    <meta name="description" content="Smart Ads AI Terms of Service — rules and conditions for using our platform.">
+    <link rel="canonical" href="https://smart-ad-sai.com/terms.html">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/shared.css">
 </head>
 <body>
-<nav>
-  <div class="container">
-    <a href="/" class="logo">Smart Ads <em>AI</em></a>
-    <div class="nav-links">
-      <a href="/#features">Features</a>
-      <a href="/#product">Product</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/company.html">Company</a>
-      <a href="/contact.html">Contact</a>
-      <a href="/cdn-cgi/l/email-protection#61121411110e131521120c0013154c00054c1200084f020e0c" class="nav-cta">Get Started</a>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">Smart Ads <span>AI</span></a>
+        <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/product.html">Product</a></li>
+            <li><a href="/demo.html">Demo</a></li>
+            <li><a href="/pricing.html">Pricing</a></li>
+            <li><a href="/company.html">Company</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="mailto:legal@smart-ad-sai.com" class="nav-cta">Get Started</a></li>
+        </ul>
     </div>
-  </div>
 </nav>
-<section class="legal-page">
-  <div class="container">
-    <h1>Terms of Service</h1>
-    <p class="updated">Last updated: March 7, 2026</p>
-    <h2>1. Acceptance</h2><p>By using Smart Ads AI, you agree to these Terms. If you do not agree, do not use the Service.</p>
-    <h2>2. Description</h2><p>Smart Ads AI is a Shopify app that uses AI to help merchants create and manage Google Ads campaigns, including product scanning, competitor analysis, AI ad copy generation, and campaign management.</p>
-    <h2>3. Requirements</h2><ul><li>Active Shopify store</li><li>At least 18 years old</li><li>Valid Google Ads account for campaign creation</li><li>Accurate information</li></ul>
-    <h2>4. Google Ads Account</h2><p>By connecting your Google Ads account, you authorize us to create, modify, pause, enable, and remove campaigns on your behalf. All campaigns start paused. You are responsible for reviewing campaigns and for all advertising costs in your Google Ads account.</p>
-    <h2>5. Billing</h2><p>Paid subscriptions are billed through Shopify. Subscriptions renew automatically unless cancelled. Cancel anytime through Shopify admin.</p>
-    <h2>6. Free Trial</h2><p>Paid plans include a 7-day free trial. If not cancelled before the trial ends, your subscription converts to a paid plan.</p>
-    <h2>7. AI Content</h2><p>AI-generated content may not always be perfect. You are responsible for reviewing all content before publishing. We do not guarantee specific advertising results.</p>
-    <h2>8. Intellectual Property</h2><p>The Service is owned by Smart Ads AI Ltd. AI-generated ad copy created for your campaigns is yours to use. You retain rights to your Shopify data.</p>
-    <h2>9. Limitation of Liability</h2><p>Smart Ads AI Ltd. shall not be liable for indirect, incidental, special, or consequential damages. Total liability shall not exceed amounts paid in the 12 months preceding the claim.</p>
-    <h2>10. Disclaimer</h2><p>The Service is provided "as is" without warranties. We do not guarantee uninterrupted service or specific advertising results.</p>
-    <h2>11. Google Ads Compliance</h2><p>You agree to comply with Google Ads policies. We are not responsible for campaigns that violate Google policies.</p>
-    <h2>12. Termination</h2><p>We may suspend access for violation of these terms. Uninstall the app to stop using the Service.</p>
-    <h2>13. Changes</h2><p>We may update these Terms. Continued use constitutes acceptance.</p>
-    <h2>14. Governing Law</h2><p>Governed by the laws of the State of Delaware, United States.</p>
-    <h2>15. Contact</h2><p>Questions: <a href="/cdn-cgi/l/email-protection#6408010305082417090516104905004917050d4a070b09"><span class="__cf_email__" data-cfemail="462a2321272a06352b2734326b27226b35272f6825292b">[email&#160;protected]</span></a></p>
-  </div>
-</section>
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="/" class="logo">Smart Ads <em>AI</em></a>
-        <p>AI-powered Google Ads automation<br>for Shopify merchants.</p>
-        <p style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.25)">Smart Ads AI Ltd. &bull; Delaware, USA</p>
-      </div>
-      <div class="footer-col"><h4>Product</h4><a href="/#features">Features</a><a href="/#product">Product Demo</a><a href="/#pricing">Pricing</a><a href="/#api-usage">API Usage</a></div>
-      <div class="footer-col"><h4>Company</h4><a href="/company.html">About Us</a><a href="/contact.html">Contact</a><a href="/company.html">Security</a></div>
-      <div class="footer-col"><h4>Legal</h4><a href="/privacy.html">Privacy Policy</a><a href="/terms.html">Terms of Service</a><a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Policy</a></div>
+
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <h1>Terms of Service</h1>
+        <p>Please read these terms carefully before using our platform.</p>
     </div>
-    <div class="footer-bottom">
-      &copy; 2026 Smart Ads AI Lt
+</section>
+
+<section class="section">
+    <div class="legal-content">
+        <p class="legal-updated">Last updated: March 12, 2026</p>
+
+        <h2>1. Agreement to Terms</h2>
+        <p>These Terms of Service ("Terms") govern your access to and use of the Smart Ads AI platform (the "Service") operated by Smart Ads AI Ltd. ("Smart Ads AI," "we," "us," or "our"). By installing, accessing, or using the Service, you ("Merchant," "you," or "your") agree to be bound by these Terms. If you do not agree to these Terms, you may not use the Service.</p>
+
+        <h2>2. Description of Service</h2>
+        <p>Smart Ads AI is a Shopify embedded application that provides AI-powered Google Ads campaign creation and management services. The Service includes:</p>
+        <ul>
+            <li>Automated product scanning and competitive analysis</li>
+            <li>AI-generated ad copy, keywords, and campaign recommendations</li>
+            <li>Google Ads campaign creation and management via the Google Ads API</li>
+            <li>Campaign performance monitoring and reporting</li>
+            <li>Budget simulation and optimization tools</li>
+        </ul>
+
+        <h2>3. Account Requirements</h2>
+        <p>To use the Service, you must:</p>
+        <ul>
+            <li>Have an active Shopify store with a valid subscription</li>
+            <li>Be at least 18 years of age</li>
+            <li>Have the authority to bind your business to these Terms</li>
+            <li>Provide accurate and complete information during app installation</li>
+            <li>Maintain the security of your account credentials</li>
+        </ul>
+        <p>To create Google Ads campaigns through the Service, you must additionally connect your own Google Ads account via OAuth 2.0 authentication.</p>
+
+        <h2>4. Google Ads Account Ownership</h2>
+        <p>You retain full ownership and control of your Google Ads account at all times. Specifically:</p>
+        <ul>
+            <li>You connect your own Google Ads account — we never create or operate shared advertising accounts on your behalf</li>
+            <li>All campaigns created by our Service are created in your Google Ads account in <strong>paused mode</strong></li>
+            <li>No ad goes live and no budget is spent without your explicit approval</li>
+            <li>You can review, edit, pause, or remove any campaign at any time, either through our dashboard or directly in Google Ads</li>
+            <li>You are solely responsible for your Google Ads account billing and payment obligations to Google</li>
+            <li>Disconnecting your Google Ads account or uninstalling our app immediately revokes all API access</li>
+        </ul>
+
+        <h2>5. Use of AI-Generated Content</h2>
+        <p>The Service uses artificial intelligence (Anthropic's Claude AI) to generate ad copy, keywords, and strategic recommendations. You understand and agree that:</p>
+        <ul>
+            <li>AI-generated content is provided as recommendations and suggestions, not guaranteed results</li>
+            <li>You are responsible for reviewing all AI-generated ad copy before approving campaigns</li>
+            <li>You must ensure all approved ad copy complies with Google Ads policies and applicable advertising laws</li>
+            <li>We do not guarantee any specific advertising results, including click-through rates, conversions, or return on ad spend</li>
+            <li>AI recommendations are based on available data and may not always be optimal for your specific situation</li>
+        </ul>
+
+        <h2>6. Subscription Plans and Payment</h2>
+        <p>The Service offers multiple subscription tiers as described on our <a href="/pricing.html">Pricing page</a>. Subscription billing is managed through Shopify's billing system. You agree that:</p>
+        <ul>
+            <li>Subscription fees are billed monthly through your Shopify account</li>
+            <li>Paid plans include a 7-day free trial period</li>
+            <li>You may cancel your subscription at any time through Shopify admin</li>
+            <li>No refunds are provided for partial billing periods</li>
+            <li>We reserve the right to change pricing with 30 days' advance notice</li>
+            <li>Google Ads advertising costs are billed separately by Google and are your sole responsibility</li>
+        </ul>
+
+        <h2>7. Acceptable Use</h2>
+        <p>You agree not to use the Service to:</p>
+        <ul>
+            <li>Violate any applicable laws, regulations, or Google Ads policies</li>
+            <li>Create misleading, deceptive, or fraudulent advertising</li>
+            <li>Advertise prohibited products or services as defined by Google Ads policies</li>
+            <li>Interfere with or disrupt the Service or its infrastructure</li>
+            <li>Reverse engineer, decompile, or attempt to extract the source code of the Service</li>
+            <li>Use the Service to access Google Ads accounts you do not own or have authorization to manage</li>
+            <li>Resell or redistribute the Service without our written consent</li>
+        </ul>
+
+        <h2>8. Intellectual Property</h2>
+        <p>The Service, including its design, features, code, and branding, is the intellectual property of Smart Ads AI Ltd. and is protected by copyright and other intellectual property laws.</p>
+        <p>AI-generated ad copy created through the Service may be freely used by you for advertising purposes. We do not claim ownership of ad copy generated for your products.</p>
+
+        <h2>9. Data Handling</h2>
+        <p>Our collection, use, and protection of your data is governed by our <a href="/privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference. By using the Service, you consent to the data practices described in our Privacy Policy.</p>
+
+        <h2>10. Disclaimer of Warranties</h2>
+        <p>THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+        <p>We do not warrant that:</p>
+        <ul>
+            <li>The Service will be uninterrupted, error-free, or secure</li>
+            <li>AI-generated content will always be accurate, appropriate, or effective</li>
+            <li>Any advertising campaigns will achieve specific results</li>
+            <li>The competitor data and analysis will be complete or current at all times</li>
+        </ul>
+
+        <h2>11. Limitation of Liability</h2>
+        <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, SMART ADS AI LTD. SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, OR GOODWILL, ARISING OUT OF OR RELATED TO YOUR USE OF THE SERVICE.</p>
+        <p>OUR TOTAL LIABILITY FOR ALL CLAIMS ARISING FROM OR RELATED TO THE SERVICE SHALL NOT EXCEED THE AMOUNT YOU PAID US IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM.</p>
+        <p>You understand that your Google Ads advertising spend is paid directly to Google and that we are not responsible for any advertising costs incurred in your Google Ads account, including those resulting from campaigns created through our Service that you have approved and enabled.</p>
+
+        <h2>12. Indemnification</h2>
+        <p>You agree to indemnify and hold harmless Smart Ads AI Ltd. and its officers, directors, employees, and agents from any claims, damages, losses, liabilities, and expenses (including attorneys' fees) arising from: (a) your use of the Service; (b) your violation of these Terms; (c) your violation of any Google Ads policies; or (d) any advertising content you approve and publish through the Service.</p>
+
+        <h2>13. Termination</h2>
+        <p>You may terminate your use of the Service at any time by uninstalling the Shopify app. We may suspend or terminate your access to the Service if you violate these Terms, with notice when practicable.</p>
+        <p>Upon termination:</p>
+        <ul>
+            <li>Your access to the Service will be revoked</li>
+            <li>Campaigns created in your Google Ads account will remain under your control</li>
+            <li>Your data will be handled in accordance with our Privacy Policy</li>
+            <li>Outstanding subscription fees through the end of the current billing period remain payable</li>
+        </ul>
+
+        <h2>14. Modifications to Terms</h2>
+        <p>We reserve the right to modify these Terms at any time. Material changes will be communicated by posting the updated Terms on our website and updating the "Last updated" date. Continued use of the Service after changes constitutes acceptance of the modified Terms.</p>
+
+        <h2>15. Governing Law</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the State of Israel, without regard to its conflict of law provisions. Any disputes arising from these Terms shall be resolved in the courts located in Israel.</p>
+
+        <h2>16. Severability</h2>
+        <p>If any provision of these Terms is found to be unenforceable, the remaining provisions shall continue in full force and effect.</p>
+
+        <h2>17. Entire Agreement</h2>
+        <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and Smart Ads AI Ltd. regarding the use of the Service.</p>
+
+        <h2>18. Contact Us</h2>
+        <p>If you have questions about these Terms, please contact us:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:legal@smart-ad-sai.com">legal@smart-ad-sai.com</a></li>
+            <li><strong>Mail:</strong> Smart Ads AI Ltd., Nahal Besor 10/7, Beit Shemesh, Israel</li>
+            <li><strong>Phone:</strong> +972-58-486-9778</li>
+        </ul>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">Smart Ads <span>AI</span></div>
+                <p class="footer-desc">AI-powered Google Ads automation for Shopify merchants.</p>
+                <p style="font-size:.8125rem; margin-top:12px;">Smart Ads AI Ltd.<br>Nahal Besor 10/7, Beit Shemesh, Israel<br>+972-58-486-9778</p>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <a href="/product.html">How It Works</a>
+                <a href="/demo.html">Live Demo</a>
+                <a href="/pricing.html">Pricing</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/company.html">About Us</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/company.html#security">Security</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Smart Ads AI Ltd. All rights reserved.</span>
+            <div class="footer-legal">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

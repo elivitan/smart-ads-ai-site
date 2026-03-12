@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo — Smart Ads AI | See the Platform in Action</title>
+    <meta name="description" content="Explore a live demo of Smart Ads AI — see how the dashboard, competitor analysis, AI ad copy, and campaign creation work.">
+    <link rel="canonical" href="https://smart-ad-sai.com/demo.html">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/shared.css">
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">Smart Ads <span>AI</span></a>
+        <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/product.html">Product</a></li>
+            <li><a href="/demo.html" class="active">Demo</a></li>
+            <li><a href="/pricing.html">Pricing</a></li>
+            <li><a href="/company.html">Company</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="mailto:legal@smart-ad-sai.com" class="nav-cta">Get Started</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="hero-badge">Interactive Demo</div>
+        <h1>See Smart Ads AI in Action</h1>
+        <p>Explore the platform screens below. This is exactly what you'll see inside your Shopify admin dashboard after installing Smart Ads AI.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="demo-container">
+        <div class="demo-tabs">
+            <button class="demo-tab active" onclick="showScreen('dashboard')">Dashboard</button>
+            <button class="demo-tab" onclick="showScreen('products')">Product Analysis</button>
+            <button class="demo-tab" onclick="showScreen('competitors')">Competitors</button>
+            <button class="demo-tab" onclick="showScreen('adcopy')">AI Ad Copy</button>
+            <button class="demo-tab" onclick="showScreen('campaign')">Campaign Preview</button>
+        </div>
+
+        <!-- DASHBOARD -->
+        <div class="demo-screen active" id="screen-dashboard">
+            <div class="demo-bar"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
+            <div class="demo-kpi-row">
+                <div class="demo-kpi">
+                    <div class="demo-kpi-label">Products Analyzed</div>
+                    <div class="demo-kpi-value">24</div>
+                    <div class="demo-kpi-delta">▲ 8 this week</div>
+                </div>
+                <div class="demo-kpi">
+                    <div class="demo-kpi-label">Avg. Ad Score</div>
+                    <div class="demo-kpi-value">78/100</div>
+                    <div class="demo-kpi-delta">▲ 12 pts</div>
+                </div>
+                <div class="demo-kpi">
+                    <div class="demo-kpi-label">Competitors Found</div>
+                    <div class="demo-kpi-value">156</div>
+                    <div class="demo-kpi-delta">▲ 23 new</div>
+                </div>
+                <div class="demo-kpi">
+                    <div class="demo-kpi-label">Keywords Generated</div>
+                    <div class="demo-kpi-value">1,240</div>
+                    <div class="demo-kpi-delta">▲ 340 new</div>
+                </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                <div class="demo-kpi">
+                    <div class="demo-kpi-label">Active Campaigns</div>
+                    <div class="demo-kpi-value">6</div>
+                    <div class="demo-kpi-delta">2 paused</div>
+                </div>
+                <div class="demo-kpi">
+                    <div class="demo-kpi-label">ROAS (Last 7 Days)</div>
+                    <div class="demo-kpi-value">3.4×</div>
+                    <div class="demo-kpi-delta">▲ 0.6× improvement</div>
+                </div>
+            </div>
+            <p style="text-align:center; color:rgba(255,255,255,.4); font-size:.75rem; margin-top:16px;">Dashboard — Real-time overview of your store's advertising performance</p>
+        </div>
+
+        <!-- PRODUCTS -->
+        <div class="demo-screen" id="screen-products">
+            <div class="demo-bar"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
+            <table class="demo-table">
+                <thead>
+                    <tr><th>Product</th><th>Ad Score</th><th>Competitors</th><th>Keywords</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Premium Cotton Bed Sheet Set</td><td><span class="demo-score">85</span></td><td>12</td><td>48</td><td style="color:var(--success);">Ready to launch</td></tr>
+                    <tr><td>Luxury Silk Pillowcase Set</td><td><span class="demo-score">72</span></td><td>8</td><td>31</td><td style="color:var(--success);">Ready to launch</td></tr>
+                    <tr><td>Weighted Blanket 15lbs</td><td><span class="demo-score warn">58</span></td><td>15</td><td>62</td><td style="color:var(--warning);">Needs optimization</td></tr>
+                    <tr><td>Bamboo Duvet Cover Queen</td><td><span class="demo-score">79</span></td><td>10</td><td>44</td><td style="color:var(--success);">Ready to launch</td></tr>
+                    <tr><td>Organic Cotton Towel Set</td><td><span class="demo-score">81</span></td><td>9</td><td>37</td><td style="color:var(--success);">Ready to launch</td></tr>
+                </tbody>
+            </table>
+            <p style="text-align:center; color:rgba(255,255,255,.4); font-size:.75rem; margin-top:16px;">Product Analysis — AI scores each product based on competitive landscape</p>
+        </div>
+
+        <!-- COMPETITORS -->
+        <div class="demo-screen" id="screen-competitors">
+            <div class="demo-bar"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
+            <div style="color:rgba(255,255,255,.5); font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; margin-bottom:16px;">Top Competitors for "cotton bed sheets"</div>
+            <table class="demo-table">
+                <thead>
+                    <tr><th>#</th><th>Competitor</th><th>Keywords</th><th>Est. Daily Spend</th><th>Threat Level</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>BrooklynBedding.com</td><td>42</td><td>$85/day</td><td><span style="color:#ef4444; font-weight:600;">High</span></td></tr>
+                    <tr><td>2</td><td>Parachute.com</td><td>38</td><td>$120/day</td><td><span style="color:#ef4444; font-weight:600;">High</span></td></tr>
+                    <tr><td>3</td><td>BollAndBranch.com</td><td>29</td><td>$65/day</td><td><span style="color:var(--warning); font-weight:600;">Medium</span></td></tr>
+                    <tr><td>4</td><td>Brooklinen.com</td><td>51</td><td>$95/day</td><td><span style="color:#ef4444; font-weight:600;">High</span></td></tr>
+                </tbody>
+            </table>
+            <p style="text-align:center; color:rgba(255,255,255,.4); font-size:.75rem; margin-top:16px;">Competitor Intelligence — Analyze your competition's ad strategies and spending</p>
+        </div>
+
+        <!-- AD COPY -->
+        <div class="demo-screen" id="screen-adcopy">
+            <div class="demo-bar"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
+            <div style="color:rgba(255,255,255,.5); font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; margin-bottom:16px;">AI-Generated Ad Copy — Premium Cotton Bed Sheet Set</div>
+            <div style="color:rgba(255,255,255,.4); font-size:.6875rem; margin-bottom:12px;">Generated Headlines (15 total, showing top 5)</div>
+            <div class="demo-headline"><span class="demo-headline-text">Premium Cotton Sheets — 400TC Luxury Feel</span><span class="demo-headline-score">★ 92</span></div>
+            <div class="demo-headline"><span class="demo-headline-text">Hotel Quality Bed Sheets — Free Shipping</span><span class="demo-headline-score">★ 88</span></div>
+            <div class="demo-headline"><span class="demo-headline-text">Softest Sheets You'll Ever Own — Shop Now</span><span class="demo-headline-score">★ 85</span></div>
+            <div class="demo-headline"><span class="demo-headline-text">Cotton Bed Sheets Sale — Up to 40% Off</span><span class="demo-headline-score">★ 81</span></div>
+            <div class="demo-headline"><span class="demo-headline-text">Luxury Bedding at Factory Prices — Limited Time</span><span class="demo-headline-score">★ 79</span></div>
+            <div style="color:rgba(255,255,255,.4); font-size:.6875rem; margin:20px 0 12px;">Generated Descriptions</div>
+            <div class="demo-headline"><span class="demo-headline-text">Experience luxury sleep with our 400TC cotton sheets. Free shipping &amp; 30-day returns.</span><span class="demo-headline-score">★ 90</span></div>
+            <div class="demo-headline"><span class="demo-headline-text">Premium quality at half the price of competitors. Join 10,000+ happy customers.</span><span class="demo-headline-score">★ 86</span></div>
+            <p style="text-align:center; color:rgba(255,255,255,.4); font-size:.75rem; margin-top:16px;">AI Ad Copy — Claude AI generates and scores each headline and description</p>
+        </div>
+
+        <!-- CAMPAIGN -->
+        <div class="demo-screen" id="screen-campaign">
+            <div class="demo-bar"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
+            <div style="color:rgba(255,255,255,.5); font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; margin-bottom:16px;">Campaign Preview — Ready for Your Approval</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+                <div class="demo-kpi">
+                    <div class="demo-kpi-label">Campaign Type</div>
+                    <div style="color:#fff; font-size:1rem; font-weight:600; margin-top:6px;">Search Campaign</div>
+                </div>
+                <div class="demo-kpi">
+                    <div class="demo-kpi-label">Status</div>
+                    <div style="color:var(--warning); font-size:1rem; font-weight:600; margin-top:6px;">⏸ PAUSED (Awaiting Approval)</div>
+                </div>
+                <div class="demo-kpi">
+                    <div class="demo-kpi-label">Daily Budget</div>
+                    <div style="color:#fff; font-size:1.25rem; font-weight:700; margin-top:6px;">$25/day</div>
+                </div>
+                <div class="demo-kpi">
+                    <div class="demo-kpi-label">Estimated Monthly Cost</div>
+                    <div style="color:#fff; font-size:1.25rem; font-weight:700; margin-top:6px;">$750/mo</div>
+                </div>
+            </div>
+            <div class="demo-kpi" style="margin-bottom:16px;">
+                <div class="demo-kpi-label">Target Keywords (12 selected)</div>
+                <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
+                    <span style="background:rgba(37,99,235,.2); color:var(--accent); padding:4px 12px; border-radius:100px; font-size:.8125rem;">cotton bed sheets</span>
+                    <span style="background:rgba(37,99,235,.2); color:var(--accent); padding:4px 12px; border-radius:100px; font-size:.8125rem;">premium cotton sheets</span>
+                    <span style="background:rgba(37,99,235,.2); color:var(--accent); padding:4px 12px; border-radius:100px; font-size:.8125rem;">400tc sheets</span>
+                    <span style="background:rgba(37,99,235,.2); color:var(--accent); padding:4px 12px; border-radius:100px; font-size:.8125rem;">luxury bed sheets</span>
+                    <span style="background:rgba(37,99,235,.2); color:var(--accent); padding:4px 12px; border-radius:100px; font-size:.8125rem;">best cotton sheets</span>
+                    <span style="background:rgba(37,99,235,.2); color:var(--accent); padding:4px 12px; border-radius:100px; font-size:.8125rem;">hotel quality sheets</span>
+                </div>
+            </div>
+            <div style="text-align:center; padding:20px;">
+                <div style="display:inline-block; background:var(--success); color:#fff; padding:12px 32px; border-radius:var(--radius-sm); font-weight:600; font-size:.9375rem;">✓ Approve &amp; Create in Google Ads (Paused)</div>
+            </div>
+            <p style="text-align:center; color:rgba(255,255,255,.4); font-size:.75rem; margin-top:8px;">Campaign Preview — Review everything before creating in your Google Ads account</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background:var(--surface);">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>Will the app spend money without my approval?</h3>
+                <p>Absolutely not. All campaigns are created in <strong>paused mode</strong> inside your own Google Ads account. You must explicitly approve and enable each campaign before any ad goes live or any budget is spent.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do I need Google Ads experience?</h3>
+                <p>No. Smart Ads AI handles everything — keyword research, ad copy writing, competitor analysis, and campaign structure. You just review and approve. The AI acts as your personal ad agency.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How does the AI generate ad copy?</h3>
+                <p>We use Anthropic's Claude AI, which analyzes your product data, competitor strategies, and real search trends to generate relevant, high-quality ad copy. Each headline and description is scored based on predicted performance.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What data do you access from my store?</h3>
+                <p>We read your product titles, descriptions, prices, and images from Shopify to perform competitive analysis. We never access customer data, payment information, or order details.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I disconnect at any time?</h3>
+                <p>Yes. Uninstalling the app or disconnecting your Google Ads account immediately revokes all access. Your campaigns remain in your Google Ads account — we never delete your work.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Ready to try Smart Ads AI?</h2>
+    <p>Get in touch for early access or explore more about the product.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="mailto:legal@smart-ad-sai.com" class="btn btn-white">Request Early Access →</a>
+        <a href="/product.html" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">Learn More</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">Smart Ads <span>AI</span></div>
+                <p class="footer-desc">AI-powered Google Ads automation for Shopify merchants.</p>
+                <p style="font-size:.8125rem; margin-top:12px;">Smart Ads AI Ltd.<br>Nahal Besor 10/7, Beit Shemesh, Israel<br>+972-58-486-9778</p>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <a href="/product.html">How It Works</a>
+                <a href="/demo.html">Live Demo</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/#api-usage">API Usage</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/company.html">About Us</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/company.html#security">Security</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+                <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Smart Ads AI Ltd. All rights reserved.</span>
+            <div class="footer-legal">
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+function showScreen(id) {
+    document.querySelectorAll('.demo-screen').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('screen-' + id).classList.add('active');
+    event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
