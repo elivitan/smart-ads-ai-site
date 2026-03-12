@@ -3,11 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company — Smart Ads AI | About Us</title>
-    <meta name="description" content="Smart Ads AI is an advertising technology startup building AI-powered Google Ads automation for Shopify merchants.">
+    <title>About Us — Smart Ads AI</title>
+    <meta name="description" content="Smart Ads AI is an AdTech startup building AI-powered Google Ads automation for Shopify merchants. Learn our story.">
     <link rel="canonical" href="https://smart-ad-sai.com/company.html">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/shared.css">
+    <style>
+        .story-section { max-width: 760px; margin: 0 auto; }
+        .story-section h2 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 700; margin-bottom: 16px; }
+        .story-section p { font-size: 1.0625rem; color: var(--slate); line-height: 1.8; margin-bottom: 16px; }
+        .story-section strong { color: var(--ink); }
+
+        .story-highlight {
+            background: linear-gradient(135deg, var(--accent-light), #ede9fe);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .story-highlight .big-quote {
+            font-family: var(--font-display);
+            font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+            font-weight: 700;
+            color: var(--ink);
+            line-height: 1.4;
+            font-style: italic;
+        }
+
+        .timeline { position: relative; max-width: 700px; margin: 48px auto; padding-left: 48px; }
+        .timeline::before { content: ''; position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; background: var(--accent); opacity: .2; }
+        .tl-item { position: relative; margin-bottom: 36px; }
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--paper);
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        .tl-date { font-size: .75rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 4px; }
+        .tl-item h4 { font-size: 1.0625rem; font-weight: 600; margin-bottom: 4px; }
+        .tl-item p { font-size: .9375rem; color: var(--slate); line-height: 1.6; }
+
+        .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 900px; margin: 0 auto; }
+        .pillar {
+            text-align: center;
+            padding: 36px 24px;
+            border-radius: 16px;
+            background: #fff;
+            border: 1px solid var(--border);
+            transition: all .25s;
+        }
+        .pillar:hover { border-color: var(--accent); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+        .pillar-icon { font-size: 2.5rem; margin-bottom: 16px; display: block; }
+        .pillar h4 { font-size: 1rem; font-weight: 600; margin-bottom: 8px; }
+        .pillar p { font-size: .875rem; color: var(--slate); line-height: 1.6; }
+
+        .roadmap-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 960px; margin: 0 auto; }
+        .rm-card {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 14px;
+            padding: 28px 20px;
+            text-align: center;
+        }
+        .rm-card h4 { color: var(--accent); font-size: .8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 10px; }
+        .rm-card p { color: rgba(255,255,255,.75); font-size: .875rem; line-height: 1.6; }
+        .rm-icon { font-size: 1.75rem; margin-bottom: 12px; display: block; }
+
+        .tech-badges { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 32px; }
+        .tech-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: #fff; border: 1px solid var(--border); border-radius: 100px;
+            padding: 8px 18px; font-size: .8125rem; font-weight: 500; color: var(--slate);
+        }
+
+        @media (max-width: 768px) {
+            .pillars-grid { grid-template-columns: 1fr; max-width: 400px; }
+            .roadmap-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
 </head>
 <body>
 
@@ -23,86 +102,173 @@
             <li><a href="/pricing.html">Pricing</a></li>
             <li><a href="/company.html" class="active">Company</a></li>
             <li><a href="/contact.html">Contact</a></li>
-            <li><a href="mailto:legal@smart-ad-sai.com" class="nav-cta">Get Started</a></li>
+            <li><a href="/contact.html" class="nav-cta">Get Started</a></li>
         </ul>
     </div>
 </nav>
 
+<!-- HERO -->
 <section class="page-hero">
     <div class="page-hero-inner">
-        <div class="hero-badge">About Us</div>
-        <h1>Building the Future of E‑Commerce Advertising</h1>
-        <p>Smart Ads AI is an advertising technology startup on a mission to democratize Google Ads for every Shopify merchant.</p>
+        <div class="hero-badge">Our Story</div>
+        <h1>We're Making Google Ads Accessible to Every Merchant</h1>
+        <p>Smart Ads AI is an advertising technology startup born out of real frustration with how hard it is for small e-commerce businesses to compete on Google.</p>
     </div>
 </section>
 
+<!-- ORIGIN STORY -->
+<section class="section">
+    <div class="story-section">
+        <h2>Where It Started</h2>
+        <p>In early 2025, our founder was running a Shopify store selling home textiles to US customers. The products were great, the reviews were strong, and the prices were competitive. But there was one problem: <strong>nobody could find the store on Google.</strong></p>
+        <p>Meanwhile, larger competitors &#8212; some selling inferior products at higher prices &#8212; dominated the first page of Google search results. They had agencies, data teams, and marketing budgets that made it impossible to compete. The founder tried learning Google Ads on his own: he spent weeks watching tutorials, reading documentation, and experimenting with campaigns. Most of that budget was wasted.</p>
+        <p>That experience revealed a fundamental problem in e-commerce: <strong>the gap between small merchants and big brands isn't about product quality &#8212; it's about access to advertising intelligence.</strong></p>
+
+        <div class="story-highlight">
+            <div class="big-quote">"Why should a small Shopify merchant need to pay $5,000/month to an agency just to run Google Ads properly? That intelligence should be automated."</div>
+        </div>
+
+        <h2>What We're Building</h2>
+        <p>Smart Ads AI is a <strong>Shopify embedded application</strong> that replaces the need for expensive ad agencies. The platform scans your product catalog, analyzes your competitive landscape using real Google search data, and uses <strong>Anthropic's Claude AI</strong> to generate complete advertising campaigns &#8212; from keyword research to ad copy to budget recommendations.</p>
+        <p>The key principle: <strong>merchants stay in control</strong>. Every campaign is created in paused mode inside the merchant's own Google Ads account. No ad goes live, no budget is spent, and no changes happen without explicit approval. We act as the intelligence layer &#8212; the merchant makes the decisions.</p>
+        <p>Unlike generic keyword tools or basic ad generators, our AI acts like a <strong>senior campaign manager at a top agency</strong>. It doesn't just suggest keywords &#8212; it studies your specific competitors, identifies weaknesses in their strategy, scores each product's advertising potential, and creates campaigns optimized for your unique market position.</p>
+    </div>
+</section>
+
+<!-- THREE PILLARS -->
+<section class="section" style="background: var(--surface);">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Built on Three Principles</h2>
+        </div>
+        <div class="pillars-grid">
+            <div class="pillar">
+                <span class="pillar-icon">📊</span>
+                <h4>Real Data, Not Templates</h4>
+                <p>Every recommendation is based on live Google search results, competitor websites, and current market trends. No generic templates or guesswork.</p>
+            </div>
+            <div class="pillar">
+                <span class="pillar-icon">🛡️</span>
+                <h4>Merchant Control First</h4>
+                <p>All campaigns start paused. Merchants review every keyword, headline, and budget before anything goes live. Full transparency, zero surprises.</p>
+            </div>
+            <div class="pillar">
+                <span class="pillar-icon">🔌</span>
+                <h4>Native Shopify Experience</h4>
+                <p>Not a bolted-on integration. The app lives inside Shopify admin, syncs products via webhooks, and bills through Shopify's system.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TIMELINE -->
 <section class="section">
     <div class="section-inner">
-        <div class="info-grid">
-            <div>
-                <table class="info-table">
-                    <tr><td>Legal Name</td><td>Smart Ads AI Ltd.</td></tr>
-                    <tr><td>Incorporated</td><td>Israel</td></tr>
-                    <tr><td>Headquarters</td><td>Nahal Besor 10/7, Beit Shemesh, Israel</td></tr>
-                    <tr><td>Phone</td><td>+972-58-486-9778</td></tr>
-                    <tr><td>Founded</td><td>2025</td></tr>
-                    <tr><td>Industry</td><td>Advertising Technology (AdTech)</td></tr>
-                    <tr><td>Focus</td><td>AI-Powered Google Ads Automation</td></tr>
-                    <tr><td>Platform</td><td>Shopify Embedded App</td></tr>
-                </table>
+        <div class="section-header">
+            <h2>Our Journey</h2>
+        </div>
+        <div class="timeline">
+            <div class="tl-item">
+                <div class="tl-date">Early 2025</div>
+                <h4>The Problem</h4>
+                <p>Founder experiences firsthand how impossible it is for small Shopify merchants to compete on Google Ads without agency-level expertise.</p>
             </div>
-            <div>
-                <table class="info-table">
-                    <tr><td>Email</td><td><a href="mailto:legal@smart-ad-sai.com" style="color:var(--accent); text-decoration:none;">legal@smart-ad-sai.com</a></td></tr>
-                    <tr><td>Response Time</td><td>Within 24 hours</td></tr>
-                    <tr><td>Business Hours</td><td>Mon–Fri, 9am–6pm EST</td></tr>
-                </table>
+            <div class="tl-item">
+                <div class="tl-date">Q1 2025</div>
+                <h4>Building the Foundation</h4>
+                <p>Development begins on the Shopify embedded app. Core architecture established: Remix/React frontend, PostgreSQL database, Shopify App Bridge integration.</p>
+            </div>
+            <div class="tl-item">
+                <div class="tl-date">Q2 2025</div>
+                <h4>AI Intelligence Engine</h4>
+                <p>Anthropic's Claude AI integrated as the "brain" of the platform. Real-time competitor analysis pipeline built using multiple search data providers. AI generates complete ad campaigns from real market data.</p>
+            </div>
+            <div class="tl-item">
+                <div class="tl-date">Q3 2025</div>
+                <h4>Google Ads API Integration</h4>
+                <p>Direct Google Ads API integration completed. Campaign creation, keyword management, and performance reporting &#8212; all from within the Shopify dashboard.</p>
+            </div>
+            <div class="tl-item">
+                <div class="tl-date">Q4 2025</div>
+                <h4>Enterprise-Grade Infrastructure</h4>
+                <p>Redis caching layer, Sentry monitoring, CI/CD pipeline, rate limiting, and database retry logic added. Platform hardened for production reliability.</p>
+            </div>
+            <div class="tl-item">
+                <div class="tl-date">2026</div>
+                <h4>First Users &amp; Growth</h4>
+                <p>First paying customers onboarded. Platform expanded with campaign management dashboard, AI credits system, and Performance Max campaign support.</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section" style="background:var(--surface);">
+<!-- TECH STACK -->
+<section class="section" style="background: var(--surface);">
     <div class="section-inner">
-        <div class="mission-block">
-            <h3>Our Mission</h3>
-            <p>We believe every Shopify merchant deserves access to the same advertising intelligence that big brands and agencies use — without the big brand budget. Traditional Google Ads management requires either expensive agency fees ($2,000–$10,000/month) or deep technical expertise that most small business owners don't have.</p>
-            <p>Smart Ads AI changes that equation. Our platform automates the entire Google Ads workflow using artificial intelligence — from competitive research to campaign launch — making professional-grade advertising accessible to any Shopify store owner.</p>
+        <div class="section-header" id="security">
+            <h2>Technology &amp; Security</h2>
+            <p>Built with enterprise-grade standards from day one.</p>
         </div>
-
-        <div class="mission-block">
-            <h3>What We Build</h3>
-            <p>Smart Ads AI is a Shopify embedded application that connects to a merchant's store, analyzes their products and competitive landscape, and creates optimized Google Ads campaigns. The platform uses Anthropic's Claude AI for intelligent ad copy generation, real-time search engine data for competitor analysis, and the Google Ads API for direct campaign management.</p>
-            <p>Our app lives inside the Shopify admin dashboard — merchants never leave their familiar environment. Products sync automatically, competitors are analyzed in real time, and campaigns are created in paused mode so merchants always maintain full control.</p>
-        </div>
-
-        <div class="mission-block" id="security">
-            <h3>Technology &amp; Security</h3>
-            <p>Our platform is built with enterprise-grade security and modern technology standards:</p>
-            <p><strong>Authentication &amp; Authorization:</strong> OAuth 2.0 for Google Ads API access. Shopify session tokens for app authentication. No passwords are ever stored.</p>
-            <p><strong>Data Security:</strong> PostgreSQL database hosted on Supabase with encryption at rest. All data transmitted over HTTPS with TLS 1.2+ encryption. Redis caching layer via Upstash with encrypted connections.</p>
-            <p><strong>Compliance:</strong> Full compliance with Google Ads API Terms of Service, Google API Services User Data Policy, Shopify App Store requirements, and applicable data protection regulations.</p>
-            <p><strong>Infrastructure:</strong> Sentry for real-time error monitoring and performance tracking. GitHub Actions for automated CI/CD pipeline. Rate limiting on all API endpoints to prevent abuse.</p>
-            <p><strong>Data Handling:</strong> We access only product catalog data from Shopify (titles, descriptions, prices, images). We never access customer PII, payment information, or order details. Merchants can disconnect at any time, immediately revoking all data access.</p>
-        </div>
-
-        <div class="mission-block">
-            <h3>Our Approach to Google Ads</h3>
-            <p>Unlike tools that simply automate bidding or provide keyword suggestions, Smart Ads AI takes a holistic approach. We analyze your entire competitive landscape before generating a single ad. Every keyword recommendation, headline, and budget suggestion is backed by real data — not assumptions.</p>
-            <p>Crucially, we believe merchants should always be in control. That's why every campaign is created in <strong>paused mode</strong>. No ad goes live, no budget is spent, and no changes are made to your Google Ads account without your explicit approval. You can review, edit, or reject any recommendation.</p>
+        <div class="story-section" style="text-align:center;">
+            <p>Our platform combines <strong>Anthropic's Claude AI</strong> for intelligent ad generation, the <strong>Google Ads API</strong> for direct campaign management, and real-time <strong>search intelligence data</strong> for competitor analysis &#8212; all secured with OAuth 2.0, TLS 1.2+ encryption, and full compliance with Google's API Services User Data Policy.</p>
+            <div class="tech-badges">
+                <span class="tech-badge">🤖 Anthropic Claude AI</span>
+                <span class="tech-badge">📢 Google Ads API</span>
+                <span class="tech-badge">🔐 OAuth 2.0</span>
+                <span class="tech-badge">🛍️ Shopify App Bridge</span>
+                <span class="tech-badge">🗄️ PostgreSQL (Supabase)</span>
+                <span class="tech-badge">⚡ Redis (Upstash)</span>
+                <span class="tech-badge">📡 Sentry Monitoring</span>
+                <span class="tech-badge">🔄 GitHub Actions CI/CD</span>
+                <span class="tech-badge">🔒 TLS 1.2+ Encryption</span>
+            </div>
         </div>
     </div>
 </section>
 
+<!-- ROADMAP -->
+<section class="section" style="background: var(--ink); color: #fff;">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2 style="color:#fff;">Where We're Headed</h2>
+            <p style="color:var(--muted);">Google Ads is just the beginning.</p>
+        </div>
+        <div class="roadmap-grid">
+            <div class="rm-card">
+                <span class="rm-icon">🎯</span>
+                <h4>Now</h4>
+                <p>Google Ads automation for Shopify with AI competitor analysis and campaign creation</p>
+            </div>
+            <div class="rm-card">
+                <span class="rm-icon">📱</span>
+                <h4>Next</h4>
+                <p>Meta, TikTok &amp; Pinterest advertising &#8212; multi-platform campaigns from one dashboard</p>
+            </div>
+            <div class="rm-card">
+                <span class="rm-icon">🌐</span>
+                <h4>Future</h4>
+                <p>WordPress, WooCommerce &amp; Magento support &#8212; beyond Shopify</p>
+            </div>
+            <div class="rm-card">
+                <span class="rm-icon">🚀</span>
+                <h4>Vision</h4>
+                <p>World-class advertising intelligence for every e-commerce merchant, no agency required</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
 <section class="cta-section">
     <h2>Want to learn more?</h2>
-    <p>Get in touch with our team or explore the product in detail.</p>
+    <p>See the product in action or get in touch with our team.</p>
     <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-        <a href="/contact.html" class="btn btn-white">Contact Us →</a>
-        <a href="/product.html" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">Product Details</a>
+        <a href="/demo.html" class="btn btn-white">View Demo &#8594;</a>
+        <a href="/contact.html" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">Contact Us</a>
     </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-inner">
         <div class="footer-grid">
