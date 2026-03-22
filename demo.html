@@ -4,13 +4,318 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Demo — Smart Ads AI | See the Platform in Action</title>
-    <meta name="description" content="Explore a live demo of Smart Ads AI — see how the dashboard, competitor analysis, AI ad copy, and campaign creation work.">
+    <meta name="description" content="Explore a live interactive demo of Smart Ads AI — see how the dashboard, product analysis, AI ad copy, campaign creation, and Google Ads API integration work inside a Shopify app.">
     <link rel="canonical" href="https://smart-ad-sai.com/demo.html">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/shared.css">
+    <style>
+/* ============ DEMO PAGE STYLES ============ */
+
+/* --- App Frame --- */
+.app-frame{max-width:1160px;margin:0 auto;background:#0a0a1a;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.3);display:flex;min-height:680px;position:relative}
+.app-sidebar{width:200px;background:rgba(255,255,255,.04);border-right:1px solid rgba(255,255,255,.08);padding:20px 0;flex-shrink:0;display:flex;flex-direction:column}
+.app-sidebar-brand{padding:0 16px 20px;font-family:var(--font-display);font-weight:700;font-size:.9rem;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:8px}
+.app-sidebar-brand em{color:#6366f1;font-style:normal}
+.sidebar-nav{list-style:none;padding:0;margin:0}
+.sidebar-nav li{padding:0}
+.sidebar-nav button{width:100%;text-align:left;padding:10px 16px;background:none;border:none;color:rgba(255,255,255,.55);font-size:.8125rem;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .15s;font-family:inherit}
+.sidebar-nav button:hover{background:rgba(255,255,255,.06);color:rgba(255,255,255,.85)}
+.sidebar-nav button.active{background:rgba(99,102,241,.15);color:#a5b4fc;border-right:2px solid #6366f1}
+.sidebar-nav button svg{width:16px;height:16px;opacity:.6;flex-shrink:0}
+.sidebar-nav button.active svg{opacity:1}
+.sidebar-badge{font-size:.6rem;background:#6366f1;color:#fff;padding:1px 6px;border-radius:100px;margin-left:auto}
+.app-main{flex:1;padding:24px 28px;overflow-y:auto;max-height:720px;color:rgba(255,255,255,.85)}
+.app-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.app-topbar h2{font-size:1.125rem;font-weight:700;color:#fff}
+.app-topbar-right{display:flex;align-items:center;gap:12px}
+.topbar-pill{font-size:.7rem;padding:4px 10px;border-radius:100px;font-weight:600}
+.pill-green{background:rgba(34,197,94,.15);color:#22c55e}
+.pill-blue{background:rgba(99,102,241,.15);color:#a5b4fc}
+.screen{display:none}
+.screen.active{display:block}
+
+/* --- Dashboard --- */
+.dash-grid{display:grid;grid-template-columns:280px 1fr;gap:20px;margin-bottom:24px}
+.health-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;text-align:center}
+.health-card h3{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-bottom:12px}
+.health-ring{position:relative;width:130px;height:130px;margin:0 auto 12px}
+.health-ring svg{transform:rotate(-90deg)}
+.health-ring-bg{fill:none;stroke:rgba(255,255,255,.08);stroke-width:8}
+.health-ring-fill{fill:none;stroke:#6366f1;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.5s ease}
+.health-score{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.health-score strong{font-family:var(--font-display);font-size:2rem;font-weight:700;color:#fff;line-height:1}
+.health-score span{font-size:.7rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+.health-grade{display:inline-block;background:#22c55e;color:#fff;font-size:.7rem;font-weight:700;padding:2px 10px;border-radius:100px;margin-top:4px}
+.sub-scores{margin-top:16px}
+.sub-score{margin-bottom:10px}
+.sub-score-header{display:flex;justify-content:space-between;font-size:.7rem;margin-bottom:4px}
+.sub-score-header span:first-child{color:rgba(255,255,255,.6)}
+.sub-score-header span:last-child{color:rgba(255,255,255,.85);font-weight:600}
+.sub-score-bar{height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.sub-score-fill{height:100%;border-radius:2px;transition:width 1s ease}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.stat-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px;text-align:center}
+.stat-card .label{font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.4);margin-bottom:4px}
+.stat-card .value{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff}
+.stat-card .delta{font-size:.65rem;color:#22c55e;margin-top:2px}
+.pulse-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;margin-bottom:20px}
+.pulse-card h3{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-bottom:12px}
+.pulse-canvas{width:100%;height:80px;display:block}
+.pulse-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.pulse-metric .pm-label{font-size:.6rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.04em}
+.pulse-metric .pm-value{font-size:.9rem;font-weight:700;color:#fff;margin-top:2px}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
+.product-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s}
+.product-card:hover{border-color:rgba(99,102,241,.4);transform:translateY(-2px)}
+.product-img{height:100px;position:relative}
+.product-img .score-badge{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);color:#fff;font-size:.7rem;font-weight:700;padding:3px 8px;border-radius:6px}
+.score-high{border:1px solid #22c55e}
+.score-mid{border:1px solid #f59e0b}
+.product-info{padding:10px 12px}
+.product-info h4{font-size:.8rem;font-weight:600;color:#fff;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.product-info .price{font-size:.75rem;color:rgba(255,255,255,.5)}
+.gap-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+.gap-card h3{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-bottom:12px}
+.gap-table{width:100%;border-collapse:collapse}
+.gap-table th{text-align:left;font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.3);padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.08)}
+.gap-table td{padding:8px;font-size:.8rem;color:rgba(255,255,255,.75);border-bottom:1px solid rgba(255,255,255,.04)}
+.gap-table .loss{color:#ef4444;font-weight:600}
+
+/* --- Product Analysis --- */
+.scan-cta{text-align:center;padding:80px 20px}
+.scan-cta h3{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:8px}
+.scan-cta p{color:rgba(255,255,255,.5);font-size:.875rem;margin-bottom:24px}
+.scan-btn{background:#6366f1;color:#fff;border:none;padding:14px 36px;border-radius:10px;font-size:.9375rem;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit}
+.scan-btn:hover{background:#4f46e5;transform:translateY(-1px)}
+.scan-anim{text-align:center;padding:40px 20px}
+.radar-container{position:relative;width:200px;height:200px;margin:0 auto 24px}
+.radar-ring{position:absolute;border:1px solid rgba(99,102,241,.3);border-radius:50%;animation:radarPulse 2s ease-out infinite}
+.radar-ring:nth-child(1){inset:30%;animation-delay:0s}
+.radar-ring:nth-child(2){inset:15%;animation-delay:.5s}
+.radar-ring:nth-child(3){inset:0;animation-delay:1s}
+.radar-dot{position:absolute;width:8px;height:8px;background:#6366f1;border-radius:50%;box-shadow:0 0 12px #6366f1}
+@keyframes radarPulse{0%{opacity:1;transform:scale(.8)}100%{opacity:0;transform:scale(1.3)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.word-particle{position:absolute;font-size:.65rem;color:rgba(255,255,255,.4);animation:float 3s ease-in-out infinite}
+.scan-progress{max-width:400px;margin:0 auto}
+.scan-step{display:flex;align-items:center;gap:10px;padding:6px 0;font-size:.8rem;color:rgba(255,255,255,.35);transition:color .3s}
+.scan-step.done{color:#22c55e}
+.scan-step.active{color:#a5b4fc}
+.scan-step .check{width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:.6rem;flex-shrink:0;transition:all .3s}
+.scan-step.done .check{background:#22c55e;border-color:#22c55e;color:#fff}
+.scan-step.active .check{border-color:#6366f1;background:rgba(99,102,241,.2)}
+
+/* --- Product Modal --- */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:#12121f;border:1px solid rgba(255,255,255,.1);border-radius:16px;width:100%;max-width:700px;max-height:90vh;overflow-y:auto;padding:28px;color:rgba(255,255,255,.85);position:relative}
+.modal-close{position:absolute;top:12px;right:16px;background:none;border:none;color:rgba(255,255,255,.4);font-size:1.25rem;cursor:pointer;padding:4px 8px}
+.modal-close:hover{color:#fff}
+.modal-header{display:flex;gap:16px;margin-bottom:20px;align-items:center}
+.modal-product-img{width:80px;height:80px;border-radius:10px;flex-shrink:0}
+.modal-product-info h3{font-size:1rem;font-weight:700;color:#fff;margin-bottom:2px}
+.modal-product-info .price{font-size:.875rem;color:rgba(255,255,255,.5)}
+.modal-ring{width:60px;height:60px;margin-left:auto;flex-shrink:0;position:relative}
+.modal-ring svg{transform:rotate(-90deg)}
+.modal-ring-score{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:#fff}
+.modal-section{margin-bottom:20px}
+.modal-section h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-bottom:10px}
+.strength-bar{height:8px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;margin-bottom:4px}
+.strength-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e);transition:width 1s ease}
+.strength-label{font-size:.7rem;color:rgba(255,255,255,.5);text-align:right}
+.google-ad-preview{background:#fff;border-radius:10px;padding:16px;font-family:Arial,sans-serif;margin-bottom:4px}
+.gad-sponsored{font-size:.7rem;color:#202124;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.gad-sponsored span{background:#e8f0fe;color:#1a73e8;font-size:.6rem;padding:1px 6px;border-radius:3px;font-weight:700}
+.gad-url{font-size:.8rem;color:#202124;margin-bottom:2px}
+.gad-url span{color:#4d5156}
+.gad-headline{font-size:1.1rem;color:#1a0dab;text-decoration:none;margin-bottom:4px;display:block;line-height:1.3}
+.gad-desc{font-size:.8rem;color:#4d5156;line-height:1.4}
+.headline-list,.desc-list{list-style:none}
+.headline-list li,.desc-list li{display:flex;justify-content:space-between;align-items:center;padding:6px 10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:6px;margin-bottom:4px;font-size:.8rem}
+.headline-list li .counter,.desc-list li .counter{font-size:.65rem;color:rgba(255,255,255,.3);flex-shrink:0;margin-left:8px}
+.keyword-chips{display:flex;flex-wrap:wrap;gap:6px}
+.kw-chip{font-size:.75rem;padding:4px 10px;border-radius:6px;font-weight:500}
+.kw-exact{background:rgba(99,102,241,.15);color:#a5b4fc;border:1px solid rgba(99,102,241,.3)}
+.kw-phrase{background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.25)}
+.kw-broad{background:rgba(255,255,255,.06);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.1)}
+.kw-negative{background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.2)}
+.competitor-intel{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.comp-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:10px;text-align:center}
+.comp-item .rank{font-size:1.1rem;font-weight:700;color:#f59e0b}
+.comp-item .name{font-size:.75rem;color:rgba(255,255,255,.6);margin-top:2px}
+.modal-launch-btn{width:100%;padding:14px;background:#22c55e;color:#fff;border:none;border-radius:10px;font-size:.9375rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s}
+.modal-launch-btn:hover{background:#16a34a}
+
+/* --- Keywords --- */
+.kw-tabs{display:flex;gap:4px;margin-bottom:20px}
+.kw-tab{padding:8px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;color:rgba(255,255,255,.5);font-size:.8rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all .15s}
+.kw-tab.active{background:rgba(99,102,241,.15);color:#a5b4fc}
+.kw-input-row{display:flex;gap:8px;margin-bottom:16px}
+.kw-input{flex:1;padding:10px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#fff;font-size:.875rem;font-family:inherit}
+.kw-input::placeholder{color:rgba(255,255,255,.3)}
+.kw-go{padding:10px 20px;background:#6366f1;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.8rem;font-family:inherit}
+.kw-results-table{width:100%;border-collapse:collapse}
+.kw-results-table th{text-align:left;font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.3);padding:8px;border-bottom:1px solid rgba(255,255,255,.08)}
+.kw-results-table td{padding:10px 8px;font-size:.8rem;color:rgba(255,255,255,.75);border-bottom:1px solid rgba(255,255,255,.04)}
+.comp-badge{font-size:.65rem;padding:2px 8px;border-radius:100px;font-weight:600}
+.comp-low{background:rgba(34,197,94,.15);color:#22c55e}
+.comp-med{background:rgba(245,158,11,.15);color:#f59e0b}
+.comp-high{background:rgba(239,68,68,.15);color:#ef4444}
+.trend-up{color:#22c55e}
+.trend-flat{color:#f59e0b}
+.trend-down{color:#ef4444}
+.extracted-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.ext-chip{font-size:.75rem;padding:5px 12px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);color:#a5b4fc;border-radius:100px}
+.saved-kw-list{list-style:none}
+.saved-kw-list li{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;margin-bottom:4px;font-size:.8rem}
+
+/* --- Campaign Wizard --- */
+.wiz-steps{display:flex;gap:4px;margin-bottom:20px;overflow-x:auto;padding-bottom:4px}
+.wiz-step-dot{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.65rem;color:rgba(255,255,255,.3);font-weight:700;flex-shrink:0;transition:all .2s;cursor:pointer}
+.wiz-step-dot.active{background:rgba(99,102,241,.2);border-color:#6366f1;color:#a5b4fc}
+.wiz-step-dot.done{background:#22c55e;border-color:#22c55e;color:#fff}
+.wiz-screen{display:none}
+.wiz-screen.active{display:block}
+.wiz-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px}
+.wiz-desc{font-size:.8rem;color:rgba(255,255,255,.45);margin-bottom:16px}
+.wiz-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.wiz-card{background:rgba(255,255,255,.04);border:2px solid rgba(255,255,255,.08);border-radius:10px;padding:16px;cursor:pointer;transition:all .15s;position:relative}
+.wiz-card:hover{border-color:rgba(99,102,241,.3)}
+.wiz-card.selected{border-color:#6366f1;background:rgba(99,102,241,.08)}
+.wiz-card h4{font-size:.85rem;font-weight:600;color:#fff;margin-bottom:2px}
+.wiz-card p{font-size:.7rem;color:rgba(255,255,255,.4);line-height:1.4}
+.wiz-card .rec{position:absolute;top:8px;right:8px;font-size:.55rem;background:#6366f1;color:#fff;padding:2px 6px;border-radius:4px;font-weight:700;text-transform:uppercase}
+.wiz-nav{display:flex;justify-content:space-between;margin-top:20px}
+.wiz-back,.wiz-next{padding:10px 24px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.8rem;font-family:inherit;transition:all .15s}
+.wiz-back{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6)}
+.wiz-back:hover{background:rgba(255,255,255,.1)}
+.wiz-next{background:#6366f1;border:none;color:#fff}
+.wiz-next:hover{background:#4f46e5}
+.wiz-locations label{display:flex;align-items:center;gap:8px;padding:6px 0;font-size:.85rem;color:rgba(255,255,255,.75);cursor:pointer}
+.wiz-locations input[type=checkbox]{accent-color:#6366f1}
+.wiz-ad-editor textarea{width:100%;padding:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#fff;font-size:.8rem;font-family:inherit;resize:vertical;margin-bottom:8px}
+.wiz-budget-slider{width:100%;margin:16px 0;accent-color:#6366f1}
+.wiz-budget-display{text-align:center}
+.wiz-budget-display .amount{font-family:var(--font-display);font-size:2rem;font-weight:700;color:#fff}
+.wiz-budget-display .monthly{font-size:.8rem;color:rgba(255,255,255,.4)}
+.wiz-toggle{display:flex;align-items:center;gap:12px;margin:12px 0}
+.wiz-toggle input[type=checkbox]{width:40px;height:22px;accent-color:#6366f1}
+.wiz-summary{list-style:none}
+.wiz-summary li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.85rem}
+.wiz-summary li span:first-child{color:rgba(255,255,255,.45)}
+.wiz-summary li span:last-child{color:#fff;font-weight:600}
+.launch-btn{width:100%;padding:14px;background:#22c55e;color:#fff;border:none;border-radius:10px;font-size:.9375rem;font-weight:700;cursor:pointer;font-family:inherit;margin-top:16px;transition:all .2s}
+.launch-btn:hover{background:#16a34a}
+
+/* --- Launch Timeline --- */
+.launch-timeline{max-width:400px;margin:20px auto 0;padding:0}
+.lt-step{display:flex;align-items:center;gap:12px;padding:8px 0;font-size:.8rem;color:rgba(255,255,255,.3);transition:all .4s}
+.lt-step.active{color:#f59e0b}
+.lt-step.done{color:#22c55e}
+.lt-icon{width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.55rem;flex-shrink:0;transition:all .4s}
+.lt-step.active .lt-icon{border-color:#f59e0b;background:rgba(245,158,11,.15)}
+.lt-step.done .lt-icon{border-color:#22c55e;background:#22c55e;color:#fff}
+.launch-success{text-align:center;padding:24px;display:none}
+.launch-success h3{font-size:1.25rem;font-weight:700;color:#22c55e;margin-bottom:8px}
+.launch-success p{font-size:.85rem;color:rgba(255,255,255,.5)}
+
+/* --- Campaigns --- */
+.campaign-list{display:grid;gap:12px}
+.campaign-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px;display:grid;grid-template-columns:2fr repeat(5,1fr);gap:12px;align-items:center}
+.campaign-item .camp-name{font-weight:600;color:#fff;font-size:.85rem}
+.campaign-item .camp-type{font-size:.7rem;color:rgba(255,255,255,.4)}
+.camp-status{font-size:.65rem;padding:3px 10px;border-radius:100px;font-weight:700;display:inline-block}
+.camp-paused{background:rgba(245,158,11,.15);color:#f59e0b}
+.camp-active{background:rgba(34,197,94,.15);color:#22c55e}
+.campaign-item .camp-val{font-size:.85rem;color:rgba(255,255,255,.7);text-align:center}
+.campaign-item .camp-label{font-size:.6rem;color:rgba(255,255,255,.3);text-transform:uppercase;text-align:center}
+
+/* --- Settings --- */
+.settings-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;margin-bottom:16px}
+.settings-card h3{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:12px}
+.settings-connected{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);border-radius:8px;margin-bottom:12px}
+.settings-connected .dot{width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0}
+.settings-connected span{font-size:.85rem;color:#22c55e;font-weight:600}
+.settings-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.85rem}
+.settings-row span:first-child{color:rgba(255,255,255,.45)}
+.settings-row span:last-child{color:#fff}
+.settings-info{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.5;margin:12px 0}
+.disconnect-btn{padding:8px 20px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);color:#ef4444;border-radius:8px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit}
+
+/* --- API Technical Section --- */
+.api-section{background:#fff;padding:80px 24px}
+.api-inner{max-width:1000px;margin:0 auto}
+.api-section h2{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2rem);font-weight:700;text-align:center;margin-bottom:8px;color:var(--ink)}
+.api-section .subtitle{text-align:center;color:var(--slate);font-size:1rem;margin-bottom:40px}
+.data-flow{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:48px;flex-wrap:wrap}
+.flow-box{padding:16px 24px;border-radius:10px;text-align:center;font-weight:600;font-size:.9rem;min-width:160px}
+.flow-shopify{background:#95bf47;color:#fff}
+.flow-smart{background:#6366f1;color:#fff}
+.flow-google{background:#4285f4;color:#fff}
+.flow-merchant{background:#34a853;color:#fff}
+.flow-arr{font-size:1.5rem;color:var(--muted);padding:0 8px;flex-shrink:0}
+.api-table-wrap{overflow-x:auto;margin-bottom:40px}
+.api-table{width:100%;border-collapse:collapse;font-size:.875rem}
+.api-table th{text-align:left;padding:12px 16px;background:var(--surface);color:var(--ink);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;border-bottom:2px solid var(--border)}
+.api-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--slate)}
+.api-table td:nth-child(2){font-family:'Courier New',monospace;font-size:.8rem;color:var(--accent);font-weight:500}
+.api-table tr:hover{background:var(--surface)}
+.security-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:48px}
+.sec-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+.sec-icon{font-size:1.75rem;margin-bottom:8px}
+.sec-card h4{font-size:.875rem;font-weight:600;margin-bottom:4px}
+.sec-card p{font-size:.8rem;color:var(--slate);line-height:1.5}
+.lifecycle-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:0}
+.lc-step{text-align:center;position:relative;padding:16px 12px}
+.lc-num{width:32px;height:32px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;margin:0 auto 10px}
+.lc-step h4{font-size:.8rem;font-weight:600;margin-bottom:4px;color:var(--ink)}
+.lc-step p{font-size:.75rem;color:var(--slate);line-height:1.4}
+
+/* --- FAQ --- */
+.faq-list{max-width:720px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-size:1rem;font-weight:600;color:var(--ink)}
+.faq-q span{transition:transform .2s}
+.faq-item.open .faq-q span{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:.9rem;color:var(--slate);line-height:1.7}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:20px}
+
+/* --- Confetti --- */
+.confetti-piece{position:fixed;width:8px;height:8px;z-index:300;pointer-events:none;animation:confettiFall 3s ease-in forwards}
+@keyframes confettiFall{0%{opacity:1;transform:translateY(0) rotate(0)}100%{opacity:0;transform:translateY(100vh) rotate(720deg)}}
+
+/* --- Responsive --- */
+@media(max-width:900px){
+    .app-frame{flex-direction:column;min-height:auto}
+    .app-sidebar{width:100%;flex-direction:row;overflow-x:auto;padding:8px;border-right:none;border-bottom:1px solid rgba(255,255,255,.08);white-space:nowrap}
+    .app-sidebar-brand{display:none}
+    .sidebar-nav{display:flex;gap:4px}
+    .sidebar-nav button{white-space:nowrap;padding:8px 14px;border-radius:8px;font-size:.75rem}
+    .sidebar-nav button.active{border-right:none;border-radius:8px}
+    .app-main{max-height:none;padding:16px}
+    .dash-grid{grid-template-columns:1fr}
+    .product-grid{grid-template-columns:repeat(2,1fr)}
+    .wiz-cards{grid-template-columns:1fr}
+    .campaign-item{grid-template-columns:1fr 1fr;gap:8px}
+    .competitor-intel{grid-template-columns:1fr}
+    .security-grid{grid-template-columns:1fr 1fr}
+    .lifecycle-steps{grid-template-columns:1fr 1fr}
+    .data-flow{flex-direction:column;gap:8px}
+    .flow-arr{transform:rotate(90deg)}
+}
+@media(max-width:600px){
+    .product-grid{grid-template-columns:1fr}
+    .stats-row{grid-template-columns:1fr 1fr}
+    .pulse-metrics{grid-template-columns:1fr 1fr}
+    .security-grid{grid-template-columns:1fr}
+    .lifecycle-steps{grid-template-columns:1fr}
+    .modal{padding:16px}
+}
+</style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="nav">
     <div class="nav-inner">
         <a href="/" class="nav-logo">Smart Ads <span>AI</span></a>
@@ -28,202 +333,517 @@
     </div>
 </nav>
 
+<!-- HERO -->
 <section class="page-hero">
     <div class="page-hero-inner">
-        <div class="hero-badge">Interactive Demo</div>
-        <h1>See Smart Ads AI in Action</h1>
-        <p>Explore the platform screens below. This is exactly what you'll see inside your Shopify admin dashboard after installing Smart Ads AI.</p>
-    </div>
-</section>
-
-<section class="section">
-    <div class="demo-container">
-        <div class="demo-tabs">
-            <button class="demo-tab active" onclick="showScreen('dashboard')">Dashboard</button>
-            <button class="demo-tab" onclick="showScreen('products')">Product Analysis</button>
-            <button class="demo-tab" onclick="showScreen('competitors')">Competitors</button>
-            <button class="demo-tab" onclick="showScreen('adcopy')">AI Ad Copy</button>
-            <button class="demo-tab" onclick="showScreen('campaign')">Campaign Preview</button>
-        </div>
-
-        <!-- DASHBOARD -->
-        <div class="demo-screen active" id="screen-dashboard">
-            <div class="demo-bar"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
-            <div class="demo-kpi-row">
-                <div class="demo-kpi">
-                    <div class="demo-kpi-label">Products Analyzed</div>
-                    <div class="demo-kpi-value">24</div>
-                    <div class="demo-kpi-delta">▲ 8 this week</div>
-                </div>
-                <div class="demo-kpi">
-                    <div class="demo-kpi-label">Avg. Ad Score</div>
-                    <div class="demo-kpi-value">78/100</div>
-                    <div class="demo-kpi-delta">▲ 12 pts</div>
-                </div>
-                <div class="demo-kpi">
-                    <div class="demo-kpi-label">Competitors Found</div>
-                    <div class="demo-kpi-value">156</div>
-                    <div class="demo-kpi-delta">▲ 23 new</div>
-                </div>
-                <div class="demo-kpi">
-                    <div class="demo-kpi-label">Keywords Generated</div>
-                    <div class="demo-kpi-value">1,240</div>
-                    <div class="demo-kpi-delta">▲ 340 new</div>
-                </div>
-            </div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-                <div class="demo-kpi">
-                    <div class="demo-kpi-label">Active Campaigns</div>
-                    <div class="demo-kpi-value">6</div>
-                    <div class="demo-kpi-delta">2 paused</div>
-                </div>
-                <div class="demo-kpi">
-                    <div class="demo-kpi-label">ROAS (Last 7 Days)</div>
-                    <div class="demo-kpi-value">3.4×</div>
-                    <div class="demo-kpi-delta">▲ 0.6× improvement</div>
-                </div>
-            </div>
-            <p style="text-align:center; color:rgba(255,255,255,.4); font-size:.75rem; margin-top:16px;">Dashboard — Real-time overview of your store's advertising performance</p>
-        </div>
-
-        <!-- PRODUCTS -->
-        <div class="demo-screen" id="screen-products">
-            <div class="demo-bar"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
-            <table class="demo-table">
-                <thead>
-                    <tr><th>Product</th><th>Ad Score</th><th>Competitors</th><th>Keywords</th><th>Status</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Premium Cotton Bed Sheet Set</td><td><span class="demo-score">85</span></td><td>12</td><td>48</td><td style="color:var(--success);">Ready to launch</td></tr>
-                    <tr><td>Luxury Silk Pillowcase Set</td><td><span class="demo-score">72</span></td><td>8</td><td>31</td><td style="color:var(--success);">Ready to launch</td></tr>
-                    <tr><td>Weighted Blanket 15lbs</td><td><span class="demo-score warn">58</span></td><td>15</td><td>62</td><td style="color:var(--warning);">Needs optimization</td></tr>
-                    <tr><td>Bamboo Duvet Cover Queen</td><td><span class="demo-score">79</span></td><td>10</td><td>44</td><td style="color:var(--success);">Ready to launch</td></tr>
-                    <tr><td>Organic Cotton Towel Set</td><td><span class="demo-score">81</span></td><td>9</td><td>37</td><td style="color:var(--success);">Ready to launch</td></tr>
-                </tbody>
-            </table>
-            <p style="text-align:center; color:rgba(255,255,255,.4); font-size:.75rem; margin-top:16px;">Product Analysis — AI scores each product based on competitive landscape</p>
-        </div>
-
-        <!-- COMPETITORS -->
-        <div class="demo-screen" id="screen-competitors">
-            <div class="demo-bar"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
-            <div style="color:rgba(255,255,255,.5); font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; margin-bottom:16px;">Top Competitors for "cotton bed sheets"</div>
-            <table class="demo-table">
-                <thead>
-                    <tr><th>#</th><th>Competitor</th><th>Keywords</th><th>Est. Daily Spend</th><th>Threat Level</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>1</td><td>BrooklynBedding.com</td><td>42</td><td>$85/day</td><td><span style="color:#ef4444; font-weight:600;">High</span></td></tr>
-                    <tr><td>2</td><td>Parachute.com</td><td>38</td><td>$120/day</td><td><span style="color:#ef4444; font-weight:600;">High</span></td></tr>
-                    <tr><td>3</td><td>BollAndBranch.com</td><td>29</td><td>$65/day</td><td><span style="color:var(--warning); font-weight:600;">Medium</span></td></tr>
-                    <tr><td>4</td><td>Brooklinen.com</td><td>51</td><td>$95/day</td><td><span style="color:#ef4444; font-weight:600;">High</span></td></tr>
-                </tbody>
-            </table>
-            <p style="text-align:center; color:rgba(255,255,255,.4); font-size:.75rem; margin-top:16px;">Competitor Intelligence — Analyze your competition's ad strategies and spending</p>
-        </div>
-
-        <!-- AD COPY -->
-        <div class="demo-screen" id="screen-adcopy">
-            <div class="demo-bar"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
-            <div style="color:rgba(255,255,255,.5); font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; margin-bottom:16px;">AI-Generated Ad Copy — Premium Cotton Bed Sheet Set</div>
-            <div style="color:rgba(255,255,255,.4); font-size:.6875rem; margin-bottom:12px;">Generated Headlines (15 total, showing top 5)</div>
-            <div class="demo-headline"><span class="demo-headline-text">Premium Cotton Sheets — 400TC Luxury Feel</span><span class="demo-headline-score">★ 92</span></div>
-            <div class="demo-headline"><span class="demo-headline-text">Hotel Quality Bed Sheets — Free Shipping</span><span class="demo-headline-score">★ 88</span></div>
-            <div class="demo-headline"><span class="demo-headline-text">Softest Sheets You'll Ever Own — Shop Now</span><span class="demo-headline-score">★ 85</span></div>
-            <div class="demo-headline"><span class="demo-headline-text">Cotton Bed Sheets Sale — Up to 40% Off</span><span class="demo-headline-score">★ 81</span></div>
-            <div class="demo-headline"><span class="demo-headline-text">Luxury Bedding at Factory Prices — Limited Time</span><span class="demo-headline-score">★ 79</span></div>
-            <div style="color:rgba(255,255,255,.4); font-size:.6875rem; margin:20px 0 12px;">Generated Descriptions</div>
-            <div class="demo-headline"><span class="demo-headline-text">Experience luxury sleep with our 400TC cotton sheets. Free shipping &amp; 30-day returns.</span><span class="demo-headline-score">★ 90</span></div>
-            <div class="demo-headline"><span class="demo-headline-text">Premium quality at half the price of competitors. Join 10,000+ happy customers.</span><span class="demo-headline-score">★ 86</span></div>
-            <p style="text-align:center; color:rgba(255,255,255,.4); font-size:.75rem; margin-top:16px;">AI Ad Copy — Claude AI generates and scores each headline and description</p>
-        </div>
-
-        <!-- CAMPAIGN -->
-        <div class="demo-screen" id="screen-campaign">
-            <div class="demo-bar"><div class="demo-dot"></div><div class="demo-dot"></div><div class="demo-dot"></div></div>
-            <div style="color:rgba(255,255,255,.5); font-size:.75rem; text-transform:uppercase; letter-spacing:.05em; margin-bottom:16px;">Campaign Preview — Ready for Your Approval</div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
-                <div class="demo-kpi">
-                    <div class="demo-kpi-label">Campaign Type</div>
-                    <div style="color:#fff; font-size:1rem; font-weight:600; margin-top:6px;">Search Campaign</div>
-                </div>
-                <div class="demo-kpi">
-                    <div class="demo-kpi-label">Status</div>
-                    <div style="color:var(--warning); font-size:1rem; font-weight:600; margin-top:6px;">⏸ PAUSED (Awaiting Approval)</div>
-                </div>
-                <div class="demo-kpi">
-                    <div class="demo-kpi-label">Daily Budget</div>
-                    <div style="color:#fff; font-size:1.25rem; font-weight:700; margin-top:6px;">$25/day</div>
-                </div>
-                <div class="demo-kpi">
-                    <div class="demo-kpi-label">Estimated Monthly Cost</div>
-                    <div style="color:#fff; font-size:1.25rem; font-weight:700; margin-top:6px;">$750/mo</div>
-                </div>
-            </div>
-            <div class="demo-kpi" style="margin-bottom:16px;">
-                <div class="demo-kpi-label">Target Keywords (12 selected)</div>
-                <div style="display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;">
-                    <span style="background:rgba(37,99,235,.2); color:var(--accent); padding:4px 12px; border-radius:100px; font-size:.8125rem;">cotton bed sheets</span>
-                    <span style="background:rgba(37,99,235,.2); color:var(--accent); padding:4px 12px; border-radius:100px; font-size:.8125rem;">premium cotton sheets</span>
-                    <span style="background:rgba(37,99,235,.2); color:var(--accent); padding:4px 12px; border-radius:100px; font-size:.8125rem;">400tc sheets</span>
-                    <span style="background:rgba(37,99,235,.2); color:var(--accent); padding:4px 12px; border-radius:100px; font-size:.8125rem;">luxury bed sheets</span>
-                    <span style="background:rgba(37,99,235,.2); color:var(--accent); padding:4px 12px; border-radius:100px; font-size:.8125rem;">best cotton sheets</span>
-                    <span style="background:rgba(37,99,235,.2); color:var(--accent); padding:4px 12px; border-radius:100px; font-size:.8125rem;">hotel quality sheets</span>
-                </div>
-            </div>
-            <div style="text-align:center; padding:20px;">
-                <div style="display:inline-block; background:var(--success); color:#fff; padding:12px 32px; border-radius:var(--radius-sm); font-weight:600; font-size:.9375rem;">✓ Approve &amp; Create in Google Ads (Paused)</div>
-            </div>
-            <p style="text-align:center; color:rgba(255,255,255,.4); font-size:.75rem; margin-top:8px;">Campaign Preview — Review everything before creating in your Google Ads account</p>
+        <div class="hero-badge">Interactive Platform Demo</div>
+        <h1>Experience Smart Ads AI</h1>
+        <p>Explore a fully interactive simulation of our Shopify app. See how AI-powered competitor analysis, ad copy generation, and Google Ads campaign creation work in real time.</p>
+        <div style="margin-top:24px;background:#fff;border:2px solid var(--accent);border-radius:12px;padding:20px 28px;text-align:left;max-width:620px;margin-left:auto;margin-right:auto">
+            <p style="font-size:.9375rem;font-weight:700;color:var(--ink);margin-bottom:8px">&#9432; Important: This is an interactive demo &mdash; not the production application.</p>
+            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">Smart Ads AI is a <strong>Shopify embedded app</strong> that runs inside the Shopify Admin dashboard. Merchants install it from the Shopify App Store, and the entire application loads within their Shopify admin panel &mdash; it does not run on this marketing website.</p>
+            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">The demo below is a <strong>static simulation</strong> of the actual application screens, built to showcase the user interface, features, and Google Ads API integration flow. All data shown is sample data for demonstration purposes.</p>
+            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin:0">The production app is built with <strong>React Router 7</strong>, uses <strong>Prisma ORM</strong> for data management, and integrates with the <strong>Google Ads API v17</strong> and <strong>Anthropic Claude AI</strong> for intelligent ad generation.</p>
         </div>
     </div>
 </section>
 
-<section class="section" style="background:var(--surface);">
+<!-- APP FRAME -->
+<section class="section" style="padding-top:40px">
+<div class="app-frame">
+    <!-- Sidebar -->
+    <div class="app-sidebar">
+        <div class="app-sidebar-brand">Smart Ads <em>AI</em></div>
+        <ul class="sidebar-nav">
+            <li><button class="active" onclick="switchScreen('dashboard')" data-screen="dashboard">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                Dashboard
+            </button></li>
+            <li><button onclick="switchScreen('products')" data-screen="products">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                Product Analysis
+            </button></li>
+            <li><button onclick="switchScreen('keywords')" data-screen="keywords">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                Keywords <span class="sidebar-badge">AI</span>
+            </button></li>
+            <li><button onclick="switchScreen('wizard')" data-screen="wizard">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                Campaign Wizard
+            </button></li>
+            <li><button onclick="switchScreen('campaigns')" data-screen="campaigns">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                Campaigns
+            </button></li>
+            <li><button onclick="switchScreen('settings')" data-screen="settings">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                Settings
+            </button></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="app-main">
+
+        <!-- ===== DASHBOARD ===== -->
+        <div class="screen active" id="screen-dashboard">
+            <div class="app-topbar">
+                <h2>Dashboard</h2>
+                <div class="app-topbar-right">
+                    <span class="topbar-pill pill-green">Store Connected</span>
+                    <span class="topbar-pill pill-blue">Google Ads Linked</span>
+                </div>
+            </div>
+            <div class="dash-grid">
+                <div class="health-card">
+                    <h3>Store Health Score</h3>
+                    <div class="health-ring">
+                        <svg width="130" height="130" viewBox="0 0 130 130">
+                            <circle class="health-ring-bg" cx="65" cy="65" r="56"/>
+                            <circle class="health-ring-fill" cx="65" cy="65" r="56" stroke-dasharray="352" stroke-dashoffset="352" id="healthRing"/>
+                        </svg>
+                        <div class="health-score">
+                            <strong id="healthNum">0</strong>
+                            <span>of 100</span>
+                        </div>
+                    </div>
+                    <div class="health-grade">Grade A</div>
+                    <div class="sub-scores">
+                        <div class="sub-score">
+                            <div class="sub-score-header"><span>Ad Quality</span><span>78%</span></div>
+                            <div class="sub-score-bar"><div class="sub-score-fill" style="width:0;background:#6366f1" data-target="78"></div></div>
+                        </div>
+                        <div class="sub-score">
+                            <div class="sub-score-header"><span>Product Coverage</span><span>100%</span></div>
+                            <div class="sub-score-bar"><div class="sub-score-fill" style="width:0;background:#22c55e" data-target="100"></div></div>
+                        </div>
+                        <div class="sub-score">
+                            <div class="sub-score-header"><span>Competitor Intel</span><span>80%</span></div>
+                            <div class="sub-score-bar"><div class="sub-score-fill" style="width:0;background:#06b6d4" data-target="80"></div></div>
+                        </div>
+                        <div class="sub-score">
+                            <div class="sub-score-header"><span>Budget Efficiency</span><span>72%</span></div>
+                            <div class="sub-score-bar"><div class="sub-score-fill" style="width:0;background:#f59e0b" data-target="72"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="stats-row">
+                        <div class="stat-card"><div class="label">Products</div><div class="value" data-counter="24">0</div><div class="delta">All Scanned</div></div>
+                        <div class="stat-card"><div class="label">Avg Score</div><div class="value" data-counter="78">0</div><div class="delta">+5 vs last week</div></div>
+                        <div class="stat-card"><div class="label">Keywords</div><div class="value" data-counter="1240">0</div><div class="delta">+120 new</div></div>
+                        <div class="stat-card"><div class="label">Campaigns</div><div class="value" data-counter="6">0</div><div class="delta">2 active</div></div>
+                    </div>
+                    <div class="pulse-card">
+                        <h3>Live Campaign Pulse</h3>
+                        <canvas class="pulse-canvas" id="pulseCanvas"></canvas>
+                        <div class="pulse-metrics">
+                            <div class="pulse-metric"><div class="pm-label">Impressions</div><div class="pm-value">12,400</div></div>
+                            <div class="pulse-metric"><div class="pm-label">Clicks</div><div class="pm-value">520</div></div>
+                            <div class="pulse-metric"><div class="pm-label">CTR</div><div class="pm-value">4.2%</div></div>
+                            <div class="pulse-metric"><div class="pm-label">Spend</div><div class="pm-value">$310</div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 style="font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:12px">Your Products</h3>
+            <div class="product-grid" id="dashProductGrid"></div>
+            <div class="gap-card">
+                <h3>Competitor Gap Finder</h3>
+                <table class="gap-table">
+                    <thead><tr><th>Keyword Gap</th><th>Competitors</th><th>Est. Lost Clicks/mo</th><th>Monthly Loss</th></tr></thead>
+                    <tbody>
+                        <tr><td>luxury bed sheets king</td><td>4</td><td>320</td><td class="loss">$480</td></tr>
+                        <tr><td>organic cotton duvet cover</td><td>3</td><td>210</td><td class="loss">$315</td></tr>
+                        <tr><td>best weighted blanket adults</td><td>5</td><td>540</td><td class="loss">$810</td></tr>
+                        <tr><td>silk pillowcase benefits</td><td>2</td><td>180</td><td class="loss">$270</td></tr>
+                        <tr><td>bamboo sheets queen set</td><td>3</td><td>290</td><td class="loss">$435</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ===== PRODUCT ANALYSIS ===== -->
+        <div class="screen" id="screen-products">
+            <div class="app-topbar"><h2>Product Analysis</h2><div class="app-topbar-right"><span class="topbar-pill pill-blue">AI-Powered</span></div></div>
+            <div id="scanStateA" class="scan-cta">
+                <h3>Analyze Your Product Catalog</h3>
+                <p>Our AI will scan all 24 products, analyze competitors, generate keywords, and score each product for ad readiness.</p>
+                <button class="scan-btn" onclick="startScan()">Scan Your Store</button>
+            </div>
+            <div id="scanStateB" class="scan-anim" style="display:none">
+                <div class="radar-container">
+                    <div class="radar-ring"></div>
+                    <div class="radar-ring"></div>
+                    <div class="radar-ring"></div>
+                    <div class="radar-dot" style="top:30%;left:60%"></div>
+                    <div class="radar-dot" style="top:55%;left:25%"></div>
+                    <div class="radar-dot" style="top:70%;left:70%"></div>
+                    <div class="word-particle" style="top:15%;left:20%;animation-delay:0s">bedding</div>
+                    <div class="word-particle" style="top:25%;left:70%;animation-delay:.5s">cotton sheets</div>
+                    <div class="word-particle" style="top:60%;left:10%;animation-delay:1s">silk pillowcase</div>
+                    <div class="word-particle" style="top:75%;left:55%;animation-delay:1.5s">weighted blanket</div>
+                    <div class="word-particle" style="top:40%;left:80%;animation-delay:.7s">duvet cover</div>
+                </div>
+                <div class="scan-progress" id="scanProgress">
+                    <div class="scan-step" data-idx="0"><div class="check"></div>Connecting to Shopify store...</div>
+                    <div class="scan-step" data-idx="1"><div class="check"></div>Fetching product catalog (24 items)...</div>
+                    <div class="scan-step" data-idx="2"><div class="check"></div>Analyzing competitor landscape...</div>
+                    <div class="scan-step" data-idx="3"><div class="check"></div>Generating AI keywords &amp; ad copy...</div>
+                    <div class="scan-step" data-idx="4"><div class="check"></div>Scoring ad readiness for each product...</div>
+                    <div class="scan-step" data-idx="5"><div class="check"></div>Building optimization recommendations...</div>
+                </div>
+            </div>
+            <div id="scanStateC" style="display:none">
+                <p style="font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:12px">Click any product to see its full ad analysis</p>
+                <div class="product-grid" id="scanProductGrid"></div>
+            </div>
+        </div>
+
+        <!-- ===== KEYWORDS ===== -->
+        <div class="screen" id="screen-keywords">
+            <div class="app-topbar"><h2>Keyword Research</h2><div class="app-topbar-right"><span class="topbar-pill pill-blue">AI-Powered</span></div></div>
+            <div class="kw-tabs">
+                <button class="kw-tab active" onclick="switchKwTab(0)">Keyword Explorer</button>
+                <button class="kw-tab" onclick="switchKwTab(1)">Scan Website</button>
+                <button class="kw-tab" onclick="switchKwTab(2)">My Keywords</button>
+            </div>
+            <!-- Tab 0: Explorer -->
+            <div class="kw-panel active" id="kwPanel0">
+                <div class="kw-input-row">
+                    <input class="kw-input" placeholder="Enter a seed keyword (e.g. bed sheets)" value="bed sheets" id="kwSeedInput">
+                    <button class="kw-go" onclick="exploreKeywords()">Explore</button>
+                </div>
+                <div id="kwResults">
+                    <table class="kw-results-table">
+                        <thead><tr><th>Keyword</th><th>Volume</th><th>Competition</th><th>CPC</th><th>Trend</th></tr></thead>
+                        <tbody id="kwResultsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Tab 1: Scan Website -->
+            <div class="kw-panel" id="kwPanel1" style="display:none">
+                <div class="kw-input-row">
+                    <input class="kw-input" placeholder="Enter competitor URL (e.g. brooklinen.com)" value="brooklinen.com">
+                    <button class="kw-go" onclick="scanWebsite()">Scan</button>
+                </div>
+                <div id="websiteResults" style="display:none">
+                    <p style="font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:8px">Extracted 18 keywords from competitor page:</p>
+                    <div class="extracted-chips" id="extractedChips"></div>
+                </div>
+            </div>
+            <!-- Tab 2: My Keywords -->
+            <div class="kw-panel" id="kwPanel2" style="display:none">
+                <p style="font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:12px">Your saved keywords across all products:</p>
+                <ul class="saved-kw-list" id="savedKwList"></ul>
+            </div>
+        </div>
+
+        <!-- ===== CAMPAIGN WIZARD ===== -->
+        <div class="screen" id="screen-wizard">
+            <div class="app-topbar"><h2>Campaign Wizard</h2><div class="app-topbar-right"><span class="topbar-pill pill-blue">8 Steps</span></div></div>
+            <div class="wiz-steps" id="wizSteps"></div>
+            <div id="wizContent"></div>
+            <div class="wiz-nav" id="wizNav">
+                <button class="wiz-back" onclick="wizPrev()">Back</button>
+                <button class="wiz-next" onclick="wizNext()">Next Step</button>
+            </div>
+        </div>
+
+        <!-- ===== CAMPAIGNS ===== -->
+        <div class="screen" id="screen-campaigns">
+            <div class="app-topbar"><h2>Campaigns</h2><div class="app-topbar-right"><span class="topbar-pill pill-green">3 Campaigns</span></div></div>
+            <div style="margin-bottom:12px">
+                <div style="display:grid;grid-template-columns:2fr repeat(5,1fr);gap:12px;padding:0 16px;font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.3)">
+                    <span>Campaign</span><span style="text-align:center">Status</span><span style="text-align:center">Budget</span><span style="text-align:center">Clicks</span><span style="text-align:center">CTR</span><span style="text-align:center">Conv.</span>
+                </div>
+            </div>
+            <div class="campaign-list">
+                <div class="campaign-item">
+                    <div><div class="camp-name">Bedding Essentials - Search</div><div class="camp-type">Search Campaign</div></div>
+                    <div style="text-align:center"><span class="camp-status camp-active">ACTIVE</span></div>
+                    <div class="camp-val">$25/day</div>
+                    <div class="camp-val">520</div>
+                    <div class="camp-val">4.2%</div>
+                    <div class="camp-val">18</div>
+                </div>
+                <div class="campaign-item">
+                    <div><div class="camp-name">Premium Sheets - PMax</div><div class="camp-type">Performance Max</div></div>
+                    <div style="text-align:center"><span class="camp-status camp-active">ACTIVE</span></div>
+                    <div class="camp-val">$40/day</div>
+                    <div class="camp-val">890</div>
+                    <div class="camp-val">3.8%</div>
+                    <div class="camp-val">24</div>
+                </div>
+                <div class="campaign-item">
+                    <div><div class="camp-name">Winter Blankets Sale</div><div class="camp-type">Shopping Campaign</div></div>
+                    <div style="text-align:center"><span class="camp-status camp-paused">PAUSED</span></div>
+                    <div class="camp-val">$15/day</div>
+                    <div class="camp-val">210</div>
+                    <div class="camp-val">2.9%</div>
+                    <div class="camp-val">6</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== SETTINGS ===== -->
+        <div class="screen" id="screen-settings">
+            <div class="app-topbar"><h2>Settings</h2></div>
+            <div class="settings-card">
+                <h3>Google Ads Connection</h3>
+                <div class="settings-connected"><div class="dot"></div><span>Connected to Google Ads</span></div>
+                <div class="settings-row"><span>Customer ID</span><span>123-456-7890</span></div>
+                <div class="settings-row"><span>Account Name</span><span>DreamHome Bedding Co.</span></div>
+                <div class="settings-row"><span>Account Type</span><span>Standard</span></div>
+                <div class="settings-row"><span>Connected On</span><span>January 15, 2026</span></div>
+                <div class="settings-row"><span>OAuth Scope</span><span>google-ads (read/write)</span></div>
+                <p class="settings-info">Smart Ads AI connects to your Google Ads account via OAuth 2.0. We request only the minimum permissions needed to create and manage campaigns on your behalf. You can revoke access at any time.</p>
+                <button class="disconnect-btn" onclick="alert('This is a demo — disconnect is disabled.')">Disconnect Google Ads</button>
+            </div>
+            <div class="settings-card">
+                <h3>Shopify Store</h3>
+                <div class="settings-connected"><div class="dot"></div><span>Connected to Shopify</span></div>
+                <div class="settings-row"><span>Store</span><span>dreamhome-bedding.myshopify.com</span></div>
+                <div class="settings-row"><span>Products</span><span>24 synced</span></div>
+                <div class="settings-row"><span>Plan</span><span>Starter ($29/mo)</span></div>
+            </div>
+            <div class="settings-card">
+                <h3>API Usage This Month</h3>
+                <div class="settings-row"><span>Campaign Mutations</span><span>12</span></div>
+                <div class="settings-row"><span>Ad Group Mutations</span><span>18</span></div>
+                <div class="settings-row"><span>Keyword Mutations</span><span>156</span></div>
+                <div class="settings-row"><span>Reporting Queries</span><span>1,240</span></div>
+                <div class="settings-row"><span>OAuth Refreshes</span><span>48</span></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- PRODUCT MODAL -->
+<div class="modal-overlay" id="productModal">
+    <div class="modal">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <div class="modal-header">
+            <div class="modal-product-img" id="modalImg"></div>
+            <div class="modal-product-info">
+                <h3 id="modalTitle">Product</h3>
+                <div class="price" id="modalPrice">$0</div>
+            </div>
+            <div class="modal-ring">
+                <svg width="60" height="60" viewBox="0 0 60 60">
+                    <circle cx="30" cy="30" r="24" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="5"/>
+                    <circle cx="30" cy="30" r="24" fill="none" stroke="#6366f1" stroke-width="5" stroke-linecap="round" stroke-dasharray="151" stroke-dashoffset="151" id="modalRing" style="transform:rotate(-90deg);transform-origin:center"/>
+                </svg>
+                <div class="modal-ring-score" id="modalScore">0</div>
+            </div>
+        </div>
+        <div class="modal-section">
+            <h4>Ad Strength</h4>
+            <div class="strength-bar"><div class="strength-fill" id="strengthFill" style="width:0"></div></div>
+            <div class="strength-label" id="strengthLabel">Calculating...</div>
+        </div>
+        <div class="modal-section">
+            <h4>Google Ad Preview</h4>
+            <div class="google-ad-preview">
+                <div class="gad-sponsored"><span>Sponsored</span></div>
+                <div class="gad-url" id="gadUrl">dreamhome-bedding.com <span>/ products</span></div>
+                <a class="gad-headline" id="gadHeadline" href="#" onclick="return false">Premium Cotton Bed Sheet Set | Luxury Bedding</a>
+                <div class="gad-desc" id="gadDesc">Shop our premium 400-thread-count cotton bed sheets. Free shipping on orders over $75. 30-day money-back guarantee.</div>
+            </div>
+        </div>
+        <div class="modal-section">
+            <h4>Headlines (Responsive Search Ad)</h4>
+            <ul class="headline-list" id="modalHeadlines"></ul>
+        </div>
+        <div class="modal-section">
+            <h4>Descriptions</h4>
+            <ul class="desc-list" id="modalDescs"></ul>
+        </div>
+        <div class="modal-section">
+            <h4>Keywords</h4>
+            <div class="keyword-chips" id="modalKeywords"></div>
+        </div>
+        <div class="modal-section">
+            <h4>Negative Keywords</h4>
+            <div class="keyword-chips" id="modalNegatives"></div>
+        </div>
+        <div class="modal-section">
+            <h4>Competitor Intelligence</h4>
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+                <span style="font-size:.8rem;color:rgba(255,255,255,.5)">Your Position:</span>
+                <span style="font-size:1.1rem;font-weight:700;color:#f59e0b" id="modalPosition">#3</span>
+                <span style="font-size:.7rem;padding:3px 8px;background:rgba(6,182,212,.15);color:#06b6d4;border-radius:100px;font-weight:600" id="modalStrategy">Undercut Pricing</span>
+            </div>
+            <div class="competitor-intel" id="modalCompetitors"></div>
+        </div>
+        <button class="modal-launch-btn" onclick="closeModal();switchScreen('wizard')">Create Google Ads Campaign</button>
+    </div>
+</div>
+
+<!-- API TECHNICAL SECTION -->
+<section class="api-section" id="api-usage">
+    <div class="api-inner">
+        <h2>How Smart Ads AI Uses the Google Ads API</h2>
+        <p class="subtitle">A detailed technical overview of our Google Ads API integration for Shopify merchants</p>
+
+        <div style="background:var(--accent-light);border:1px solid var(--accent);border-radius:12px;padding:20px 24px;margin-bottom:40px">
+            <p style="font-size:.9375rem;font-weight:700;color:var(--ink);margin-bottom:8px">&#128736; About Our Application Architecture</p>
+            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">Smart Ads AI is a <strong>Shopify embedded application</strong> &mdash; it runs as an iframe inside the Shopify Admin dashboard, not as a standalone website. Merchants install the app from the Shopify App Store, and the app loads within their existing Shopify admin panel at <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px;font-size:.8125rem">https://admin.shopify.com/store/{shop}/apps/smart-ads-ai</code>.</p>
+            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px"><strong>This website (smart-ad-sai.com) is our marketing and information site only.</strong> The demo above is a static HTML/CSS/JavaScript simulation of the actual app interface, created to showcase the platform features and Google Ads API usage. The production application is a full-stack Node.js app built with:</p>
+            <ul style="font-size:.875rem;color:var(--slate);line-height:1.65;margin:0 0 0 20px">
+                <li><strong>Frontend:</strong> React 18 + React Router 7 + Shopify Polaris design system + Shopify App Bridge</li>
+                <li><strong>Backend:</strong> Node.js server with React Router server-side rendering</li>
+                <li><strong>Database:</strong> Prisma ORM (SQLite in development, PostgreSQL/MySQL in production)</li>
+                <li><strong>AI Engine:</strong> Anthropic Claude API for product analysis, ad copy generation, and competitor intelligence</li>
+                <li><strong>Ads Integration:</strong> Google Ads API v17 (REST &amp; gRPC) for campaign creation, management, and performance tracking</li>
+                <li><strong>Authentication:</strong> Shopify OAuth for app installation + Google OAuth 2.0 for Google Ads account linking</li>
+            </ul>
+        </div>
+
+        <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:16px;text-align:center">Data Flow Architecture</h3>
+        <div class="data-flow">
+            <div class="flow-box flow-shopify">Shopify Store<br><small style="font-weight:400;font-size:.7rem">Product &amp; order data</small></div>
+            <div class="flow-arr">&rarr;</div>
+            <div class="flow-box flow-smart">Smart Ads AI<br><small style="font-weight:400;font-size:.7rem">AI analysis &amp; optimization</small></div>
+            <div class="flow-arr">&rarr;</div>
+            <div class="flow-box flow-google">Google Ads API<br><small style="font-weight:400;font-size:.7rem">v17 REST &amp; gRPC</small></div>
+            <div class="flow-arr">&rarr;</div>
+            <div class="flow-box flow-merchant">Merchant's Account<br><small style="font-weight:400;font-size:.7rem">Campaigns &amp; ads live here</small></div>
+        </div>
+
+        <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:16px">Google Ads API Operations</h3>
+        <div class="api-table-wrap">
+            <table class="api-table">
+                <thead><tr><th>Operation</th><th>Google Ads API Resource</th><th>When Used</th></tr></thead>
+                <tbody>
+                    <tr><td>Campaign Creation</td><td>CampaignService.MutateCampaigns</td><td>When a merchant creates a new campaign through our wizard. Campaign is always created in PAUSED state for merchant review.</td></tr>
+                    <tr><td>Budget Management</td><td>CampaignBudgetService.MutateCampaignBudgets</td><td>When the merchant sets or modifies the daily budget in the campaign wizard (Step 6). Budget is linked to the campaign via resource_name.</td></tr>
+                    <tr><td>Keyword Targeting</td><td>AdGroupCriterionService.MutateAdGroupCriteria (KeywordInfo)</td><td>When AI-generated keywords are applied to ad groups. Includes exact, phrase, and broad match types with negative keywords.</td></tr>
+                    <tr><td>Ad Copy Upload</td><td>AdGroupAdService.MutateAdGroupAds (ResponsiveSearchAdInfo)</td><td>When AI-generated headlines and descriptions are uploaded as responsive search ads (up to 15 headlines, 4 descriptions).</td></tr>
+                    <tr><td>Performance Data</td><td>GoogleAdsService.Search (GAQL)</td><td>Dashboard metrics: impressions, clicks, CTR, conversions, cost. Queries use Google Ads Query Language (GAQL) with date ranges.</td></tr>
+                    <tr><td>Campaign Control</td><td>CampaignService.MutateCampaigns (status update)</td><td>When merchant pauses or enables a campaign. Status transitions: PAUSED &rarr; ENABLED or ENABLED &rarr; PAUSED.</td></tr>
+                    <tr><td>Asset Management</td><td>AssetService.MutateAssets</td><td>For Performance Max campaigns: uploading images, logos, and video assets linked to asset groups.</td></tr>
+                    <tr><td>Conversion Tracking</td><td>ConversionActionService.MutateConversionActions</td><td>Setting up purchase conversion tracking linked to Shopify checkout events for ROAS measurement.</td></tr>
+                    <tr><td>Location Targeting</td><td>GeoTargetConstantService + CampaignCriterionService</td><td>When merchant selects target locations in wizard Step 4. Uses geo target constants for precise targeting.</td></tr>
+                    <tr><td>Bidding Strategy</td><td>BiddingStrategyService / Campaign.bidding_strategy_type</td><td>Applying the merchant's chosen bidding strategy (Max Conversions, Target CPA, Target ROAS, etc.).</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:16px;text-align:center">Security &amp; Compliance</h3>
+        <div class="security-grid">
+            <div class="sec-card">
+                <div class="sec-icon">&#128274;</div>
+                <h4>OAuth 2.0 Authentication</h4>
+                <p>Industry-standard OAuth 2.0 flow with PKCE. Merchants authenticate directly with Google. We store only encrypted refresh tokens.</p>
+            </div>
+            <div class="sec-card">
+                <div class="sec-icon">&#9208;</div>
+                <h4>Campaigns Created PAUSED</h4>
+                <p>All campaigns are created in PAUSED state. Merchants must explicitly review and enable campaigns before any ad spend occurs.</p>
+            </div>
+            <div class="sec-card">
+                <div class="sec-icon">&#128272;</div>
+                <h4>Encrypted Transmission</h4>
+                <p>All API communication uses TLS 1.2+ encryption. Refresh tokens are AES-256 encrypted at rest. No credentials stored in plaintext.</p>
+            </div>
+            <div class="sec-card">
+                <div class="sec-icon">&#128100;</div>
+                <h4>Merchant Retains Control</h4>
+                <p>Merchants retain full ownership and control of their Google Ads account. They can revoke access or disconnect at any time.</p>
+            </div>
+        </div>
+
+        <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:16px;text-align:center">Campaign Lifecycle</h3>
+        <div class="lifecycle-steps">
+            <div class="lc-step"><div class="lc-num">1</div><h4>Install on Shopify</h4><p>Merchant installs Smart Ads AI from the Shopify App Store</p></div>
+            <div class="lc-step"><div class="lc-num">2</div><h4>Connect Google Ads</h4><p>OAuth 2.0 flow authenticates with Google Ads account</p></div>
+            <div class="lc-step"><div class="lc-num">3</div><h4>AI Scans Products</h4><p>AI analyzes products, competitors, and keyword landscape</p></div>
+            <div class="lc-step"><div class="lc-num">4</div><h4>Generate Ad Copy</h4><p>AI creates optimized headlines, descriptions, and keywords</p></div>
+            <div class="lc-step"><div class="lc-num">5</div><h4>Review in Wizard</h4><p>Merchant reviews and customizes all campaign settings</p></div>
+            <div class="lc-step"><div class="lc-num">6</div><h4>Create PAUSED</h4><p>Campaign created via Google Ads API in PAUSED state</p></div>
+            <div class="lc-step"><div class="lc-num">7</div><h4>Review in Google</h4><p>Merchant reviews campaign in Google Ads dashboard</p></div>
+            <div class="lc-step"><div class="lc-num">8</div><h4>Enable When Ready</h4><p>Merchant enables campaign when satisfied with setup</p></div>
+        </div>
+
+        <div style="margin-top:40px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px">
+            <h4 style="font-size:.9rem;font-weight:700;margin-bottom:12px">Technical Implementation Details</h4>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:.85rem;color:var(--slate);line-height:1.6">
+                <div>
+                    <strong style="color:var(--ink)">Authentication Flow:</strong><br>
+                    1. Merchant clicks "Connect Google Ads"<br>
+                    2. Redirect to Google OAuth consent screen<br>
+                    3. Merchant grants google-ads scope<br>
+                    4. Authorization code exchanged for tokens<br>
+                    5. Refresh token encrypted and stored<br>
+                    6. Access tokens auto-refreshed before expiry
+                </div>
+                <div>
+                    <strong style="color:var(--ink)">Campaign Creation Flow:</strong><br>
+                    1. Create CampaignBudget resource<br>
+                    2. Create Campaign (status: PAUSED)<br>
+                    3. Create AdGroup(s) under campaign<br>
+                    4. Upload ResponsiveSearchAd(s)<br>
+                    5. Add KeywordInfo criteria<br>
+                    6. Link ConversionAction for tracking
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--surface)">
     <div class="section-inner">
         <div class="section-header">
             <h2>Frequently Asked Questions</h2>
+            <p>Common questions about Smart Ads AI and our Google Ads integration</p>
         </div>
         <div class="faq-list">
-            <div class="faq-item">
-                <h3>Will the app spend money without my approval?</h3>
-                <p>Absolutely not. All campaigns are created in <strong>paused mode</strong> inside your own Google Ads account. You must explicitly approve and enable each campaign before any ad goes live or any budget is spent.</p>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">How does Smart Ads AI connect to my Google Ads account?<span>+</span></div>
+                <div class="faq-a">We use the industry-standard OAuth 2.0 protocol. When you click "Connect Google Ads," you are redirected to Google's consent screen where you grant permission. We never see or store your Google password. We only request the minimum scope needed (google-ads) and store an encrypted refresh token.</div>
             </div>
-            <div class="faq-item">
-                <h3>Do I need Google Ads experience?</h3>
-                <p>No. Smart Ads AI handles everything — keyword research, ad copy writing, competitor analysis, and campaign structure. You just review and approve. The AI acts as your personal ad agency.</p>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Will Smart Ads AI spend my money without my permission?<span>+</span></div>
+                <div class="faq-a">No. All campaigns created by Smart Ads AI are initially set to PAUSED status. You must explicitly review and enable each campaign before any ad spend occurs. You retain full control over your budget and campaigns at all times.</div>
             </div>
-            <div class="faq-item">
-                <h3>How does the AI generate ad copy?</h3>
-                <p>We use Anthropic's Claude AI, which analyzes your product data, competitor strategies, and real search trends to generate relevant, high-quality ad copy. Each headline and description is scored based on predicted performance.</p>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Which Google Ads API resources does Smart Ads AI use?<span>+</span></div>
+                <div class="faq-a">We use CampaignService for creating and managing campaigns, CampaignBudgetService for budgets, AdGroupCriterionService for keyword targeting, AdGroupAdService for uploading responsive search ads, GoogleAdsService.Search for performance reporting, and ConversionActionService for conversion tracking setup.</div>
             </div>
-            <div class="faq-item">
-                <h3>What data do you access from my store?</h3>
-                <p>We read your product titles, descriptions, prices, and images from Shopify to perform competitive analysis. We never access customer data, payment information, or order details.</p>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Can I revoke Smart Ads AI's access to my Google Ads account?<span>+</span></div>
+                <div class="faq-a">Yes, at any time. You can either disconnect within our app's Settings page, or revoke access directly from your Google Account security settings. Revoking access will not delete any campaigns already created in your account.</div>
             </div>
-            <div class="faq-item">
-                <h3>Can I disconnect at any time?</h3>
-                <p>Yes. Uninstalling the app or disconnecting your Google Ads account immediately revokes all access. Your campaigns remain in your Google Ads account — we never delete your work.</p>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">How does the AI generate ad copy and keywords?<span>+</span></div>
+                <div class="faq-a">Our AI analyzes your product titles, descriptions, and images, then studies competitor ads to understand what performs well in your niche. It generates optimized headlines (up to 30 characters each) and descriptions (up to 90 characters) following Google Ads best practices, along with relevant exact, phrase, and broad match keywords.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Is my data secure?<span>+</span></div>
+                <div class="faq-a">Absolutely. All data transmission uses TLS 1.2+ encryption. OAuth refresh tokens are AES-256 encrypted at rest. We follow Google's API Services User Data Policy and only access the data necessary to provide our service. We never share your data with third parties.</div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- CTA -->
 <section class="cta-section">
-    <h2>Ready to try Smart Ads AI?</h2>
-    <p>Get in touch for early access or explore more about the product.</p>
-    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-        <a href="/contact.html" class="btn btn-white">Request Early Access →</a>
-        <a href="/product.html" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">Learn More</a>
-    </div>
+    <h2>Ready to supercharge your Google Ads?</h2>
+    <p>Join Shopify merchants who use AI to create smarter, data-driven Google Ads campaigns.</p>
+    <a href="/contact.html" class="btn btn-white">Request Early Access &rarr;</a>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
     <div class="footer-inner">
         <div class="footer-grid">
             <div>
                 <div class="footer-brand">Smart Ads <span>AI</span></div>
-                <p class="footer-desc">AI-powered Google Ads automation for Shopify merchants.</p>
+                <p class="footer-desc">AI-powered Google Ads automation for Shopify merchants. Scan competitors, generate ad copy, and launch campaigns — all from your Shopify dashboard.</p>
                 <p style="font-size:.8125rem; margin-top:12px;">Smart Ads AI Ltd.<br>Nahal Besor 10/7, Beit Shemesh, Israel<br>+972-58-486-9778</p>
             </div>
             <div class="footer-col">
@@ -257,14 +877,473 @@
 </footer>
 
 <script>
-function showScreen(id) {
-    document.querySelectorAll('.demo-screen').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.demo-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('screen-' + id).classList.add('active');
-    event.target.classList.add('active');
-}
-</script>
+/* ============================================================
+   Smart Ads AI — Interactive Demo
+   ============================================================ */
 
+// ----- DATA -----
+var PRODUCTS = [
+  {id:0,name:'Premium Cotton Bed Sheet Set',price:'$89',score:85,strength:78,color:'linear-gradient(135deg,#e0c3fc,#8ec5fc)',headlines:['Premium Cotton Bed Sheets','400-Thread-Count Sheet Set','Luxury Bed Sheets On Sale','Shop Cotton Sheets Today','Soft Cotton Bedding Set','Best Bed Sheets 2026','Free Shipping Over $75','30-Day Money Back'],descriptions:['Shop our premium 400-thread-count cotton bed sheets. Free shipping on orders over $75. 30-day guarantee.','Upgrade your bedroom with luxury cotton sheets. Available in 12 colors. Machine washable.','Premium cotton bed sheets loved by 5,000+ customers. Soft, breathable & durable. Order now.','Experience hotel-quality cotton sheets at home. Easy care, wrinkle-resistant. Shop the collection.'],keywords:[{t:'[premium cotton bed sheets]',c:'exact'},{t:'[bed sheet set queen]',c:'exact'},{t:'"cotton bed sheets"',c:'phrase'},{t:'"luxury sheet set"',c:'phrase'},{t:'best bed sheets',c:'broad'},{t:'soft cotton sheets',c:'broad'}],negatives:['cheap','used','twin xl','clearance'],competitors:[{name:'Brooklinen',rank:'#1'},{name:'Parachute',rank:'#2'},{name:'Casper',rank:'#4'}],position:'#3',strategy:'Quality Focus'},
+  {id:1,name:'Luxury Silk Pillowcase Set',price:'$49',score:72,strength:65,color:'linear-gradient(135deg,#fbc2eb,#a6c1ee)',headlines:['Silk Pillowcases for Hair','Luxury Mulberry Silk Cases','Anti-Aging Silk Pillowcase','Shop Silk Pillowcases Now','Best Silk Pillow Covers','Beauty Sleep Essentials','Hypoallergenic Silk Cases','Grade 6A Mulberry Silk'],descriptions:['Pure mulberry silk pillowcases for healthier hair and skin. Hypoallergenic, temperature-regulating. Free returns.','Upgrade your beauty sleep with grade 6A silk pillowcases. Reduces friction on hair and skin. Shop now.','Luxury silk pillowcase set — dermatologist recommended. Anti-aging, anti-frizz. Available in 8 colors.','Sleep on pure silk tonight. Our pillowcases reduce hair breakage by 40%. Money-back guarantee.'],keywords:[{t:'[silk pillowcase set]',c:'exact'},{t:'[mulberry silk pillow case]',c:'exact'},{t:'"silk pillowcase for hair"',c:'phrase'},{t:'"luxury pillowcase"',c:'phrase'},{t:'best silk pillowcases',c:'broad'},{t:'anti aging pillowcase',c:'broad'}],negatives:['satin','cheap','wholesale','bulk'],competitors:[{name:'Slip',rank:'#1'},{name:'Blissy',rank:'#2'},{name:'LilySilk',rank:'#4'}],position:'#3',strategy:'Undercut Pricing'},
+  {id:2,name:'Weighted Blanket 15lbs',price:'$129',score:90,strength:85,color:'linear-gradient(135deg,#667eea,#764ba2)',headlines:['Premium Weighted Blanket','15lb Weighted Blanket Sale','Better Sleep Guaranteed','Anxiety Relief Blanket','Cooling Weighted Blanket','Best Weighted Blanket 2026','Free Shipping + Returns','Doctor Recommended'],descriptions:['Clinically proven to reduce anxiety. Our 15lb weighted blanket promotes deeper sleep. Free shipping & 30-day trial.','Premium weighted blanket with cooling glass beads. Machine washable cover. Trusted by 10,000+ customers.','Sleep deeper with our doctor-recommended weighted blanket. Even weight distribution, breathable fabric.','Struggling to sleep? Our 15lb weighted blanket reduces tossing by 60%. Try risk-free for 30 nights.'],keywords:[{t:'[weighted blanket 15 lbs]',c:'exact'},{t:'[best weighted blanket]',c:'exact'},{t:'"weighted blanket for anxiety"',c:'phrase'},{t:'"cooling weighted blanket"',c:'phrase'},{t:'weighted blanket adults',c:'broad'},{t:'heavy blanket for sleep',c:'broad'}],negatives:['kids','cheap','DIY','wholesale'],competitors:[{name:'Bearaby',rank:'#1'},{name:'Gravity',rank:'#3'},{name:'Luna',rank:'#4'}],position:'#2',strategy:'Clinical Proof'},
+  {id:3,name:'Bamboo Duvet Cover Queen',price:'$119',score:76,strength:70,color:'linear-gradient(135deg,#a8edea,#fed6e3)',headlines:['Bamboo Duvet Cover Queen','Eco-Friendly Bedding Set','Cooling Duvet Cover','Organic Bamboo Bedding','Shop Bamboo Covers Now','Sustainable Luxury Bedding','Silky Soft Bamboo Cover','Temperature Regulating'],descriptions:['Eco-friendly bamboo duvet cover. Naturally cooling, hypoallergenic & sustainable. Free shipping over $75.','Upgrade to bamboo bedding — 3x softer than cotton. Temperature-regulating for year-round comfort.','Premium bamboo duvet cover in queen size. OEKO-TEX certified, machine washable. 15 color options.','Sleep sustainably with our organic bamboo duvet cover. Silky soft hand-feel, naturally antibacterial.'],keywords:[{t:'[bamboo duvet cover queen]',c:'exact'},{t:'[organic bamboo bedding]',c:'exact'},{t:'"bamboo duvet cover"',c:'phrase'},{t:'"eco friendly bedding"',c:'phrase'},{t:'cooling duvet cover',c:'broad'},{t:'sustainable bedding',c:'broad'}],negatives:['king','twin','cheap','used'],competitors:[{name:'Ettitude',rank:'#1'},{name:'Cariloha',rank:'#2'},{name:'Cozy Earth',rank:'#4'}],position:'#3',strategy:'Eco Messaging'},
+  {id:4,name:'Organic Cotton Towel Set',price:'$59',score:68,strength:60,color:'linear-gradient(135deg,#ffecd2,#fcb69f)',headlines:['Organic Cotton Towels','Luxury Bath Towel Set','Ultra-Absorbent Towels','Shop Organic Towels Now','Hotel-Quality Bath Towels','GOTS Certified Organic','Soft Plush Towel Set','Zero Chemical Towels'],descriptions:['GOTS-certified organic cotton towels. Ultra-absorbent, quick-drying & luxuriously soft. Set of 6 pieces.','Upgrade your bathroom with organic cotton towels. Zero harmful chemicals, sustainably sourced cotton.','Hotel-quality organic towels for your home. 600 GSM plush weight, available in 10 designer colors.','Feel the difference of truly organic cotton. Our towel sets are chemical-free, eco-friendly & super soft.'],keywords:[{t:'[organic cotton towel set]',c:'exact'},{t:'[best organic bath towels]',c:'exact'},{t:'"organic cotton towels"',c:'phrase'},{t:'"luxury bath towel set"',c:'phrase'},{t:'organic towels',c:'broad'},{t:'eco friendly bath towels',c:'broad'}],negatives:['wholesale','bulk','hand towel only','used'],competitors:[{name:'Boll & Branch',rank:'#1'},{name:'Coyuchi',rank:'#3'},{name:'Under the Canopy',rank:'#4'}],position:'#2',strategy:'Certification Trust'},
+  {id:5,name:'Memory Foam Pillow Pack',price:'$79',score:81,strength:75,color:'linear-gradient(135deg,#c3cfe2,#f5f7fa)',headlines:['Memory Foam Pillows 2-Pack','Best Pillow for Neck Pain','Cooling Gel Foam Pillow','Shop Memory Foam Now','CertiPUR-US Certified','Orthopedic Sleep Pillow','Adjustable Loft Pillow','Sleep Better Tonight'],descriptions:['CertiPUR-US certified memory foam pillows. Cooling gel layer prevents overheating. Pack of 2 with washable covers.','Say goodbye to neck pain with our orthopedic memory foam pillows. Adjustable loft for any sleep position.','Premium memory foam pillow 2-pack. Contoured support, cooling gel infused. 100-night sleep trial.','Wake up pain-free with our chiropractor-recommended memory foam pillows. Free shipping + free returns.']}
+];
+PRODUCTS[5].keywords=[{t:'[memory foam pillow]',c:'exact'},{t:'[best pillow for neck pain]',c:'exact'},{t:'"memory foam pillow pack"',c:'phrase'},{t:'"cooling gel pillow"',c:'phrase'},{t:'orthopedic pillow',c:'broad'},{t:'best sleeping pillow',c:'broad'}];
+PRODUCTS[5].negatives=['body pillow','travel','toddler','cheap'];
+PRODUCTS[5].competitors=[{name:'Tempur-Pedic',rank:'#1'},{name:'Coop Home',rank:'#2'},{name:'Purple',rank:'#4'}];
+PRODUCTS[5].position='#3';
+PRODUCTS[5].strategy='Pain Point Focus';
+
+var KW_DATA = [
+  {kw:'bed sheets queen',vol:'22,400',comp:'high',cpc:'$1.85',trend:'up'},
+  {kw:'cotton bed sheets',vol:'14,800',comp:'med',cpc:'$1.42',trend:'up'},
+  {kw:'luxury bed sheet set',vol:'8,200',comp:'high',cpc:'$2.10',trend:'up'},
+  {kw:'best bed sheets 2026',vol:'6,900',comp:'med',cpc:'$1.65',trend:'up'},
+  {kw:'soft bed sheets',vol:'5,400',comp:'low',cpc:'$0.98',trend:'flat'},
+  {kw:'400 thread count sheets',vol:'3,100',comp:'low',cpc:'$1.22',trend:'flat'},
+  {kw:'bed sheets on sale',vol:'12,600',comp:'high',cpc:'$1.90',trend:'down'},
+  {kw:'organic bed sheets',vol:'4,500',comp:'med',cpc:'$1.55',trend:'up'}
+];
+
+var WEBSITE_KWS = ['luxury sheets','cotton bedding','duvet covers','pillowcase set','bed linen','thread count','queen sheets','king sheets','fitted sheet','flat sheet','percale','sateen','bamboo bedding','organic cotton','hypoallergenic','breathable sheets','hotel bedding','sheet set sale'];
+
+var SAVED_KWS = [
+  {t:'[premium cotton bed sheets]',match:'Exact'},{t:'"luxury silk pillowcase"',match:'Phrase'},{t:'weighted blanket for adults',match:'Broad'},
+  {t:'[bamboo duvet cover queen]',match:'Exact'},{t:'"organic cotton towels"',match:'Phrase'},{t:'memory foam pillow',match:'Broad'},
+  {t:'[best bed sheets 2026]',match:'Exact'},{t:'"cooling weighted blanket"',match:'Phrase'}
+];
+
+var WIZ_STEPS_DATA = [
+  {title:'Choose Your Goal',desc:'What do you want to achieve with this campaign?',type:'cards',items:[
+    {h:'Drive Sales',p:'Get more online purchases from your store',icon:'&#128176;'},
+    {h:'Generate Leads',p:'Collect contact information from potential customers',icon:'&#128221;'},
+    {h:'Increase Traffic',p:'Drive more visitors to your website',icon:'&#127760;'},
+    {h:'Build Brand',p:'Increase brand awareness and recognition',icon:'&#11088;'}
+  ]},
+  {title:'Campaign Type',desc:'Select the type of Google Ads campaign to create.',type:'cards',items:[
+    {h:'Performance Max',p:'AI-optimized across all Google channels',icon:'&#9889;',rec:true},
+    {h:'Search',p:'Text ads on Google search results',icon:'&#128270;'},
+    {h:'Shopping',p:'Product listings with images and prices',icon:'&#128722;'},
+    {h:'Display',p:'Banner ads across Google Display Network',icon:'&#128444;'},
+    {h:'YouTube',p:'Video ads on YouTube',icon:'&#9654;'}
+  ]},
+  {title:'Bidding Strategy',desc:'How should Google optimize your bids?',type:'cards',items:[
+    {h:'Maximize Conversions',p:'Let Google AI optimize for most conversions',icon:'&#127919;',rec:true},
+    {h:'Maximize Conv. Value',p:'Optimize for highest conversion value',icon:'&#128176;'},
+    {h:'Maximize Clicks',p:'Get as many clicks as possible',icon:'&#128073;'},
+    {h:'Target CPA',p:'Set a target cost per acquisition',icon:'&#127919;'},
+    {h:'Target ROAS',p:'Set a target return on ad spend',icon:'&#128200;'}
+  ]},
+  {title:'Target Locations',desc:'Where do you want your ads to show?',type:'locations'},
+  {title:'Ad Content',desc:'Review and customize your AI-generated ad copy.',type:'adcontent'},
+  {title:'Daily Budget',desc:'Set your daily advertising budget.',type:'budget'},
+  {title:'Conversion Tracking',desc:'Track purchases from your Shopify store.',type:'conversion'},
+  {title:'Review & Launch',desc:'Review all settings before creating your campaign.',type:'review'}
+];
+
+var LOCATIONS = ['United States','Canada','United Kingdom','Australia','Germany','France','Israel'];
+var wizSelections = {goal:'Drive Sales',type:'Performance Max',bidding:'Maximize Conversions',locations:['United States','Canada'],budget:25,conversion:true};
+
+// ----- STATE -----
+var currentScreen = 'dashboard';
+var scanState = 'A';
+var currentKwTab = 0;
+var wizStep = 0;
+var launchState = 'idle';
+var animFrame = null;
+
+// ----- SCREEN SWITCHING -----
+function switchScreen(s){
+  currentScreen = s;
+  document.querySelectorAll('.screen').forEach(function(el){el.classList.remove('active')});
+  document.getElementById('screen-'+s).classList.add('active');
+  document.querySelectorAll('.sidebar-nav button').forEach(function(b){
+    b.classList.toggle('active', b.getAttribute('data-screen')===s);
+  });
+  if(s==='dashboard') animateDashboard();
+  if(s==='keywords') { populateKwResults(); populateSavedKw(); }
+  if(s==='wizard') renderWizard();
+}
+
+// ----- DASHBOARD -----
+function animateDashboard(){
+  // Health ring
+  var ring = document.getElementById('healthRing');
+  var target = 82;
+  var circ = 2*Math.PI*56;
+  ring.style.strokeDasharray = circ;
+  setTimeout(function(){ ring.style.strokeDashoffset = circ - (circ * target/100); },100);
+  // Health number
+  animateCounter(document.getElementById('healthNum'), 0, target, 1200);
+  // Sub score bars
+  document.querySelectorAll('.sub-score-fill').forEach(function(bar){
+    var t = bar.getAttribute('data-target');
+    setTimeout(function(){ bar.style.width = t+'%'; },200);
+  });
+  // Stat counters
+  document.querySelectorAll('[data-counter]').forEach(function(el){
+    animateCounter(el, 0, parseInt(el.getAttribute('data-counter')), 1500);
+  });
+  // Pulse canvas
+  startPulse();
+}
+
+function animateCounter(el, from, to, dur){
+  var start = null;
+  function step(ts){
+    if(!start) start=ts;
+    var p = Math.min((ts-start)/dur, 1);
+    var ease = 1 - Math.pow(1-p, 3);
+    var v = Math.round(from + (to-from)*ease);
+    el.textContent = v >= 1000 ? v.toLocaleString() : v;
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function startPulse(){
+  var canvas = document.getElementById('pulseCanvas');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var w = canvas.parentElement.clientWidth - 32;
+  canvas.width = w; canvas.height = 80;
+  var pts = [];
+  for(var i=0;i<100;i++) pts.push(Math.random()*30+10);
+  var offset = 0;
+  function draw(){
+    ctx.clearRect(0,0,w,80);
+    ctx.beginPath();
+    ctx.strokeStyle = '#6366f1';
+    ctx.lineWidth = 2;
+    for(var i=0;i<w;i++){
+      var idx = (i+Math.floor(offset))%pts.length;
+      var y = 40 + Math.sin((i+offset)*0.03)*15 + Math.sin((i+offset)*0.07)*8;
+      if(i===0) ctx.moveTo(i,y); else ctx.lineTo(i,y);
+    }
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.strokeStyle = 'rgba(6,182,212,.4)';
+    for(var i=0;i<w;i++){
+      var y = 42 + Math.cos((i+offset)*0.04)*12 + Math.cos((i+offset)*0.09)*6;
+      if(i===0) ctx.moveTo(i,y); else ctx.lineTo(i,y);
+    }
+    ctx.stroke();
+    offset += 0.8;
+    animFrame = requestAnimationFrame(draw);
+  }
+  if(animFrame) cancelAnimationFrame(animFrame);
+  draw();
+}
+
+function renderProductCards(containerId, clickable){
+  var c = document.getElementById(containerId);
+  c.innerHTML = '';
+  PRODUCTS.forEach(function(p){
+    var card = document.createElement('div');
+    card.className = 'product-card';
+    if(clickable) card.onclick = function(){ openModal(p.id); };
+    card.innerHTML = '<div class="product-img" style="background:'+p.color+'"><div class="score-badge '+(p.score>=80?'score-high':'score-mid')+'">'+p.score+'/100</div></div><div class="product-info"><h4>'+p.name+'</h4><div class="price">'+p.price+'</div></div>';
+    c.appendChild(card);
+  });
+}
+
+// ----- SCAN -----
+function startScan(){
+  scanState='B';
+  document.getElementById('scanStateA').style.display='none';
+  document.getElementById('scanStateB').style.display='block';
+  var steps = document.querySelectorAll('#scanProgress .scan-step');
+  var i=0;
+  var iv = setInterval(function(){
+    if(i>0) steps[i-1].classList.remove('active');
+    if(i>0) steps[i-1].classList.add('done');
+    if(i>0) steps[i-1].querySelector('.check').textContent='✓';
+    if(i<steps.length){
+      steps[i].classList.add('active');
+      i++;
+    } else {
+      clearInterval(iv);
+      setTimeout(function(){
+        scanState='C';
+        document.getElementById('scanStateB').style.display='none';
+        document.getElementById('scanStateC').style.display='block';
+        renderProductCards('scanProductGrid', true);
+      },500);
+    }
+  },1300);
+}
+
+// ----- MODAL -----
+function openModal(id){
+  var p = PRODUCTS[id];
+  document.getElementById('modalImg').style.background = p.color;
+  document.getElementById('modalTitle').textContent = p.name;
+  document.getElementById('modalPrice').textContent = p.price;
+  // Score ring
+  var ring = document.getElementById('modalRing');
+  var circ = 2*Math.PI*24;
+  ring.style.strokeDasharray = circ;
+  ring.style.strokeDashoffset = circ;
+  setTimeout(function(){ ring.style.strokeDashoffset = circ - (circ*p.score/100); ring.style.transition='stroke-dashoffset 1s ease'; },50);
+  document.getElementById('modalScore').textContent = p.score;
+  // Strength
+  document.getElementById('strengthFill').style.width = p.strength+'%';
+  document.getElementById('strengthLabel').textContent = p.strength >= 80 ? 'Excellent' : p.strength >= 60 ? 'Good' : 'Needs Work';
+  // Google ad preview
+  var slug = p.name.toLowerCase().replace(/\s+/g,'-');
+  document.getElementById('gadUrl').innerHTML = 'dreamhome-bedding.com <span>/ products / '+slug+'</span>';
+  document.getElementById('gadHeadline').textContent = p.headlines[0]+' | '+p.headlines[1];
+  document.getElementById('gadDesc').textContent = p.descriptions[0];
+  // Headlines
+  var hl = document.getElementById('modalHeadlines');
+  hl.innerHTML = '';
+  p.headlines.forEach(function(h){
+    hl.innerHTML += '<li><span>'+h+'</span><span class="counter">'+h.length+'/30</span></li>';
+  });
+  // Descriptions
+  var dl = document.getElementById('modalDescs');
+  dl.innerHTML = '';
+  p.descriptions.forEach(function(d){
+    dl.innerHTML += '<li><span style="font-size:.75rem">'+d+'</span><span class="counter">'+d.length+'/90</span></li>';
+  });
+  // Keywords
+  var kc = document.getElementById('modalKeywords');
+  kc.innerHTML = '';
+  p.keywords.forEach(function(k){
+    kc.innerHTML += '<span class="kw-chip kw-'+k.c+'">'+k.t+'</span>';
+  });
+  // Negatives
+  var nc = document.getElementById('modalNegatives');
+  nc.innerHTML = '';
+  p.negatives.forEach(function(n){
+    nc.innerHTML += '<span class="kw-chip kw-negative">-'+n+'</span>';
+  });
+  // Competitors
+  document.getElementById('modalPosition').textContent = p.position;
+  document.getElementById('modalStrategy').textContent = p.strategy;
+  var ci = document.getElementById('modalCompetitors');
+  ci.innerHTML = '';
+  p.competitors.forEach(function(c){
+    ci.innerHTML += '<div class="comp-item"><div class="rank">'+c.rank+'</div><div class="name">'+c.name+'</div></div>';
+  });
+  document.getElementById('productModal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('productModal').classList.remove('open');
+  document.body.style.overflow='';
+  document.getElementById('modalRing').style.transition='none';
+}
+
+// ----- KEYWORDS -----
+function switchKwTab(idx){
+  currentKwTab = idx;
+  document.querySelectorAll('.kw-tab').forEach(function(t,i){t.classList.toggle('active',i===idx)});
+  document.querySelectorAll('.kw-panel').forEach(function(p,i){p.style.display = i===idx?'block':'none'});
+}
+
+function populateKwResults(){
+  var tbody = document.getElementById('kwResultsBody');
+  tbody.innerHTML = '';
+  KW_DATA.forEach(function(k){
+    var compClass = k.comp==='low'?'comp-low':k.comp==='med'?'comp-med':'comp-high';
+    var trendIcon = k.trend==='up'?'&#8593;':k.trend==='flat'?'&#8594;':'&#8595;';
+    var trendClass = 'trend-'+k.trend;
+    tbody.innerHTML += '<tr><td>'+k.kw+'</td><td>'+k.vol+'</td><td><span class="comp-badge '+compClass+'">'+k.comp.toUpperCase()+'</span></td><td>'+k.cpc+'</td><td class="'+trendClass+'">'+trendIcon+'</td></tr>';
+  });
+}
+
+function exploreKeywords(){
+  populateKwResults();
+}
+
+function scanWebsite(){
+  var c = document.getElementById('extractedChips');
+  c.innerHTML = '';
+  WEBSITE_KWS.forEach(function(k){
+    c.innerHTML += '<span class="ext-chip">'+k+'</span>';
+  });
+  document.getElementById('websiteResults').style.display='block';
+}
+
+function populateSavedKw(){
+  var list = document.getElementById('savedKwList');
+  list.innerHTML = '';
+  SAVED_KWS.forEach(function(k){
+    var cls = k.match==='Exact'?'kw-exact':k.match==='Phrase'?'kw-phrase':'kw-broad';
+    list.innerHTML += '<li><span>'+k.t+'</span><span class="kw-chip '+cls+'" style="font-size:.65rem">'+k.match+'</span></li>';
+  });
+}
+
+// ----- CAMPAIGN WIZARD -----
+function renderWizard(){
+  // Step dots
+  var stepsEl = document.getElementById('wizSteps');
+  stepsEl.innerHTML = '';
+  for(var i=0;i<8;i++){
+    var cls = i<wizStep?'done':i===wizStep?'active':'';
+    var dot = document.createElement('div');
+    dot.className='wiz-step-dot '+cls;
+    dot.textContent = i<wizStep?'✓':(i+1);
+    dot.onclick = (function(idx){ return function(){ if(idx<=wizStep) {wizStep=idx; renderWizard();} }; })(i);
+    stepsEl.appendChild(dot);
+  }
+  // Content
+  var content = document.getElementById('wizContent');
+  var data = WIZ_STEPS_DATA[wizStep];
+  var html = '<div class="wiz-title">Step '+(wizStep+1)+': '+data.title+'</div><div class="wiz-desc">'+data.desc+'</div>';
+
+  if(data.type==='cards'){
+    html += '<div class="wiz-cards">';
+    data.items.forEach(function(item,idx){
+      var selKey = wizStep===0?'goal':wizStep===1?'type':'bidding';
+      var selected = wizSelections[selKey]===item.h?'selected':'';
+      html += '<div class="wiz-card '+selected+'" onclick="wizSelect('+wizStep+',\''+item.h+'\')">';
+      if(item.rec) html += '<span class="rec">Recommended</span>';
+      html += '<h4>'+item.icon+' '+item.h+'</h4><p>'+item.p+'</p></div>';
+    });
+    html += '</div>';
+  }
+  else if(data.type==='locations'){
+    html += '<div class="wiz-locations">';
+    LOCATIONS.forEach(function(loc){
+      var checked = wizSelections.locations.indexOf(loc)>=0?'checked':'';
+      html += '<label><input type="checkbox" '+checked+' onchange="wizToggleLoc(\''+loc+'\')"> '+loc+'</label>';
+    });
+    html += '</div>';
+  }
+  else if(data.type==='adcontent'){
+    html += '<div class="wiz-ad-editor"><label style="font-size:.75rem;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Headlines</label>';
+    html += '<textarea rows="3" id="wizHeadlines">Premium Cotton Bed Sheets | 400 Thread Count\nLuxury Bed Sheet Set | Free Shipping\nShop Cotton Sheets | 30-Day Guarantee</textarea>';
+    html += '<label style="font-size:.75rem;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Descriptions</label>';
+    html += '<textarea rows="3" id="wizDescs">Shop our premium 400-thread-count cotton bed sheets. Free shipping on orders over $75. 30-day money-back guarantee.\nUpgrade your bedroom with luxury cotton sheets. Available in 12 colors. Machine washable & durable.</textarea>';
+    html += '</div>';
+    html += '<div style="margin-top:12px"><h4 style="font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:8px">Live Ad Preview</h4><div class="google-ad-preview"><div class="gad-sponsored"><span>Sponsored</span></div><div class="gad-url">dreamhome-bedding.com <span>/ products</span></div><a class="gad-headline" href="#" onclick="return false">Premium Cotton Bed Sheets | 400 Thread Count</a><div class="gad-desc">Shop our premium 400-thread-count cotton bed sheets. Free shipping on orders over $75. 30-day money-back guarantee.</div></div></div>';
+  }
+  else if(data.type==='budget'){
+    html += '<div class="wiz-budget-display"><div class="amount" id="budgetAmount">$'+wizSelections.budget+'</div><div class="monthly">~$'+(wizSelections.budget*30)+'/month estimated</div></div>';
+    html += '<input type="range" class="wiz-budget-slider" min="5" max="500" step="5" value="'+wizSelections.budget+'" oninput="wizBudget(this.value)">';
+    html += '<div style="display:flex;justify-content:space-between;font-size:.7rem;color:rgba(255,255,255,.3)"><span>$5/day</span><span>$500/day</span></div>';
+  }
+  else if(data.type==='conversion'){
+    html += '<div class="wiz-toggle"><input type="checkbox" '+(wizSelections.conversion?'checked':'')+' onchange="wizSelections.conversion=this.checked"><span style="font-size:.85rem">Enable Conversion Tracking</span></div>';
+    html += '<p style="font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.5;margin-top:8px">When enabled, Smart Ads AI creates a "Purchase" conversion action in your Google Ads account via the <strong style="color:rgba(255,255,255,.7)">ConversionActionService</strong> API. This tracks Shopify checkout completions and reports ROAS in your Google Ads dashboard. The conversion tag is automatically injected into your Shopify checkout.</p>';
+  }
+  else if(data.type==='review'){
+    html += '<ul class="wiz-summary">';
+    html += '<li><span>Goal</span><span>'+wizSelections.goal+'</span></li>';
+    html += '<li><span>Campaign Type</span><span>'+wizSelections.type+'</span></li>';
+    html += '<li><span>Bidding Strategy</span><span>'+wizSelections.bidding+'</span></li>';
+    html += '<li><span>Locations</span><span>'+wizSelections.locations.join(', ')+'</span></li>';
+    html += '<li><span>Daily Budget</span><span>$'+wizSelections.budget+'/day (~$'+(wizSelections.budget*30)+'/mo)</span></li>';
+    html += '<li><span>Conversion Tracking</span><span>'+(wizSelections.conversion?'Enabled':'Disabled')+'</span></li>';
+    html += '<li><span>Initial Status</span><span style="color:#f59e0b">PAUSED</span></li>';
+    html += '</ul>';
+    if(launchState==='idle'){
+      html += '<button class="launch-btn" onclick="launchCampaign()">Create Campaign (PAUSED)</button>';
+    } else if(launchState==='launching'){
+      html += '<div class="launch-timeline" id="launchTimeline"></div>';
+    } else if(launchState==='done'){
+      html += '<div class="launch-timeline" id="launchTimeline"></div>';
+      html += '<div class="launch-success" id="launchSuccess" style="display:block"><h3>Campaign Created Successfully!</h3><p>Your campaign has been created in PAUSED state in your Google Ads account (ID: 123-456-7890). Review it in your Google Ads dashboard before enabling.</p></div>';
+    }
+  }
+
+  content.innerHTML = html;
+
+  // Nav buttons visibility
+  var nav = document.getElementById('wizNav');
+  if(launchState!=='idle' && wizStep===7) { nav.style.display='none'; } else { nav.style.display='flex'; }
+
+  // Render launch timeline if needed
+  if((launchState==='launching' || launchState==='done') && wizStep===7){
+    renderLaunchTimeline();
+  }
+}
+
+function wizSelect(step, val){
+  if(step===0) wizSelections.goal=val;
+  else if(step===1) wizSelections.type=val;
+  else if(step===2) wizSelections.bidding=val;
+  renderWizard();
+}
+function wizToggleLoc(loc){
+  var idx=wizSelections.locations.indexOf(loc);
+  if(idx>=0) wizSelections.locations.splice(idx,1); else wizSelections.locations.push(loc);
+}
+function wizBudget(val){
+  wizSelections.budget=parseInt(val);
+  document.getElementById('budgetAmount').textContent='$'+val;
+  document.querySelector('.wiz-budget-display .monthly').textContent='~$'+(val*30)+'/month estimated';
+}
+function wizNext(){
+  if(wizStep<7){wizStep++;renderWizard();}
+}
+function wizPrev(){
+  if(wizStep>0){wizStep--;renderWizard();}
+}
+
+var LAUNCH_STEPS = ['QUEUED','VALIDATING','CREATING_BUDGET','CREATING_CAMPAIGN','UPLOADING_ASSETS','LINKING_CONVERSIONS','ENABLING','ENABLED'];
+var launchIdx = -1;
+
+function launchCampaign(){
+  launchState='launching';
+  launchIdx=-1;
+  renderWizard();
+  var iv=setInterval(function(){
+    launchIdx++;
+    if(launchIdx >= LAUNCH_STEPS.length){
+      clearInterval(iv);
+      launchState='done';
+      renderWizard();
+      fireConfetti();
+      return;
+    }
+    renderLaunchTimeline();
+  },800);
+}
+
+function renderLaunchTimeline(){
+  var el = document.getElementById('launchTimeline');
+  if(!el) return;
+  var html='';
+  LAUNCH_STEPS.forEach(function(s,i){
+    var cls = i<launchIdx?'done':i===launchIdx?'active':'';
+    var icon = i<launchIdx?'✓':i===launchIdx?'...':'';
+    html += '<div class="lt-step '+cls+'"><div class="lt-icon">'+icon+'</div><span>'+s+'</span></div>';
+  });
+  el.innerHTML = html;
+}
+
+function fireConfetti(){
+  var colors = ['#6366f1','#22c55e','#f59e0b','#06b6d4','#ef4444','#ec4899'];
+  for(var i=0;i<60;i++){
+    var c = document.createElement('div');
+    c.className='confetti-piece';
+    c.style.left = Math.random()*100+'vw';
+    c.style.top = '-10px';
+    c.style.background = colors[Math.floor(Math.random()*colors.length)];
+    c.style.borderRadius = Math.random()>.5?'50%':'2px';
+    c.style.width = (Math.random()*8+4)+'px';
+    c.style.height = (Math.random()*8+4)+'px';
+    c.style.animationDuration = (Math.random()*2+2)+'s';
+    c.style.animationDelay = Math.random()*1+'s';
+    document.body.appendChild(c);
+    setTimeout(function(el){return function(){el.remove()}}(c),5000);
+  }
+}
+
+// ----- INIT -----
+function init(){
+  renderProductCards('dashProductGrid', true);
+  animateDashboard();
+  populateKwResults();
+  populateSavedKw();
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
 </body>
 </html>
-
