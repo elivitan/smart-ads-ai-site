@@ -32,7 +32,7 @@
 .sidebar-badge{font-size:.6rem;background:#6366f1;color:#fff;padding:1px 6px;border-radius:100px;margin-left:auto}
 .app-main{flex:1;padding:24px 28px;overflow-y:auto;max-height:720px;color:rgba(255,255,255,.85)}
 .app-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-.app-topbar h2{font-size:1.125rem;font-weight:700;color:#fff}
+.app-topbar .app-panel-title{font-size:1.125rem;font-weight:700;color:#fff}
 .app-topbar-right{display:flex;align-items:center;gap:12px}
 .topbar-pill{font-size:.7rem;padding:4px 10px;border-radius:100px;font-weight:600}
 .pill-green{background:rgba(34,197,94,.15);color:#22c55e}
@@ -396,7 +396,7 @@
         <!-- ===== DASHBOARD ===== -->
         <div class="screen active" id="screen-dashboard">
             <div class="app-topbar">
-                <h2>Dashboard</h2>
+                <div class="app-panel-title" role="heading" aria-level="3">Dashboard</div>
                 <div class="app-topbar-right">
                     <span class="topbar-pill pill-green">Store Connected</span>
                     <span class="topbar-pill pill-blue">Google · Meta · TikTok · Pinterest Linked</span>
@@ -473,7 +473,7 @@
 
         <!-- ===== PRODUCT ANALYSIS ===== -->
         <div class="screen" id="screen-products">
-            <div class="app-topbar"><h2>Product Analysis</h2><div class="app-topbar-right"><span class="topbar-pill pill-blue">AI-Powered</span></div></div>
+            <div class="app-topbar"><div class="app-panel-title">Product Analysis</div><div class="app-topbar-right"><span class="topbar-pill pill-blue">AI-Powered</span></div></div>
             <div id="scanStateA" class="scan-cta">
                 <h3>Analyze Your Product Catalog</h3>
                 <p>Our AI will scan all 24 products, analyze competitors, generate keywords, and score each product for ad readiness.</p>
@@ -510,7 +510,7 @@
 
         <!-- ===== KEYWORDS ===== -->
         <div class="screen" id="screen-keywords">
-            <div class="app-topbar"><h2>Keyword Research</h2><div class="app-topbar-right"><span class="topbar-pill pill-blue">AI-Powered</span></div></div>
+            <div class="app-topbar"><div class="app-panel-title">Keyword Research</div><div class="app-topbar-right"><span class="topbar-pill pill-blue">AI-Powered</span></div></div>
             <div class="kw-tabs">
                 <button class="kw-tab active" onclick="switchKwTab(0)">Keyword Explorer</button>
                 <button class="kw-tab" onclick="switchKwTab(1)">Scan Website</button>
@@ -549,7 +549,7 @@
 
         <!-- ===== CAMPAIGN WIZARD ===== -->
         <div class="screen" id="screen-wizard">
-            <div class="app-topbar"><h2>Campaign Wizard</h2><div class="app-topbar-right"><span class="topbar-pill pill-blue">8 Steps</span></div></div>
+            <div class="app-topbar"><div class="app-panel-title">Campaign Wizard</div><div class="app-topbar-right"><span class="topbar-pill pill-blue">8 Steps</span></div></div>
             <div class="wiz-steps" id="wizSteps"></div>
             <div id="wizContent"></div>
             <div class="wiz-nav" id="wizNav">
@@ -560,7 +560,7 @@
 
         <!-- ===== CAMPAIGNS ===== -->
         <div class="screen" id="screen-campaigns">
-            <div class="app-topbar"><h2>Campaigns</h2><div class="app-topbar-right"><span class="topbar-pill pill-green">3 Campaigns</span></div></div>
+            <div class="app-topbar"><div class="app-panel-title">Campaigns</div><div class="app-topbar-right"><span class="topbar-pill pill-green">3 Campaigns</span></div></div>
             <div style="margin-bottom:12px">
                 <div style="display:grid;grid-template-columns:2fr repeat(5,1fr);gap:12px;padding:0 16px;font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.3)">
                     <span>Campaign</span><span style="text-align:center">Status</span><span style="text-align:center">Budget</span><span style="text-align:center">Clicks</span><span style="text-align:center">CTR</span><span style="text-align:center">Conv.</span>
@@ -596,7 +596,7 @@
 
         <!-- ===== SETTINGS ===== -->
         <div class="screen" id="screen-settings">
-            <div class="app-topbar"><h2>Settings</h2></div>
+            <div class="app-topbar"><div class="app-panel-title">Settings</div></div>
             <div class="settings-card">
                 <h3>Ad Network Connections</h3>
                 <div class="settings-connected"><div class="dot"></div><span>Connected to Google, Meta, TikTok &amp; Pinterest</span></div>
@@ -808,7 +808,7 @@
 <section class="section" style="background:var(--surface)">
     <div class="section-inner">
         <div class="section-header">
-            <h2>Frequently Asked Questions</h2>
+            <h2>Demo &amp; Platform FAQ</h2>
             <p>Common questions about Smart Ads AI and our Google, Meta, TikTok &amp; Pinterest ad integrations</p>
         </div>
         <div class="faq-list">
@@ -842,9 +842,13 @@
 
 <!-- CTA -->
 <section class="cta-section">
-    <h2>Ready to supercharge your ads across every channel?</h2>
+    <h2>Like what you see? Start running AI-powered ads today.</h2>
     <p>Join Shopify merchants who use AI to create smarter, data-driven campaigns across Google, Meta, TikTok &amp; Pinterest.</p>
-    <a href="/contact" class="btn btn-white">Request Early Access &rarr;</a>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="/contact" class="btn btn-white">Request Early Access &rarr;</a>
+        <a href="/pricing" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">See Pricing</a>
+        <a href="/product" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">Learn More</a>
+    </div>
 </section>
 
 <!-- FOOTER -->
