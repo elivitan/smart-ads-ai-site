@@ -31,6 +31,21 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://smart-ad-sai.com/roas-calculator</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smart-ad-sai.com/pinterest-ads-shopify-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smart-ad-sai.com/meta-ads-vs-google-ads-shopify</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://smart-ad-sai.com/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

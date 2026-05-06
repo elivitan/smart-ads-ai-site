@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free ROAS Calculator for Shopify | Smart Ads AI</title>
+    <meta name="description" content="Free ROAS calculator for Shopify merchants. Calculate return on ad spend, net profit, and profit margin across Google, Meta, TikTok, and Pinterest ad channels.">
+    <link rel="canonical" href="https://smart-ad-sai.com/roas-calculator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smart-ad-sai.com/roas-calculator">
+    <meta property="og:title" content="Free ROAS Calculator for Shopify | Smart Ads AI">
+    <meta property="og:description" content="Calculate your return on ad spend across Google, Meta, TikTok, and Pinterest. Free ROAS calculator with benchmarks and optimization tips.">
+    <meta property="og:image" content="https://smart-ad-sai.com/apple-touch-icon.png">
+    <meta name="twitter:card" content="summary">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/shared.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is ROAS and why does it matter?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ROAS (Return on Ad Spend) measures the revenue generated for every dollar spent on advertising. A ROAS of 4.0x means you earn $4 for every $1 spent. It is the single most important metric for evaluating ad campaign profitability and deciding where to allocate your marketing budget."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a good ROAS for Shopify stores?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A good ROAS depends on your margins, but generally: below 2x is unprofitable for most stores, 2-4x is average, 4-8x is good, and above 8x is excellent. The average ROAS benchmarks by platform are approximately 4.0x for Google Ads, 3.5x for Meta Ads, 2.5x for TikTok Ads, and 2.8x for Pinterest Ads."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I improve my ROAS?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To improve ROAS: refine your audience targeting to reach high-intent buyers, optimize ad creatives with stronger calls-to-action, improve landing page conversion rates, use negative keywords to eliminate wasted spend, test different bid strategies, and leverage retargeting to convert warm audiences at lower cost."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When should I scale my ad spend?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Scale ad spend when your ROAS is consistently above your break-even point (typically 3x+ for most Shopify stores) for at least 2-3 weeks, your cost per acquisition is stable, and your landing page conversion rate is optimized. Increase budget by 15-20% at a time to avoid disrupting platform algorithms."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is ROAS different from ROI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ROAS measures gross revenue per dollar of ad spend (Revenue / Ad Spend). ROI measures net profit after all costs are deducted ((Revenue - Total Costs) / Total Costs). ROAS is specific to advertising efficiency, while ROI accounts for the full business picture including product costs, overhead, and operational expenses."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        /* ---- CALCULATOR ---- */
+        .calc-container { max-width: 960px; margin: 0 auto; }
+        .calc-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+        }
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+        .calc-inputs h3,
+        .calc-results h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label {
+            display: block;
+            font-size: .8125rem;
+            font-weight: 600;
+            color: var(--slate);
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            margin-bottom: 6px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: .9375rem;
+            color: var(--ink);
+            background: var(--paper);
+            transition: border-color .2s;
+            outline: none;
+        }
+        .form-group input:focus { border-color: var(--accent); }
+        .form-group .input-hint {
+            font-size: .75rem;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        /* Channel breakdown toggle */
+        .channel-toggle {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+            cursor: pointer;
+            font-size: .875rem;
+            font-weight: 500;
+            color: var(--accent);
+            user-select: none;
+        }
+        .channel-toggle .toggle-icon {
+            transition: transform .2s;
+            font-size: .75rem;
+        }
+        .channel-toggle.open .toggle-icon { transform: rotate(90deg); }
+        .channel-section { display: none; }
+        .channel-section.open { display: block; }
+        .channel-group {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        .channel-group h4 {
+            font-size: .875rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .channel-group .channel-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .channel-group .form-group { margin-bottom: 0; }
+        .channel-group .form-group input {
+            padding: 10px 12px;
+            font-size: .8125rem;
+            background: #fff;
+        }
+        .channel-group .form-group label {
+            font-size: .6875rem;
+        }
+
+        /* Results */
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label {
+            font-size: .875rem;
+            color: var(--slate);
+            font-weight: 500;
+        }
+        .result-value {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--ink);
+        }
+        .result-value.positive { color: var(--success); }
+        .result-value.negative { color: #ef4444; }
+
+        /* ROAS Gauge */
+        .gauge-container {
+            margin: 24px 0 8px;
+            position: relative;
+        }
+        .gauge-bar {
+            height: 12px;
+            border-radius: 6px;
+            background: linear-gradient(90deg, #ef4444 0%, #f59e0b 25%, #22c55e 55%, #2563eb 100%);
+            position: relative;
+            overflow: visible;
+        }
+        .gauge-marker {
+            position: absolute;
+            top: -6px;
+            width: 24px;
+            height: 24px;
+            background: #fff;
+            border: 3px solid var(--ink);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            transition: left .4s ease;
+            box-shadow: var(--shadow-sm);
+            z-index: 2;
+        }
+        .gauge-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: .6875rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            font-weight: 600;
+        }
+        .gauge-rating {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 8px 20px;
+            border-radius: 100px;
+            display: inline-block;
+        }
+        .gauge-rating.poor { background: #fef2f2; color: #ef4444; }
+        .gauge-rating.average { background: #fffbeb; color: #d97706; }
+        .gauge-rating.good { background: #f0fdf4; color: #16a34a; }
+        .gauge-rating.excellent { background: #eff6ff; color: #2563eb; }
+        .gauge-rating-wrap { text-align: center; }
+
+        /* Channel Results */
+        .channel-results { margin-top: 20px; }
+        .channel-result-row {
+            display: grid;
+            grid-template-columns: 100px 1fr 1fr;
+            gap: 12px;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: .8125rem;
+        }
+        .channel-result-row:first-child {
+            font-weight: 600;
+            color: var(--slate);
+            font-size: .6875rem;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 8px;
+        }
+        .channel-result-name { font-weight: 600; }
+        .channel-result-roas { font-family: var(--font-display); font-weight: 700; }
+
+        /* Benchmarks */
+        .benchmark-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .benchmark-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            text-align: center;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .benchmark-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .benchmark-icon { font-size: 1.75rem; margin-bottom: 12px; }
+        .benchmark-platform {
+            font-size: .8125rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            color: var(--slate);
+            margin-bottom: 8px;
+        }
+        .benchmark-value {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+        .benchmark-label {
+            font-size: .75rem;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        /* Tips grid */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .tip-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 28px;
+        }
+        .tip-number {
+            font-family: var(--font-display);
+            font-size: .875rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        .tip-card h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .tip-card p {
+            font-size: .875rem;
+            color: var(--slate);
+            line-height: 1.65;
+        }
+
+        /* Scale checklist */
+        .scale-checklist {
+            list-style: none;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .scale-checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: .9375rem;
+            color: var(--slate);
+            line-height: 1.6;
+        }
+        .scale-checklist li:last-child { border-bottom: none; }
+        .check-icon {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--accent-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: .75rem;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        /* Internal link inline styling */
+        .content-block a,
+        .tip-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .content-block a:hover,
+        .tip-card a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr; gap: 32px; }
+            .calc-card { padding: 24px; }
+            .benchmark-grid { grid-template-columns: 1fr 1fr; }
+            .tips-grid { grid-template-columns: 1fr; }
+            .channel-group .channel-fields { grid-template-columns: 1fr; }
+            .channel-result-row { grid-template-columns: 80px 1fr 1fr; gap: 8px; }
+        }
+        @media (max-width: 480px) {
+            .benchmark-grid { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">Smart Ads <span>AI</span></a>
+        <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/product">Product</a></li>
+            <li><a href="/demo">Demo</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/company">Company</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/terms">Terms</a></li>
+            <li><a href="/contact" class="nav-cta">Get Started</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <div class="hero-badge">Free Tool</div>
+        <h1>ROAS Calculator for Shopify Merchants</h1>
+        <p>Calculate your return on ad spend across Google, Meta, TikTok, and Pinterest. Understand whether your campaigns are profitable and where to optimize.</p>
+    </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="section">
+    <div class="section-inner">
+        <div class="calc-container">
+            <div class="calc-card">
+                <div class="calc-grid">
+                    <!-- Inputs -->
+                    <div class="calc-inputs">
+                        <h3>Enter Your Numbers</h3>
+                        <div class="form-group">
+                            <label for="adSpend">Total Ad Spend ($)</label>
+                            <input type="number" id="adSpend" placeholder="e.g. 5000" min="0" step="0.01">
+                            <div class="input-hint">Total amount spent on advertising</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="revenue">Revenue from Ads ($)</label>
+                            <input type="number" id="revenue" placeholder="e.g. 20000" min="0" step="0.01">
+                            <div class="input-hint">Total revenue attributed to your ad campaigns</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="productCost">Product Cost (%)</label>
+                            <input type="number" id="productCost" placeholder="e.g. 35" min="0" max="100" step="0.1">
+                            <div class="input-hint">Cost of goods sold as a percentage of revenue</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="conversions">Number of Conversions</label>
+                            <input type="number" id="conversions" placeholder="e.g. 150" min="0" step="1">
+                            <div class="input-hint">Total purchases or conversions from ads (for CPA calculation)</div>
+                        </div>
+
+                        <!-- Channel Breakdown Toggle -->
+                        <div class="channel-toggle" id="channelToggle" onclick="toggleChannels()">
+                            <span class="toggle-icon">&#9654;</span>
+                            Break down by channel (optional)
+                        </div>
+                        <div class="channel-section" id="channelSection">
+                            <div class="channel-group">
+                                <h4>&#128270; Google Ads</h4>
+                                <div class="channel-fields">
+                                    <div class="form-group">
+                                        <label for="googleSpend">Ad Spend ($)</label>
+                                        <input type="number" id="googleSpend" placeholder="0" min="0" step="0.01">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="googleRevenue">Revenue ($)</label>
+                                        <input type="number" id="googleRevenue" placeholder="0" min="0" step="0.01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="channel-group">
+                                <h4>&#128216; Meta (Facebook &amp; Instagram)</h4>
+                                <div class="channel-fields">
+                                    <div class="form-group">
+                                        <label for="metaSpend">Ad Spend ($)</label>
+                                        <input type="number" id="metaSpend" placeholder="0" min="0" step="0.01">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="metaRevenue">Revenue ($)</label>
+                                        <input type="number" id="metaRevenue" placeholder="0" min="0" step="0.01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="channel-group">
+                                <h4>&#127925; TikTok Ads</h4>
+                                <div class="channel-fields">
+                                    <div class="form-group">
+                                        <label for="tiktokSpend">Ad Spend ($)</label>
+                                        <input type="number" id="tiktokSpend" placeholder="0" min="0" step="0.01">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="tiktokRevenue">Revenue ($)</label>
+                                        <input type="number" id="tiktokRevenue" placeholder="0" min="0" step="0.01">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="channel-group">
+                                <h4>&#128204; Pinterest Ads</h4>
+                                <div class="channel-fields">
+                                    <div class="form-group">
+                                        <label for="pinterestSpend">Ad Spend ($)</label>
+                                        <input type="number" id="pinterestSpend" placeholder="0" min="0" step="0.01">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pinterestRevenue">Revenue ($)</label>
+                                        <input type="number" id="pinterestRevenue" placeholder="0" min="0" step="0.01">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="calc-results">
+                        <h3>Your Results</h3>
+
+                        <div class="gauge-container">
+                            <div class="gauge-bar">
+                                <div class="gauge-marker" id="gaugeMarker" style="left: 0%"></div>
+                            </div>
+                            <div class="gauge-labels">
+                                <span>Poor</span>
+                                <span>Average</span>
+                                <span>Good</span>
+                                <span>Excellent</span>
+                            </div>
+                        </div>
+                        <div class="gauge-rating-wrap">
+                            <div class="gauge-rating poor" id="gaugeRating">Enter your data</div>
+                        </div>
+
+                        <div style="margin-top: 20px;">
+                            <div class="result-item">
+                                <span class="result-label">ROAS</span>
+                                <span class="result-value" id="resultRoas">--</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Net Profit</span>
+                                <span class="result-value" id="resultProfit">--</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Profit Margin</span>
+                                <span class="result-value" id="resultMargin">--</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Cost Per Acquisition</span>
+                                <span class="result-value" id="resultCpa">--</span>
+                            </div>
+                        </div>
+
+                        <!-- Channel Results (shown when breakdown is active) -->
+                        <div class="channel-results" id="channelResults" style="display:none;">
+                            <div class="channel-result-row">
+                                <span>Channel</span>
+                                <span>ROAS</span>
+                                <span>Net Profit</span>
+                            </div>
+                            <div class="channel-result-row" id="googleResult">
+                                <span class="channel-result-name">Google</span>
+                                <span class="channel-result-roas">--</span>
+                                <span>--</span>
+                            </div>
+                            <div class="channel-result-row" id="metaResult">
+                                <span class="channel-result-name">Meta</span>
+                                <span class="channel-result-roas">--</span>
+                                <span>--</span>
+                            </div>
+                            <div class="channel-result-row" id="tiktokResult">
+                                <span class="channel-result-name">TikTok</span>
+                                <span class="channel-result-roas">--</span>
+                                <span>--</span>
+                            </div>
+                            <div class="channel-result-row" id="pinterestResult">
+                                <span class="channel-result-name">Pinterest</span>
+                                <span class="channel-result-roas">--</span>
+                                <span>--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT IS ROAS -->
+<section class="section" style="background: var(--surface);">
+    <div class="section-inner">
+        <div class="content-block">
+            <h2>What Is ROAS and Why Does It Matter?</h2>
+            <p><strong>ROAS (Return on Ad Spend)</strong> measures the revenue generated for every dollar spent on advertising. It is calculated as:</p>
+            <p style="text-align:center; font-family:var(--font-display); font-size:1.25rem; font-weight:700; color:var(--ink); padding:20px; background:#fff; border:1px solid var(--border); border-radius:var(--radius-sm); margin:20px 0;">ROAS = Revenue from Ads &divide; Ad Spend</p>
+            <p>A ROAS of <strong>4.0x</strong> means you earn $4 for every $1 spent on advertising. For Shopify merchants running paid campaigns, ROAS is the single most important metric for evaluating campaign profitability.</p>
+            <p>Unlike vanity metrics such as impressions or clicks, ROAS directly ties your ad spend to actual revenue. It answers the fundamental question: <strong>is this campaign making money?</strong></p>
+            <p>However, ROAS alone does not account for product costs. A 3.0x ROAS might be profitable for a digital product with 90% margins, but unprofitable for physical goods with 50% margins. That is why this calculator also computes <strong>net profit</strong> and <strong>profit margin</strong> after deducting your cost of goods sold.</p>
+            <p>Smart Ads AI <a href="/product">automatically tracks ROAS</a> across all four ad channels from a single dashboard, so you never have to calculate it manually.</p>
+        </div>
+    </div>
+</section>
+
+<!-- BENCHMARKS -->
+<section class="section">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Average ROAS Benchmarks by Platform</h2>
+            <p>Industry average return on ad spend for Shopify merchants across the four major advertising networks.</p>
+        </div>
+        <div class="benchmark-grid">
+            <div class="benchmark-card">
+                <div class="benchmark-icon">&#128270;</div>
+                <div class="benchmark-platform">Google Ads</div>
+                <div class="benchmark-value">4.0x</div>
+                <div class="benchmark-label">Average ROAS</div>
+            </div>
+            <div class="benchmark-card">
+                <div class="benchmark-icon">&#128216;</div>
+                <div class="benchmark-platform">Meta Ads</div>
+                <div class="benchmark-value">3.5x</div>
+                <div class="benchmark-label">Average ROAS</div>
+            </div>
+            <div class="benchmark-card">
+                <div class="benchmark-icon">&#127925;</div>
+                <div class="benchmark-platform">TikTok Ads</div>
+                <div class="benchmark-value">2.5x</div>
+                <div class="benchmark-label">Average ROAS</div>
+            </div>
+            <div class="benchmark-card">
+                <div class="benchmark-icon">&#128204;</div>
+                <div class="benchmark-platform">Pinterest Ads</div>
+                <div class="benchmark-value">2.8x</div>
+                <div class="benchmark-label">Average ROAS</div>
+            </div>
+        </div>
+        <div class="content-block" style="margin-top:40px;">
+            <p>These benchmarks represent median values across e-commerce verticals. Your actual ROAS will vary based on product category, price point, competitive landscape, and ad creative quality. Use <a href="/demo">our live demo</a> to see how Smart Ads AI benchmarks your store against competitors in your specific niche.</p>
+        </div>
+    </div>
+</section>
+
+<!-- HOW TO IMPROVE ROAS -->
+<section class="section" style="background: var(--surface);">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>How to Improve Your ROAS</h2>
+            <p>Six proven strategies to increase your return on ad spend across all channels.</p>
+        </div>
+        <div class="tips-grid">
+            <div class="tip-card">
+                <div class="tip-number">01</div>
+                <h4>Refine Audience Targeting</h4>
+                <p>Narrow your targeting to reach high-intent buyers. Use lookalike audiences based on your best customers, exclude non-converting demographics, and layer interest targeting with purchase behavior signals.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">02</div>
+                <h4>Optimize Ad Creatives</h4>
+                <p>Test multiple ad variations with different headlines, images, and calls-to-action. The highest-performing creative often delivers 2-3x better ROAS than average. Refresh creatives every 2-3 weeks to combat ad fatigue.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">03</div>
+                <h4>Improve Landing Pages</h4>
+                <p>A faster, clearer landing page converts more visitors into buyers. Ensure your product pages load in under 3 seconds, have clear pricing, strong social proof, and a prominent add-to-cart button.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">04</div>
+                <h4>Eliminate Wasted Spend</h4>
+                <p>Use negative keywords (Google) and exclusion lists (Meta/TikTok/Pinterest) to stop paying for irrelevant clicks. Review search term reports weekly and block terms that generate clicks but not conversions.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">05</div>
+                <h4>Leverage Retargeting</h4>
+                <p>Retargeting warm audiences — cart abandoners, past visitors, email subscribers — typically delivers 2-5x higher ROAS than prospecting. Allocate 20-30% of your budget to retargeting campaigns.</p>
+            </div>
+            <div class="tip-card">
+                <div class="tip-number">06</div>
+                <h4>Use AI-Powered Optimization</h4>
+                <p>Platforms like <a href="/product">Smart Ads AI</a> use machine learning to continuously optimize bids, audiences, and creatives across channels. Automated optimization removes guesswork and reacts faster than manual management.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHEN TO SCALE -->
+<section class="section">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>When to Scale Your Ad Spend</h2>
+            <p>Scaling too early wastes money. Scaling too late leaves revenue on the table. Use this checklist to know when you are ready.</p>
+        </div>
+        <ul class="scale-checklist">
+            <li>
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Consistent ROAS above break-even for 2-3 weeks.</strong> A single good day is not a trend. Wait for sustained profitability before increasing budget.</span>
+            </li>
+            <li>
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Cost Per Acquisition (CPA) is stable or declining.</strong> If your CPA is rising as you spend more, you are hitting audience saturation — optimize before scaling.</span>
+            </li>
+            <li>
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Landing page conversion rate is optimized.</strong> Scaling traffic to a low-converting page amplifies waste. Get your conversion rate above industry average (2-3% for e-commerce) first.</span>
+            </li>
+            <li>
+                <span class="check-icon">&#10003;</span>
+                <span><strong>You have sufficient inventory and fulfillment capacity.</strong> Running out of stock after scaling ad spend means paying for clicks you cannot convert.</span>
+            </li>
+            <li>
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Increase budget by 15-20% at a time.</strong> Dramatic increases disrupt platform learning algorithms. Gradual scaling maintains performance stability.</span>
+            </li>
+            <li>
+                <span class="check-icon">&#10003;</span>
+                <span><strong>Diversify across channels before maxing out one.</strong> If Google Ads is performing well, test Meta or TikTok with a small budget. Cross-channel presence reduces risk and captures different audience segments. <a href="/pricing" style="color:var(--accent);text-decoration:none;font-weight:500;">See our pricing plans</a> that support multi-channel campaigns.</span>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background: var(--surface);">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h3>What is ROAS and why does it matter?</h3>
+                <p>ROAS (Return on Ad Spend) measures the revenue generated for every dollar spent on advertising. A ROAS of 4.0x means you earn $4 for every $1 spent. It is the single most important metric for evaluating ad campaign profitability and deciding where to allocate your marketing budget.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What is a good ROAS for Shopify stores?</h3>
+                <p>A good ROAS depends on your margins. Generally: below 2x is unprofitable for most stores, 2-4x is average, 4-8x is good, and above 8x is excellent. The average ROAS benchmarks by platform are approximately 4.0x for Google Ads, 3.5x for Meta Ads, 2.5x for TikTok Ads, and 2.8x for Pinterest Ads.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I improve my ROAS?</h3>
+                <p>To improve ROAS: refine your audience targeting to reach high-intent buyers, optimize ad creatives with stronger calls-to-action, improve landing page conversion rates, use negative keywords to eliminate wasted spend, test different bid strategies, and leverage retargeting to convert warm audiences at lower cost.</p>
+            </div>
+            <div class="faq-item">
+                <h3>When should I scale my ad spend?</h3>
+                <p>Scale ad spend when your ROAS is consistently above your break-even point (typically 3x+ for most Shopify stores) for at least 2-3 weeks, your cost per acquisition is stable, and your landing page conversion rate is optimized. Increase budget by 15-20% at a time to avoid disrupting platform algorithms.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How is ROAS different from ROI?</h3>
+                <p>ROAS measures gross revenue per dollar of ad spend (Revenue / Ad Spend). ROI measures net profit after all costs are deducted ((Revenue - Total Costs) / Total Costs). ROAS is specific to advertising efficiency, while ROI accounts for the full business picture including product costs, overhead, and operational expenses.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <h2>Stop guessing. Start optimizing.</h2>
+    <p>Smart Ads AI tracks ROAS across Google, Meta, TikTok, and Pinterest automatically from one dashboard. Let AI manage your campaigns so you can focus on your business.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="/demo" class="btn btn-white">View Live Demo &#8594;</a>
+        <a href="/pricing" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">See Pricing</a>
+        <a href="/contact" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">Contact Us</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">Smart Ads <span>AI</span></div>
+                <p class="footer-desc">AI-powered multi-channel ad automation (Google, Meta, TikTok, Pinterest) for Shopify merchants.</p>
+                <p style="font-size:.8125rem; margin-top:12px;">Smart Ads AI Ltd.<br>Nahal Besor 10/7, Beit Shemesh, Israel<br>+972-58-486-9778</p>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <a href="/product">How It Works</a>
+                <a href="/demo">Live Demo</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/#api-usage">API Usage</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="/roas-calculator">ROAS Calculator</a>
+                <a href="/pinterest-ads-shopify-guide">Pinterest Ads Guide</a>
+                <a href="/meta-ads-vs-google-ads-shopify">Meta vs Google Ads</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/company">About Us</a>
+                <a href="/contact">Contact</a>
+                <a href="/company#security">Security</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Smart Ads AI Ltd. All rights reserved.</span>
+            <div class="footer-legal">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function() {
+    var adSpend = document.getElementById('adSpend');
+    var revenue = document.getElementById('revenue');
+    var productCost = document.getElementById('productCost');
+    var conversions = document.getElementById('conversions');
+    var inputs = [adSpend, revenue, productCost, conversions];
+
+    var channelInputIds = [
+        'googleSpend', 'googleRevenue',
+        'metaSpend', 'metaRevenue',
+        'tiktokSpend', 'tiktokRevenue',
+        'pinterestSpend', 'pinterestRevenue'
+    ];
+    var channelInputs = channelInputIds.map(function(id) { return document.getElementById(id); });
+
+    var allInputs = inputs.concat(channelInputs);
+    allInputs.forEach(function(el) {
+        el.addEventListener('input', calculate);
+    });
+
+    var channelsOpen = false;
+
+    window.toggleChannels = function() {
+        channelsOpen = !channelsOpen;
+        var toggle = document.getElementById('channelToggle');
+        var section = document.getElementById('channelSection');
+        var results = document.getElementById('channelResults');
+        if (channelsOpen) {
+            toggle.classList.add('open');
+            section.classList.add('open');
+            results.style.display = 'block';
+        } else {
+            toggle.classList.remove('open');
+            section.classList.remove('open');
+            results.style.display = 'none';
+        }
+        calculate();
+    };
+
+    function fmt(n) {
+        if (isNaN(n) || !isFinite(n)) return '--';
+        return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    function calcChannel(spend, rev, costPct) {
+        if (!spend || spend <= 0) return { roas: null, profit: null };
+        var roas = rev / spend;
+        var cogs = rev * (costPct / 100);
+        var profit = rev - cogs - spend;
+        return { roas: roas, profit: profit };
+    }
+
+    function calculate() {
+        var spend = parseFloat(adSpend.value) || 0;
+        var rev = parseFloat(revenue.value) || 0;
+        var costPct = parseFloat(productCost.value) || 0;
+        var conv = parseInt(conversions.value) || 0;
+
+        var resultRoas = document.getElementById('resultRoas');
+        var resultProfit = document.getElementById('resultProfit');
+        var resultMargin = document.getElementById('resultMargin');
+        var resultCpa = document.getElementById('resultCpa');
+        var gaugeMarker = document.getElementById('gaugeMarker');
+        var gaugeRating = document.getElementById('gaugeRating');
+
+        if (spend <= 0 || rev <= 0) {
+            resultRoas.textContent = '--';
+            resultRoas.className = 'result-value';
+            resultProfit.textContent = '--';
+            resultProfit.className = 'result-value';
+            resultMargin.textContent = '--';
+            resultMargin.className = 'result-value';
+            resultCpa.textContent = '--';
+            resultCpa.className = 'result-value';
+            gaugeMarker.style.left = '0%';
+            gaugeRating.textContent = 'Enter your data';
+            gaugeRating.className = 'gauge-rating poor';
+            clearChannelResults();
+            return;
+        }
+
+        var roas = rev / spend;
+        var cogs = rev * (costPct / 100);
+        var netProfit = rev - cogs - spend;
+        var margin = (netProfit / rev) * 100;
+        var cpa = conv > 0 ? spend / conv : null;
+
+        resultRoas.textContent = roas.toFixed(2) + 'x';
+        resultRoas.className = 'result-value' + (roas >= 2 ? ' positive' : ' negative');
+
+        resultProfit.textContent = (netProfit >= 0 ? '$' : '-$') + fmt(Math.abs(netProfit));
+        resultProfit.className = 'result-value' + (netProfit >= 0 ? ' positive' : ' negative');
+
+        resultMargin.textContent = margin.toFixed(1) + '%';
+        resultMargin.className = 'result-value' + (margin >= 0 ? ' positive' : ' negative');
+
+        if (cpa !== null) {
+            resultCpa.textContent = '$' + fmt(cpa);
+        } else {
+            resultCpa.textContent = '--';
+        }
+        resultCpa.className = 'result-value';
+
+        // Gauge position: 0x=0%, 2x=25%, 4x=50%, 8x=75%, 12x+=100%
+        var pct;
+        if (roas <= 0) pct = 0;
+        else if (roas <= 2) pct = (roas / 2) * 25;
+        else if (roas <= 4) pct = 25 + ((roas - 2) / 2) * 25;
+        else if (roas <= 8) pct = 50 + ((roas - 4) / 4) * 25;
+        else pct = 75 + Math.min(((roas - 8) / 4) * 25, 25);
+        gaugeMarker.style.left = Math.min(pct, 100) + '%';
+
+        if (roas < 2) {
+            gaugeRating.textContent = 'Poor ROAS (' + roas.toFixed(1) + 'x)';
+            gaugeRating.className = 'gauge-rating poor';
+        } else if (roas < 4) {
+            gaugeRating.textContent = 'Average ROAS (' + roas.toFixed(1) + 'x)';
+            gaugeRating.className = 'gauge-rating average';
+        } else if (roas < 8) {
+            gaugeRating.textContent = 'Good ROAS (' + roas.toFixed(1) + 'x)';
+            gaugeRating.className = 'gauge-rating good';
+        } else {
+            gaugeRating.textContent = 'Excellent ROAS (' + roas.toFixed(1) + 'x)';
+            gaugeRating.className = 'gauge-rating excellent';
+        }
+
+        // Channel breakdown
+        if (channelsOpen) {
+            var channels = [
+                { id: 'googleResult', spend: parseFloat(document.getElementById('googleSpend').value) || 0, rev: parseFloat(document.getElementById('googleRevenue').value) || 0 },
+                { id: 'metaResult', spend: parseFloat(document.getElementById('metaSpend').value) || 0, rev: parseFloat(document.getElementById('metaRevenue').value) || 0 },
+                { id: 'tiktokResult', spend: parseFloat(document.getElementById('tiktokSpend').value) || 0, rev: parseFloat(document.getElementById('tiktokRevenue').value) || 0 },
+                { id: 'pinterestResult', spend: parseFloat(document.getElementById('pinterestSpend').value) || 0, rev: parseFloat(document.getElementById('pinterestRevenue').value) || 0 }
+            ];
+
+            channels.forEach(function(ch) {
+                var row = document.getElementById(ch.id);
+                var cells = row.querySelectorAll('span');
+                var result = calcChannel(ch.spend, ch.rev, costPct);
+                if (result.roas !== null) {
+                    cells[1].textContent = result.roas.toFixed(2) + 'x';
+                    cells[1].style.color = result.roas >= 2 ? 'var(--success)' : '#ef4444';
+                    var p = result.profit;
+                    cells[2].textContent = (p >= 0 ? '$' : '-$') + fmt(Math.abs(p));
+                    cells[2].style.color = p >= 0 ? 'var(--success)' : '#ef4444';
+                } else {
+                    cells[1].textContent = '--';
+                    cells[1].style.color = '';
+                    cells[2].textContent = '--';
+                    cells[2].style.color = '';
+                }
+            });
+        }
+    }
+
+    function clearChannelResults() {
+        ['googleResult', 'metaResult', 'tiktokResult', 'pinterestResult'].forEach(function(id) {
+            var row = document.getElementById(id);
+            var cells = row.querySelectorAll('span');
+            cells[1].textContent = '--';
+            cells[1].style.color = '';
+            cells[2].textContent = '--';
+            cells[2].style.color = '';
+        });
+    }
+})();
+</script>
+
+</body>
+</html>
