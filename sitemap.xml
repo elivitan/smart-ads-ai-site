@@ -2,57 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://smart-ad-sai.com/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://smart-ad-sai.com/product</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://smart-ad-sai.com/demo</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://smart-ad-sai.com/pricing</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://smart-ad-sai.com/company</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://smart-ad-sai.com/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://smart-ad-sai.com/roas-calculator</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://smart-ad-sai.com/pinterest-ads-shopify-guide</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://smart-ad-sai.com/meta-ads-vs-google-ads-shopify</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://smart-ad-sai.com/privacy</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-05-14</lastmod>
   </url>
   <url>
     <loc>https://smart-ad-sai.com/terms</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-05-14</lastmod>
   </url>
 </urlset>
