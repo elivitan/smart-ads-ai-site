@@ -1,49 +1,27 @@
-<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-  <!-- Bamzal mark — 8-pointed Mazel Star on deep ink background -->
-  <rect width="1024" height="1024" rx="224" fill="url(#bg)"/>
-
-  <!-- Outer sparkle -->
-  <g transform="translate(512 512)">
-    <path d="M0 -340 L72 -120 L300 -60 L120 60 L60 300 L0 340 L-60 300 L-120 60 L-300 -60 L-120 -120 Z"
-          fill="url(#starGrad)"/>
-    <!-- Cleaner 8-point star (corrected geometry) -->
-  </g>
-
-  <!-- Re-drawn proper 8-point sparkle -->
-  <g transform="translate(512 512)" opacity="0">
-    <path d="" />
-  </g>
-
-  <!-- True 8-point sparkle (AI star), centered -->
-  <g transform="translate(512 512)">
-    <path d="
-      M 0 -360
-      C 30 -160 160 -30 360 0
-      C 160 30 30 160 0 360
-      C -30 160 -160 30 -360 0
-      C -160 -30 -30 -160 0 -360 Z"
-      fill="url(#starGrad)"/>
-    <!-- inner highlight -->
-    <path d="
-      M 0 -200
-      C 18 -90 90 -18 200 0
-      C 90 18 18 90 0 200
-      C -18 90 -90 18 -200 0
-      C -90 -18 -18 -90 0 -200 Z"
-      fill="white" opacity="0.28"/>
-    <!-- center bright dot -->
-    <circle r="36" fill="white" opacity="0.85"/>
-  </g>
-
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BAMZAL · B mark">
+  <!-- Bamzal premium B mark — cream chassis with deep-ink B, large + centered for legibility at every size -->
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0F0F23"/>
-      <stop offset="100%" stop-color="#1E1B4B"/>
-    </linearGradient>
-    <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#A78BFA"/>
-      <stop offset="55%" stop-color="#8B5CF6"/>
-      <stop offset="100%" stop-color="#22D3EE"/>
+    <linearGradient id="paper" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"  stop-color="#FAF6EC"/>
+      <stop offset="100%" stop-color="#F2EBD8"/>
     </linearGradient>
   </defs>
+
+  <rect width="1024" height="1024" rx="224" fill="url(#paper)"/>
+
+  <!-- B drawn as ONE continuous path, scaled ~2.85x to fill ~70% of the chassis, centered -->
+  <g transform="translate(-72 -212) scale(2.85)">
+    <path fill="#0A0A0F" fill-rule="evenodd" d="
+      M 144 116
+      H 200
+      A 70 70 0 0 1 200 256
+      A 74 70 0 0 1 200 396
+      H 144
+      Z
+      M 200 152 A 34 34 0 0 1 200 220 Z
+      M 200 292 A 38 38 0 0 1 200 360 Z"/>
+  </g>
+
+  <!-- Single bronze accent dot, bottom-right -->
+  <circle cx="900" cy="900" r="10" fill="#8C6F2E" opacity="0.9"/>
 </svg>
