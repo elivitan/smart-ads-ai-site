@@ -198,3 +198,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--paper
     .demo-kpi-row { grid-template-columns: 1fr 1fr; }
     .capability { flex-direction: column; gap: 12px; }
 }
+
+/* ---- ICONS (monoline, currentColor) ---- */
+.icon{display:inline-block;vertical-align:-3px;flex-shrink:0;}
+.tech-item h4 .icon,.cap-content h3 .icon{margin-right:8px;color:var(--accent);}
+.flow-icon .icon{color:var(--accent);}
+.flow-icon{background:var(--accent-light);border-radius:50%;width:56px;height:56px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;}
