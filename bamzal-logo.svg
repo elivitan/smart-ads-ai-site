@@ -1,0 +1,22 @@
+<svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BAMZAL — autonomous advertising">
+  <!-- Bamzal premium horizontal lockup (light app background variant) -->
+  <!-- B mark, scaled into the row -->
+  <g transform="translate(38 12) scale(0.42)">
+    <path fill="#0A0A0F" fill-rule="evenodd" d="
+      M 144 116
+      H 200
+      A 70 70 0 0 1 200 256
+      A 74 70 0 0 1 200 396
+      H 144
+      Z
+      M 200 152 A 34 34 0 0 1 200 220 Z
+      M 200 292 A 38 38 0 0 1 200 360 Z"/>
+  </g>
+
+  <!-- Hairline bronze divider -->
+  <line x1="194" y1="50" x2="194" y2="150" stroke="#8C6F2E" stroke-opacity="0.45" stroke-width="1"/>
+
+  <!-- Wordmark -->
+  <text x="222" y="128" font-family="'Inter Display','Inter','SF Pro Display','Helvetica Neue',Arial,sans-serif"
+        font-weight="700" font-size="96" letter-spacing="-0.045em" fill="#0A0A0F">BAMZAL</text>
+</svg>
