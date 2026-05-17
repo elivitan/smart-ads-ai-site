@@ -1,15 +1,18 @@
 :root {
-    --ink: #0f1923;
-    --paper: #fafaf8;
-    --accent: #2563eb;
-    --accent-dark: #1d4ed8;
-    --accent-light: #dbeafe;
-    --slate: #475569;
-    --muted: #94a3b8;
-    --border: #e2e8f0;
-    --surface: #f1f5f9;
-    --success: #10b981;
-    --warning: #f59e0b;
+    /* Bamzal brand palette — derived from the official logo:
+       gold #8C6F2E on warm-cream #FAF6EC over near-black ink #0A0A0F.
+       All UI tokens below tune to this warm, editorial scheme. */
+    --ink: #0A0A0F;
+    --paper: #FAF6EC;
+    --accent: #8C6F2E;
+    --accent-dark: #6D551F;
+    --accent-light: #F2EBD8;
+    --slate: #3A2E13;
+    --muted: #8B7F6B;
+    --border: #E5DCC1;
+    --surface: #F5EDD8;
+    --success: #2F8F6B;
+    --warning: #B8862C;
     --radius: 12px;
     --radius-sm: 8px;
     --shadow-sm: 0 1px 3px rgba(0,0,0,.06);
@@ -23,7 +26,7 @@ html { scroll-behavior: smooth; }
 body { font-family: var(--font-body); color: var(--ink); background: var(--paper); line-height: 1.65; -webkit-font-smoothing: antialiased; }
 
 /* ---- NAV ---- */
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,250,248,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(250,246,236,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
 .nav-inner { max-width: 1120px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
 .nav-logo { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--ink); text-decoration: none; }
 .nav-logo span { color: var(--accent); }
