@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Shopping Ads for Shopify: 2026 Setup &amp; Optimization Guide | Bamzal</title>
+    <meta name="description" content="Step-by-step guide to running Google Shopping Ads on a Shopify store. Feed setup, campaign structure, bidding, troubleshooting common disapprovals, and automation.">
+    <link rel="canonical" href="https://bamzal.com/google-shopping-ads-shopify">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bamzal.com/google-shopping-ads-shopify">
+    <meta property="og:title" content="Google Shopping Ads for Shopify: 2026 Setup &amp; Optimization Guide">
+    <meta property="og:description" content="Step-by-step guide to running Google Shopping Ads on a Shopify store. Feed setup, campaign structure, bidding, troubleshooting common disapprovals, and automation.">
+    <meta property="og:image" content="https://bamzal.com/apple-touch-icon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Google Shopping Ads for Shopify: 2026 Setup &amp; Optimization Guide">
+    <meta name="twitter:description" content="Step-by-step guide to running Google Shopping Ads on a Shopify store. Feed, structure, bidding, and troubleshooting.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/shared.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Google Shopping Ads for Shopify: 2026 Setup &amp; Optimization Guide",
+        "description": "Step-by-step guide to running Google Shopping Ads on a Shopify store. Feed setup, campaign structure, bidding, troubleshooting common disapprovals, and automation.",
+        "author": {"@type": "Organization", "name": "Bamzal", "url": "https://bamzal.com"},
+        "publisher": {"@type": "Organization", "name": "Bamzal", "url": "https://bamzal.com", "logo": {"@type": "ImageObject", "url": "https://bamzal.com/apple-touch-icon.png"}},
+        "datePublished": "2026-05-14",
+        "dateModified": "2026-05-14",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bamzal.com/google-shopping-ads-shopify"},
+        "keywords": ["google shopping ads shopify", "shopify google shopping", "merchant center shopify", "google shopping feed", "shopping campaigns"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "How do I connect Shopify to Google Shopping?", "acceptedAnswer": {"@type": "Answer", "text": "Install the Google &amp; YouTube channel from the Shopify App Store, sign in with the Google account that owns your Merchant Center and Google Ads, and approve the requested scopes. Shopify pushes your catalog to Merchant Center automatically and keeps it in sync as you update products."}},
+            {"@type": "Question", "name": "Why are my Shopify products disapproved in Merchant Center?", "acceptedAnswer": {"@type": "Answer", "text": "The most common causes are missing GTIN or brand fields, image background that violates Google's policies, price mismatches between the feed and the landing page, missing shipping configuration, and missing return policy. Each disapproval lists the specific issue in Merchant Center diagnostics."}},
+            {"@type": "Question", "name": "What is the difference between Standard Shopping and Performance Max?", "acceptedAnswer": {"@type": "Answer", "text": "Standard Shopping campaigns show product listings only on Google Search and the Shopping tab, with manual bidding control and clear placement reporting. Performance Max promotes the same catalog across Search, Shopping, Display, YouTube, Gmail, and Discover with automated bidding and limited placement transparency."}},
+            {"@type": "Question", "name": "Can I run Google Shopping ads without a website redesign?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. As long as your Shopify product pages show the same price as the feed, have a clear add-to-cart, and your store has a working returns and contact page, no redesign is required. Most Shopify themes meet Google Shopping requirements out of the box."}}
+        ]
+    }
+    </script>
+
+    <style>
+        .article-hero { padding: 140px 24px 48px; text-align: center; background: linear-gradient(180deg, var(--accent-light) 0%, var(--paper) 100%); }
+        .article-hero-inner { max-width: 760px; margin: 0 auto; }
+        .article-meta { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 20px; font-size: .8125rem; color: var(--muted); }
+        .article-body { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+        .article-body h2 { font-family: var(--font-display); font-size: 1.625rem; font-weight: 700; margin: 48px 0 16px; color: var(--ink); scroll-margin-top: 80px; }
+        .article-body h3 { font-size: 1.125rem; font-weight: 600; margin: 32px 0 12px; color: var(--ink); }
+        .article-body p { font-size: .9375rem; color: var(--slate); margin-bottom: 16px; line-height: 1.75; }
+        .article-body strong { color: var(--ink); }
+        .article-body a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .article-body a:hover { text-decoration: underline; }
+        .article-body ul, .article-body ol { margin: 8px 0 20px 24px; }
+        .article-body li { font-size: .9375rem; color: var(--slate); margin-bottom: 8px; line-height: 1.7; }
+        .toc { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; margin-bottom: 40px; }
+        .toc h3 { font-size: .9375rem; font-weight: 600; margin-bottom: 14px; color: var(--ink); }
+        .toc ol { margin: 0; padding-left: 20px; }
+        .toc li { font-size: .875rem; color: var(--slate); margin-bottom: 8px; line-height: 1.5; }
+        .toc a { color: var(--accent); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        .comparison-table-wrap { overflow-x: auto; margin: 24px 0 32px; }
+        .comparison-table { width: 100%; border-collapse: collapse; font-size: .875rem; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+        .comparison-table thead { background: var(--ink); }
+        .comparison-table th { color: #fff; font-weight: 600; padding: 14px 16px; text-align: left; font-size: .8125rem; text-transform: uppercase; letter-spacing: .04em; }
+        .comparison-table td { padding: 13px 16px; border-bottom: 1px solid var(--border); color: var(--slate); vertical-align: top; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table td:first-child { font-weight: 600; color: var(--ink); }
+        .comparison-table tr:nth-child(even) { background: var(--surface); }
+        .data-callout { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 20px 24px; margin: 24px 0 28px; }
+        .data-callout p { color: var(--ink); margin-bottom: 0; font-size: .9375rem; }
+        .data-callout strong { color: var(--accent-dark); }
+        .verdict-box { background: #fff; border: 2px solid var(--accent); border-radius: var(--radius); padding: 28px 32px; margin: 24px 0 28px; }
+        .verdict-box h4 { font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; color: var(--accent); margin-bottom: 10px; }
+        .verdict-box p { margin-bottom: 8px; }
+        .verdict-box p:last-child { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">Smart Ads <span>AI</span></a>
+        <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/product">Product</a></li>
+            <li><a href="/demo">Demo</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/company">Company</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/terms">Terms</a></li>
+            <li><a href="/contact" class="nav-cta">Get Started</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="article-hero">
+    <div class="article-hero-inner">
+        <div class="hero-badge">Guide</div>
+        <h1>Google Shopping Ads for Shopify: 2026 Setup &amp; Optimization Guide</h1>
+        <p>How Shopify merchants connect their catalog to Google Shopping, structure profitable campaigns, fix the disapprovals that always show up, and decide between Standard Shopping and Performance Max.</p>
+        <div class="article-meta">
+            <span>By Bamzal</span>
+            <span>|</span>
+            <span>Updated May 2026</span>
+            <span>|</span>
+            <span>15 min read</span>
+        </div>
+    </div>
+</section>
+
+<div class="article-body">
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+            <li><a href="#why-shopping">Why Google Shopping is the workhorse channel for Shopify</a></li>
+            <li><a href="#setup">Connecting Shopify to Google Merchant Center</a></li>
+            <li><a href="#feed-quality">Feed quality: the hidden lever behind every result</a></li>
+            <li><a href="#campaign-types">Standard Shopping vs Performance Max</a></li>
+            <li><a href="#structure">Campaign structure for Shopify catalogs</a></li>
+            <li><a href="#bidding">Bidding strategies that actually work</a></li>
+            <li><a href="#disapprovals">Fixing common product disapprovals</a></li>
+            <li><a href="#optimization">Ongoing optimization checklist</a></li>
+            <li><a href="#automation">Automating the whole flow with Bamzal</a></li>
+            <li><a href="#faq">FAQ</a></li>
+        </ol>
+    </div>
+
+    <h2 id="why-shopping">1. Why Google Shopping is the workhorse channel for Shopify</h2>
+
+    <p>Google Shopping ads — the visual product listings that appear at the top of search results with image, price, and store name — are the single most direct match for a Shopify store's product catalog. The shopper sees the product before they click, the click costs you, and they land on your product page already qualified.</p>
+
+    <p>Three structural reasons this channel works well for Shopify merchants. First, the Shopify-Google integration is mature; the catalog sync is one of the cleanest data pipes any ad platform has. Second, Shopping ads filter clicks by price visibility — someone who clicks on a $89 product image already knows it costs $89, which means lower wasted clicks. Third, the format scales naturally with your catalog. Adding 100 new SKUs to Shopify expands your Shopping coverage automatically; you do not have to write 100 new ads.</p>
+
+    <p>Median ROAS for Shopify Google Shopping campaigns sits in the 3x to 5x range across mainstream ecommerce categories, with home goods and beauty often higher and competitive electronics often lower. Those numbers move with creative, feed quality, and bid strategy — all of which are addressable.</p>
+
+    <h2 id="setup">2. Connecting Shopify to Google Merchant Center</h2>
+
+    <p>The setup flow has been simplified considerably over the last two years. From a clean start:</p>
+
+    <ol>
+        <li><strong>Install the Google &amp; YouTube channel</strong> from the Shopify App Store. This is the official integration maintained jointly by Shopify and Google.</li>
+        <li><strong>Sign in with the Google account that owns your Merchant Center and Google Ads.</strong> If those accounts do not exist yet, the channel walks you through creating them.</li>
+        <li><strong>Verify and claim your Shopify domain</strong> in Merchant Center. The integration usually does this automatically; if it does not, the manual flow takes about five minutes.</li>
+        <li><strong>Configure shipping and tax settings</strong> in Merchant Center. Google requires accurate shipping costs in the feed; mismatches cause disapprovals later.</li>
+        <li><strong>Add your return policy</strong> to Merchant Center. As of 2024, this is a hard requirement — feeds without a published return policy will not serve.</li>
+        <li><strong>Approve catalog sync.</strong> Choose whether to push your entire Shopify catalog or specific collections. The feed updates on a recurring schedule and reflects changes within hours.</li>
+    </ol>
+
+    <p>Once the catalog has been pushed, allow 24 to 72 hours for Merchant Center to review your products. Some will be approved immediately; some will surface diagnostic warnings that need fixing before they can run.</p>
+
+    <h2 id="feed-quality">3. Feed quality: the hidden lever behind every result</h2>
+
+    <p>The feed is where most Shopify Google Shopping accounts win or lose. Google's algorithm reads your product titles, descriptions, attributes, and images to decide which queries your products are eligible to show on. A weak feed competes for the wrong searches; a strong feed dominates the searches that match.</p>
+
+    <h3>Title structure</h3>
+    <p>The single biggest lever. Default Shopify product titles like "Aurora Ceramic Mug" tell Google nothing useful. A structured title like "Aurora Ceramic Coffee Mug — 12oz Sage Green Handmade Stoneware" maps to dozens of high-intent queries. The pattern that works: <strong>brand + product type + key attributes + size + color + material</strong>, in roughly that order.</p>
+
+    <h3>Description detail</h3>
+    <p>Descriptions feed Google's matching algorithm even though shoppers rarely read them on the listing itself. Use the first 160 characters to repeat your highest-intent keywords. Spell out materials, dimensions, use cases, and occasions.</p>
+
+    <h3>Required attributes</h3>
+    <p>GTIN, brand, MPN, condition, availability, price, image, and product category are all checked. Missing GTINs are the most common feed defect in Shopify-managed catalogs. If a product genuinely has no GTIN (custom items, bundles), set the <code>identifier_exists</code> attribute to <code>no</code> rather than leaving the field blank.</p>
+
+    <h3>Image standards</h3>
+    <p>Clean background, no watermarks, no overlay text, no promotional badges, minimum 100x100 pixels (250x250 for apparel). The default Shopify product photos almost always pass these checks; theme-applied watermarks are the most common cause of image disapprovals.</p>
+
+    <h3>Custom labels</h3>
+    <p>Custom labels are five optional fields you can use to segment products in your campaigns — by margin tier, season, top seller, new arrival, etc. They do not affect what Google shows, but they let you bid differently on different segments. Set them up before you build your first campaign; retrofitting them later is painful.</p>
+
+    <h2 id="campaign-types">4. Standard Shopping vs Performance Max</h2>
+
+    <p>Google has two main shopping-driven campaign types. The choice between them is one of the most consequential decisions you make.</p>
+
+    <div class="comparison-table-wrap">
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Factor</th>
+                    <th>Standard Shopping</th>
+                    <th>Performance Max</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Placements</td><td>Search results, Shopping tab</td><td>Search, Shopping, Display, YouTube, Gmail, Discover</td></tr>
+                <tr><td>Bidding</td><td>Manual or tCPC</td><td>tROAS or maximize conversion value</td></tr>
+                <tr><td>Placement reporting</td><td>Detailed</td><td>Limited (improving in 2026)</td></tr>
+                <tr><td>Negative keyword control</td><td>Full</td><td>Brand exclusions only by default</td></tr>
+                <tr><td>Asset requirements</td><td>Feed only</td><td>Feed + images, video, headlines, descriptions</td></tr>
+                <tr><td>Best for</td><td>Established accounts that want control</td><td>New accounts and broad scaling</td></tr>
+                <tr><td>Risk profile</td><td>Lower — predictable</td><td>Higher — algorithm has more rope</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>Most Shopify merchants in 2026 end up running both. Performance Max captures broad demand and discovery surfaces; a separate Standard Shopping campaign with brand-term and high-margin product focus keeps a controllable, predictable layer underneath. Running PMax alone can work, but it removes your ability to protect brand traffic at lower bids.</p>
+
+    <h2 id="structure">5. Campaign structure for Shopify catalogs</h2>
+
+    <p>The default temptation is to throw the entire catalog into one campaign and let Google figure it out. Sometimes that works. More often it leaves obvious money on the table because high-margin products subsidize low-margin ones at the same bid.</p>
+
+    <p>A simple, reliable structure for catalogs of 50 to 500 SKUs:</p>
+
+    <ul>
+        <li><strong>Performance Max — broad catalog.</strong> All products eligible, low to medium tROAS target, broad asset set.</li>
+        <li><strong>Performance Max — top sellers.</strong> Custom label segment for top-revenue products, higher tROAS target, premium creative.</li>
+        <li><strong>Standard Shopping — brand defense.</strong> Manual CPC bidding on brand-name searches, separate campaign so you control bids precisely.</li>
+        <li><strong>Standard Shopping — long tail.</strong> Lower-volume SKUs that PMax tends to under-serve; manual bidding gives them oxygen.</li>
+    </ul>
+
+    <p>This four-campaign skeleton scales well to most Shopify stores and gives you levers to pull when one segment drifts.</p>
+
+    <h2 id="bidding">6. Bidding strategies that actually work</h2>
+
+    <p>Google offers several automated bid strategies for Shopping. The two that matter most for Shopify accounts:</p>
+
+    <p><strong>Target ROAS (tROAS).</strong> You tell Google how much revenue per dollar of spend you need; Google bids to hit that ratio. Best for established accounts with at least 30 conversions per month. Start with a tROAS slightly below your historical ROAS to give the algorithm room to scale, then tighten as it stabilizes.</p>
+
+    <p><strong>Maximize conversion value.</strong> Google maximizes total revenue inside your budget without a ROAS constraint. Best for new campaigns gathering data, or for limited-budget periods where you want every dollar to chase the highest possible return.</p>
+
+    <p>Manual CPC still has a place, especially in Standard Shopping campaigns where you want to defend specific bids on brand terms or high-margin SKUs. It also tends to outperform tROAS on very small budgets ($10/day or less) where the algorithm cannot get enough data to optimize.</p>
+
+    <div class="data-callout">
+        <p><strong>Run the math first.</strong> Before setting a tROAS target, model your break-even ROAS using the <a href="/roas-calculator">Bamzal ROAS Calculator</a>. Setting a tROAS below break-even is one of the fastest ways to lose money even on technically "successful" campaigns.</p>
+    </div>
+
+    <h2 id="disapprovals">7. Fixing common product disapprovals</h2>
+
+    <p>Every Shopify Google Shopping account hits these. The fixes are routine but the diagnostics can be cryptic. Here is what each one usually means.</p>
+
+    <ul>
+        <li><strong>"Missing GTIN."</strong> Add the barcode or UPC field on each variant in Shopify. For custom or handmade items with no GTIN, set <code>identifier_exists: no</code>.</li>
+        <li><strong>"Image issue: promotional overlay."</strong> Your theme is adding a sale badge or watermark. Either turn off the badge for products in your feed, or upload clean product images separately.</li>
+        <li><strong>"Price mismatch."</strong> The price in the feed does not match the price on your Shopify product page. Most often caused by currency conversion settings or active discount codes that have not been excluded.</li>
+        <li><strong>"Missing shipping information."</strong> You need shipping configured in Merchant Center even if shipping is free. Set free shipping as an explicit rule, not as a blank field.</li>
+        <li><strong>"Missing return policy."</strong> Publish a returns page on your Shopify store and link it from Merchant Center settings.</li>
+        <li><strong>"Misrepresentation" disapproval.</strong> Google flagged something on your store as untrustworthy — vague company info, missing contact, broken HTTPS, low-quality reviews. This one requires a manual response and can take days to resolve.</li>
+    </ul>
+
+    <h2 id="optimization">8. Ongoing optimization checklist</h2>
+
+    <p>Once campaigns are running, the work shifts from setup to ongoing tuning. A weekly cadence is usually enough.</p>
+
+    <ul>
+        <li>Review search terms report (Standard Shopping) and add waste terms as negative keywords.</li>
+        <li>Check product-level performance; pause or downbid the bottom 10-20% by ROAS.</li>
+        <li>Refresh underperforming Performance Max creative assets every 4-6 weeks.</li>
+        <li>Reallocate budget from low-ROAS campaigns to high-ROAS ones.</li>
+        <li>Audit feed for new disapprovals (Merchant Center diagnostics flags them).</li>
+        <li>Adjust tROAS targets based on the previous 30-day performance window.</li>
+    </ul>
+
+    <h2 id="automation">9. Automating the whole flow with Bamzal</h2>
+
+    <p>Setting up Google Shopping for a Shopify store the right way is mostly grunt work — feed cleanup, custom label assignment, campaign structure, asset packaging, bid strategy choice. <a href="/product">Bamzal</a> handles the build steps automatically and hands you paused campaigns to review inside Google Ads.</p>
+
+    <p>The platform analyzes your Shopify catalog, scans your competitive landscape, generates structured product titles and descriptions optimized for Shopping search matching, builds the campaign skeleton (Performance Max plus targeted Standard Shopping layers), drafts asset packs, and publishes everything in <strong>paused mode</strong>. You open Google Ads, review what was built, edit anything you want, and unpause when you are satisfied.</p>
+
+    <p>The same brief that builds your Google Shopping campaigns also builds aligned Meta, TikTok, and Pinterest campaigns from one workflow. For more on multi-channel coordination, see <a href="/meta-ads-vs-google-ads-shopify">Meta Ads vs Google Ads for Shopify</a> and our <a href="/shopify-google-ads-automation">Shopify Google Ads Automation</a> deep dive.</p>
+
+    <h2 id="faq">10. FAQ</h2>
+
+    <h3>How do I connect Shopify to Google Shopping?</h3>
+    <p>Install the Google &amp; YouTube channel from the Shopify App Store, sign in with the Google account that owns your Merchant Center and Ads accounts, and approve catalog sync. Shopify pushes your products automatically and keeps them in sync.</p>
+
+    <h3>Why are my Shopify products disapproved in Merchant Center?</h3>
+    <p>Most often: missing GTINs or brand fields, watermark or text overlays on product images, price mismatches between feed and landing page, missing shipping or return policy. Each disapproval lists the specific issue in Merchant Center diagnostics.</p>
+
+    <h3>What is the difference between Standard Shopping and Performance Max?</h3>
+    <p>Standard Shopping shows product listings on Search and the Shopping tab with full bidding control and detailed reporting. Performance Max promotes the same catalog across all Google surfaces with automated bidding and limited placement transparency. Most Shopify accounts run both.</p>
+
+    <h3>Can I run Google Shopping ads without a website redesign?</h3>
+    <p>Yes. As long as your Shopify product pages match the feed price, have a working add-to-cart, and you publish a return policy and contact page, no redesign is required.</p>
+
+    <div class="verdict-box">
+        <h4>The compounding payoff</h4>
+        <p>Get the feed right and the campaign structure clean, and Google Shopping becomes the most predictable channel in your paid mix. The setup is one-time work; the upside compounds every month after.</p>
+        <p><a href="/demo">See the live demo</a> or <a href="/pricing">view pricing</a>.</p>
+    </div>
+
+</div>
+
+<section class="cta-section">
+    <h2>Launch Google Shopping ads from Shopify</h2>
+    <p>Bamzal builds paused Google Shopping, Search, and Performance Max campaigns from your Shopify catalog. You review and unpause inside Google Ads.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="/demo" class="btn btn-white">View Live Demo</a>
+        <a href="/pricing" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">See Pricing</a>
+        <a href="/product" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">How It Works</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">Smart Ads <span>AI</span></div>
+                <p class="footer-desc">AI-powered multi-channel ad automation (Google, Meta, TikTok, Pinterest) for Shopify merchants.</p>
+                <p style="font-size:.8125rem; margin-top:12px;">Bamzal Ltd.<br>Nahal Besor 10/7, Beit Shemesh, Israel<br>+972-58-486-9778</p>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <a href="/product">How It Works</a>
+                <a href="/demo">Live Demo</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/#api-usage">API Usage</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="/roas-calculator">ROAS Calculator</a>
+                <a href="/pinterest-ads-shopify-guide">Pinterest Ads Guide</a>
+                <a href="/meta-ads-vs-google-ads-shopify">Meta vs Google Ads</a>
+                <a href="/shopify-google-ads-automation">Google Ads Automation</a>
+                <a href="/google-shopping-ads-shopify">Google Shopping Ads</a>
+                <a href="/performance-max-shopify">Performance Max Guide</a>
+                <a href="/shopify-meta-ads-automation">Meta Ads Automation</a>
+                <a href="/tiktok-ads-for-shopify">TikTok Ads for Shopify</a>
+                <a href="/pinterest-catalog-ads-shopify">Pinterest Catalog Ads</a>
+                <a href="/best-shopify-ads-apps">Best Shopify Ads Apps</a>
+                <a href="/ai-ad-copy-generator-ecommerce">AI Ad Copy Generator</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/company">About Us</a>
+                <a href="/contact">Contact</a>
+                <a href="/company#security">Security</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Bamzal Ltd. All rights reserved.</span>
+            <div class="footer-legal">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

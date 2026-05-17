@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopify Google Ads Automation: How It Works in 2026 | Bamzal</title>
+    <meta name="description" content="A practical guide to Shopify Google Ads automation in 2026. What can be automated, what should not be, and how AI tools build paused campaigns from your catalog.">
+    <link rel="canonical" href="https://bamzal.com/shopify-google-ads-automation">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://bamzal.com/shopify-google-ads-automation">
+    <meta property="og:title" content="Shopify Google Ads Automation: How It Works in 2026">
+    <meta property="og:description" content="A practical guide to Shopify Google Ads automation in 2026. What can be automated, what should not be, and how AI tools build paused campaigns from your catalog.">
+    <meta property="og:image" content="https://bamzal.com/apple-touch-icon.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shopify Google Ads Automation: How It Works in 2026">
+    <meta name="twitter:description" content="A practical guide to Shopify Google Ads automation in 2026. What can be automated, what should not be, and how AI tools build paused campaigns from your catalog.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/shared.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Shopify Google Ads Automation: How It Works in 2026",
+        "description": "A practical guide to Shopify Google Ads automation in 2026. What can be automated, what should not be, and how AI tools build paused campaigns from your catalog.",
+        "author": {"@type": "Organization", "name": "Bamzal", "url": "https://bamzal.com"},
+        "publisher": {"@type": "Organization", "name": "Bamzal", "url": "https://bamzal.com", "logo": {"@type": "ImageObject", "url": "https://bamzal.com/apple-touch-icon.png"}},
+        "datePublished": "2026-05-14",
+        "dateModified": "2026-05-14",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bamzal.com/shopify-google-ads-automation"},
+        "keywords": ["shopify google ads automation", "google ads shopify", "automated google ads", "shopify ppc automation", "ai google ads"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Can Google Ads be fully automated for a Shopify store?", "acceptedAnswer": {"@type": "Answer", "text": "Most of the build steps can be automated: keyword research, ad copy drafts, Shopping feed mapping, campaign structure, and bid strategy selection. The launch decision and ongoing budget choices should remain with the merchant. Bamzal publishes everything in paused mode so a human reviews each campaign before any spend begins."}},
+            {"@type": "Question", "name": "Does Shopify have a built-in Google Ads automation feature?", "acceptedAnswer": {"@type": "Answer", "text": "Shopify's native Google &amp; YouTube channel handles product feed sync to Merchant Center and basic Smart Shopping campaign creation. It does not automate keyword research, competitive analysis, ad copy generation, or multi-product campaign planning. Third-party Shopify apps fill those gaps."}},
+            {"@type": "Question", "name": "Will an AI-built Google Ads campaign waste my budget?", "acceptedAnswer": {"@type": "Answer", "text": "Only if it goes live without review. The risk in any automation tool is treating the output as final. Bamzal deliberately publishes campaigns in paused state inside Google Ads so you confirm targeting, budget caps, and bid strategy before enabling spend."}},
+            {"@type": "Question", "name": "How long does Shopify Google Ads automation take to set up?", "acceptedAnswer": {"@type": "Answer", "text": "Connecting Shopify, Google Ads, and Merchant Center through OAuth takes under ten minutes. Generating the first round of paused campaigns from the catalog typically takes a few minutes per product set. The longest step is usually the merchant review before unpausing."}}
+        ]
+    }
+    </script>
+
+    <style>
+        .article-hero { padding: 140px 24px 48px; text-align: center; background: linear-gradient(180deg, var(--accent-light) 0%, var(--paper) 100%); }
+        .article-hero-inner { max-width: 760px; margin: 0 auto; }
+        .article-meta { display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 20px; font-size: .8125rem; color: var(--muted); }
+        .article-body { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+        .article-body h2 { font-family: var(--font-display); font-size: 1.625rem; font-weight: 700; margin: 48px 0 16px; color: var(--ink); scroll-margin-top: 80px; }
+        .article-body h3 { font-size: 1.125rem; font-weight: 600; margin: 32px 0 12px; color: var(--ink); }
+        .article-body p { font-size: .9375rem; color: var(--slate); margin-bottom: 16px; line-height: 1.75; }
+        .article-body strong { color: var(--ink); }
+        .article-body a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .article-body a:hover { text-decoration: underline; }
+        .article-body ul, .article-body ol { margin: 8px 0 20px 24px; }
+        .article-body li { font-size: .9375rem; color: var(--slate); margin-bottom: 8px; line-height: 1.7; }
+        .toc { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 32px; margin-bottom: 40px; }
+        .toc h3 { font-size: .9375rem; font-weight: 600; margin-bottom: 14px; color: var(--ink); }
+        .toc ol { margin: 0; padding-left: 20px; }
+        .toc li { font-size: .875rem; color: var(--slate); margin-bottom: 8px; line-height: 1.5; }
+        .toc a { color: var(--accent); text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        .comparison-table-wrap { overflow-x: auto; margin: 24px 0 32px; }
+        .comparison-table { width: 100%; border-collapse: collapse; font-size: .875rem; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+        .comparison-table thead { background: var(--ink); }
+        .comparison-table th { color: #fff; font-weight: 600; padding: 14px 16px; text-align: left; font-size: .8125rem; text-transform: uppercase; letter-spacing: .04em; }
+        .comparison-table td { padding: 13px 16px; border-bottom: 1px solid var(--border); color: var(--slate); vertical-align: top; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table td:first-child { font-weight: 600; color: var(--ink); }
+        .comparison-table tr:nth-child(even) { background: var(--surface); }
+        .data-callout { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; padding: 20px 24px; margin: 24px 0 28px; }
+        .data-callout p { color: var(--ink); margin-bottom: 0; font-size: .9375rem; }
+        .data-callout strong { color: var(--accent-dark); }
+        .verdict-box { background: #fff; border: 2px solid var(--accent); border-radius: var(--radius); padding: 28px 32px; margin: 24px 0 28px; }
+        .verdict-box h4 { font-family: var(--font-display); font-size: 1.125rem; font-weight: 700; color: var(--accent); margin-bottom: 10px; }
+        .verdict-box p { margin-bottom: 8px; }
+        .verdict-box p:last-child { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+    <div class="nav-inner">
+        <a href="/" class="nav-logo">Smart Ads <span>AI</span></a>
+        <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="/product">Product</a></li>
+            <li><a href="/demo">Demo</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li><a href="/company">Company</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/terms">Terms</a></li>
+            <li><a href="/contact" class="nav-cta">Get Started</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="article-hero">
+    <div class="article-hero-inner">
+        <div class="hero-badge">Guide</div>
+        <h1>Shopify Google Ads Automation: How It Works in 2026</h1>
+        <p>What can actually be automated when you run Google Ads on top of a Shopify catalog, what should remain a human decision, and how modern AI tools assemble paused campaigns end-to-end.</p>
+        <div class="article-meta">
+            <span>By Bamzal</span>
+            <span>|</span>
+            <span>Updated May 2026</span>
+            <span>|</span>
+            <span>14 min read</span>
+        </div>
+    </div>
+</section>
+
+<div class="article-body">
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+            <li><a href="#what-is-automation">What "Shopify Google Ads automation" actually means</a></li>
+            <li><a href="#native-tools">What Shopify already automates natively</a></li>
+            <li><a href="#gaps">The gaps native tools leave behind</a></li>
+            <li><a href="#what-ai-can-do">What an AI layer can take over</a></li>
+            <li><a href="#what-stays-manual">What should stay a human decision</a></li>
+            <li><a href="#workflow">A typical end-to-end automated workflow</a></li>
+            <li><a href="#paused-mode">Why paused-mode publishing matters</a></li>
+            <li><a href="#smart-ads-ai">How Bamzal fits in</a></li>
+            <li><a href="#faq">Frequently asked questions</a></li>
+        </ol>
+    </div>
+
+    <h2 id="what-is-automation">1. What "Shopify Google Ads automation" actually means</h2>
+
+    <p>The phrase gets used loosely. For some merchants it means a Smart Shopping campaign that auto-bids inside Google Ads. For others it means a full pipeline that pulls products from Shopify, drafts ad copy, picks keywords, and builds the campaign skeleton. Both are forms of automation, but they sit at very different points in the workflow.</p>
+
+    <p>To make this concrete, a Google Ads campaign for a Shopify store is built from roughly a dozen distinct tasks: choosing which products to advertise, mapping them to themes or campaign groups, researching keywords, drafting headlines and descriptions, setting up the Merchant Center feed, structuring ad groups, picking a bid strategy, defining negative keywords, configuring conversion tracking, allocating budget, and finally enabling spend. <strong>Automation can compress most of these tasks, but each one has a different risk profile</strong> — and that matters for how much control you keep.</p>
+
+    <p>The useful framing is to ask, for each task, two questions. Can it be done well by software? And what is the worst-case cost if the software gets it wrong? Tasks where the answer is "yes" and "low-cost" are good automation candidates. Tasks where the answer is "yes, but a mistake means burning money" are candidates for software-assisted but human-approved workflows. That distinction is the spine of every serious Shopify Google Ads automation tool in 2026.</p>
+
+    <h2 id="native-tools">2. What Shopify already automates natively</h2>
+
+    <p>Shopify's own Google &amp; YouTube channel app handles a meaningful chunk of the plumbing. It is worth understanding what it does before reaching for third-party tools, because layering on top of duplicated functionality wastes setup time.</p>
+
+    <h3>Product feed sync to Google Merchant Center</h3>
+    <p>The native channel pushes your Shopify catalog to Merchant Center automatically. Title, description, price, availability, image URL, and product type all sync on a recurring schedule. When you update a product in Shopify — change the price, mark a variant out of stock, swap a product image — the change propagates to Merchant Center within a few hours. This is genuinely solved. No third-party tool needs to re-do it.</p>
+
+    <h3>Conversion tracking via the Google sales channel</h3>
+    <p>The channel installs the Google Ads conversion tag and the Google Analytics 4 tag in your Shopify theme. Purchase events, item revenue, and basic checkout funnel data flow back to Google Ads automatically. Server-side conversions through the Shopify-Google integration cover most of the gaps left by browser-based tracking.</p>
+
+    <h3>Smart Shopping / Performance Max creation</h3>
+    <p>From inside Shopify you can create a basic Performance Max campaign in a few clicks. Shopify hands the catalog to Google, you set a budget and target ROAS, and Google's algorithm handles the rest. This works for merchants who want a single, broad campaign that promotes the entire catalog. It does not work as well when you want to segment products into themed campaigns, control bidding per product group, or coordinate Google with Meta and other channels.</p>
+
+    <h2 id="gaps">3. The gaps native tools leave behind</h2>
+
+    <p>Once you push past a single Performance Max campaign, the native tooling runs out. The gaps that show up most often:</p>
+
+    <ul>
+        <li><strong>No keyword research.</strong> Performance Max does not expose keyword targeting. For Search campaigns — still essential for branded queries and high-intent terms — you have to build keyword lists manually.</li>
+        <li><strong>No ad copy generation.</strong> Headlines, descriptions, and asset variations are entirely on you. A typical Responsive Search Ad needs 15 headlines and 4 descriptions; building that for every product line is hours of work.</li>
+        <li><strong>No competitive intelligence.</strong> Shopify cannot tell you what your competitors are bidding on, what their ad copy emphasizes, or where the gaps in their messaging are.</li>
+        <li><strong>No campaign structure logic.</strong> Should this product live in its own ad group? Should three SKUs be bundled into one themed campaign? The native tooling does not opine; it just promotes everything.</li>
+        <li><strong>No multi-channel coordination.</strong> If you also run Meta, TikTok, or Pinterest ads, nothing in the Shopify-Google integration helps you keep messaging and budget consistent across them.</li>
+    </ul>
+
+    <p>These gaps are exactly where AI-driven automation has emerged in the last 18 months.</p>
+
+    <h2 id="what-ai-can-do">4. What an AI layer can take over</h2>
+
+    <p>Modern automation tools — including <a href="/product">Bamzal</a> — sit on top of Shopify and Google Ads as an orchestration layer. They handle the planning and asset creation that the native channel skips. The honest list of what works well:</p>
+
+    <div class="comparison-table-wrap">
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Automate-friendly?</th>
+                    <th>Why</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Keyword research</td><td>Yes</td><td>Pattern-matching against catalog text and competitor data is something LLMs do well.</td></tr>
+                <tr><td>Ad copy drafts</td><td>Yes</td><td>Headlines and descriptions follow tight character limits and well-known patterns.</td></tr>
+                <tr><td>Negative keyword seeding</td><td>Yes</td><td>Common waste terms (jobs, free, used, lyrics) can be added automatically by category.</td></tr>
+                <tr><td>Campaign / ad group structure</td><td>Yes, with review</td><td>AI can group SKUs by theme; merchants should sanity-check the groupings.</td></tr>
+                <tr><td>Bid strategy choice</td><td>Yes, with review</td><td>Tools can suggest tROAS, tCPA, or maximize conversions based on stage; merchant approves.</td></tr>
+                <tr><td>Budget per campaign</td><td>Suggest, do not set</td><td>This is a financial decision; software should propose, the merchant should commit.</td></tr>
+                <tr><td>Enabling spend</td><td>No</td><td>Always a human decision. Paused-mode publishing is the right default.</td></tr>
+                <tr><td>Mid-flight bid changes</td><td>Partial</td><td>Rule-based adjustments are safe; large reallocations should be reviewed.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p>The pattern is consistent. <strong>Generation and structuring tasks automate well. Spending decisions belong with the merchant.</strong> Any tool that blurs that line is asking for trouble.</p>
+
+    <h2 id="what-stays-manual">5. What should stay a human decision</h2>
+
+    <p>Even with the best automation in place, a few things should never go fully hands-off for a Shopify Google Ads account.</p>
+
+    <p><strong>The launch.</strong> Pressing "enable" on a campaign is the moment money starts leaving your account. That decision should always be made by a person who has reviewed the targeting, budget cap, and bid strategy. AI-generated campaigns should arrive in your Google Ads dashboard already paused — ready to inspect, not already burning.</p>
+
+    <p><strong>Total monthly budget.</strong> Software can recommend a spend split across campaigns, but the ceiling on what you spend per month is a business decision tied to cash flow, margin, and growth targets. Tools that auto-scale budget without human ceilings have caused some of the most expensive mistakes in ecommerce advertising history.</p>
+
+    <p><strong>Brand voice approval.</strong> Generated ad copy is fast and usually competent, but it can also drift in ways that do not match how you want your store to read. A 30-second skim of generated headlines catches almost every drift before it ships.</p>
+
+    <p><strong>Promotional and seasonal messaging.</strong> AI can draft "Mother's Day sale" headlines, but the decision to run a sale, the discount depth, and the timing are all merchant calls.</p>
+
+    <h2 id="workflow">6. A typical end-to-end automated workflow</h2>
+
+    <p>Here is what a complete Shopify Google Ads automation flow looks like in practice.</p>
+
+    <ol>
+        <li><strong>Connect accounts.</strong> One-time OAuth into Shopify, Google Ads, and Google Merchant Center. The automation tool gains read access to your catalog and write access to create paused campaigns.</li>
+        <li><strong>Catalog ingestion.</strong> Products are pulled from Shopify with title, description, price, images, variants, and tags.</li>
+        <li><strong>Competitive scan.</strong> The tool searches Google for your top product categories and surfaces what other advertisers are bidding on, how their ad copy reads, and which keyword themes are crowded versus open.</li>
+        <li><strong>Campaign brief generation.</strong> AI proposes a campaign structure: which products belong together, which should run as standalone Search campaigns, which fit into a Performance Max feed.</li>
+        <li><strong>Asset generation.</strong> Headlines, descriptions, sitelinks, callouts, and structured snippets are drafted for each ad group. Negative keyword lists are seeded.</li>
+        <li><strong>Budget &amp; bid suggestions.</strong> The tool proposes daily budgets and bid strategies based on product margin, AOV, and target ROAS.</li>
+        <li><strong>Paused publishing.</strong> Everything is created inside your Google Ads account in paused state. Nothing is enabled.</li>
+        <li><strong>Merchant review.</strong> You open Google Ads, inspect the proposed campaigns, edit anything that needs adjusting, and unpause when you are satisfied.</li>
+    </ol>
+
+    <p>From "I want to advertise my Shopify catalog on Google" to "campaigns are sitting in Google Ads ready for my review," this entire flow can run in under fifteen minutes. The actual review step takes longer, and that is exactly as it should be.</p>
+
+    <div class="data-callout">
+        <p><strong>Try the budget step first.</strong> Before any campaign creation, model your expected return at different spend levels using the <a href="/roas-calculator">Bamzal ROAS Calculator</a>. Knowing your break-even ROAS for a given AOV and margin is the prerequisite for any budget conversation.</p>
+    </div>
+
+    <h2 id="paused-mode">7. Why paused-mode publishing matters</h2>
+
+    <p>The single biggest design decision in any Google Ads automation tool is what happens at the end of the workflow. Tools that publish campaigns live by default save merchants 30 seconds of manual effort and expose them to thousands of dollars of risk. Tools that publish in paused mode add an explicit review step and turn the AI output into a draft, not a commitment.</p>
+
+    <p>Paused-mode publishing means three things in practice. First, the merchant always sees the actual campaign in the actual Google Ads UI before any spend happens. Second, edits to the AI-generated campaign happen inside Google Ads itself — not inside a separate tool — which keeps a single source of truth. Third, if anything looks wrong (a negative keyword missing, a budget too high, a bid strategy that does not fit), the campaign simply stays paused until the issue is resolved. No emergency "kill switch" required.</p>
+
+    <p>For a deeper look at how the two major paid platforms compare and where Google fits in a multi-channel mix, see our breakdown of <a href="/meta-ads-vs-google-ads-shopify">Meta Ads vs Google Ads for Shopify</a>.</p>
+
+    <h2 id="smart-ads-ai">8. How Bamzal fits in</h2>
+
+    <p><a href="/product">Bamzal</a> is a Shopify-native app that handles the full automation pipeline described above. It connects to Shopify, Google Ads, Meta, TikTok, and Pinterest in one place. It uses Anthropic's Claude AI to generate keyword research, ad copy, and campaign structure for each connected platform — including Google Search, Google Shopping, and Performance Max.</p>
+
+    <p>Every campaign it creates is published in <strong>paused mode</strong> inside the relevant ads account. Nothing goes live without your review. The same campaign brief that produces Google Ads also produces Meta, TikTok, and Pinterest variants, so messaging stays consistent across channels without you maintaining four separate creative pipelines.</p>
+
+    <p>If you want a sense of what the workflow actually looks like, the <a href="/demo">live demo</a> walks through a real Shopify catalog being turned into a paused multi-channel campaign set. For pricing, see the <a href="/pricing">pricing page</a>.</p>
+
+    <h2 id="faq">9. Frequently asked questions</h2>
+
+    <h3>Can Google Ads be fully automated for a Shopify store?</h3>
+    <p>Most of the build steps — keyword research, ad copy drafts, Shopping feed mapping, campaign structure, bid strategy selection — can be automated cleanly. The launch decision and the monthly budget ceiling should remain with the merchant. Bamzal publishes everything in paused mode for exactly this reason.</p>
+
+    <h3>Does Shopify have a built-in Google Ads automation feature?</h3>
+    <p>The native Google &amp; YouTube channel handles product feed sync, conversion tracking, and basic Performance Max creation. It does not handle keyword research, ad copy generation, multi-product campaign planning, or competitive analysis. Third-party tools like Bamzal fill those gaps.</p>
+
+    <h3>Will an AI-built Google Ads campaign waste my budget?</h3>
+    <p>Only if it goes live without review. The risk in any automation tool is treating the output as final. Paused-mode publishing — where campaigns arrive in Google Ads ready to inspect but not enabled — eliminates that failure mode.</p>
+
+    <h3>How long does setup take?</h3>
+    <p>OAuth connections take under ten minutes. The first round of paused campaigns generates in a few minutes per product set. The longest step is the merchant review before unpausing, which is exactly as it should be.</p>
+
+    <div class="verdict-box">
+        <h4>The right level of automation</h4>
+        <p>Generation, structuring, and asset creation are good automation candidates. Spending decisions belong with you. The right Shopify Google Ads automation tool gets the boring work out of the way and hands you a draft to review — not an invoice.</p>
+        <p><a href="/demo">See the live demo</a> or <a href="/pricing">view pricing</a> to get started.</p>
+    </div>
+
+</div>
+
+<!-- CTA -->
+<section class="cta-section">
+    <h2>Automate Google Ads for your Shopify store</h2>
+    <p>Bamzal builds paused Google, Meta, TikTok, and Pinterest campaigns from your Shopify catalog. You review and unpause.</p>
+    <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="/demo" class="btn btn-white">View Live Demo</a>
+        <a href="/pricing" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">See Pricing</a>
+        <a href="/product" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">How It Works</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">Smart Ads <span>AI</span></div>
+                <p class="footer-desc">AI-powered multi-channel ad automation (Google, Meta, TikTok, Pinterest) for Shopify merchants.</p>
+                <p style="font-size:.8125rem; margin-top:12px;">Bamzal Ltd.<br>Nahal Besor 10/7, Beit Shemesh, Israel<br>+972-58-486-9778</p>
+            </div>
+            <div class="footer-col">
+                <h4>Product</h4>
+                <a href="/product">How It Works</a>
+                <a href="/demo">Live Demo</a>
+                <a href="/pricing">Pricing</a>
+                <a href="/#api-usage">API Usage</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="/roas-calculator">ROAS Calculator</a>
+                <a href="/pinterest-ads-shopify-guide">Pinterest Ads Guide</a>
+                <a href="/meta-ads-vs-google-ads-shopify">Meta vs Google Ads</a>
+                <a href="/shopify-google-ads-automation">Google Ads Automation</a>
+                <a href="/google-shopping-ads-shopify">Google Shopping Ads</a>
+                <a href="/performance-max-shopify">Performance Max Guide</a>
+                <a href="/shopify-meta-ads-automation">Meta Ads Automation</a>
+                <a href="/tiktok-ads-for-shopify">TikTok Ads for Shopify</a>
+                <a href="/pinterest-catalog-ads-shopify">Pinterest Catalog Ads</a>
+                <a href="/best-shopify-ads-apps">Best Shopify Ads Apps</a>
+                <a href="/ai-ad-copy-generator-ecommerce">AI Ad Copy Generator</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="/company">About Us</a>
+                <a href="/contact">Contact</a>
+                <a href="/company#security">Security</a>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+                <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Bamzal Ltd. All rights reserved.</span>
+            <div class="footer-legal">
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/terms">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
