@@ -34,7 +34,7 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+972-58-486-9778",
-        "email": "legal@bamzal.com",
+        "email": "support@bamzal.com",
         "contactType": "customer support"
       },
       "sameAs": ["https://github.com/elivitan"]
@@ -553,7 +553,7 @@
         <p>Bamzal is a single system that runs your paid media on five networks, your organic social on six, a creative studio that learns what works, a competitive-intelligence layer that watches your market in real time, and a community-management surface that replies to every comment and DM. Twelve specialist agents, forty-eight scheduled optimization cycles, a 12-step governance gateway — every decision logged, reversible, and yours.</p>
         <div class="hero-actions">
             <a href="/product" class="btn btn-primary">See How It Works →</a>
-            <a href="#demo" class="btn btn-outline">View Live Demo</a>
+            <a href="/demo" class="btn btn-outline">View Live Demo</a>
         </div>
     </div>
 </section>
@@ -850,10 +850,13 @@
                             <div class="health-ring">
                                 <svg width="130" height="130" viewBox="0 0 130 130">
                                     <circle class="health-ring-bg" cx="65" cy="65" r="56"/>
-                                    <circle class="health-ring-fill" cx="65" cy="65" r="56" stroke-dasharray="352" stroke-dashoffset="352" id="healthRing"/>
+                                    <!-- QA 2026-05-18: initial values match the animation target (82, Grade A).
+                                         Before this fix, the static state showed "0 of 100" next to "Grade A",
+                                         which read as inconsistent in screenshots before JS animation runs. -->
+                                    <circle class="health-ring-fill" cx="65" cy="65" r="56" stroke-dasharray="352" stroke-dashoffset="64" id="healthRing"/>
                                 </svg>
                                 <div class="health-score">
-                                    <strong id="healthNum">0</strong>
+                                    <strong id="healthNum">82</strong>
                                     <span>of 100</span>
                                 </div>
                             </div>
@@ -1148,7 +1151,7 @@
                 <li><strong>Backend:</strong> Node.js server with React Router server-side rendering</li>
                 <li><strong>Database:</strong> Prisma ORM (SQLite in development, PostgreSQL/MySQL in production)</li>
                 <li><strong>AI Engine:</strong> Anthropic Claude API for product analysis, ad copy generation, and competitor intelligence</li>
-                <li><strong>Ads Integrations:</strong> Google Ads API v17 (REST &amp; gRPC), Meta Marketing API (Facebook &amp; Instagram, incl. Pages + Instagram Business), TikTok Marketing API, and Pinterest Ads API — for campaign creation, management, and performance tracking across every channel</li>
+                <li><strong>Ads Integrations:</strong> Google Ads API v22 (REST &amp; gRPC), Meta Marketing API (Facebook &amp; Instagram, incl. Pages + Instagram Business), TikTok Marketing API, and Pinterest Ads API — for campaign creation, management, and performance tracking across every channel</li>
                 <li><strong>Authentication:</strong> Shopify OAuth for app installation + official OAuth 2.0 flows for Google Ads, Meta, TikTok and Pinterest ad-account linking</li>
             </ul>
         </div>
@@ -1351,27 +1354,31 @@
                 <p class="footer-desc">AI-powered multi-channel ad automation for Shopify merchants — Google, Meta (Facebook &amp; Instagram), TikTok, Pinterest and X. Scan competitors, generate ad copy and creatives, and launch campaigns from one Shopify dashboard.</p>
                 <p style="font-size:.8125rem; margin-top:12px;">Bamzal Ltd.<br>Nahal Besor 10/7, Beit Shemesh, Israel<br>+972-58-486-9778</p>
             </div>
+            <!-- QA 2026-05-18: footer column headings raised from h4 → h3.
+                 Lighthouse flagged the previous heading order because the
+                 last h2 on the page was hundreds of lines up — jumping
+                 directly to h4 violates the accessibility hierarchy. -->
             <div class="footer-col">
-                <h4>Product</h4>
+                <h3>Product</h3>
                 <a href="/product">How It Works</a>
                 <a href="/demo">Live Demo</a>
                 <a href="/pricing">Pricing</a>
                 <a href="/#api-usage">API Usage</a>
             </div>
             <div class="footer-col">
-                <h4>Company</h4>
+                <h3>Company</h3>
                 <a href="/company">About Us</a>
                 <a href="/contact">Contact</a>
                 <a href="/company#security">Security</a>
             </div>
             <div class="footer-col">
-                <h4>Resources</h4>
+                <h3>Resources</h3>
                 <a href="/roas-calculator">ROAS Calculator</a>
                 <a href="/pinterest-ads-shopify-guide">Pinterest Ads Guide</a>
                 <a href="/meta-ads-vs-google-ads-shopify">Meta vs Google Ads</a>
             </div>
             <div class="footer-col">
-                <h4>Legal</h4>
+                <h3>Legal</h3>
                 <a href="https://bamzal.com/privacy">Privacy Policy</a>
                 <a href="https://bamzal.com/terms">Terms of Service</a>
                 <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Policy</a>
@@ -1502,6 +1509,13 @@ function animateDashboard(){
 }
 
 function animateCounter(el, from, to, dur){
+  // QA 2026-05-18: if the element already shows the target value (or
+  // close to it) skip the animation. Previously the counter always
+  // started from `from` and overwrote any static pre-filled value with
+  // 0 → target, which caused a jarring 82 → 0 → 82 flash and made the
+  // static state look broken before JS ran.
+  var existing = parseInt((el.textContent || "").replace(/[^0-9-]/g, ""), 10);
+  if (!isNaN(existing) && existing === to) return;
   var start = null;
   function step(ts){
     if(!start) start=ts;

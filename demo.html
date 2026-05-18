@@ -351,7 +351,7 @@
             <p style="font-size:.9375rem;font-weight:700;color:var(--ink);margin-bottom:8px">&#9432; This is an interactive demo &mdash; not the production application.</p>
             <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">Bamzal is a <strong>Shopify embedded app</strong> that runs inside the Shopify Admin. Merchants install it from the Shopify App Store, and the application loads inside their Shopify admin panel &mdash; not on this marketing website.</p>
             <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">The demo below is a <strong>static simulation</strong> of the actual application screens, built so you can see the layout, the data flow and the decision surfaces. All numbers are illustrative.</p>
-            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin:0">The production system is built on <strong>React Router 7</strong>, <strong>Prisma + Supabase Postgres</strong>, <strong>Redis &amp; BullMQ</strong> for queued optimization cycles, and integrates with the <strong>Google Ads API v17</strong>, <strong>Meta Marketing API</strong>, <strong>TikTok Marketing API</strong>, <strong>Pinterest Ads API</strong>, <strong>X Ads API</strong> and <strong>Anthropic Claude</strong>.</p>
+            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin:0">The production system is built on <strong>React Router 7</strong>, <strong>Prisma + Supabase Postgres</strong>, <strong>Redis &amp; BullMQ</strong> for queued optimization cycles, and integrates with the <strong>Google Ads API v22</strong>, <strong>Meta Marketing API</strong>, <strong>TikTok Marketing API</strong>, <strong>Pinterest Ads API</strong>, <strong>X Ads API</strong> and <strong>Anthropic Claude</strong>.</p>
         </div>
     </div>
 </section>
@@ -408,10 +408,11 @@
                     <div class="health-ring">
                         <svg width="130" height="130" viewBox="0 0 130 130">
                             <circle class="health-ring-bg" cx="65" cy="65" r="56"/>
-                            <circle class="health-ring-fill" cx="65" cy="65" r="56" stroke-dasharray="352" stroke-dashoffset="352" id="healthRing"/>
+                            <!-- QA 2026-05-18: initial state matches Grade A (82/100). -->
+                            <circle class="health-ring-fill" cx="65" cy="65" r="56" stroke-dasharray="352" stroke-dashoffset="64" id="healthRing"/>
                         </svg>
                         <div class="health-score">
-                            <strong id="healthNum">0</strong>
+                            <strong id="healthNum">82</strong>
                             <span>of 100</span>
                         </div>
                     </div>
@@ -706,7 +707,7 @@
                 <li><strong>Backend:</strong> Node.js server with React Router server-side rendering</li>
                 <li><strong>Database:</strong> Prisma ORM (SQLite in development, PostgreSQL/MySQL in production)</li>
                 <li><strong>AI Engine:</strong> Anthropic Claude API for product analysis, ad copy generation, and competitor intelligence</li>
-                <li><strong>Ads Integrations:</strong> Google Ads API v17 (REST &amp; gRPC), Meta Marketing API (Facebook &amp; Instagram, incl. Pages + Instagram Business), TikTok Marketing API, and Pinterest Ads API &mdash; for campaign creation, management, and performance tracking across every channel</li>
+                <li><strong>Ads Integrations:</strong> Google Ads API v22 (REST &amp; gRPC), Meta Marketing API (Facebook &amp; Instagram, incl. Pages + Instagram Business), TikTok Marketing API, and Pinterest Ads API &mdash; for campaign creation, management, and performance tracking across every channel</li>
                 <li><strong>Authentication:</strong> Shopify OAuth for app installation + official OAuth 2.0 flows for Google Ads, Meta, TikTok and Pinterest ad-account linking</li>
             </ul>
         </div>
@@ -861,26 +862,26 @@
                 <p style="font-size:.8125rem; margin-top:12px;">Bamzal Ltd.<br>Nahal Besor 10/7, Beit Shemesh, Israel<br>+972-58-486-9778</p>
             </div>
             <div class="footer-col">
-                <h4>Product</h4>
+                <h3>Product</h3>
                 <a href="/product">How It Works</a>
                 <a href="/demo">Live Demo</a>
                 <a href="/pricing">Pricing</a>
                 <a href="/#api-usage">API Usage</a>
             </div>
             <div class="footer-col">
-                <h4>Resources</h4>
+                <h3>Resources</h3>
                 <a href="/roas-calculator">ROAS Calculator</a>
                 <a href="/pinterest-ads-shopify-guide">Pinterest Ads Guide</a>
                 <a href="/meta-ads-vs-google-ads-shopify">Meta vs Google Ads</a>
             </div>
             <div class="footer-col">
-                <h4>Company</h4>
+                <h3>Company</h3>
                 <a href="/company">About Us</a>
                 <a href="/contact">Contact</a>
                 <a href="/company#security">Security</a>
             </div>
             <div class="footer-col">
-                <h4>Legal</h4>
+                <h3>Legal</h3>
                 <a href="/privacy">Privacy Policy</a>
                 <a href="/terms">Terms of Service</a>
                 <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Policy</a>
@@ -1011,6 +1012,10 @@ function animateDashboard(){
 }
 
 function animateCounter(el, from, to, dur){
+  // QA 2026-05-18: skip animation if static value already matches target
+  // (avoids 82 → 0 → 82 flash on initial render).
+  var existing = parseInt((el.textContent || "").replace(/[^0-9-]/g, ""), 10);
+  if (!isNaN(existing) && existing === to) return;
   var start = null;
   function step(ts){
     if(!start) start=ts;

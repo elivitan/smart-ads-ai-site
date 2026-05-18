@@ -46,16 +46,68 @@
 
 <section class="section">
     <div class="section-inner">
+        <!-- QA 2026-05-18: real contact form. Default action is `mailto:` so it works
+             on a static host with no signup or backend dependency. To swap to a
+             Formspree / Web3Forms / Netlify backend, change the `action` attribute
+             and the `method` to "POST" (and remove `enctype="text/plain"`). -->
+        <form
+            id="contact-form"
+            method="POST"
+            action="mailto:hello@bamzal.com"
+            enctype="text/plain"
+            style="max-width:680px;margin:0 auto 56px;background:rgba(255,255,255,.6);border:1px solid var(--border, rgba(0,0,0,.08));border-radius:14px;padding:28px;"
+        >
+            <h3 style="font-family:var(--font-display);font-size:1.25rem;margin:0 0 8px;">Send us a message</h3>
+            <p style="color:var(--slate);margin:0 0 20px;font-size:.9375rem;">We typically reply within 24 hours. For urgent technical issues, email <a href="mailto:support@bamzal.com">support@bamzal.com</a> directly.</p>
+
+            <div style="display:grid;gap:14px;">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                    <label style="display:flex;flex-direction:column;gap:6px;font-size:.8125rem;font-weight:600;color:var(--ink);">
+                        Name
+                        <input type="text" name="name" required placeholder="Jane Cohen" style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;">
+                    </label>
+                    <label style="display:flex;flex-direction:column;gap:6px;font-size:.8125rem;font-weight:600;color:var(--ink);">
+                        Email
+                        <input type="email" name="email" required placeholder="you@store.com" style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;">
+                    </label>
+                </div>
+                <label style="display:flex;flex-direction:column;gap:6px;font-size:.8125rem;font-weight:600;color:var(--ink);">
+                    Shopify store URL (optional)
+                    <input type="url" name="store" placeholder="https://yourstore.myshopify.com" style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;">
+                </label>
+                <label style="display:flex;flex-direction:column;gap:6px;font-size:.8125rem;font-weight:600;color:var(--ink);">
+                    What do you need?
+                    <select name="topic" required style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;">
+                        <option value="">Choose one…</option>
+                        <option value="early-access">Early access — I want to try Bamzal</option>
+                        <option value="support">Support — I'm already using Bamzal</option>
+                        <option value="partnership">Partnership / integration</option>
+                        <option value="press">Press / media inquiry</option>
+                        <option value="other">Something else</option>
+                    </select>
+                </label>
+                <label style="display:flex;flex-direction:column;gap:6px;font-size:.8125rem;font-weight:600;color:var(--ink);">
+                    Message
+                    <textarea name="message" required rows="5" placeholder="Tell us about your store, ad spend, and what you're hoping Bamzal can help with…" style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;resize:vertical;min-height:120px;"></textarea>
+                </label>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+                    <p style="margin:0;font-size:.75rem;color:var(--muted);max-width:340px;">By submitting, you agree we'll email you back. We never sell your data — see <a href="/privacy">privacy</a>.</p>
+                    <button type="submit" class="btn" style="padding:10px 22px;">Send message</button>
+                </div>
+            </div>
+        </form>
+
+        <h3 style="text-align:center;font-family:var(--font-display);font-size:1.125rem;margin:0 0 16px;color:var(--slate);font-weight:600;">Or email a specific inbox</h3>
         <div class="contact-grid">
             <div class="contact-card">
                 <h3><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg> General &amp; Support</h3>
                 <p>For technical support, account questions, or help with campaigns.</p>
-                <a href="mailto:legal@bamzal.com">legal@bamzal.com</a>
+                <a href="mailto:support@bamzal.com">support@bamzal.com</a>
             </div>
             <div class="contact-card">
                 <h3><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Privacy &amp; Data Requests</h3>
                 <p>For GDPR requests, data deletion, or privacy-related inquiries.</p>
-                <a href="mailto:legal@bamzal.com">legal@bamzal.com</a>
+                <a href="mailto:privacy@bamzal.com">privacy@bamzal.com</a>
             </div>
             <div class="contact-card">
                 <h3><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 16h6l-3-7-3 7zM2 16h6l-3-7-3 7zM7 21h10M12 3v18M3 7h18"/></svg>️ Legal</h3>
@@ -65,7 +117,7 @@
             <div class="contact-card">
                 <h3><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="M21 3 12 12"/><path d="M3.29 8.71a3 3 0 0 0-.6 3.4l5.59 5.59"/></svg> Partnerships</h3>
                 <p>Interested in integration partnerships or business development opportunities.</p>
-                <a href="mailto:legal@bamzal.com">legal@bamzal.com</a>
+                <a href="mailto:partnerships@bamzal.com">partnerships@bamzal.com</a>
             </div>
         </div>
 
@@ -98,25 +150,25 @@
                 <p style="font-size:.8125rem; margin-top:12px;">Bamzal Ltd.<br>Nahal Besor 10/7, Beit Shemesh, Israel<br>+972-58-486-9778</p>
             </div>
             <div class="footer-col">
-                <h4>Product</h4>
+                <h3>Product</h3>
                 <a href="/product">How It Works</a>
                 <a href="/demo">Live Demo</a>
                 <a href="/pricing">Pricing</a>
             </div>
             <div class="footer-col">
-                <h4>Resources</h4>
+                <h3>Resources</h3>
                 <a href="/roas-calculator">ROAS Calculator</a>
                 <a href="/pinterest-ads-shopify-guide">Pinterest Ads Guide</a>
                 <a href="/meta-ads-vs-google-ads-shopify">Meta vs Google Ads</a>
             </div>
             <div class="footer-col">
-                <h4>Company</h4>
+                <h3>Company</h3>
                 <a href="/company">About Us</a>
                 <a href="/contact">Contact</a>
                 <a href="/company#security">Security</a>
             </div>
             <div class="footer-col">
-                <h4>Legal</h4>
+                <h3>Legal</h3>
                 <a href="/privacy">Privacy Policy</a>
                 <a href="/terms">Terms of Service</a>
                 <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Policy</a>
