@@ -280,3 +280,20 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--paper
     from{opacity:0;transform:translateY(12px);}
     to{opacity:1;transform:translateY(0);}
 }
+
+/* ---- LAYER LIST — editorial how-it-works detail ---- */
+.layer-list{max-width:880px;margin:0 auto;display:flex;flex-direction:column;}
+.layer{display:grid;grid-template-columns:120px 1fr;gap:32px;align-items:start;padding:40px 0;border-top:1px solid var(--border);position:relative;}
+.layer:first-child{border-top:none;padding-top:8px;}
+.layer::before{content:'';position:absolute;top:-1px;left:0;width:40px;height:1px;background:var(--accent);opacity:0;transition:opacity .3s ease, width .3s ease;}
+.layer:hover::before{opacity:.6;width:88px;}
+.layer:first-child::before{display:none;}
+.layer-num{font-family:var(--font-display);font-size:3rem;font-weight:700;color:var(--accent);opacity:.45;line-height:1;letter-spacing:-0.02em;}
+.layer-body h3{font-family:var(--font-display);font-size:1.5rem;font-weight:700;line-height:1.2;letter-spacing:-0.012em;margin-bottom:14px;color:var(--ink);}
+.layer-body p{font-size:1rem;line-height:1.75;color:var(--slate);}
+.layer-body p em{font-style:italic;color:var(--accent-dark);font-weight:500;}
+@media (max-width:720px){
+    .layer{grid-template-columns:1fr;gap:8px;padding:32px 0;}
+    .layer-num{font-size:2rem;}
+    .layer-body h3{font-size:1.25rem;}
+}

@@ -607,6 +607,74 @@
     </div>
 </section>
 
+<!-- HOW EACH LAYER WORKS — editorial detail -->
+<section class="section" id="how-each-works" style="background: var(--surface);">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>How each layer works</h2>
+            <p>The mechanics underneath each surface — what the system actually does, and why.</p>
+        </div>
+        <div class="layer-list">
+            <article class="layer">
+                <div class="layer-num">01</div>
+                <div class="layer-body">
+                    <h3>Paid acquisition</h3>
+                    <p>On install, the system reads your Shopify catalog and absorbs the competitive landscape via real Google search data. It then drafts an initial campaign set across Google Search, Shopping, Performance Max, YouTube, Meta Advantage+, TikTok Spark, Pinterest Shopping and X promoted posts — created in your own ad accounts in paused mode. After your first approval, the Mutation Gateway routes every subsequent budget shift, audience tweak and keyword change through a 12-step guard pipeline (idempotency, rate limiting, budget caps, risk scoring, kill switch).</p>
+                </div>
+            </article>
+            <article class="layer">
+                <div class="layer-num">02</div>
+                <div class="layer-body">
+                    <h3>Organic social publishing</h3>
+                    <p>The Content Selector chooses what to post based on trending topics, your new products, competitor moves and seasonal moments. The Proactive Poster scheduler places each post in the audience-peak window for that channel — daily 09:00 and 17:00 UTC for X by default, tuned per channel for Instagram, TikTok, Facebook, Threads and YouTube. A Warmup Pipeline ramps new accounts gradually so platforms don't flag them as automated.</p>
+                </div>
+            </article>
+            <article class="layer">
+                <div class="layer-num">03</div>
+                <div class="layer-body">
+                    <h3>Community replies</h3>
+                    <p>Every two hours the engagement engine hunts your connected channels for new comments, mentions and DMs. The reply stack is multi-module: Persona Engine and Humanization v2 shape tone, Voice Blender enforces brand voice, Brand-Primacy Guardian prevents off-brand drift, Ethics Layer + Causal-Leakage detection prevents risky replies, Adaptive Rate Limiter and Anti-Detection Shield avoid platform throttles, Conversation Memory + Narrative Continuity keep thread context. High-stakes messages land in a review queue for your approval.</p>
+                </div>
+            </article>
+            <article class="layer">
+                <div class="layer-num">04</div>
+                <div class="layer-body">
+                    <h3>AI Creative Studio</h3>
+                    <p>Per-platform copywriter modules (Meta, TikTok, Pinterest, X each have their own, tuned to that platform's voice) draft headlines, descriptions and captions. Image generation runs on diffusion models; short-form video on Stability + ElevenLabs voiceover. The Creative DNA library extracts the genetic attributes of your past best-performing ads — hooks, structures, CTAs, color palettes — and uses them to spawn fresh variants when an existing creative starts to fatigue. Assets connect to your Shopify product library, Google Drive and Dropbox.</p>
+                </div>
+            </article>
+            <article class="layer">
+                <div class="layer-num">05</div>
+                <div class="layer-body">
+                    <h3>Market intelligence</h3>
+                    <p>The Competitor Intelligence agent crawls Google continuously for your category — your top competitors' pricing, ad copy, keyword strategy and estimated ad spend. The Causal Engine builds a counterfactual graph so the system can reason about why metrics moved (Did the new competitor pricing cause the CTR drop? Did the YouTube ad cannibalize search?). Cross-store benchmarks flow in via differential-privacy hive sync — you see how your shop ranks against the network without any merchant data leaking.</p>
+                </div>
+            </article>
+            <article class="layer">
+                <div class="layer-num">06</div>
+                <div class="layer-body">
+                    <h3>Continuous optimization</h3>
+                    <p>Forty-eight scheduled cycles drive the optimization loop. Every 15 minutes: a Google Ads micro-bid pass (capped ±10% adjustments). Every 2 hours: Search Sentinel detects and adds waste keywords as negatives. Every 3 hours: Meta optimizer rebalances audiences and budgets. Daily 08:00 UTC: a creative-refresh against fatigue scores. Weekly Monday: portfolio rebalancer shifts budget between campaigns under cap. Sunday: Self-Reflection synthesizes new rules from the week's outcomes. Profit Intelligence forecasts <em>net-profit</em> ROAS using your COGS and shipping — so the system optimizes for actual margin, not vanity revenue. Inventory-Aware throttling auto-pauses out-of-stock SKUs in real time via Shopify webhooks.</p>
+                </div>
+            </article>
+            <article class="layer">
+                <div class="layer-num">07</div>
+                <div class="layer-body">
+                    <h3>Governance &amp; audit</h3>
+                    <p>Every write to a paid platform passes through a unified Mutation Gateway with twelve guard steps — substrate validation, token check, decision check, idempotency, rate limit, cooldown, budget bound, dry-run, kill switch, risk officer, constitution, synthetic advisory. Every action is written to an immutable Decision Log with a rollback token. Seven binding production SLOs gate every deploy (availability ≥99.5%, 5xx rate <0.5%, gateway rejection <5%, job success >98%, webhook delivery >99%, OAuth callback >95%, queue lag p95 <30s); two consecutive breaches trigger auto-rollback. Three autonomy tiers per platform (manual, advisory, autonomous) are operator-dial-able. CI enforces that nothing bypasses the gate.</p>
+                </div>
+            </article>
+            <article class="layer">
+                <div class="layer-num">08</div>
+                <div class="layer-body">
+                    <h3>Self-learning</h3>
+                    <p>The Self-Reflection cycle runs every Sunday — it scores the past week's decisions, finds which heuristics worked and which didn't, and synthesizes new rules into the optimizer's working memory. The Evolution Orchestrator runs a genetic algorithm over bidding policies; the Self-Mutating Engine evolves the code's tunable parameters. The Brain Promotion engine evaluates each AI agent on its 14-day Pearson correlation between predicted and realized ROAS — agents that demonstrate ≥0.7 correlation auto-promote from shadow to observe to co-pilot tiers. Agents that drift get demoted automatically.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
 <!-- HOW IT WORKS -->
 <section class="section how-bg" id="how">
     <div class="section-inner">
