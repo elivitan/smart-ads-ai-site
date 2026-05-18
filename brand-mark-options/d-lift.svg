@@ -1,0 +1,7 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bamzal D lift mark">
+  <title>Bamzal D Lift</title>
+  <rect width="1024" height="1024" rx="224" fill="#FAF6EC"/>
+  <path fill="#0A0A0F" d="M235 160h330c126 0 216 78 216 194 0 70-33 126-85 160 60 31 98 89 98 164 0 119-92 186-238 186H235V160Zm190 152v142h128c39 0 66-27 66-71s-27-71-66-71H425Zm0 270v130h148c40 0 66-24 66-64s-26-66-66-66H425Z"/>
+  <path fill="#FAF6EC" d="M214 716 683 286l62 66-469 430H214v-66Z"/>
+  <path fill="#B8892F" d="M664 242 852 176l-66 188-36-74-244 226-45-48 244-226-41-0Z"/>
+</svg>

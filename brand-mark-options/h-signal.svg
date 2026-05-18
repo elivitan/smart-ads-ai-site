@@ -1,0 +1,8 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bamzal H signal mark">
+  <title>Bamzal H Signal</title>
+  <rect width="1024" height="1024" rx="224" fill="#FAF6EC"/>
+  <path fill="#0A0A0F" d="M236 160h328c126 0 216 78 216 194 0 70-33 126-85 160 60 31 98 89 98 164 0 119-92 186-238 186H236V160Zm188 152v142h128c39 0 66-27 66-71s-27-71-66-71H424Zm0 270v130h148c40 0 66-24 66-64s-26-66-66-66H424Z"/>
+  <rect x="330" y="592" width="58" height="152" rx="28" fill="#B8892F"/>
+  <rect x="418" y="530" width="58" height="214" rx="28" fill="#B8892F"/>
+  <rect x="506" y="458" width="58" height="286" rx="28" fill="#B8892F"/>
+</svg>
