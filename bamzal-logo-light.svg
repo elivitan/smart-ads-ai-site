@@ -1,5 +1,11 @@
 <svg viewBox="55 35 530 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BAMZAL — autonomous advertising (light text variant)">
   <!-- Bamzal premium horizontal lockup (DARK app background — light text) -->
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&amp;display=swap');
+      .bamzal-wordmark { font-family: 'Cinzel', 'Trajan Pro', 'Cormorant Garamond', 'Times New Roman', serif; font-weight: 700; letter-spacing: 0.06em; }
+    </style>
+  </defs>
   <g transform="translate(38 12) scale(0.42)">
     <path fill="#FAF6EC" fill-rule="evenodd" d="
       M 144 116
@@ -14,6 +20,5 @@
 
   <line x1="194" y1="50" x2="194" y2="150" stroke="#C9A961" stroke-opacity="0.5" stroke-width="1"/>
 
-  <text x="222" y="128" font-family="'Inter Display','Inter','SF Pro Display','Helvetica Neue',Arial,sans-serif"
-        font-weight="700" font-size="96" letter-spacing="-0.045em" fill="#FAF6EC">BAMZAL</text>
+  <text x="222" y="130" class="bamzal-wordmark" font-size="82" fill="#FAF6EC">BAMZAL</text>
 </svg>

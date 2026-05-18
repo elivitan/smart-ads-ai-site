@@ -1,5 +1,11 @@
 <svg viewBox="55 35 530 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BAMZAL — autonomous advertising">
   <!-- Bamzal premium horizontal lockup (light app background variant) -->
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&amp;display=swap');
+      .bamzal-wordmark { font-family: 'Cinzel', 'Trajan Pro', 'Cormorant Garamond', 'Times New Roman', serif; font-weight: 700; letter-spacing: 0.06em; }
+    </style>
+  </defs>
   <!-- B mark, scaled into the row -->
   <g transform="translate(38 12) scale(0.42)">
     <path fill="#0A0A0F" fill-rule="evenodd" d="
@@ -16,7 +22,6 @@
   <!-- Hairline bronze divider -->
   <line x1="194" y1="50" x2="194" y2="150" stroke="#8C6F2E" stroke-opacity="0.45" stroke-width="1"/>
 
-  <!-- Wordmark -->
-  <text x="222" y="128" font-family="'Inter Display','Inter','SF Pro Display','Helvetica Neue',Arial,sans-serif"
-        font-weight="700" font-size="96" letter-spacing="-0.045em" fill="#0A0A0F">BAMZAL</text>
+  <!-- Wordmark — Cinzel, Roman-imperial, distinctive -->
+  <text x="222" y="130" class="bamzal-wordmark" font-size="82" fill="#0A0A0F">BAMZAL</text>
 </svg>
