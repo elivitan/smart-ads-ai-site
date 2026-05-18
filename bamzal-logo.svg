@@ -1,9 +1,9 @@
 <svg viewBox="55 35 530 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BAMZAL — autonomous advertising">
-  <!-- Bamzal premium horizontal lockup.
-       Custom wordmark: Didone-extreme-contrast Roman capitals.
-       Hairline verticals (5px) + heavy horizontals (16-20px).
-       Tall narrow proportions in the luxury-fashion tradition (Vogue / Tiffany / Cartier).
-       Bronze signature line beneath. -->
+  <!-- BAMZAL wordmark with a unique brand signature:
+       a constellation of bronze gems embedded INSIDE the letters,
+       at varied positions, forming a Bamzal-only visual rhythm.
+       Each letter has exactly one inset bronze dot; the dots are
+       at different y-positions so they trace a wave across the word. -->
 
   <g transform="translate(38 12) scale(0.42)">
     <path fill="#0A0A0F" fill-rule="evenodd" d="M 144 116 H 200 A 70 70 0 0 1 200 256 A 74 70 0 0 1 200 396 H 144 Z M 200 152 A 34 34 0 0 1 200 220 Z M 200 292 A 38 38 0 0 1 200 360 Z"/>
@@ -11,43 +11,43 @@
 
   <line x1="194" y1="50" x2="194" y2="150" stroke="#8C6F2E" stroke-opacity="0.45" stroke-width="1"/>
 
-  <!-- BAMZAL — high-contrast Didone construction -->
+  <!-- BAMZAL letterforms — Didone contrast, tall and narrow.
+       Each letter is set with the SAME stroke-weight discipline:
+       6px verticals, 18px horizontals, sharp corners. -->
   <g fill="#0A0A0F" fill-rule="evenodd">
-    <!-- B  (x=210-256) — thin stem + two graduated crescent bowls.
-         Bottom bowl is larger than top (classic Didone proportions). -->
-    <path d="M 210 65 H 215 V 155 H 210 Z
-             M 215 65 H 230 A 18 22 0 0 1 230 109 H 215 V 99 H 228 A 8 12 0 0 0 228 75 H 215 Z
-             M 215 109 H 232 A 20 23 0 0 1 232 155 H 215 V 145 H 230 A 9 13 0 0 0 230 119 H 215 Z"/>
 
-    <!-- A  (x=266-322) — tall slender triangle with HEAVY base flare.
-         Apex is a sharp point. Crossbar is thin (4px). Base of each diagonal flares outward. -->
-    <path d="M 266 155 L 287 65 H 301 L 322 155 H 308 L 304 138 H 284 L 280 155 Z
-             M 287 124 H 301 L 294 89 Z"/>
-    <!-- A base-flare detail: small triangular spurs at the bottom of each diagonal -->
-    <path d="M 266 155 L 274 155 L 270 149 Z"/>
-    <path d="M 322 155 L 314 155 L 318 149 Z"/>
+    <!-- B  (x=210, width 48) — hairline stem + graduated crescent bowls -->
+    <path d="M 210 65 H 216 V 155 H 210 Z
+             M 216 65 H 232 A 19 22 0 0 1 232 109 H 216 V 99 H 230 A 9 12 0 0 0 230 75 H 216 Z
+             M 216 109 H 234 A 21 23 0 0 1 234 155 H 216 V 145 H 232 A 10 13 0 0 0 232 119 H 216 Z"/>
 
-    <!-- M  (x=332-410) — narrow with V that drops just past midline.
-         Apexes at top corners are spiked. -->
-    <path d="M 332 155 V 65 H 339 L 371 130 L 403 65 H 410 V 155 H 401 V 84 L 374 138 H 368 L 341 84 V 155 Z"/>
+    <!-- A  (x=266, width 56) — tall slim triangle with sharp pointed apex -->
+    <path d="M 266 155 L 288 65 H 300 L 322 155 H 311 L 307 137 H 281 L 277 155 Z
+             M 285 124 H 303 L 294 88 Z"/>
 
-    <!-- Z  (x=420-466) — extreme contrast: thick top + thick bottom, hairline diagonal.
-         Tiny serifs at the corners. -->
-    <path d="M 420 65 H 466 V 80 L 437 142 H 466 V 155 H 420 V 140 L 449 78 H 420 Z"/>
+    <!-- M  (x=332, width 78) — narrow with deep-V to baseline + pointed apexes -->
+    <path d="M 332 65 H 339 L 371 145 L 403 65 H 410 V 155 H 401 V 88 L 374 152 H 368 L 341 88 V 155 H 332 Z"/>
 
-    <!-- A  (x=476-532) — same as first A -->
-    <path d="M 476 155 L 497 65 H 511 L 532 155 H 518 L 514 138 H 494 L 490 155 Z
-             M 497 124 H 511 L 504 89 Z"/>
-    <path d="M 476 155 L 484 155 L 480 149 Z"/>
-    <path d="M 532 155 L 524 155 L 528 149 Z"/>
+    <!-- Z  (x=420, width 48) — heavy top + bottom slabs, hairline diagonal -->
+    <path d="M 420 65 H 468 V 80 L 437 140 H 468 V 155 H 420 V 140 L 451 80 H 420 Z"/>
 
-    <!-- L  (x=542-578) — slim stem with HEAVY base bar that extends right -->
-    <path d="M 542 65 H 547 V 142 H 578 V 155 H 542 Z"/>
+    <!-- A  (x=478, width 56) — same as first A -->
+    <path d="M 478 155 L 500 65 H 512 L 534 155 H 523 L 519 137 H 493 L 489 155 Z
+             M 497 124 H 515 L 506 88 Z"/>
+
+    <!-- L  (x=544, width 36) — slim stem + heavy base bar -->
+    <path d="M 544 65 H 550 V 142 H 580 V 155 H 544 Z"/>
   </g>
 
-  <!-- Bronze signature line + accent dots -->
-  <line x1="210" y1="167" x2="578" y2="167" stroke="#8C6F2E" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
-  <circle cx="210" cy="167" r="3" fill="#8C6F2E"/>
-  <circle cx="394" cy="167" r="3" fill="#8C6F2E"/>
-  <circle cx="578" cy="167" r="3" fill="#8C6F2E"/>
+  <!-- The BAMZAL CONSTELLATION — six bronze gems embedded in the letters,
+       at varied y-positions tracing a wave. This is the brand signature. -->
+  <circle cx="219" cy="85" r="3.5" fill="#8C6F2E"/>     <!-- inside B top bowl -->
+  <circle cx="294" cy="78" r="3.5" fill="#8C6F2E"/>     <!-- A1 apex -->
+  <circle cx="371" cy="135" r="3.5" fill="#8C6F2E"/>    <!-- M V tip -->
+  <circle cx="444" cy="110" r="3.5" fill="#8C6F2E"/>    <!-- Z center -->
+  <circle cx="506" cy="78" r="3.5" fill="#8C6F2E"/>     <!-- A2 apex -->
+  <circle cx="575" cy="148" r="3.5" fill="#8C6F2E"/>    <!-- L base corner -->
+
+  <!-- Bronze signature line — runs full width below baseline -->
+  <line x1="210" y1="170" x2="580" y2="170" stroke="#8C6F2E" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
 </svg>
