@@ -1,24 +1,20 @@
 <svg viewBox="55 35 530 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BAMZAL — autonomous advertising (light text variant)">
-  <!-- Bamzal premium horizontal lockup (DARK app background — light text) -->
-  <defs>
-    <style type="text/css">
-      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&amp;display=swap');
-      .bamzal-wordmark { font-family: 'Cinzel', 'Trajan Pro', 'Cormorant Garamond', 'Times New Roman', serif; font-weight: 700; letter-spacing: 0.06em; }
-    </style>
-  </defs>
+  <!-- Light-text variant for dark backgrounds. Same custom letterforms as the main logo. -->
+
   <g transform="translate(38 12) scale(0.42)">
-    <path fill="#FAF6EC" fill-rule="evenodd" d="
-      M 144 116
-      H 200
-      A 70 70 0 0 1 200 256
-      A 74 70 0 0 1 200 396
-      H 144
-      Z
-      M 200 152 A 34 34 0 0 1 200 220 Z
-      M 200 292 A 38 38 0 0 1 200 360 Z"/>
+    <path fill="#FAF6EC" fill-rule="evenodd" d="M 144 116 H 200 A 70 70 0 0 1 200 256 A 74 70 0 0 1 200 396 H 144 Z M 200 152 A 34 34 0 0 1 200 220 Z M 200 292 A 38 38 0 0 1 200 360 Z"/>
   </g>
 
   <line x1="194" y1="50" x2="194" y2="150" stroke="#C9A961" stroke-opacity="0.5" stroke-width="1"/>
 
-  <text x="222" y="130" class="bamzal-wordmark" font-size="82" fill="#FAF6EC">BAMZAL</text>
+  <g fill="#FAF6EC" fill-rule="evenodd">
+    <path d="M 205 65 H 229 A 19 19 0 0 1 229 103 H 205 Z M 216 76 V 92 H 228 A 8 8 0 0 0 228 76 Z M 205 103 H 231 A 22 22 0 0 1 231 147 H 205 Z M 216 114 V 136 H 230 A 11 11 0 0 0 230 114 Z"/>
+    <path d="M 281 65 H 303 L 321 147 H 309 L 305 128 H 279 L 275 147 H 263 Z M 281 117 H 303 L 292 78 Z"/>
+    <path d="M 329 65 H 341 L 369 119 L 397 65 H 409 V 147 H 397 V 89 L 374 134 H 364 L 341 89 V 147 H 329 Z"/>
+    <path d="M 417 65 H 467 V 76 L 432 136 H 467 V 147 H 417 V 136 L 452 76 H 417 Z"/>
+    <path d="M 493 65 H 515 L 533 147 H 521 L 517 128 H 491 L 487 147 H 475 Z M 493 117 H 515 L 504 78 Z"/>
+    <path d="M 541 65 H 553 V 136 H 577 V 147 H 541 Z"/>
+  </g>
+
+  <circle cx="582" cy="143" r="3" fill="#C9A961" opacity="0.9"/>
 </svg>
