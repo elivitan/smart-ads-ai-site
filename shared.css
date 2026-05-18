@@ -8,7 +8,11 @@
     --accent-dark: #6D551F;
     --accent-light: #F2EBD8;
     --slate: #3A2E13;
-    --muted: #8B7F6B;
+    /* QA 2026-05-18: --muted darkened from #8B7F6B → #6B6052 to pass
+       WCAG AA 4.5:1 against the cream paper background. The previous
+       value rendered stat sub-labels and small captions at ~3:1, which
+       Lighthouse flagged. */
+    --muted: #6B6052;
     --border: #E5DCC1;
     --surface: #F5EDD8;
     --success: #2F8F6B;
