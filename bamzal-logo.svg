@@ -1,7 +1,10 @@
 <svg viewBox="55 35 530 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BAMZAL — autonomous advertising">
-  <!-- Bamzal premium horizontal lockup. Wordmark is hand-drawn SVG paths,
-       no external font dependency. Cap height 82, baseline 147,
-       flat-top A apex, geometric construction. -->
+  <!-- Bamzal premium horizontal lockup.
+       Wordmark is hand-drawn SVG paths — no external font dependency.
+       Three signature features unique to the Bamzal mark:
+         (1) A with a CONCAVE TOP — U-cut into the apex instead of a point
+         (2) M with a DEEP-V CENTER that drops to the baseline
+         (3) A continuous bronze SIGNATURE LINE under the wordmark -->
 
   <g transform="translate(38 12) scale(0.42)">
     <path fill="#0A0A0F" fill-rule="evenodd" d="M 144 116 H 200 A 70 70 0 0 1 200 256 A 74 70 0 0 1 200 396 H 144 Z M 200 152 A 34 34 0 0 1 200 220 Z M 200 292 A 38 38 0 0 1 200 360 Z"/>
@@ -12,18 +15,29 @@
   <g fill="#0A0A0F" fill-rule="evenodd">
     <!-- B  (x=205, width 50) -->
     <path d="M 205 65 H 229 A 19 19 0 0 1 229 103 H 205 Z M 216 76 V 92 H 228 A 8 8 0 0 0 228 76 Z M 205 103 H 231 A 22 22 0 0 1 231 147 H 205 Z M 216 114 V 136 H 230 A 11 11 0 0 0 230 114 Z"/>
-    <!-- A  (x=263, width 58, flat apex) -->
-    <path d="M 281 65 H 303 L 321 147 H 309 L 305 128 H 279 L 275 147 H 263 Z M 281 117 H 303 L 292 78 Z"/>
-    <!-- M  (x=329, width 80) -->
-    <path d="M 329 65 H 341 L 369 119 L 397 65 H 409 V 147 H 397 V 89 L 374 134 H 364 L 341 89 V 147 H 329 Z"/>
-    <!-- Z  (x=417, width 50) -->
-    <path d="M 417 65 H 467 V 76 L 432 136 H 467 V 147 H 417 V 136 L 452 76 H 417 Z"/>
-    <!-- A  (x=475, width 58, flat apex) -->
-    <path d="M 493 65 H 515 L 533 147 H 521 L 517 128 H 491 L 487 147 H 475 Z M 493 117 H 515 L 504 78 Z"/>
-    <!-- L  (x=541, width 36) -->
-    <path d="M 541 65 H 553 V 136 H 577 V 147 H 541 Z"/>
+
+    <!-- A  (x=263, width 58) — CONCAVE TOP (signature feature) -->
+    <!-- Outer outline: starts at bottom-left, up the left diagonal, across the concave top, down the right diagonal, to bottom-right -->
+    <path d="M 263 147 L 286 65 A 12 8 0 0 1 298 65 L 321 147 H 309 L 305 128 H 279 L 275 147 Z M 282 117 H 302 L 295 92 A 10 6 0 0 0 289 92 Z"/>
+
+    <!-- M  (x=329, width 82) — DEEP-V CENTER drops to baseline (signature feature) -->
+    <path d="M 329 65 H 343 L 370 142 L 397 65 H 411 V 147 H 401 V 88 L 376 147 H 364 L 339 88 V 147 H 329 Z"/>
+
+    <!-- Z  (x=419, width 50) -->
+    <path d="M 419 65 H 469 V 76 L 434 136 H 469 V 147 H 419 V 136 L 454 76 H 419 Z"/>
+
+    <!-- A  (x=477, width 58) — CONCAVE TOP -->
+    <path d="M 477 147 L 500 65 A 12 8 0 0 1 512 65 L 535 147 H 523 L 519 128 H 493 L 489 147 Z M 496 117 H 516 L 509 92 A 10 6 0 0 0 503 92 Z"/>
+
+    <!-- L  (x=543, width 36) -->
+    <path d="M 543 65 H 555 V 136 H 579 V 147 H 543 Z"/>
   </g>
 
-  <!-- Subtle bronze accent dot — signature mark below the L -->
-  <circle cx="582" cy="143" r="3" fill="#8C6F2E" opacity="0.85"/>
+  <!-- BRONZE SIGNATURE LINE — runs the full width of the wordmark, just below baseline.
+       This is the distinctive "Bamzal stamp" — like a Roman senatus mark or a tailor's signature thread. -->
+  <line x1="205" y1="155" x2="579" y2="155" stroke="#8C6F2E" stroke-width="2" stroke-linecap="round" opacity="0.9"/>
+  <!-- Three accent dots along the signature line — visual rhythm -->
+  <circle cx="205" cy="155" r="3" fill="#8C6F2E"/>
+  <circle cx="392" cy="155" r="3" fill="#8C6F2E"/>
+  <circle cx="579" cy="155" r="3" fill="#8C6F2E"/>
 </svg>
