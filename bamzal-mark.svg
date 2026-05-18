@@ -1,24 +1,6 @@
-<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BAMZAL · B mark">
-  <defs>
-    <linearGradient id="paper" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
-      <stop offset="0%"  stop-color="#FAF6EC"/>
-      <stop offset="100%" stop-color="#F2EBD8"/>
-    </linearGradient>
-  </defs>
-
-  <rect width="1024" height="1024" rx="224" fill="url(#paper)"/>
-
-  <line x1="860" y1="192" x2="860" y2="832" stroke="#8C6F2E" stroke-opacity="0.55" stroke-width="2"/>
-
-  <path fill="#0A0A0F" fill-rule="evenodd" d="
-    M 260 208
-    H 388
-    A 160 160 0 0 1 388 528
-    A 160 160 0 0 1 388 848
-    H 260
-    Z
-    M 388 256 A 112 112 0 0 1 388 480 L 388 480 Z
-    M 388 576 A 112 112 0 0 1 388 800 L 388 800 Z"/>
-
-  <circle cx="824" cy="824" r="6" fill="#8C6F2E" opacity="0.9"/>
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bamzal">
+  <title>Bamzal</title>
+  <rect width="1024" height="1024" rx="224" fill="#0A0A0F"/>
+  <text x="512" y="704" text-anchor="middle" fill="#FAF6EC" font-family="Inter, Arial, Helvetica, sans-serif" font-size="650" font-weight="780">B</text>
+  <circle cx="590" cy="618" r="58" fill="#B8892F"/>
 </svg>

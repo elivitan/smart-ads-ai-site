@@ -1,13 +1,6 @@
-<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BAMZAL · B mark">
-  <rect width="1024" height="1024" rx="200" fill="#0A0A0F"/>
-
-  <path fill="#FAF6EC" fill-rule="evenodd" d="
-    M 304 128
-    H 528
-    A 192 192 0 0 1 528 512
-    A 192 192 0 0 1 528 896
-    H 304
-    Z
-    M 528 224 A 96 96 0 0 1 528 416 L 528 416 Z
-    M 528 608 A 96 96 0 0 1 528 800 L 528 800 Z"/>
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bamzal">
+  <title>Bamzal</title>
+  <rect width="1024" height="1024" rx="224" fill="#0A0A0F"/>
+  <text x="512" y="704" text-anchor="middle" fill="#FAF6EC" font-family="Inter, Arial, Helvetica, sans-serif" font-size="650" font-weight="780">B</text>
+  <circle cx="590" cy="618" r="58" fill="#B8892F"/>
 </svg>
