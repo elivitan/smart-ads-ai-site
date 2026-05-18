@@ -1,4 +1,5 @@
-<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bamzal selected mark">
-  <title>Bamzal Selected Mark</title>
-  <image href="/favicon-512.png" width="512" height="512" preserveAspectRatio="xMidYMid meet"/>
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bamzal mark">
+  <title>Bamzal Mark</title>
+  <path fill="#03050b" d="M102 56h183c98 0 160 52 160 133 0 48-25 86-70 108 56 20 88 62 88 119 0 88-67 144-174 144H102V56Zm98 82v122h78c46 0 72-23 72-62 0-38-28-60-76-60h-74Zm0 200v140h88c50 0 78-26 78-70 0-45-30-70-83-70h-83Z"/>
+  <path fill="none" stroke="#fff" stroke-width="54" stroke-linecap="butt" stroke-linejoin="miter" d="M72 152 374 304 72 460"/>
 </svg>
