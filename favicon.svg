@@ -1,6 +1,10 @@
 <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bamzal">
   <title>Bamzal</title>
   <rect width="1024" height="1024" rx="224" fill="#0A0A0F"/>
-  <text x="512" y="704" text-anchor="middle" fill="#FAF6EC" font-family="Inter, Arial, Helvetica, sans-serif" font-size="650" font-weight="780">B</text>
-  <circle cx="590" cy="618" r="58" fill="#B8892F"/>
+  <g fill="#FAF6EC" font-family="Fraunces, Georgia, serif" font-size="238" font-weight="650" letter-spacing="-13">
+    <text x="142" y="596">B</text>
+    <text x="398" y="596">mzal</text>
+  </g>
+  <path d="M 292 598 C 334 456 385 405 432 430 C 463 447 489 522 506 598" fill="none" stroke="#FAF6EC" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="385" cy="566" r="38" fill="#B8892F"/>
 </svg>
