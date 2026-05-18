@@ -1,5 +1,4 @@
 <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BAMZAL · B mark">
-  <!-- Bamzal premium B mark — cream chassis with deep-ink B and bronze accents -->
   <defs>
     <linearGradient id="paper" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
       <stop offset="0%"  stop-color="#FAF6EC"/>
@@ -9,22 +8,17 @@
 
   <rect width="1024" height="1024" rx="224" fill="url(#paper)"/>
 
-  <!-- Hairline bronze rule on the right side -->
   <line x1="860" y1="192" x2="860" y2="832" stroke="#8C6F2E" stroke-opacity="0.55" stroke-width="2"/>
 
-  <!-- B drawn as ONE continuous path, scaled to fit the 1024 chassis (×2 from the 512 source) -->
-  <g transform="translate(0 0) scale(2)">
-    <path fill="#0A0A0F" fill-rule="evenodd" d="
-      M 144 116
-      H 200
-      A 70 70 0 0 1 200 256
-      A 74 70 0 0 1 200 396
-      H 144
-      Z
-      M 200 152 A 34 34 0 0 1 200 220 Z
-      M 200 292 A 38 38 0 0 1 200 360 Z"/>
-  </g>
+  <path fill="#0A0A0F" fill-rule="evenodd" d="
+    M 260 208
+    H 388
+    A 160 160 0 0 1 388 528
+    A 160 160 0 0 1 388 848
+    H 260
+    Z
+    M 388 256 A 112 112 0 0 1 388 480 L 388 480 Z
+    M 388 576 A 112 112 0 0 1 388 800 L 388 800 Z"/>
 
-  <!-- Single bronze accent dot -->
   <circle cx="824" cy="824" r="6" fill="#8C6F2E" opacity="0.9"/>
 </svg>

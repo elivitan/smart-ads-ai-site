@@ -6,7 +6,7 @@
        at different y-positions so they trace a wave across the word. -->
 
   <g transform="translate(38 12) scale(0.42)">
-    <path fill="#0A0A0F" fill-rule="evenodd" d="M 144 116 H 200 A 70 70 0 0 1 200 256 A 74 70 0 0 1 200 396 H 144 Z M 200 152 A 34 34 0 0 1 200 220 Z M 200 292 A 38 38 0 0 1 200 360 Z"/>
+    <path fill="#0A0A0F" fill-rule="evenodd" d="M 144 116 H 172 A 70 70 0 0 1 172 256 A 70 70 0 0 1 172 396 H 144 Z M 172 144 A 42 42 0 0 1 172 228 L 172 228 Z M 172 284 A 42 42 0 0 1 172 368 L 172 368 Z"/>
   </g>
 
   <line x1="194" y1="50" x2="194" y2="150" stroke="#8C6F2E" stroke-opacity="0.45" stroke-width="1"/>

@@ -1,6 +1,6 @@
 <svg viewBox="55 35 530 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BAMZAL — autonomous advertising (light text variant)">
   <g transform="translate(38 12) scale(0.42)">
-    <path fill="#FAF6EC" fill-rule="evenodd" d="M 144 116 H 200 A 70 70 0 0 1 200 256 A 74 70 0 0 1 200 396 H 144 Z M 200 152 A 34 34 0 0 1 200 220 Z M 200 292 A 38 38 0 0 1 200 360 Z"/>
+    <path fill="#FAF6EC" fill-rule="evenodd" d="M 144 116 H 172 A 70 70 0 0 1 172 256 A 70 70 0 0 1 172 396 H 144 Z M 172 144 A 42 42 0 0 1 172 228 L 172 228 Z M 172 284 A 42 42 0 0 1 172 368 L 172 368 Z"/>
   </g>
 
   <line x1="194" y1="50" x2="194" y2="150" stroke="#C9A961" stroke-opacity="0.5" stroke-width="1"/>

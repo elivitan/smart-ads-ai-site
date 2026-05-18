@@ -1,27 +1,13 @@
 <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BAMZAL · B mark">
-  <!-- Bamzal premium B mark — cream chassis with deep-ink B, large + centered for legibility at every size -->
-  <defs>
-    <linearGradient id="paper" x1="0" y1="0" x2="1024" y2="1024" gradientUnits="userSpaceOnUse">
-      <stop offset="0%"  stop-color="#FAF6EC"/>
-      <stop offset="100%" stop-color="#F2EBD8"/>
-    </linearGradient>
-  </defs>
+  <rect width="1024" height="1024" rx="200" fill="#0A0A0F"/>
 
-  <rect width="1024" height="1024" rx="224" fill="url(#paper)"/>
-
-  <!-- B drawn as ONE continuous path, scaled ~2.85x to fill ~70% of the chassis, centered -->
-  <g transform="translate(-72 -212) scale(2.85)">
-    <path fill="#0A0A0F" fill-rule="evenodd" d="
-      M 144 116
-      H 200
-      A 70 70 0 0 1 200 256
-      A 74 70 0 0 1 200 396
-      H 144
-      Z
-      M 200 152 A 34 34 0 0 1 200 220 Z
-      M 200 292 A 38 38 0 0 1 200 360 Z"/>
-  </g>
-
-  <!-- Single bronze accent dot, bottom-right -->
-  <circle cx="900" cy="900" r="10" fill="#8C6F2E" opacity="0.9"/>
+  <path fill="#FAF6EC" fill-rule="evenodd" d="
+    M 304 128
+    H 528
+    A 192 192 0 0 1 528 512
+    A 192 192 0 0 1 528 896
+    H 304
+    Z
+    M 528 224 A 96 96 0 0 1 528 416 L 528 416 Z
+    M 528 608 A 96 96 0 0 1 528 800 L 528 800 Z"/>
 </svg>
