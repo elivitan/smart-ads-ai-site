@@ -210,8 +210,73 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--paper
     .capability { flex-direction: column; gap: 12px; }
 }
 
-/* ---- ICONS (monoline, currentColor) ---- */
+/* ---- ICONS — premium treatment ---- */
 .icon{display:inline-block;vertical-align:-3px;flex-shrink:0;}
 .tech-item h4 .icon,.cap-content h3 .icon{margin-right:8px;color:var(--accent);}
 .flow-icon .icon{color:var(--accent);}
-.flow-icon{background:var(--accent-light);border-radius:50%;width:56px;height:56px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.flow-icon{background:linear-gradient(135deg,var(--accent-light) 0%,#fff 100%);border:1px solid rgba(140,111,46,.25);border-radius:50%;width:64px;height:64px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:16px;box-shadow:0 4px 16px rgba(140,111,46,.12);}
+
+/* Premium feature-icon — gold-orb container, soft inner glow */
+.feature-icon{
+    width:56px;height:56px;border-radius:14px;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:24px;
+    background:linear-gradient(135deg,#FAF3E0 0%,#F2EBD8 100%);
+    border:1px solid rgba(140,111,46,.18);
+    color:var(--accent-dark);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(140,111,46,.10);
+    transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+.feature-icon .icon{width:24px;height:24px;}
+.feature-card:hover .feature-icon{
+    transform:translateY(-2px) scale(1.02);
+    border-color:rgba(140,111,46,.45);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.7),0 8px 20px rgba(140,111,46,.18);
+}
+
+/* Tech-item icon treatment */
+.tech-item h4 .icon{
+    width:18px;height:18px;
+    padding:6px;
+    background:rgba(242,235,216,.6);
+    border-radius:6px;
+    margin-right:10px;
+    vertical-align:-7px;
+    box-sizing:content-box;
+}
+
+/* Top-edge gold whisper on feature cards (premium signal) */
+.feature-card::before{
+    content:'';position:absolute;top:0;left:24px;right:24px;height:1px;
+    background:linear-gradient(90deg,transparent 0%,rgba(140,111,46,.4) 50%,transparent 100%);
+    opacity:0;transition:opacity .3s ease;
+}
+.feature-card:hover::before{opacity:1;}
+
+/* Pillar icons (company page) — same premium treatment */
+.pillar{position:relative;}
+.pillar-icon{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:56px;height:56px;border-radius:14px;margin-bottom:20px;
+    background:linear-gradient(135deg,#FAF3E0 0%,#F2EBD8 100%);
+    border:1px solid rgba(140,111,46,.18);
+    color:var(--accent-dark);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 4px 12px rgba(140,111,46,.10);
+}
+
+/* Subtle reveal on scroll for premium feel */
+@media (prefers-reduced-motion: no-preference){
+    .feature-card,.tech-item,.pillar{animation:fadeUp .6s ease-out backwards;}
+    .feature-card:nth-child(1),.tech-item:nth-child(1),.pillar:nth-child(1){animation-delay:.05s;}
+    .feature-card:nth-child(2),.tech-item:nth-child(2),.pillar:nth-child(2){animation-delay:.12s;}
+    .feature-card:nth-child(3),.tech-item:nth-child(3),.pillar:nth-child(3){animation-delay:.19s;}
+    .feature-card:nth-child(4),.tech-item:nth-child(4){animation-delay:.26s;}
+    .feature-card:nth-child(5),.tech-item:nth-child(5){animation-delay:.33s;}
+    .feature-card:nth-child(6),.tech-item:nth-child(6){animation-delay:.40s;}
+    .feature-card:nth-child(7),.tech-item:nth-child(7){animation-delay:.47s;}
+    .feature-card:nth-child(8),.tech-item:nth-child(8){animation-delay:.54s;}
+}
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(12px);}
+    to{opacity:1;transform:translateY(0);}
+}
