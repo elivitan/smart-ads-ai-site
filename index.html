@@ -18,18 +18,58 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Bamzal",
+      "legalName": "Bamzal Ltd.",
+      "url": "https://bamzal.com",
+      "logo": "https://bamzal.com/bamzal-mark.svg",
+      "description": "Bamzal is the autonomous growth system for Shopify merchants — a single AI that runs paid media, organic social, creative production, community management and optimization end-to-end across Google, Meta, TikTok, Pinterest and X.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Nahal Besor 10/7",
+        "addressLocality": "Beit Shemesh",
+        "addressCountry": "IL"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+972-58-486-9778",
+        "email": "legal@bamzal.com",
+        "contactType": "customer support"
+      },
+      "sameAs": ["https://github.com/elivitan"]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Bamzal",
+      "url": "https://bamzal.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://bamzal.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "Bamzal",
       "url": "https://bamzal.com",
       "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web",
-      "description": "AI-powered multi-channel ad automation for Shopify merchants across Google, Meta, TikTok, Pinterest and X.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "creator": {
+      "applicationSubCategory": "Advertising Automation",
+      "operatingSystem": "Web (Shopify embedded app)",
+      "description": "Bamzal runs the growth side of your Shopify store — paid media across Google, Meta, TikTok, Pinterest and X; organic social across Instagram, TikTok, X, Facebook, Threads and YouTube; AI creative studio; real-time community replies; continuous net-profit-ROAS optimization. Twelve specialist AI agents, governed by a Mutation Gateway and an immutable decision log.",
+      "offers": [
+        {"@type": "Offer", "name": "Free Preview", "price": "0", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "Starter", "price": "49", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "Pro", "price": "79", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "Premium", "price": "149", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "Enterprise", "price": "499", "priceCurrency": "USD"}
+      ],
+      "publisher": {
         "@type": "Organization",
         "name": "Bamzal",
         "url": "https://bamzal.com"
@@ -173,22 +213,22 @@
         .app-frame{max-width:1160px;margin:0 auto;background:#0a0a1a;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.3);display:flex;min-height:680px;position:relative}
         .app-sidebar{width:200px;background:rgba(255,255,255,.04);border-right:1px solid rgba(255,255,255,.08);padding:20px 0;flex-shrink:0;display:flex;flex-direction:column}
         .app-sidebar-brand{padding:0 16px 20px;font-family:var(--font-display);font-weight:700;font-size:.9rem;color:#fff;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:8px}
-        .app-sidebar-brand em{color:#6366f1;font-style:normal}
+        .app-sidebar-brand em{color:#8C6F2E;font-style:normal}
         .sidebar-nav{list-style:none;padding:0;margin:0}
         .sidebar-nav li{padding:0}
         .sidebar-nav button{width:100%;text-align:left;padding:10px 16px;background:none;border:none;color:rgba(255,255,255,.55);font-size:.8125rem;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .15s;font-family:inherit}
         .sidebar-nav button:hover{background:rgba(255,255,255,.06);color:rgba(255,255,255,.85)}
-        .sidebar-nav button.active{background:rgba(99,102,241,.15);color:#a5b4fc;border-right:2px solid #6366f1}
+        .sidebar-nav button.active{background:rgba(140,111,46,.15);color:#C9AA66;border-right:2px solid #8C6F2E}
         .sidebar-nav button svg{width:16px;height:16px;opacity:.6;flex-shrink:0}
         .sidebar-nav button.active svg{opacity:1}
-        .sidebar-badge{font-size:.6rem;background:#6366f1;color:#fff;padding:1px 6px;border-radius:100px;margin-left:auto}
+        .sidebar-badge{font-size:.6rem;background:#8C6F2E;color:#fff;padding:1px 6px;border-radius:100px;margin-left:auto}
         .app-main{flex:1;padding:24px 28px;overflow-y:auto;max-height:720px;color:rgba(255,255,255,.85)}
         .app-topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
         .app-topbar .app-panel-title{font-size:1.125rem;font-weight:700;color:#fff}
         .app-topbar-right{display:flex;align-items:center;gap:12px}
         .topbar-pill{font-size:.7rem;padding:4px 10px;border-radius:100px;font-weight:600}
         .pill-green{background:rgba(34,197,94,.15);color:#22c55e}
-        .pill-blue{background:rgba(99,102,241,.15);color:#a5b4fc}
+        .pill-blue{background:rgba(140,111,46,.15);color:#C9AA66}
         .screen{display:none}
         .screen.active{display:block}
 
@@ -199,7 +239,7 @@
         .health-ring{position:relative;width:130px;height:130px;margin:0 auto 12px}
         .health-ring svg{transform:rotate(-90deg)}
         .health-ring-bg{fill:none;stroke:rgba(255,255,255,.08);stroke-width:8}
-        .health-ring-fill{fill:none;stroke:#6366f1;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.5s ease}
+        .health-ring-fill{fill:none;stroke:#8C6F2E;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.5s ease}
         .health-score{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
         .health-score strong{font-family:var(--font-display);font-size:2rem;font-weight:700;color:#fff;line-height:1}
         .health-score span{font-size:.7rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
@@ -224,7 +264,7 @@
         .pulse-metric .pm-value{font-size:.9rem;font-weight:700;color:#fff;margin-top:2px}
         .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
         .product-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s}
-        .product-card:hover{border-color:rgba(99,102,241,.4);transform:translateY(-2px)}
+        .product-card:hover{border-color:rgba(140,111,46,.4);transform:translateY(-2px)}
         .product-img{height:100px;position:relative}
         .product-img .score-badge{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);color:#fff;font-size:.7rem;font-weight:700;padding:3px 8px;border-radius:6px}
         .score-high{border:1px solid #22c55e}
@@ -243,25 +283,25 @@
         .scan-cta{text-align:center;padding:80px 20px}
         .scan-cta h3{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:8px}
         .scan-cta p{color:rgba(255,255,255,.5);font-size:.875rem;margin-bottom:24px}
-        .scan-btn{background:#6366f1;color:#fff;border:none;padding:14px 36px;border-radius:10px;font-size:.9375rem;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit}
+        .scan-btn{background:#8C6F2E;color:#fff;border:none;padding:14px 36px;border-radius:10px;font-size:.9375rem;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit}
         .scan-btn:hover{background:#4f46e5;transform:translateY(-1px)}
         .scan-anim{text-align:center;padding:40px 20px}
         .radar-container{position:relative;width:200px;height:200px;margin:0 auto 24px}
-        .radar-ring{position:absolute;border:1px solid rgba(99,102,241,.3);border-radius:50%;animation:radarPulse 2s ease-out infinite}
+        .radar-ring{position:absolute;border:1px solid rgba(140,111,46,.3);border-radius:50%;animation:radarPulse 2s ease-out infinite}
         .radar-ring:nth-child(1){inset:30%;animation-delay:0s}
         .radar-ring:nth-child(2){inset:15%;animation-delay:.5s}
         .radar-ring:nth-child(3){inset:0;animation-delay:1s}
-        .radar-dot{position:absolute;width:8px;height:8px;background:#6366f1;border-radius:50%;box-shadow:0 0 12px #6366f1}
+        .radar-dot{position:absolute;width:8px;height:8px;background:#8C6F2E;border-radius:50%;box-shadow:0 0 12px #8C6F2E}
         @keyframes radarPulse{0%{opacity:1;transform:scale(.8)}100%{opacity:0;transform:scale(1.3)}}
         @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
         .word-particle{position:absolute;font-size:.65rem;color:rgba(255,255,255,.4);animation:float 3s ease-in-out infinite}
         .scan-progress{max-width:400px;margin:0 auto}
         .scan-step{display:flex;align-items:center;gap:10px;padding:6px 0;font-size:.8rem;color:rgba(255,255,255,.35);transition:color .3s}
         .scan-step.done{color:#22c55e}
-        .scan-step.active{color:#a5b4fc}
+        .scan-step.active{color:#C9AA66}
         .scan-step .check{width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:.6rem;flex-shrink:0;transition:all .3s}
         .scan-step.done .check{background:#22c55e;border-color:#22c55e;color:#fff}
-        .scan-step.active .check{border-color:#6366f1;background:rgba(99,102,241,.2)}
+        .scan-step.active .check{border-color:#8C6F2E;background:rgba(140,111,46,.2)}
 
         /* --- Product Modal --- */
         .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
@@ -293,7 +333,7 @@
         .headline-list li .counter,.desc-list li .counter{font-size:.65rem;color:rgba(255,255,255,.3);flex-shrink:0;margin-left:8px}
         .keyword-chips{display:flex;flex-wrap:wrap;gap:6px}
         .kw-chip{font-size:.75rem;padding:4px 10px;border-radius:6px;font-weight:500}
-        .kw-exact{background:rgba(99,102,241,.15);color:#a5b4fc;border:1px solid rgba(99,102,241,.3)}
+        .kw-exact{background:rgba(140,111,46,.15);color:#C9AA66;border:1px solid rgba(140,111,46,.3)}
         .kw-phrase{background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.25)}
         .kw-broad{background:rgba(255,255,255,.06);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.1)}
         .kw-negative{background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.2)}
@@ -307,11 +347,11 @@
         /* --- Keywords --- */
         .kw-tabs{display:flex;gap:4px;margin-bottom:20px}
         .kw-tab{padding:8px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;color:rgba(255,255,255,.5);font-size:.8rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all .15s}
-        .kw-tab.active{background:rgba(99,102,241,.15);color:#a5b4fc}
+        .kw-tab.active{background:rgba(140,111,46,.15);color:#C9AA66}
         .kw-input-row{display:flex;gap:8px;margin-bottom:16px}
         .kw-input{flex:1;padding:10px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#fff;font-size:.875rem;font-family:inherit}
         .kw-input::placeholder{color:rgba(255,255,255,.3)}
-        .kw-go{padding:10px 20px;background:#6366f1;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.8rem;font-family:inherit}
+        .kw-go{padding:10px 20px;background:#8C6F2E;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.8rem;font-family:inherit}
         .kw-results-table{width:100%;border-collapse:collapse}
         .kw-results-table th{text-align:left;font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.3);padding:8px;border-bottom:1px solid rgba(255,255,255,.08)}
         .kw-results-table td{padding:10px 8px;font-size:.8rem;color:rgba(255,255,255,.75);border-bottom:1px solid rgba(255,255,255,.04)}
@@ -323,14 +363,14 @@
         .trend-flat{color:#f59e0b}
         .trend-down{color:#ef4444}
         .extracted-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
-        .ext-chip{font-size:.75rem;padding:5px 12px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);color:#a5b4fc;border-radius:100px}
+        .ext-chip{font-size:.75rem;padding:5px 12px;background:rgba(140,111,46,.1);border:1px solid rgba(140,111,46,.2);color:#C9AA66;border-radius:100px}
         .saved-kw-list{list-style:none}
         .saved-kw-list li{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:8px;margin-bottom:4px;font-size:.8rem}
 
         /* --- Campaign Wizard --- */
         .wiz-steps{display:flex;gap:4px;margin-bottom:20px;overflow-x:auto;padding-bottom:4px}
         .wiz-step-dot{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.65rem;color:rgba(255,255,255,.3);font-weight:700;flex-shrink:0;transition:all .2s;cursor:pointer}
-        .wiz-step-dot.active{background:rgba(99,102,241,.2);border-color:#6366f1;color:#a5b4fc}
+        .wiz-step-dot.active{background:rgba(140,111,46,.2);border-color:#8C6F2E;color:#C9AA66}
         .wiz-step-dot.done{background:#22c55e;border-color:#22c55e;color:#fff}
         .wiz-screen{display:none}
         .wiz-screen.active{display:block}
@@ -338,26 +378,26 @@
         .wiz-desc{font-size:.8rem;color:rgba(255,255,255,.45);margin-bottom:16px}
         .wiz-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
         .wiz-card{background:rgba(255,255,255,.04);border:2px solid rgba(255,255,255,.08);border-radius:10px;padding:16px;cursor:pointer;transition:all .15s;position:relative}
-        .wiz-card:hover{border-color:rgba(99,102,241,.3)}
-        .wiz-card.selected{border-color:#6366f1;background:rgba(99,102,241,.08)}
+        .wiz-card:hover{border-color:rgba(140,111,46,.3)}
+        .wiz-card.selected{border-color:#8C6F2E;background:rgba(140,111,46,.08)}
         .wiz-card h4{font-size:.85rem;font-weight:600;color:#fff;margin-bottom:2px}
         .wiz-card p{font-size:.7rem;color:rgba(255,255,255,.4);line-height:1.4}
-        .wiz-card .rec{position:absolute;top:8px;right:8px;font-size:.55rem;background:#6366f1;color:#fff;padding:2px 6px;border-radius:4px;font-weight:700;text-transform:uppercase}
+        .wiz-card .rec{position:absolute;top:8px;right:8px;font-size:.55rem;background:#8C6F2E;color:#fff;padding:2px 6px;border-radius:4px;font-weight:700;text-transform:uppercase}
         .wiz-nav{display:flex;justify-content:space-between;margin-top:20px}
         .wiz-back,.wiz-next{padding:10px 24px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.8rem;font-family:inherit;transition:all .15s}
         .wiz-back{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.6)}
         .wiz-back:hover{background:rgba(255,255,255,.1)}
-        .wiz-next{background:#6366f1;border:none;color:#fff}
+        .wiz-next{background:#8C6F2E;border:none;color:#fff}
         .wiz-next:hover{background:#4f46e5}
         .wiz-locations label{display:flex;align-items:center;gap:8px;padding:6px 0;font-size:.85rem;color:rgba(255,255,255,.75);cursor:pointer}
-        .wiz-locations input[type=checkbox]{accent-color:#6366f1}
+        .wiz-locations input[type=checkbox]{accent-color:#8C6F2E}
         .wiz-ad-editor textarea{width:100%;padding:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#fff;font-size:.8rem;font-family:inherit;resize:vertical;margin-bottom:8px}
-        .wiz-budget-slider{width:100%;margin:16px 0;accent-color:#6366f1}
+        .wiz-budget-slider{width:100%;margin:16px 0;accent-color:#8C6F2E}
         .wiz-budget-display{text-align:center}
         .wiz-budget-display .amount{font-family:var(--font-display);font-size:2rem;font-weight:700;color:#fff}
         .wiz-budget-display .monthly{font-size:.8rem;color:rgba(255,255,255,.4)}
         .wiz-toggle{display:flex;align-items:center;gap:12px;margin:12px 0}
-        .wiz-toggle input[type=checkbox]{width:40px;height:22px;accent-color:#6366f1}
+        .wiz-toggle input[type=checkbox]{width:40px;height:22px;accent-color:#8C6F2E}
         .wiz-summary{list-style:none}
         .wiz-summary li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.85rem}
         .wiz-summary li span:first-child{color:rgba(255,255,255,.45)}
@@ -408,7 +448,7 @@
         .data-flow{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:48px;flex-wrap:wrap}
         .flow-box{padding:16px 24px;border-radius:10px;text-align:center;font-weight:600;font-size:.9rem;min-width:160px}
         .flow-shopify{background:#95bf47;color:#fff}
-        .flow-smart{background:#6366f1;color:#fff}
+        .flow-smart{background:#8C6F2E;color:#fff}
         .flow-google{background:#4285f4;color:#fff}
         .flow-merchant{background:#34a853;color:#fff}
         .flow-arr{font-size:1.5rem;color:var(--muted);padding:0 8px;flex-shrink:0}
@@ -820,7 +860,7 @@
                             <div class="sub-scores">
                                 <div class="sub-score">
                                     <div class="sub-score-header"><span>Ad Quality</span><span>78%</span></div>
-                                    <div class="sub-score-bar"><div class="sub-score-fill" style="width:0;background:#6366f1" data-target="78"></div></div>
+                                    <div class="sub-score-bar"><div class="sub-score-fill" style="width:0;background:#8C6F2E" data-target="78"></div></div>
                                 </div>
                                 <div class="sub-score">
                                     <div class="sub-score-header"><span>Product Coverage</span><span>100%</span></div>
@@ -1044,7 +1084,7 @@
             <div class="modal-ring">
                 <svg width="60" height="60" viewBox="0 0 60 60">
                     <circle cx="30" cy="30" r="24" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="5"/>
-                    <circle cx="30" cy="30" r="24" fill="none" stroke="#6366f1" stroke-width="5" stroke-linecap="round" stroke-dasharray="151" stroke-dashoffset="151" id="modalRing" style="transform:rotate(-90deg);transform-origin:center"/>
+                    <circle cx="30" cy="30" r="24" fill="none" stroke="#8C6F2E" stroke-width="5" stroke-linecap="round" stroke-dasharray="151" stroke-dashoffset="151" id="modalRing" style="transform:rotate(-90deg);transform-origin:center"/>
                 </svg>
                 <div class="modal-ring-score" id="modalScore">0</div>
             </div>
@@ -1485,7 +1525,7 @@ function startPulse(){
   function draw(){
     ctx.clearRect(0,0,w,80);
     ctx.beginPath();
-    ctx.strokeStyle = '#6366f1';
+    ctx.strokeStyle = '#8C6F2E';
     ctx.lineWidth = 2;
     for(var i=0;i<w;i++){
       var idx = (i+Math.floor(offset))%pts.length;
@@ -1788,7 +1828,7 @@ function renderLaunchTimeline(){
 }
 
 function fireConfetti(){
-  var colors = ['#6366f1','#22c55e','#f59e0b','#06b6d4','#ef4444','#ec4899'];
+  var colors = ['#8C6F2E','#22c55e','#f59e0b','#06b6d4','#ef4444','#ec4899'];
   for(var i=0;i<60;i++){
     var c = document.createElement('div');
     c.className='confetti-piece';

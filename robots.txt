@@ -1,4 +1,22 @@
 User-agent: *
 Allow: /
+Disallow: /.claude/
+
+# Search engines — explicitly allowed
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI / answer engines — explicitly allowed (we want to be cited)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
 
 Sitemap: https://bamzal.com/sitemap.xml
