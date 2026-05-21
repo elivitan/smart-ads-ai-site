@@ -104,9 +104,89 @@
             padding: 8px 18px; font-size: .8125rem; font-weight: 500; color: var(--slate);
         }
 
+        /* Founder section */
+        .founder-section { max-width: 1080px; margin: 0 auto; }
+        .founder-grid {
+            display: grid;
+            grid-template-columns: minmax(280px, 420px) 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+        .founder-photo-wrap {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            aspect-ratio: 4 / 5;
+            background: var(--accent-light);
+        }
+        .founder-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .founder-photo-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            box-shadow: inset 0 0 80px rgba(140, 111, 46, .18);
+            pointer-events: none;
+        }
+        .founder-rule {
+            width: 56px; height: 2px;
+            background: var(--accent);
+            margin-bottom: 18px;
+        }
+        .founder-eyebrow {
+            font-family: var(--font-body);
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .18em;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .founder-name {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.875rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 6px;
+        }
+        .founder-title {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: .14em;
+            margin-bottom: 28px;
+        }
+        .founder-quote {
+            font-family: var(--font-display);
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            line-height: 1.45;
+            font-style: italic;
+            color: var(--ink);
+            border-left: 3px solid var(--accent);
+            padding-left: 22px;
+            margin-bottom: 28px;
+        }
+        .founder-bio {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: var(--slate);
+        }
+        .founder-bio + .founder-bio { margin-top: 14px; }
+
         @media (max-width: 768px) {
             .pillars-grid { grid-template-columns: 1fr; max-width: 400px; }
             .roadmap-grid { grid-template-columns: 1fr 1fr; }
+            .founder-grid { grid-template-columns: 1fr; gap: 36px; }
+            .founder-photo-wrap { max-width: 360px; margin: 0 auto; }
         }
     </style>
 </head>
@@ -154,6 +234,28 @@
         <h2>What we're building</h2>
         <p>Bamzal is the autonomous growth system for Shopify. A single coordinated AI runs the commercial surface of a store: paid media on five networks, organic social on six, an in-app creative studio, real-time community replies, continuous competitor intelligence, profit-aware optimization, and self-learning cycles that synthesize new rules from the outcomes of the prior week.</p>
         <p>Every action the system takes flows through a twelve-step governance gateway, lands in an immutable decision log, and is bounded by configurable caps and seven binding production SLOs. Three autonomy tiers — shadow, observe, co-pilot — let merchants dial how much authority the AI has, independently per platform. The keys stay with the merchant. The kill switch is one click away. The system does the work.</p>
+    </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="section" style="background: var(--paper);">
+    <div class="section-inner">
+        <div class="founder-section">
+            <div class="founder-grid">
+                <div class="founder-photo-wrap">
+                    <img src="/founder/lea-portrait.jpg" alt="Lea Vitan, Founder & CEO of Bamzal" width="720" height="960" loading="lazy">
+                </div>
+                <div>
+                    <div class="founder-rule"></div>
+                    <div class="founder-eyebrow">Meet the Founder</div>
+                    <h2 class="founder-name">Lea Vitan</h2>
+                    <div class="founder-title">Founder &amp; CEO</div>
+                    <blockquote class="founder-quote">&ldquo;Never give up believing in yourself.&rdquo;</blockquote>
+                    <p class="founder-bio">Lea built Bamzal after fifteen years inside the performance-marketing trenches &mdash; running SEO and paid-media programs for hundreds of merchants, watching the same playbook get re-applied account after account.</p>
+                    <p class="founder-bio">She founded Bamzal to encode that playbook as software: a single autonomous system that does the work of an entire media-buying team, gives the keys back to the merchant, and bills like an app instead of an agency.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
