@@ -317,6 +317,194 @@
     .lifecycle-steps{grid-template-columns:1fr}
     .modal{padding:16px}
 }
+
+/* === NEW: System Status Bar (persistent live indicators) === */
+.sysbar{display:flex;align-items:center;gap:18px;padding:10px 20px;background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.01));border-bottom:1px solid rgba(255,255,255,.06);font-size:.7rem;color:rgba(255,255,255,.62);flex-wrap:wrap}
+.sysbar-pill{display:inline-flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums}
+.sysbar-pill .num{color:#fff;font-weight:700;font-family:var(--font-display);font-size:.825rem;font-variant-numeric:tabular-nums}
+.sysbar-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.18);animation:livepulse 2.4s ease-in-out infinite}
+@keyframes livepulse{0%,100%{box-shadow:0 0 0 4px rgba(34,197,94,.18)}50%{box-shadow:0 0 0 6px rgba(34,197,94,.05)}}
+.sysbar-spacer{flex:1}
+.sysbar-search{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:5px 11px;color:rgba(255,255,255,.5);font-size:.7rem;min-width:220px}
+.sysbar-search svg{width:13px;height:13px;flex-shrink:0;opacity:.55}
+.sysbar-search kbd{margin-left:auto;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:4px;padding:1px 6px;font-size:.62rem;font-family:var(--font-mono,monospace);color:rgba(255,255,255,.55)}
+.sysbar-thinking{color:#C9AA66;display:inline-flex;align-items:center;gap:6px}
+.sysbar-thinking::before{content:'';width:6px;height:6px;border-radius:50%;background:#C9AA66;animation:livepulse 1.2s ease-in-out infinite}
+
+/* === NEW: Spark micro-chart === */
+.spark{display:inline-block;vertical-align:middle;margin-left:6px}
+.spark path{fill:none;stroke:#22c55e;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.spark.spark-down path{stroke:#ef4444}
+.spark.spark-amber path{stroke:#f59e0b}
+.spark-area{fill:rgba(34,197,94,.12)}
+.spark-area.spark-down{fill:rgba(239,68,68,.12)}
+.spark-area.spark-amber{fill:rgba(245,158,11,.12)}
+
+/* === NEW: Activity Feed === */
+.activity-feed{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;margin-top:18px}
+.activity-feed-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.activity-feed-head h3{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:8px}
+.activity-feed-head h3::before{content:'';width:7px;height:7px;border-radius:50%;background:#22c55e;animation:livepulse 2.4s ease-in-out infinite}
+.activity-link{font-size:.7rem;color:#C9AA66;text-decoration:none}
+.activity-row{display:grid;grid-template-columns:62px 24px 1fr auto;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);align-items:center;font-size:.78rem}
+.activity-row:last-child{border-bottom:none}
+.activity-time{font-size:.65rem;color:rgba(255,255,255,.4);font-variant-numeric:tabular-nums}
+.activity-icon{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:#fff}
+.act-bid{background:rgba(140,111,46,.85)}
+.act-creative{background:rgba(139,92,246,.85)}
+.act-dm{background:rgba(34,197,94,.85)}
+.act-post{background:rgba(14,165,233,.85)}
+.act-pause{background:rgba(245,158,11,.85)}
+.act-alert{background:rgba(239,68,68,.85)}
+.activity-text{color:rgba(255,255,255,.82);line-height:1.45}
+.activity-text strong{color:#fff}
+.activity-text em{color:#C9AA66;font-style:normal}
+.activity-result{font-size:.68rem;color:#22c55e;font-weight:600;font-variant-numeric:tabular-nums}
+.activity-result.warn{color:#f59e0b}
+
+/* === Hover polish on creative cards === */
+.creative-card{transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease}
+.creative-card:hover{transform:translateY(-3px);border-color:rgba(140,111,46,.5);box-shadow:0 14px 30px rgba(0,0,0,.35),0 0 0 1px rgba(140,111,46,.2) inset}
+
+/* === Comp card sparkline area === */
+.comp-spark-row{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.05);font-size:.65rem;color:rgba(255,255,255,.45)}
+.comp-spark-row .spark{margin-left:auto}
+
+/* === Aut row tighten + confidence === */
+.aut-confidence{font-size:.6rem;color:rgba(255,255,255,.45);margin-top:2px;display:flex;align-items:center;gap:5px}
+.aut-confidence::before{content:'';width:5px;height:5px;border-radius:50%;background:#22c55e}
+
+/* === NEW: Inbox (community replies) === */
+.inbox-layout{display:grid;grid-template-columns:280px 1fr;gap:0;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02);min-height:520px}
+.inbox-list{border-right:1px solid rgba(255,255,255,.08);overflow-y:auto;max-height:520px}
+.inbox-item{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer;transition:background .15s;display:grid;grid-template-columns:32px 1fr auto;gap:10px;align-items:start}
+.inbox-item:hover{background:rgba(255,255,255,.04)}
+.inbox-item.active{background:rgba(140,111,46,.12)}
+.inbox-platform{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#fff}
+.plat-ig{background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af)}
+.plat-tt{background:#000}
+.plat-fb{background:#1877f2}
+.plat-x{background:#000}
+.plat-yt{background:#ff0000}
+.plat-pn{background:#e60023}
+.inbox-meta{min-width:0}
+.inbox-from{font-size:.8rem;font-weight:600;color:#fff;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.inbox-preview{font-size:.7rem;color:rgba(255,255,255,.5);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.inbox-time{font-size:.65rem;color:rgba(255,255,255,.35);white-space:nowrap}
+.inbox-badge{display:inline-block;font-size:.6rem;font-weight:700;padding:1px 6px;border-radius:100px;margin-top:3px}
+.badge-auto{background:rgba(34,197,94,.15);color:#22c55e}
+.badge-review{background:rgba(245,158,11,.15);color:#f59e0b}
+.inbox-thread{padding:20px;display:flex;flex-direction:column;gap:14px}
+.inbox-thread-head{display:flex;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.06)}
+.inbox-thread-head .inbox-from{font-size:.875rem}
+.thread-msg{max-width:78%;padding:10px 14px;border-radius:14px;font-size:.825rem;line-height:1.45}
+.thread-msg.them{background:rgba(255,255,255,.06);color:rgba(255,255,255,.85);align-self:flex-start;border-bottom-left-radius:4px}
+.thread-msg.us{background:#8C6F2E;color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.thread-msg .by{font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;opacity:.65;margin-bottom:2px}
+.thread-suggest{margin-top:8px;padding:14px;background:rgba(140,111,46,.08);border:1px dashed rgba(140,111,46,.35);border-radius:10px}
+.thread-suggest .label{font-size:.65rem;color:#C9AA66;text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.thread-suggest .text{font-size:.825rem;color:rgba(255,255,255,.85);margin-bottom:10px}
+.thread-actions{display:flex;gap:8px}
+.thread-btn{padding:6px 14px;border-radius:7px;font-size:.7rem;font-weight:600;border:none;cursor:pointer}
+.btn-approve{background:#22c55e;color:#fff}
+.btn-edit{background:rgba(255,255,255,.08);color:rgba(255,255,255,.85)}
+.btn-skip{background:transparent;color:rgba(255,255,255,.4);border:1px solid rgba(255,255,255,.1)}
+
+/* === NEW: Social Calendar === */
+.social-cal{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+.cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.cal-head h3{font-size:.875rem;font-weight:700;color:#fff}
+.cal-platforms{display:flex;gap:6px;font-size:.65rem}
+.cal-pl{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:100px;background:rgba(255,255,255,.06);color:rgba(255,255,255,.7)}
+.cal-pl::before{content:'';width:6px;height:6px;border-radius:50%;display:inline-block}
+.cal-pl.ig::before{background:#dd2a7b}.cal-pl.tt::before{background:#fff}.cal-pl.fb::before{background:#1877f2}.cal-pl.x::before{background:#666}.cal-pl.yt::before{background:#ff0000}.cal-pl.pn::before{background:#e60023}.cal-pl.th::before{background:#888}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal-day{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:8px;padding:8px;min-height:96px;display:flex;flex-direction:column;gap:4px}
+.cal-day .day-num{font-size:.7rem;color:rgba(255,255,255,.4);font-weight:600;margin-bottom:2px}
+.cal-day.today{border-color:#8C6F2E;background:rgba(140,111,46,.08)}
+.cal-day.today .day-num{color:#C9AA66}
+.cal-post{font-size:.6rem;padding:3px 6px;border-radius:5px;color:#fff;display:flex;align-items:center;gap:4px;line-height:1.2}
+.cal-post::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.cal-post.ig{background:rgba(221,42,123,.18);color:#f9a8d4}.cal-post.ig::before{background:#dd2a7b}
+.cal-post.tt{background:rgba(255,255,255,.08);color:#fff}.cal-post.tt::before{background:#fff}
+.cal-post.fb{background:rgba(24,119,242,.18);color:#93c5fd}.cal-post.fb::before{background:#1877f2}
+.cal-post.x{background:rgba(255,255,255,.06);color:rgba(255,255,255,.75)}.cal-post.x::before{background:#888}
+.cal-post.yt{background:rgba(255,0,0,.18);color:#fca5a5}.cal-post.yt::before{background:#ff0000}
+.cal-post.pn{background:rgba(230,0,35,.18);color:#fca5a5}.cal-post.pn::before{background:#e60023}
+.cal-post.th{background:rgba(120,120,120,.18);color:rgba(255,255,255,.7)}.cal-post.th::before{background:#888}
+
+/* === NEW: Creative Studio === */
+.creative-toolbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:12px;flex-wrap:wrap}
+.creative-filters{display:flex;gap:6px;flex-wrap:wrap}
+.creative-chip{padding:5px 12px;border-radius:100px;font-size:.7rem;font-weight:600;background:rgba(255,255,255,.06);color:rgba(255,255,255,.75);border:1px solid transparent;cursor:pointer}
+.creative-chip.active{background:rgba(140,111,46,.18);color:#C9AA66;border-color:rgba(140,111,46,.4)}
+.creative-gen{background:#8C6F2E;color:#fff;border:none;padding:8px 16px;border-radius:8px;font-size:.75rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.creative-gen svg{width:14px;height:14px}
+.creative-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.creative-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;overflow:hidden;position:relative}
+.creative-img{aspect-ratio:1;background:linear-gradient(135deg,#3d2f12,#1a1a2e);display:flex;align-items:center;justify-content:center;position:relative;font-size:.6rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em}
+.creative-img.gradient-1{background:linear-gradient(135deg,#fbbf24,#dc2626)}
+.creative-img.gradient-2{background:linear-gradient(135deg,#10b981,#3b82f6)}
+.creative-img.gradient-3{background:linear-gradient(135deg,#8b5cf6,#ec4899)}
+.creative-img.gradient-4{background:linear-gradient(135deg,#0ea5e9,#1e1b4b)}
+.creative-img.gradient-5{background:linear-gradient(135deg,#f59e0b,#7c2d12)}
+.creative-img.gradient-6{background:linear-gradient(135deg,#a16207,#1c1917)}
+.creative-img.gradient-7{background:linear-gradient(135deg,#06b6d4,#312e81)}
+.creative-img.gradient-8{background:linear-gradient(135deg,#be185d,#451a03)}
+.creative-pl-tag{position:absolute;top:6px;left:6px;font-size:.55rem;padding:2px 6px;border-radius:4px;background:rgba(0,0,0,.55);color:#fff;font-weight:700;letter-spacing:.04em}
+.creative-perf{position:absolute;bottom:6px;right:6px;font-size:.55rem;padding:2px 6px;border-radius:4px;background:rgba(34,197,94,.85);color:#fff;font-weight:700}
+.creative-perf.warn{background:rgba(245,158,11,.85)}
+.creative-info{padding:8px 10px}
+.creative-info .headline{font-size:.7rem;font-weight:600;color:#fff;line-height:1.3;margin-bottom:2px}
+.creative-info .meta{font-size:.6rem;color:rgba(255,255,255,.4)}
+
+/* === NEW: Competitors === */
+.comp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:16px}
+.comp-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px}
+.comp-card-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.comp-logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,#8C6F2E,#1a1a2e);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:#fff;flex-shrink:0}
+.comp-name{font-size:.85rem;font-weight:700;color:#fff}
+.comp-stat-row{display:flex;justify-content:space-between;font-size:.7rem;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.comp-stat-row:last-child{border-bottom:none}
+.comp-stat-row .lbl{color:rgba(255,255,255,.5)}
+.comp-stat-row .val{color:#fff;font-weight:600}
+.comp-stat-row .val.up{color:#22c55e}
+.comp-stat-row .val.down{color:#ef4444}
+.comp-feed{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+.comp-feed h3{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.comp-feed h3::before{content:'';width:7px;height:7px;border-radius:50%;background:#ef4444;animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.feed-item{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:10px;align-items:flex-start}
+.feed-item:last-child{border-bottom:none}
+.feed-time{font-size:.65rem;color:rgba(255,255,255,.35);min-width:62px;padding-top:1px;font-variant-numeric:tabular-nums}
+.feed-text{font-size:.78rem;color:rgba(255,255,255,.8);line-height:1.45}
+.feed-text strong{color:#fff}
+
+/* === NEW: Autonomy === */
+.aut-row{display:grid;grid-template-columns:160px 1fr 200px;gap:16px;align-items:center;padding:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;margin-bottom:8px}
+.aut-platform{display:flex;align-items:center;gap:10px}
+.aut-platform .inbox-platform{width:28px;height:28px;font-size:.65rem}
+.aut-platform .name{font-size:.875rem;font-weight:700;color:#fff}
+.aut-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:rgba(0,0,0,.25);border-radius:8px;padding:3px;position:relative}
+.aut-tier{padding:8px 6px;text-align:center;font-size:.7rem;font-weight:600;color:rgba(255,255,255,.5);cursor:pointer;border-radius:6px;transition:all .2s;position:relative;z-index:2}
+.aut-tier.active{background:#8C6F2E;color:#fff;box-shadow:0 4px 14px rgba(140,111,46,.35)}
+.aut-tier small{display:block;font-size:.55rem;font-weight:500;opacity:.7;text-transform:uppercase;letter-spacing:.05em;margin-top:1px}
+.aut-perf{display:flex;align-items:center;gap:8px;font-size:.7rem;color:rgba(255,255,255,.6);justify-content:flex-end}
+.aut-perf .num{font-family:var(--font-display);font-size:1rem;font-weight:700;color:#fff;font-variant-numeric:tabular-nums}
+.aut-perf .delta{font-size:.65rem;font-weight:600;color:#22c55e}
+.aut-explain{background:rgba(140,111,46,.06);border:1px solid rgba(140,111,46,.2);border-radius:10px;padding:14px;margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.aut-explain-tier{font-size:.7rem;color:rgba(255,255,255,.65);line-height:1.5}
+.aut-explain-tier strong{display:block;color:#C9AA66;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;font-weight:700}
+
+@media(max-width:768px){
+    .inbox-layout{grid-template-columns:1fr}
+    .inbox-list{max-height:240px;border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+    .cal-grid{grid-template-columns:repeat(4,1fr)}
+    .creative-grid{grid-template-columns:repeat(2,1fr)}
+    .comp-grid{grid-template-columns:1fr}
+    .aut-row{grid-template-columns:1fr;gap:10px}
+    .aut-perf{justify-content:flex-start}
+}
 </style>
 </head>
 <body>
@@ -346,12 +534,12 @@
     <div class="page-hero-inner">
         <div class="hero-badge">Interactive Platform Demo</div>
         <h1>See the system in motion</h1>
-        <p>Walk through the merchant-facing surfaces — dashboard, competitor intelligence, creative studio, campaign builder, social inbox, settings. The screens are real; the data is sample.</p>
+        <p>Eleven screens of the actual app &mdash; the dashboard, your product catalog scored for ads, AI-built campaigns, the creative studio that designs your ads and videos, the social calendar that posts on every platform for you, the inbox that replies to DMs and comments in your voice, the competitor radar, and the autonomy controls that decide how much rope Bamzal has on each platform.</p>
         <div style="margin-top:24px;background:#fff;border:2px solid var(--accent);border-radius:12px;padding:20px 28px;text-align:left;max-width:620px;margin-left:auto;margin-right:auto">
             <p style="font-size:.9375rem;font-weight:700;color:var(--ink);margin-bottom:8px">&#9432; This is an interactive demo &mdash; not the production application.</p>
             <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">Bamzal is a <strong>Shopify embedded app</strong> that runs inside the Shopify Admin. Merchants install it from the Shopify App Store, and the application loads inside their Shopify admin panel &mdash; not on this marketing website.</p>
             <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">The demo below is a <strong>static simulation</strong> of the actual application screens, built so you can see the layout, the data flow and the decision surfaces. All numbers are illustrative.</p>
-            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin:0">The production system is built on <strong>React Router 7</strong>, <strong>Prisma + Supabase Postgres</strong>, <strong>Redis &amp; BullMQ</strong> for queued optimization cycles, and integrates with the <strong>Google Ads API v22</strong>, <strong>Meta Marketing API</strong>, <strong>TikTok Marketing API</strong>, <strong>Pinterest API v5</strong>, <strong>X Ads API</strong> and <strong>Anthropic Claude</strong>.</p>
+            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin:0">Connects directly to your <strong>Google, Meta, TikTok, Pinterest and X</strong> ad accounts &mdash; in your name, with your billing. Powered by <strong>Anthropic Claude</strong> for the creative and copy work. Your ad accounts stay yours; cancel anytime and the system disconnects cleanly.</p>
         </div>
     </div>
 </section>
@@ -383,6 +571,26 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 Campaigns
             </button></li>
+            <li><button onclick="switchScreen('creative')" data-screen="creative">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+                Creative Studio <span class="sidebar-badge">AI</span>
+            </button></li>
+            <li><button onclick="switchScreen('social')" data-screen="social">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>
+                Social Calendar
+            </button></li>
+            <li><button onclick="switchScreen('inbox')" data-screen="inbox">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                Inbox <span class="sidebar-badge">3</span>
+            </button></li>
+            <li><button onclick="switchScreen('competitors')" data-screen="competitors">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                Competitors
+            </button></li>
+            <li><button onclick="switchScreen('autonomy')" data-screen="autonomy">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"/><path d="M12 18v4"/><path d="m4.93 4.93 2.83 2.83"/><path d="m16.24 16.24 2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="m4.93 19.07 2.83-2.83"/><path d="m16.24 7.76 2.83-2.83"/></svg>
+                Autonomy
+            </button></li>
             <li><button onclick="switchScreen('settings')" data-screen="settings">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
                 Settings
@@ -392,6 +600,20 @@
 
     <!-- Main Content -->
     <div class="app-main">
+
+        <!-- ===== SYSTEM STATUS BAR (persistent across screens) ===== -->
+        <div class="sysbar">
+            <span class="sysbar-pill"><span class="sysbar-dot"></span>12 agents active</span>
+            <span class="sysbar-pill"><span class="num">47</span> actions / hr</span>
+            <span class="sysbar-pill"><span class="num">$182</span> / $250 today</span>
+            <span class="sysbar-thinking">Bid optimizer running &middot; 12s</span>
+            <span class="sysbar-spacer"></span>
+            <div class="sysbar-search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                Ask Bamzal anything&hellip;
+                <kbd>&#8984;K</kbd>
+            </div>
+        </div>
 
         <!-- ===== DASHBOARD ===== -->
         <div class="screen active" id="screen-dashboard">
@@ -469,6 +691,55 @@
                         <tr><td>bamboo sheets queen set</td><td>3</td><td>290</td><td class="loss">$435</td></tr>
                     </tbody>
                 </table>
+            </div>
+
+            <div class="activity-feed">
+                <div class="activity-feed-head">
+                    <h3>Bamzal &middot; live activity</h3>
+                    <a href="#" class="activity-link" onclick="return false">View full log &rarr;</a>
+                </div>
+                <div class="activity-row">
+                    <div class="activity-time">12:42</div>
+                    <div class="activity-icon act-bid">$</div>
+                    <div class="activity-text">Raised bid on <strong>"bamboo sheets queen"</strong> from $1.85 &rarr; $2.10 &mdash; <em>defending position vs Cozy Earth</em></div>
+                    <div class="activity-result">+12% impressions</div>
+                </div>
+                <div class="activity-row">
+                    <div class="activity-time">12:38</div>
+                    <div class="activity-icon act-creative">C</div>
+                    <div class="activity-text">Pushed <strong>3 new TikTok creative variants</strong> for <em>Bamboo Sheet Set</em> &mdash; predecessor fatigued at 14d</div>
+                    <div class="activity-result">queued</div>
+                </div>
+                <div class="activity-row">
+                    <div class="activity-time">12:31</div>
+                    <div class="activity-icon act-dm">@</div>
+                    <div class="activity-text">Auto-replied to <strong>@sleepwell_jess</strong> on Instagram &mdash; sizing question, brand voice 94%</div>
+                    <div class="activity-result">sent</div>
+                </div>
+                <div class="activity-row">
+                    <div class="activity-time">12:22</div>
+                    <div class="activity-icon act-post">P</div>
+                    <div class="activity-text">Published <strong>Reel</strong> to Instagram &mdash; "Sleep cooler with bamboo" hero variant</div>
+                    <div class="activity-result">live</div>
+                </div>
+                <div class="activity-row">
+                    <div class="activity-time">12:11</div>
+                    <div class="activity-icon act-alert">!</div>
+                    <div class="activity-text">Detected <strong>Brooklinen</strong> launched 3 new TikTok Spark ads on your category &mdash; counter-creative queued</div>
+                    <div class="activity-result warn">action queued</div>
+                </div>
+                <div class="activity-row">
+                    <div class="activity-time">12:04</div>
+                    <div class="activity-icon act-pause">||</div>
+                    <div class="activity-text">Paused <strong>"Winter Blankets Sale"</strong> Pinterest campaign &mdash; spend efficiency 0.4x below threshold</div>
+                    <div class="activity-result warn">paused</div>
+                </div>
+                <div class="activity-row">
+                    <div class="activity-time">11:58</div>
+                    <div class="activity-icon act-bid">$</div>
+                    <div class="activity-text">Shifted <strong>$45</strong> from underperforming Google Search ad group to <strong>Meta Advantage+</strong> &mdash; profit-adjusted</div>
+                    <div class="activity-result">+$112 forecast</div>
+                </div>
             </div>
         </div>
 
@@ -615,7 +886,7 @@
                 <div class="settings-connected"><div class="dot"></div><span>Connected to Shopify</span></div>
                 <div class="settings-row"><span>Store</span><span>dreamhome-bedding.myshopify.com</span></div>
                 <div class="settings-row"><span>Products</span><span>24 synced</span></div>
-                <div class="settings-row"><span>Plan</span><span>Starter ($29/mo)</span></div>
+                <div class="settings-row"><span>Plan</span><span>Starter ($49/mo)</span></div>
             </div>
             <div class="settings-card">
                 <h3>API Usage This Month</h3>
@@ -624,6 +895,372 @@
                 <div class="settings-row"><span>Keyword Mutations</span><span>156</span></div>
                 <div class="settings-row"><span>Reporting Queries</span><span>1,240</span></div>
                 <div class="settings-row"><span>OAuth Refreshes</span><span>48</span></div>
+            </div>
+        </div>
+
+        <!-- ===== CREATIVE STUDIO ===== -->
+        <div class="screen" id="screen-creative">
+            <div class="app-topbar">
+                <div class="app-panel-title">Creative Studio</div>
+                <div class="app-topbar-right">
+                    <span class="topbar-pill pill-green">8 variants ready</span>
+                    <span class="topbar-pill pill-blue">Refreshes when ads fatigue</span>
+                </div>
+            </div>
+            <div class="creative-toolbar">
+                <div class="creative-filters">
+                    <button class="creative-chip active">All platforms</button>
+                    <button class="creative-chip">Meta</button>
+                    <button class="creative-chip">TikTok</button>
+                    <button class="creative-chip">Google</button>
+                    <button class="creative-chip">Pinterest</button>
+                </div>
+                <button class="creative-gen">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11"/></svg>
+                    Generate fresh batch
+                </button>
+            </div>
+            <div class="creative-grid">
+                <div class="creative-card">
+                    <div class="creative-img gradient-1"><span class="creative-pl-tag">META</span><span class="creative-perf">+38%</span>Hero · 1:1</div>
+                    <div class="creative-info"><div class="headline">Sleep cooler with bamboo</div><div class="meta">Story · 12d live</div></div>
+                </div>
+                <div class="creative-card">
+                    <div class="creative-img gradient-2"><span class="creative-pl-tag">TIKTOK</span><span class="creative-perf">+22%</span>UGC · 9:16</div>
+                    <div class="creative-info"><div class="headline">"This sheet set changed my sleep"</div><div class="meta">Spark · 8d live</div></div>
+                </div>
+                <div class="creative-card">
+                    <div class="creative-img gradient-3"><span class="creative-pl-tag">META</span><span class="creative-perf">+15%</span>Lifestyle · 4:5</div>
+                    <div class="creative-info"><div class="headline">The luxury sheet under $90</div><div class="meta">Feed · 5d live</div></div>
+                </div>
+                <div class="creative-card">
+                    <div class="creative-img gradient-4"><span class="creative-pl-tag">GOOGLE</span><span class="creative-perf">+12%</span>Search · RSA</div>
+                    <div class="creative-info"><div class="headline">Premium Cotton Bed Sheets | Free Shipping</div><div class="meta">PMax · 6d live</div></div>
+                </div>
+                <div class="creative-card">
+                    <div class="creative-img gradient-5"><span class="creative-pl-tag">PINTEREST</span><span class="creative-perf warn">-4%</span>Pin · 2:3</div>
+                    <div class="creative-info"><div class="headline">7 cozy bedroom upgrades</div><div class="meta">Standard · 14d live · fatiguing</div></div>
+                </div>
+                <div class="creative-card">
+                    <div class="creative-img gradient-6"><span class="creative-pl-tag">META</span><span class="creative-perf">+41%</span>Carousel · 5 cards</div>
+                    <div class="creative-info"><div class="headline">Compare our cotton thread counts</div><div class="meta">Catalog · 7d live</div></div>
+                </div>
+                <div class="creative-card">
+                    <div class="creative-img gradient-7"><span class="creative-pl-tag">TIKTOK</span><span class="creative-perf">+29%</span>Trend · 9:16</div>
+                    <div class="creative-info"><div class="headline">Bed reveal · "wait for it"</div><div class="meta">Spark · 3d live</div></div>
+                </div>
+                <div class="creative-card">
+                    <div class="creative-img gradient-8"><span class="creative-pl-tag">META</span><span class="creative-perf">+18%</span>Video · 15s</div>
+                    <div class="creative-info"><div class="headline">From cotton field to your bed</div><div class="meta">Reels · 9d live</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== SOCIAL CALENDAR ===== -->
+        <div class="screen" id="screen-social">
+            <div class="app-topbar">
+                <div class="app-panel-title">Social Calendar</div>
+                <div class="app-topbar-right">
+                    <span class="topbar-pill pill-green">42 posts scheduled</span>
+                    <span class="topbar-pill pill-blue">6 platforms · auto-cadence</span>
+                </div>
+            </div>
+            <div class="social-cal">
+                <div class="cal-head">
+                    <h3>This week &middot; Apr 14&ndash;20</h3>
+                    <div class="cal-platforms">
+                        <span class="cal-pl ig">Instagram</span>
+                        <span class="cal-pl tt">TikTok</span>
+                        <span class="cal-pl fb">Facebook</span>
+                        <span class="cal-pl pn">Pinterest</span>
+                        <span class="cal-pl th">Threads</span>
+                        <span class="cal-pl yt">YouTube</span>
+                    </div>
+                </div>
+                <div class="cal-grid">
+                    <div class="cal-day"><div class="day-num">Mon 14</div>
+                        <div class="cal-post ig">9am · Reel</div>
+                        <div class="cal-post tt">3pm · Spark</div>
+                        <div class="cal-post pn">7pm · Pin set</div>
+                    </div>
+                    <div class="cal-day"><div class="day-num">Tue 15</div>
+                        <div class="cal-post fb">10am · Story</div>
+                        <div class="cal-post ig">1pm · Carousel</div>
+                        <div class="cal-post yt">8pm · Short</div>
+                    </div>
+                    <div class="cal-day"><div class="day-num">Wed 16</div>
+                        <div class="cal-post ig">9am · Feed</div>
+                        <div class="cal-post tt">2pm · UGC</div>
+                        <div class="cal-post th">5pm · Reply chain</div>
+                        <div class="cal-post pn">7pm · Pin</div>
+                    </div>
+                    <div class="cal-day today"><div class="day-num">Thu 17 · today</div>
+                        <div class="cal-post ig">9am · Reel ✓</div>
+                        <div class="cal-post fb">12pm · Live ✓</div>
+                        <div class="cal-post tt">4pm · Trend</div>
+                        <div class="cal-post x">6pm · Thread</div>
+                    </div>
+                    <div class="cal-day"><div class="day-num">Fri 18</div>
+                        <div class="cal-post yt">10am · Short</div>
+                        <div class="cal-post ig">2pm · Story</div>
+                        <div class="cal-post pn">6pm · Pin</div>
+                    </div>
+                    <div class="cal-day"><div class="day-num">Sat 19</div>
+                        <div class="cal-post tt">11am · UGC</div>
+                        <div class="cal-post ig">3pm · Carousel</div>
+                        <div class="cal-post fb">7pm · Post</div>
+                    </div>
+                    <div class="cal-day"><div class="day-num">Sun 20</div>
+                        <div class="cal-post pn">10am · Pin set</div>
+                        <div class="cal-post ig">2pm · Reel</div>
+                        <div class="cal-post th">6pm · Thread</div>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size:.75rem;color:rgba(255,255,255,.45);margin-top:14px;line-height:1.6">Cadence tuned per platform &mdash; Reels twice weekly, TikTok daily during trend windows, Pinterest before audience peak. Bamzal watches engagement and shifts the schedule itself.</p>
+        </div>
+
+        <!-- ===== INBOX (Community Replies) ===== -->
+        <div class="screen" id="screen-inbox">
+            <div class="app-topbar">
+                <div class="app-panel-title">Inbox</div>
+                <div class="app-topbar-right">
+                    <span class="topbar-pill pill-green">24 replied this week</span>
+                    <span class="topbar-pill pill-blue">3 waiting for your call</span>
+                </div>
+            </div>
+            <div class="inbox-layout">
+                <div class="inbox-list">
+                    <div class="inbox-item active">
+                        <div class="inbox-platform plat-ig">IG</div>
+                        <div class="inbox-meta">
+                            <div class="inbox-from">@sleepwell_jess</div>
+                            <div class="inbox-preview">does this come in queen size?</div>
+                            <span class="inbox-badge badge-review">Review</span>
+                        </div>
+                        <div class="inbox-time">2m</div>
+                    </div>
+                    <div class="inbox-item">
+                        <div class="inbox-platform plat-tt">TT</div>
+                        <div class="inbox-meta">
+                            <div class="inbox-from">@cozycorner</div>
+                            <div class="inbox-preview">how do you wash these?</div>
+                            <span class="inbox-badge badge-auto">Auto-replied</span>
+                        </div>
+                        <div class="inbox-time">14m</div>
+                    </div>
+                    <div class="inbox-item">
+                        <div class="inbox-platform plat-fb">FB</div>
+                        <div class="inbox-meta">
+                            <div class="inbox-from">Maria Klein</div>
+                            <div class="inbox-preview">shipping to Germany?</div>
+                            <span class="inbox-badge badge-auto">Auto-replied</span>
+                        </div>
+                        <div class="inbox-time">31m</div>
+                    </div>
+                    <div class="inbox-item">
+                        <div class="inbox-platform plat-ig">IG</div>
+                        <div class="inbox-meta">
+                            <div class="inbox-from">@minimalhome</div>
+                            <div class="inbox-preview">are these GOTS-certified?</div>
+                            <span class="inbox-badge badge-review">Review</span>
+                        </div>
+                        <div class="inbox-time">47m</div>
+                    </div>
+                    <div class="inbox-item">
+                        <div class="inbox-platform plat-x">X</div>
+                        <div class="inbox-meta">
+                            <div class="inbox-from">@designdad</div>
+                            <div class="inbox-preview">love the new colorway!</div>
+                            <span class="inbox-badge badge-auto">Auto-replied</span>
+                        </div>
+                        <div class="inbox-time">1h</div>
+                    </div>
+                    <div class="inbox-item">
+                        <div class="inbox-platform plat-tt">TT</div>
+                        <div class="inbox-meta">
+                            <div class="inbox-from">@sarahb_home</div>
+                            <div class="inbox-preview">comparing to brooklinen 🤔</div>
+                            <span class="inbox-badge badge-review">Review</span>
+                        </div>
+                        <div class="inbox-time">2h</div>
+                    </div>
+                    <div class="inbox-item">
+                        <div class="inbox-platform plat-fb">FB</div>
+                        <div class="inbox-meta">
+                            <div class="inbox-from">Daniel Park</div>
+                            <div class="inbox-preview">just got mine 5/5</div>
+                            <span class="inbox-badge badge-auto">Auto-replied</span>
+                        </div>
+                        <div class="inbox-time">3h</div>
+                    </div>
+                </div>
+                <div class="inbox-thread">
+                    <div class="inbox-thread-head">
+                        <div class="inbox-platform plat-ig">IG</div>
+                        <div>
+                            <div class="inbox-from">@sleepwell_jess &middot; Instagram DM</div>
+                            <div class="inbox-time">Replied to your Reel &middot; 2 min ago</div>
+                        </div>
+                    </div>
+                    <div class="thread-msg them">
+                        <div class="by">@sleepwell_jess</div>
+                        Wait this looks so cozy 😍 does this come in queen size? And do you ship to Canada?
+                    </div>
+                    <div class="thread-suggest">
+                        <div class="label">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/></svg>
+                            Bamzal suggests &middot; matches your brand voice (94%)
+                        </div>
+                        <div class="text">Hey Jess! Yes &mdash; queen is one of our most popular sizes (link in bio for sizes). And we ship to Canada free over $75. Want me to send the queen link directly? 💕</div>
+                        <div class="thread-actions">
+                            <button class="thread-btn btn-approve">Send reply</button>
+                            <button class="thread-btn btn-edit">Edit first</button>
+                            <button class="thread-btn btn-skip">Skip</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size:.75rem;color:rgba(255,255,255,.45);margin-top:14px;line-height:1.6">Bamzal sees every DM and comment in real time. Routine answers (sizing, shipping, care) reply themselves in your brand voice. Anything tricky, opinion-shaped or off-script gets routed to you with a draft &mdash; you keep the human touch where it matters.</p>
+        </div>
+
+        <!-- ===== COMPETITORS ===== -->
+        <div class="screen" id="screen-competitors">
+            <div class="app-topbar">
+                <div class="app-panel-title">Competitor Intelligence</div>
+                <div class="app-topbar-right">
+                    <span class="topbar-pill pill-green">5 brands tracked</span>
+                    <span class="topbar-pill pill-blue">Live &middot; updated 4 min ago</span>
+                </div>
+            </div>
+            <div class="comp-grid">
+                <div class="comp-card">
+                    <div class="comp-card-head"><div class="comp-logo">BR</div><div><div class="comp-name">Brooklinen</div><div style="font-size:.65rem;color:rgba(255,255,255,.4)">brooklinen.com</div></div></div>
+                    <div class="comp-stat-row"><span class="lbl">Est. monthly spend</span><span class="val">$84K</span></div>
+                    <div class="comp-stat-row"><span class="lbl">New ads this week</span><span class="val">7</span></div>
+                    <div class="comp-stat-row"><span class="lbl">Avg sheet price</span><span class="val up">$159 &uarr;5%</span></div>
+                    <div class="comp-stat-row"><span class="lbl">Top keyword</span><span class="val">"luxe sateen"</span></div>
+                    <div class="comp-spark-row"><span>7-day spend trend</span><svg class="spark" width="84" height="22" viewBox="0 0 84 22"><path class="spark-area" d="M0,16 L12,14 L24,17 L36,11 L48,9 L60,7 L72,5 L84,3 L84,22 L0,22 Z"/><path d="M0,16 L12,14 L24,17 L36,11 L48,9 L60,7 L72,5 L84,3"/></svg></div>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-card-head"><div class="comp-logo">PB</div><div><div class="comp-name">Parachute Home</div><div style="font-size:.65rem;color:rgba(255,255,255,.4)">parachutehome.com</div></div></div>
+                    <div class="comp-stat-row"><span class="lbl">Est. monthly spend</span><span class="val">$112K</span></div>
+                    <div class="comp-stat-row"><span class="lbl">New ads this week</span><span class="val">4</span></div>
+                    <div class="comp-stat-row"><span class="lbl">Avg sheet price</span><span class="val down">$185 &darr;8%</span></div>
+                    <div class="comp-stat-row"><span class="lbl">Top keyword</span><span class="val">"linen sheets"</span></div>
+                    <div class="comp-spark-row"><span>7-day spend trend</span><svg class="spark spark-down" width="84" height="22" viewBox="0 0 84 22"><path class="spark-area spark-down" d="M0,4 L12,7 L24,5 L36,9 L48,8 L60,12 L72,15 L84,18 L84,22 L0,22 Z"/><path d="M0,4 L12,7 L24,5 L36,9 L48,8 L60,12 L72,15 L84,18"/></svg></div>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-card-head"><div class="comp-logo">BO</div><div><div class="comp-name">Boll &amp; Branch</div><div style="font-size:.65rem;color:rgba(255,255,255,.4)">bollandbranch.com</div></div></div>
+                    <div class="comp-stat-row"><span class="lbl">Est. monthly spend</span><span class="val">$67K</span></div>
+                    <div class="comp-stat-row"><span class="lbl">New ads this week</span><span class="val">11</span></div>
+                    <div class="comp-stat-row"><span class="lbl">Avg sheet price</span><span class="val">$249</span></div>
+                    <div class="comp-stat-row"><span class="lbl">Top keyword</span><span class="val">"organic cotton"</span></div>
+                    <div class="comp-spark-row"><span>7-day spend trend</span><svg class="spark spark-amber" width="84" height="22" viewBox="0 0 84 22"><path class="spark-area spark-amber" d="M0,12 L12,8 L24,14 L36,6 L48,11 L60,4 L72,13 L84,9 L84,22 L0,22 Z"/><path d="M0,12 L12,8 L24,14 L36,6 L48,11 L60,4 L72,13 L84,9"/></svg></div>
+                </div>
+                <div class="comp-card">
+                    <div class="comp-card-head"><div class="comp-logo">CO</div><div><div class="comp-name">Cozy Earth</div><div style="font-size:.65rem;color:rgba(255,255,255,.4)">cozyearth.com</div></div></div>
+                    <div class="comp-stat-row"><span class="lbl">Est. monthly spend</span><span class="val">$45K</span></div>
+                    <div class="comp-stat-row"><span class="lbl">New ads this week</span><span class="val">3</span></div>
+                    <div class="comp-stat-row"><span class="lbl">Avg sheet price</span><span class="val up">$329 &uarr;12%</span></div>
+                    <div class="comp-stat-row"><span class="lbl">Top keyword</span><span class="val">"bamboo viscose"</span></div>
+                    <div class="comp-spark-row"><span>7-day spend trend</span><svg class="spark" width="84" height="22" viewBox="0 0 84 22"><path class="spark-area" d="M0,18 L12,15 L24,13 L36,14 L48,10 L60,8 L72,6 L84,4 L84,22 L0,22 Z"/><path d="M0,18 L12,15 L24,13 L36,14 L48,10 L60,8 L72,6 L84,4"/></svg></div>
+                </div>
+            </div>
+            <div class="comp-feed">
+                <h3>Live signals</h3>
+                <div class="feed-item"><div class="feed-time">2 min ago</div><div class="feed-text"><strong>Brooklinen</strong> launched 3 new TikTok Spark ads targeting <em>&ldquo;cooling sheets summer&rdquo;</em>. Bamzal queued counter-creative for your bamboo set.</div></div>
+                <div class="feed-item"><div class="feed-time">18 min ago</div><div class="feed-text"><strong>Parachute</strong> dropped percale set from $185 to $169 (&minus;8%). Your $149 stays competitive; no action needed.</div></div>
+                <div class="feed-item"><div class="feed-time">42 min ago</div><div class="feed-text"><strong>Cozy Earth</strong> bidding aggressively on <em>&ldquo;bamboo sheets queen&rdquo;</em> (your top keyword). Bamzal raised your bid cap from $1.85 to $2.20 to hold position 2.</div></div>
+                <div class="feed-item"><div class="feed-time">1h ago</div><div class="feed-text"><strong>Boll &amp; Branch</strong> ran first-ever Pinterest spend ($800). Below noise floor &mdash; ignoring.</div></div>
+                <div class="feed-item"><div class="feed-time">3h ago</div><div class="feed-text">New entrant <strong>Sijo Home</strong> detected in your category. Now tracking &mdash; ramp-up signals appear above $5K/month spend.</div></div>
+            </div>
+        </div>
+
+        <!-- ===== AUTONOMY ===== -->
+        <div class="screen" id="screen-autonomy">
+            <div class="app-topbar">
+                <div class="app-panel-title">Autonomy Settings</div>
+                <div class="app-topbar-right">
+                    <span class="topbar-pill pill-green">Performing within bounds</span>
+                </div>
+            </div>
+            <p style="font-size:.85rem;color:rgba(255,255,255,.65);margin-bottom:18px;line-height:1.6">Pick how much rope Bamzal has, per platform. Start in <strong style="color:#fff">Shadow</strong> while you watch what it would have done. Move to <strong style="color:#fff">Observe</strong> when you trust the patterns. Promote to <strong style="color:#fff">Co-Pilot</strong> when you want it acting on its own &mdash; with your budget caps still in force.</p>
+
+            <div class="aut-row">
+                <div class="aut-platform"><div class="inbox-platform" style="background:#fff;color:#000">G</div><div class="name">Google Ads</div></div>
+                <div class="aut-tiers">
+                    <div class="aut-tier">Shadow<small>watch only</small></div>
+                    <div class="aut-tier">Observe<small>notify, ask</small></div>
+                    <div class="aut-tier active">Co-Pilot<small>auto-act</small></div>
+                </div>
+                <div class="aut-perf"><div>
+                    <div class="num">+38%<svg class="spark" width="60" height="16" viewBox="0 0 60 16"><path d="M0,12 L8,11 L16,10 L24,8 L32,9 L40,6 L48,4 L60,2"/></svg></div>
+                    <div class="delta">vs shadow baseline</div>
+                    <div class="aut-confidence">Confidence 0.92 &middot; 47d data</div>
+                </div></div>
+            </div>
+
+            <div class="aut-row">
+                <div class="aut-platform"><div class="inbox-platform plat-fb">M</div><div class="name">Meta (FB &amp; IG)</div></div>
+                <div class="aut-tiers">
+                    <div class="aut-tier">Shadow<small>watch only</small></div>
+                    <div class="aut-tier active">Observe<small>notify, ask</small></div>
+                    <div class="aut-tier">Co-Pilot<small>auto-act</small></div>
+                </div>
+                <div class="aut-perf"><div>
+                    <div class="num">+24%<svg class="spark" width="60" height="16" viewBox="0 0 60 16"><path d="M0,10 L8,9 L16,11 L24,7 L32,8 L40,6 L48,5 L60,5"/></svg></div>
+                    <div class="delta">vs shadow baseline</div>
+                    <div class="aut-confidence">Confidence 0.78 &middot; 21d data</div>
+                </div></div>
+            </div>
+
+            <div class="aut-row">
+                <div class="aut-platform"><div class="inbox-platform plat-tt">T</div><div class="name">TikTok</div></div>
+                <div class="aut-tiers">
+                    <div class="aut-tier">Shadow<small>watch only</small></div>
+                    <div class="aut-tier">Observe<small>notify, ask</small></div>
+                    <div class="aut-tier active">Co-Pilot<small>auto-act</small></div>
+                </div>
+                <div class="aut-perf"><div>
+                    <div class="num">+51%<svg class="spark" width="60" height="16" viewBox="0 0 60 16"><path d="M0,14 L8,12 L16,9 L24,7 L32,5 L40,4 L48,3 L60,1"/></svg></div>
+                    <div class="delta">vs shadow baseline</div>
+                    <div class="aut-confidence">Confidence 0.95 &middot; 62d data</div>
+                </div></div>
+            </div>
+
+            <div class="aut-row">
+                <div class="aut-platform"><div class="inbox-platform plat-pn">P</div><div class="name">Pinterest</div></div>
+                <div class="aut-tiers">
+                    <div class="aut-tier active">Shadow<small>watch only</small></div>
+                    <div class="aut-tier">Observe<small>notify, ask</small></div>
+                    <div class="aut-tier">Co-Pilot<small>auto-act</small></div>
+                </div>
+                <div class="aut-perf"><div>
+                    <div class="num" style="color:rgba(255,255,255,.65)">&mdash;</div>
+                    <div class="delta" style="color:rgba(255,255,255,.4)">7d learning window</div>
+                    <div class="aut-confidence" style="opacity:.55">Confidence 0.41 &middot; need 14d</div>
+                </div></div>
+            </div>
+
+            <div class="aut-row">
+                <div class="aut-platform"><div class="inbox-platform plat-x">X</div><div class="name">X (Twitter)</div></div>
+                <div class="aut-tiers">
+                    <div class="aut-tier">Shadow<small>watch only</small></div>
+                    <div class="aut-tier active">Observe<small>notify, ask</small></div>
+                    <div class="aut-tier">Co-Pilot<small>auto-act</small></div>
+                </div>
+                <div class="aut-perf"><div>
+                    <div class="num">+9%<svg class="spark spark-amber" width="60" height="16" viewBox="0 0 60 16"><path d="M0,9 L8,8 L16,10 L24,7 L32,9 L40,8 L48,7 L60,7"/></svg></div>
+                    <div class="delta">vs shadow baseline</div>
+                    <div class="aut-confidence">Confidence 0.72 &middot; 18d data</div>
+                </div></div>
+            </div>
+
+            <div class="aut-explain">
+                <div class="aut-explain-tier"><strong>Shadow</strong>Bamzal does the analysis and shows you what it would have done &mdash; but does nothing. Zero-risk way to learn the system.</div>
+                <div class="aut-explain-tier"><strong>Observe</strong>Every recommendation pings you with a one-tap approve. You stay in the loop. Bamzal acts on your green light.</div>
+                <div class="aut-explain-tier"><strong>Co-Pilot</strong>Bamzal acts on its own inside your budget caps. You get a daily digest. Pull the kill switch in one click anytime.</div>
             </div>
         </div>
 
@@ -1084,7 +1721,7 @@ function startScan(){
   var iv = setInterval(function(){
     if(i>0) steps[i-1].classList.remove('active');
     if(i>0) steps[i-1].classList.add('done');
-    if(i>0) steps[i-1].querySelector('.check').textContent='<svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg>';
+    if(i>0) steps[i-1].querySelector('.check').innerHTML='<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>';
     if(i<steps.length){
       steps[i].classList.add('active');
       i++;
@@ -1211,7 +1848,7 @@ function renderWizard(){
     var cls = i<wizStep?'done':i===wizStep?'active':'';
     var dot = document.createElement('div');
     dot.className='wiz-step-dot '+cls;
-    dot.textContent = i<wizStep?'<svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg>':(i+1);
+    dot.innerHTML = i<wizStep?'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>':String(i+1);
     dot.onclick = (function(idx){ return function(){ if(idx<=wizStep) {wizStep=idx; renderWizard();} }; })(i);
     stepsEl.appendChild(dot);
   }
