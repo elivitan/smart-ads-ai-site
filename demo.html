@@ -374,6 +374,106 @@
 .aut-confidence{font-size:.6rem;color:rgba(255,255,255,.45);margin-top:2px;display:flex;align-items:center;gap:5px}
 .aut-confidence::before{content:'';width:5px;height:5px;border-radius:50%;background:#22c55e}
 
+/* === NEW: Realistic ad mockup cards (Creative Studio) === */
+.ad-mock{aspect-ratio:1;position:relative;background:#16161f;overflow:hidden;display:flex;flex-direction:column}
+.ad-mock-meta{background:#fff;color:#000;font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
+.ad-mock-meta .am-head{display:flex;align-items:center;gap:6px;padding:7px 9px;border-bottom:1px solid #efefef;font-size:.62rem}
+.ad-mock-meta .am-avatar{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#8C6F2E,#4f46e5);flex-shrink:0}
+.ad-mock-meta .am-handle{font-weight:600;color:#262626}
+.ad-mock-meta .am-sponsored{color:#737373;font-size:.55rem;margin-left:auto}
+.ad-mock-meta .am-img{flex:1;background:linear-gradient(135deg,#fef3c7,#fde68a);position:relative;display:flex;align-items:center;justify-content:center;color:rgba(67,52,21,.65);font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.ad-mock-meta .am-body{padding:6px 9px}
+.ad-mock-meta .am-headline{font-size:.66rem;font-weight:600;color:#000;line-height:1.25;margin-bottom:2px}
+.ad-mock-meta .am-domain{font-size:.55rem;color:#737373;text-transform:uppercase;letter-spacing:.06em}
+.ad-mock-meta .am-cta{margin-top:4px;background:#0d6efd;color:#fff;font-size:.55rem;font-weight:700;padding:3px 6px;border-radius:4px;display:inline-block}
+
+.ad-mock-tt{background:#000;color:#fff;font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
+.ad-mock-tt .tt-img{flex:1;background:linear-gradient(160deg,#0ea5e9 0%,#312e81 60%,#000 100%);position:relative;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:.55rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.ad-mock-tt .tt-side{position:absolute;right:6px;bottom:32px;display:flex;flex-direction:column;gap:8px;align-items:center}
+.ad-mock-tt .tt-icon{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:.55rem}
+.ad-mock-tt .tt-cap{position:absolute;left:8px;right:38px;bottom:32px;font-size:.55rem;line-height:1.3;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+.ad-mock-tt .tt-handle{font-weight:700;margin-bottom:2px}
+.ad-mock-tt .tt-cta{position:absolute;left:8px;right:38px;bottom:8px;background:#fe2c55;color:#fff;font-size:.55rem;font-weight:700;padding:5px 0;border-radius:4px;text-align:center}
+.ad-mock-tt .tt-spark{position:absolute;top:6px;left:6px;background:rgba(0,0,0,.55);color:#fff;font-size:.5rem;font-weight:700;padding:2px 5px;border-radius:3px;letter-spacing:.05em}
+
+.ad-mock-g{background:#fff;color:#202124;font-family:arial,sans-serif;padding:12px;justify-content:center}
+.ad-mock-g .g-spons{font-size:.6rem;font-weight:700;color:#202124;margin-bottom:6px}
+.ad-mock-g .g-spons span{background:#e8f0fe;color:#1a73e8;font-size:.5rem;padding:1px 5px;border-radius:3px;font-weight:700;margin-right:5px}
+.ad-mock-g .g-url{font-size:.6rem;color:#202124;margin-bottom:2px}
+.ad-mock-g .g-url small{color:#5f6368;font-size:.55rem}
+.ad-mock-g .g-headline{color:#1a0dab;font-size:.78rem;font-weight:400;line-height:1.25;margin-bottom:3px;text-decoration:none}
+.ad-mock-g .g-desc{font-size:.62rem;color:#4d5156;line-height:1.4;margin-bottom:6px}
+.ad-mock-g .g-sites{display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:.55rem;color:#1a0dab;border-top:1px solid #ebebeb;padding-top:6px}
+
+.ad-mock-pn{background:#f5f5f5;color:#000;font-family:-apple-system,'Segoe UI',sans-serif}
+.ad-mock-pn .pn-img{flex:1;background:linear-gradient(135deg,#fbcfe8,#a16207);position:relative;display:flex;align-items:flex-end;padding:8px;color:#fff;font-size:.65rem;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.ad-mock-pn .pn-save{position:absolute;top:6px;right:6px;background:#e60023;color:#fff;font-size:.55rem;font-weight:700;padding:3px 8px;border-radius:100px}
+.ad-mock-pn .pn-promoted{position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,.55);color:#fff;font-size:.5rem;font-weight:600;padding:2px 5px;border-radius:3px}
+
+/* === NEW: Proper line chart === */
+.chart-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px;margin-bottom:20px;position:relative}
+.chart-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;flex-wrap:wrap;gap:12px}
+.chart-title{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.45);font-weight:600}
+.chart-kpis{display:flex;gap:18px;align-items:baseline}
+.chart-kpi .v{font-family:var(--font-display);font-size:1.4rem;font-weight:700;color:#fff;font-variant-numeric:tabular-nums}
+.chart-kpi .d{font-size:.65rem;color:#22c55e;margin-left:6px;font-weight:600}
+.chart-kpi .l{font-size:.62rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+.chart-legend{display:flex;gap:14px;font-size:.7rem;color:rgba(255,255,255,.7)}
+.chart-legend-item{display:inline-flex;align-items:center;gap:6px}
+.chart-legend-item .swatch{width:11px;height:2px;border-radius:1px;display:inline-block}
+.chart-svg{width:100%;height:200px;display:block}
+.cgrid{stroke:rgba(255,255,255,.05);stroke-width:1}
+.caxis{font-size:9px;fill:rgba(255,255,255,.4)}
+.cline-rev{fill:none;stroke:#22c55e;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cline-spend{fill:none;stroke:#C9AA66;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cline-cap{fill:none;stroke:rgba(239,68,68,.6);stroke-width:1.5;stroke-dasharray:4 4}
+.carea-rev{fill:url(#revGrad);opacity:.5}
+.cdot{fill:#22c55e;stroke:#fff;stroke-width:1.5}
+
+/* === NEW: AI Insights panel === */
+.insights-panel{background:linear-gradient(135deg,rgba(140,111,46,.08),rgba(79,70,229,.05));border:1px solid rgba(140,111,46,.22);border-radius:14px;padding:18px;margin-bottom:20px}
+.insights-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.insights-head .badge{background:rgba(140,111,46,.18);color:#C9AA66;font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;padding:3px 9px;border-radius:100px;display:inline-flex;align-items:center;gap:6px}
+.insights-head .badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#C9AA66;animation:livepulse 2s ease-in-out infinite}
+.insights-head h3{font-size:.95rem;color:#fff;font-weight:700;font-family:var(--font-display)}
+.insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.insight-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.insight-eyebrow{font-size:.6rem;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.08em;font-weight:600;display:flex;align-items:center;gap:6px}
+.insight-eyebrow.win::before{content:'';width:6px;height:6px;border-radius:50%;background:#22c55e}
+.insight-eyebrow.warn::before{content:'';width:6px;height:6px;border-radius:50%;background:#f59e0b}
+.insight-eyebrow.opp::before{content:'';width:6px;height:6px;border-radius:50%;background:#06b6d4}
+.insight-title{font-size:.875rem;color:#fff;font-weight:700;line-height:1.3}
+.insight-text{font-size:.72rem;color:rgba(255,255,255,.7);line-height:1.55}
+.insight-text strong{color:#fff}
+.insight-foot{display:flex;justify-content:space-between;align-items:center;padding-top:8px;margin-top:auto;border-top:1px solid rgba(255,255,255,.05);font-size:.65rem}
+.insight-foot .impact{color:#22c55e;font-weight:700;font-variant-numeric:tabular-nums}
+.insight-foot .impact.warn{color:#f59e0b}
+.insight-act{color:#C9AA66;text-decoration:none}
+
+/* === NEW: Heatmap (7×24 conversion grid) === */
+.hm-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px;margin-bottom:20px}
+.hm-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.hm-grid{display:grid;grid-template-columns:32px repeat(24,1fr);gap:2px}
+.hm-h{font-size:.55rem;color:rgba(255,255,255,.35);text-align:center;padding:2px 0}
+.hm-row-l{font-size:.62rem;color:rgba(255,255,255,.5);padding-right:4px;display:flex;align-items:center;font-weight:600}
+.hm-cell{aspect-ratio:1;background:rgba(255,255,255,.04);border-radius:3px;transition:transform .12s}
+.hm-cell:hover{transform:scale(1.4);z-index:5;position:relative;outline:1px solid #C9AA66}
+.hm-i1{background:rgba(140,111,46,.10)}.hm-i2{background:rgba(140,111,46,.20)}.hm-i3{background:rgba(140,111,46,.35)}.hm-i4{background:rgba(140,111,46,.55)}.hm-i5{background:rgba(140,111,46,.78)}.hm-i6{background:#C9AA66}
+.hm-legend{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:.62rem;color:rgba(255,255,255,.5)}
+.hm-legend-grad{flex:1;height:6px;background:linear-gradient(90deg,rgba(140,111,46,.10),#C9AA66);border-radius:3px;max-width:200px}
+
+/* === NEW: Notification bell === */
+.sysbar-bell{position:relative;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.65);cursor:pointer}
+.sysbar-bell svg{width:14px;height:14px}
+.sysbar-bell .nbadge{position:absolute;top:-3px;right:-3px;background:#ef4444;color:#fff;font-size:.55rem;font-weight:700;min-width:14px;height:14px;border-radius:7px;padding:0 4px;display:flex;align-items:center;justify-content:center;border:1.5px solid #0a0a14}
+
+@media(max-width:768px){
+    .insights-grid{grid-template-columns:1fr}
+    .hm-grid{grid-template-columns:32px repeat(12,1fr)}
+    .hm-grid .hm-cell:nth-child(n+38){display:none}
+    .hm-grid .hm-h:nth-child(n+14){display:none}
+}
+
 /* === NEW: Inbox (community replies) === */
 .inbox-layout{display:grid;grid-template-columns:280px 1fr;gap:0;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.02);min-height:520px}
 .inbox-list{border-right:1px solid rgba(255,255,255,.08);overflow-y:auto;max-height:520px}
@@ -613,6 +713,10 @@
                 Ask Bamzal anything&hellip;
                 <kbd>&#8984;K</kbd>
             </div>
+            <div class="sysbar-bell" title="5 alerts">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+                <span class="nbadge">5</span>
+            </div>
         </div>
 
         <!-- ===== DASHBOARD ===== -->
@@ -665,18 +769,90 @@
                         <div class="stat-card"><div class="label">Keywords</div><div class="value" data-counter="1240">0</div><div class="delta">+120 new</div></div>
                         <div class="stat-card"><div class="label">Campaigns</div><div class="value" data-counter="6">0</div><div class="delta">2 active</div></div>
                     </div>
-                    <div class="pulse-card">
-                        <h3>Live Campaign Pulse</h3>
-                        <canvas class="pulse-canvas" id="pulseCanvas"></canvas>
-                        <div class="pulse-metrics">
-                            <div class="pulse-metric"><div class="pm-label">Impressions</div><div class="pm-value">12,400</div></div>
-                            <div class="pulse-metric"><div class="pm-label">Clicks</div><div class="pm-value">520</div></div>
-                            <div class="pulse-metric"><div class="pm-label">CTR</div><div class="pm-value">4.2%</div></div>
-                            <div class="pulse-metric"><div class="pm-label">Spend</div><div class="pm-value">$310</div></div>
+                    <div class="chart-card">
+                        <div class="chart-head">
+                            <div>
+                                <div class="chart-title">Revenue &middot; Ad Spend &middot; Net Profit / 30 days</div>
+                                <div class="chart-kpis" style="margin-top:6px">
+                                    <div class="chart-kpi"><div><span class="v">$3,412</span><span class="d">+18%</span></div><div class="l">Revenue today</div></div>
+                                    <div class="chart-kpi"><div><span class="v">$394</span><span class="d" style="color:#C9AA66">11.5%</span></div><div class="l">Ad spend today</div></div>
+                                    <div class="chart-kpi"><div><span class="v">$1,247</span><span class="d">+22%</span></div><div class="l">Net profit today</div></div>
+                                </div>
+                            </div>
+                            <div class="chart-legend">
+                                <span class="chart-legend-item"><span class="swatch" style="background:#22c55e"></span>Revenue</span>
+                                <span class="chart-legend-item"><span class="swatch" style="background:#C9AA66"></span>Ad spend</span>
+                                <span class="chart-legend-item"><span class="swatch" style="background:#ef4444;background:repeating-linear-gradient(90deg,#ef4444 0 3px,transparent 3px 6px)"></span>Budget cap</span>
+                            </div>
                         </div>
+                        <svg class="chart-svg" viewBox="0 0 800 210" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="revGrad" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#22c55e" stop-opacity=".4"/>
+                                    <stop offset="100%" stop-color="#22c55e" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- Gridlines -->
+                            <line class="cgrid" x1="0" y1="40" x2="800" y2="40"/>
+                            <line class="cgrid" x1="0" y1="80" x2="800" y2="80"/>
+                            <line class="cgrid" x1="0" y1="120" x2="800" y2="120"/>
+                            <line class="cgrid" x1="0" y1="160" x2="800" y2="160"/>
+                            <line class="cgrid" x1="0" y1="200" x2="800" y2="200"/>
+                            <!-- Y-axis labels -->
+                            <text class="caxis" x="0" y="38">$3.5K</text>
+                            <text class="caxis" x="0" y="78">$2.6K</text>
+                            <text class="caxis" x="0" y="118">$1.7K</text>
+                            <text class="caxis" x="0" y="158">$880</text>
+                            <text class="caxis" x="0" y="206">$0</text>
+                            <!-- Budget cap line -->
+                            <path class="cline-cap" d="M0,174 L800,174"/>
+                            <!-- Revenue area -->
+                            <path class="carea-rev" d="M0,158 C30,152 60,148 100,144 C140,138 170,132 200,126 C235,118 265,114 300,113 C335,108 370,106 400,104 C435,98 465,92 500,87 C540,78 570,73 600,69 C635,60 665,55 700,51 C730,42 760,34 800,25 L800,200 L0,200 Z"/>
+                            <!-- Revenue line -->
+                            <path class="cline-rev" d="M0,158 C30,152 60,148 100,144 C140,138 170,132 200,126 C235,118 265,114 300,113 C335,108 370,106 400,104 C435,98 465,92 500,87 C540,78 570,73 600,69 C635,60 665,55 700,51 C730,42 760,34 800,25"/>
+                            <!-- Spend line -->
+                            <path class="cline-spend" d="M0,186 C50,186 100,185 150,184 C200,184 250,183 300,183 C350,182 400,181 450,181 C500,180 550,179 600,179 C650,180 700,180 750,179 C780,180 800,179 800,179"/>
+                            <!-- Endpoint dots -->
+                            <circle class="cdot" cx="800" cy="25" r="3.5"/>
+                            <circle cx="800" cy="179" r="3" fill="#C9AA66" stroke="#0a0a14" stroke-width="1.5"/>
+                            <!-- X-axis labels -->
+                            <text class="caxis" x="33" y="218">Apr 1</text>
+                            <text class="caxis" x="207" y="218">Apr 8</text>
+                            <text class="caxis" x="389" y="218">Apr 15</text>
+                            <text class="caxis" x="572" y="218">Apr 22</text>
+                            <text class="caxis" x="750" y="218">Apr 30</text>
+                        </svg>
                     </div>
                 </div>
             </div>
+
+            <div class="insights-panel">
+                <div class="insights-head">
+                    <span class="badge">AI insights</span>
+                    <h3>What Bamzal noticed this week</h3>
+                </div>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <div class="insight-eyebrow win">Win &middot; auto-acted</div>
+                        <div class="insight-title">TikTok co-pilot is paying off</div>
+                        <div class="insight-text">Three days after promoting TikTok from Observe to Co-Pilot, your TikTok-attributed revenue jumped from <strong>$340 to $1,180/day</strong>. The system shifted $87 from underperforming Google Search ad groups.</div>
+                        <div class="insight-foot"><span class="impact">+$5,840 / wk</span><a href="#" class="insight-act" onclick="return false">See decisions &rarr;</a></div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-eyebrow warn">Heads up &middot; needs you</div>
+                        <div class="insight-title">Cozy Earth keyword war</div>
+                        <div class="insight-text">Cozy Earth is bidding aggressively on <strong>"bamboo sheets queen"</strong> &mdash; your top earner. Bamzal raised your bid cap from $1.85 to $2.20 to hold position 2. Consider raising the max to $2.60 to fight for position 1.</div>
+                        <div class="insight-foot"><span class="impact warn">$415/wk at risk</span><a href="#" class="insight-act" onclick="return false">Raise cap &rarr;</a></div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-eyebrow opp">Opportunity</div>
+                        <div class="insight-title">Pinterest is undervalued</div>
+                        <div class="insight-text">Your Pinterest pins are getting <strong>3.2&times; the engagement</strong> of category benchmarks but you only spend $12/day there. The 14-day learning window finishes Friday &mdash; system will request promotion to Observe.</div>
+                        <div class="insight-foot"><span class="impact">+$2,100/mo forecast</span><a href="#" class="insight-act" onclick="return false">Preview plan &rarr;</a></div>
+                    </div>
+                </div>
+            </div>
+
             <h3 style="font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:12px">Your Products</h3>
             <div class="product-grid" id="dashProductGrid"></div>
             <div class="gap-card">
@@ -739,6 +915,45 @@
                     <div class="activity-icon act-bid">$</div>
                     <div class="activity-text">Shifted <strong>$45</strong> from underperforming Google Search ad group to <strong>Meta Advantage+</strong> &mdash; profit-adjusted</div>
                     <div class="activity-result">+$112 forecast</div>
+                </div>
+            </div>
+
+            <div class="hm-card">
+                <div class="hm-head">
+                    <div>
+                        <div class="chart-title">When your customers actually buy</div>
+                        <div style="font-size:.7rem;color:rgba(255,255,255,.55);margin-top:4px;line-height:1.5">Conversion-rate heatmap, last 30 days &middot; <strong style="color:#fff">Tue&ndash;Thu evenings convert 2.4&times; the weekly average.</strong> Bamzal weights your bid schedule to this map automatically.</div>
+                    </div>
+                    <div class="hm-legend" style="margin-top:0">
+                        <span>Low</span>
+                        <div class="hm-legend-grad"></div>
+                        <span>High</span>
+                    </div>
+                </div>
+                <div class="hm-grid">
+                    <div></div>
+                    <div class="hm-h">12a</div><div class="hm-h">2</div><div class="hm-h">4</div><div class="hm-h">6</div><div class="hm-h">8</div><div class="hm-h">10</div><div class="hm-h">12p</div><div class="hm-h">2</div><div class="hm-h">4</div><div class="hm-h">6</div><div class="hm-h">8</div><div class="hm-h">10</div><div class="hm-h"></div><div class="hm-h"></div><div class="hm-h"></div><div class="hm-h"></div><div class="hm-h"></div><div class="hm-h"></div><div class="hm-h"></div><div class="hm-h"></div><div class="hm-h"></div><div class="hm-h"></div><div class="hm-h"></div><div class="hm-h"></div>
+
+                    <div class="hm-row-l">Mon</div>
+                    <div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i1"></div>
+
+                    <div class="hm-row-l">Tue</div>
+                    <div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i6"></div><div class="hm-cell hm-i6"></div><div class="hm-cell hm-i6"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i1"></div>
+
+                    <div class="hm-row-l">Wed</div>
+                    <div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i6"></div><div class="hm-cell hm-i6"></div><div class="hm-cell hm-i6"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i1"></div>
+
+                    <div class="hm-row-l">Thu</div>
+                    <div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i6"></div><div class="hm-cell hm-i6"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i1"></div><div class="hm-cell"></div>
+
+                    <div class="hm-row-l">Fri</div>
+                    <div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i1"></div><div class="hm-cell"></div>
+
+                    <div class="hm-row-l">Sat</div>
+                    <div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i1"></div>
+
+                    <div class="hm-row-l">Sun</div>
+                    <div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i5"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i4"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i3"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i2"></div><div class="hm-cell hm-i1"></div><div class="hm-cell hm-i1"></div><div class="hm-cell"></div>
                 </div>
             </div>
         </div>
@@ -921,38 +1136,122 @@
                 </button>
             </div>
             <div class="creative-grid">
+
                 <div class="creative-card">
-                    <div class="creative-img gradient-1"><span class="creative-pl-tag">META</span><span class="creative-perf">+38%</span>Hero · 1:1</div>
-                    <div class="creative-info"><div class="headline">Sleep cooler with bamboo</div><div class="meta">Story · 12d live</div></div>
+                    <div class="creative-img ad-mock ad-mock-meta">
+                        <div class="am-head"><div class="am-avatar"></div><span class="am-handle">dreamhome.bedding</span><span class="am-sponsored">Sponsored</span></div>
+                        <div class="am-img">Bamboo sheet set &middot; bedroom hero</div>
+                        <div class="am-body">
+                            <div class="am-headline">Sleep cooler with bamboo</div>
+                            <div class="am-domain">dreamhome-bedding.com</div>
+                            <span class="am-cta">Shop now</span>
+                        </div>
+                        <span class="creative-pl-tag">META &middot; Feed</span>
+                        <span class="creative-perf">+38%</span>
+                    </div>
+                    <div class="creative-info"><div class="headline">Sleep cooler with bamboo</div><div class="meta">1:1 hero &middot; 12d live</div></div>
                 </div>
+
                 <div class="creative-card">
-                    <div class="creative-img gradient-2"><span class="creative-pl-tag">TIKTOK</span><span class="creative-perf">+22%</span>UGC · 9:16</div>
-                    <div class="creative-info"><div class="headline">"This sheet set changed my sleep"</div><div class="meta">Spark · 8d live</div></div>
+                    <div class="creative-img ad-mock ad-mock-tt">
+                        <div class="tt-img">Creator UGC &middot; bed reveal</div>
+                        <span class="tt-spark">Spark Ads</span>
+                        <div class="tt-side"><span class="tt-icon">&#10084;</span><span class="tt-icon">&#128172;</span><span class="tt-icon">&#10148;</span></div>
+                        <div class="tt-cap"><div class="tt-handle">@sleephome &middot; 2.1M</div>"This sheet set changed my sleep" &mdash; honest review</div>
+                        <div class="tt-cta">Shop the set</div>
+                        <span class="creative-pl-tag" style="top:6px;right:6px;left:auto">TIKTOK</span>
+                        <span class="creative-perf">+22%</span>
+                    </div>
+                    <div class="creative-info"><div class="headline">"This sheet set changed my sleep"</div><div class="meta">9:16 UGC &middot; 8d live</div></div>
                 </div>
+
                 <div class="creative-card">
-                    <div class="creative-img gradient-3"><span class="creative-pl-tag">META</span><span class="creative-perf">+15%</span>Lifestyle · 4:5</div>
-                    <div class="creative-info"><div class="headline">The luxury sheet under $90</div><div class="meta">Feed · 5d live</div></div>
+                    <div class="creative-img ad-mock ad-mock-meta">
+                        <div class="am-head"><div class="am-avatar" style="background:linear-gradient(135deg,#10b981,#3b82f6)"></div><span class="am-handle">dreamhome.bedding</span><span class="am-sponsored">Sponsored</span></div>
+                        <div class="am-img" style="background:linear-gradient(135deg,#bae6fd,#7dd3fc);color:rgba(15,42,82,.7)">Lifestyle &middot; morning bedroom</div>
+                        <div class="am-body">
+                            <div class="am-headline">The luxury sheet under $90</div>
+                            <div class="am-domain">dreamhome-bedding.com</div>
+                            <span class="am-cta">Shop now</span>
+                        </div>
+                        <span class="creative-pl-tag">META &middot; Feed</span>
+                        <span class="creative-perf">+15%</span>
+                    </div>
+                    <div class="creative-info"><div class="headline">The luxury sheet under $90</div><div class="meta">4:5 lifestyle &middot; 5d live</div></div>
                 </div>
+
                 <div class="creative-card">
-                    <div class="creative-img gradient-4"><span class="creative-pl-tag">GOOGLE</span><span class="creative-perf">+12%</span>Search · RSA</div>
-                    <div class="creative-info"><div class="headline">Premium Cotton Bed Sheets | Free Shipping</div><div class="meta">PMax · 6d live</div></div>
+                    <div class="creative-img ad-mock ad-mock-g">
+                        <div class="g-spons"><span>Sponsored</span></div>
+                        <div class="g-url">dreamhome-bedding.com <small>/ premium-cotton</small></div>
+                        <div class="g-headline">Premium Cotton Bed Sheets | Free Shipping</div>
+                        <div class="g-desc">400-thread-count, OEKO-TEX certified. 30-day money-back. Free shipping on orders over $75.</div>
+                        <div class="g-sites"><span>Queen sets</span><span>King sets</span></div>
+                        <span class="creative-pl-tag" style="top:8px;right:8px;left:auto;background:rgba(0,0,0,.7)">GOOGLE</span>
+                        <span class="creative-perf" style="bottom:8px;right:8px">+12%</span>
+                    </div>
+                    <div class="creative-info"><div class="headline">Premium Cotton Bed Sheets | Free Shipping</div><div class="meta">Responsive Search Ad &middot; 6d live</div></div>
                 </div>
+
                 <div class="creative-card">
-                    <div class="creative-img gradient-5"><span class="creative-pl-tag">PINTEREST</span><span class="creative-perf warn">-4%</span>Pin · 2:3</div>
-                    <div class="creative-info"><div class="headline">7 cozy bedroom upgrades</div><div class="meta">Standard · 14d live · fatiguing</div></div>
+                    <div class="creative-img ad-mock ad-mock-pn">
+                        <div class="pn-img" style="background:linear-gradient(160deg,#fde68a,#b45309)">
+                            <span class="pn-save">Save</span>
+                            <div>7 cozy bedroom upgrades for under $200</div>
+                            <span class="pn-promoted">Promoted &middot; dreamhome-bedding.com</span>
+                        </div>
+                        <span class="creative-pl-tag">PINTEREST</span>
+                        <span class="creative-perf warn">&minus;4%</span>
+                    </div>
+                    <div class="creative-info"><div class="headline">7 cozy bedroom upgrades</div><div class="meta">2:3 standard &middot; 14d &middot; fatiguing</div></div>
                 </div>
+
                 <div class="creative-card">
-                    <div class="creative-img gradient-6"><span class="creative-pl-tag">META</span><span class="creative-perf">+41%</span>Carousel · 5 cards</div>
-                    <div class="creative-info"><div class="headline">Compare our cotton thread counts</div><div class="meta">Catalog · 7d live</div></div>
+                    <div class="creative-img ad-mock ad-mock-meta">
+                        <div class="am-head"><div class="am-avatar" style="background:linear-gradient(135deg,#a16207,#1c1917)"></div><span class="am-handle">dreamhome.bedding</span><span class="am-sponsored">Sponsored</span></div>
+                        <div class="am-img" style="background:linear-gradient(135deg,#fed7aa,#9a3412);color:rgba(255,255,255,.85);font-size:.55rem;flex-direction:column;gap:4px;display:flex">
+                            <div>3 of 5 &nbsp;&middot;&nbsp; Swipe &rarr;</div>
+                            <div style="display:flex;gap:3px"><span style="width:14px;height:2px;background:rgba(255,255,255,.4);border-radius:1px"></span><span style="width:14px;height:2px;background:rgba(255,255,255,.4);border-radius:1px"></span><span style="width:14px;height:2px;background:#fff;border-radius:1px"></span><span style="width:14px;height:2px;background:rgba(255,255,255,.4);border-radius:1px"></span><span style="width:14px;height:2px;background:rgba(255,255,255,.4);border-radius:1px"></span></div>
+                        </div>
+                        <div class="am-body">
+                            <div class="am-headline">Compare our cotton thread counts</div>
+                            <div class="am-domain">300 vs 400 vs 600 &middot; explained</div>
+                            <span class="am-cta">Shop now</span>
+                        </div>
+                        <span class="creative-pl-tag">META &middot; Carousel</span>
+                        <span class="creative-perf">+41%</span>
+                    </div>
+                    <div class="creative-info"><div class="headline">Compare our cotton thread counts</div><div class="meta">5-card carousel &middot; 7d live</div></div>
                 </div>
+
                 <div class="creative-card">
-                    <div class="creative-img gradient-7"><span class="creative-pl-tag">TIKTOK</span><span class="creative-perf">+29%</span>Trend · 9:16</div>
-                    <div class="creative-info"><div class="headline">Bed reveal · "wait for it"</div><div class="meta">Spark · 3d live</div></div>
+                    <div class="creative-img ad-mock ad-mock-tt">
+                        <div class="tt-img" style="background:linear-gradient(160deg,#fbbf24 0%,#7c2d12 60%,#000 100%)">Trend hook &middot; "wait for it"</div>
+                        <span class="tt-spark">Spark Ads</span>
+                        <div class="tt-side"><span class="tt-icon">&#10084;</span><span class="tt-icon">&#128172;</span><span class="tt-icon">&#10148;</span></div>
+                        <div class="tt-cap"><div class="tt-handle">@dreamhome &middot; bed reveal</div>POV: you finally found cooling sheets</div>
+                        <div class="tt-cta">Shop the look</div>
+                        <span class="creative-pl-tag" style="top:6px;right:6px;left:auto">TIKTOK</span>
+                        <span class="creative-perf">+29%</span>
+                    </div>
+                    <div class="creative-info"><div class="headline">Bed reveal &middot; "wait for it"</div><div class="meta">9:16 trend hook &middot; 3d live</div></div>
                 </div>
+
                 <div class="creative-card">
-                    <div class="creative-img gradient-8"><span class="creative-pl-tag">META</span><span class="creative-perf">+18%</span>Video · 15s</div>
-                    <div class="creative-info"><div class="headline">From cotton field to your bed</div><div class="meta">Reels · 9d live</div></div>
+                    <div class="creative-img ad-mock ad-mock-meta">
+                        <div class="am-head"><div class="am-avatar" style="background:linear-gradient(135deg,#0ea5e9,#1e1b4b)"></div><span class="am-handle">dreamhome.bedding</span><span class="am-sponsored">Sponsored</span></div>
+                        <div class="am-img" style="background:linear-gradient(135deg,#a7f3d0,#065f46);color:#fff;flex-direction:column;gap:4px;display:flex"><div>15s product story</div><div style="font-size:.5rem;opacity:.7">&#9654; 0:08 / 0:15</div></div>
+                        <div class="am-body">
+                            <div class="am-headline">From cotton field to your bed</div>
+                            <div class="am-domain">dreamhome-bedding.com</div>
+                            <span class="am-cta">Watch story</span>
+                        </div>
+                        <span class="creative-pl-tag">META &middot; Reels</span>
+                        <span class="creative-perf">+18%</span>
+                    </div>
+                    <div class="creative-info"><div class="headline">From cotton field to your bed</div><div class="meta">15s video &middot; 9d live</div></div>
                 </div>
+
             </div>
         </div>
 
