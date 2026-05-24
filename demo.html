@@ -374,41 +374,127 @@
 .aut-confidence{font-size:.6rem;color:rgba(255,255,255,.45);margin-top:2px;display:flex;align-items:center;gap:5px}
 .aut-confidence::before{content:'';width:5px;height:5px;border-radius:50%;background:#22c55e}
 
-/* === NEW: Realistic ad mockup cards (Creative Studio) === */
-.ad-mock{aspect-ratio:1;position:relative;background:#16161f;overflow:hidden;display:flex;flex-direction:column}
-.ad-mock-meta{background:#fff;color:#000;font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
-.ad-mock-meta .am-head{display:flex;align-items:center;gap:6px;padding:7px 9px;border-bottom:1px solid #efefef;font-size:.62rem}
-.ad-mock-meta .am-avatar{width:18px;height:18px;border-radius:50%;background:linear-gradient(135deg,#8C6F2E,#4f46e5);flex-shrink:0}
-.ad-mock-meta .am-handle{font-weight:600;color:#262626}
-.ad-mock-meta .am-sponsored{color:#737373;font-size:.55rem;margin-left:auto}
-.ad-mock-meta .am-img{flex:1;background:linear-gradient(135deg,#fef3c7,#fde68a);position:relative;display:flex;align-items:center;justify-content:center;color:rgba(67,52,21,.65);font-size:.6rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
-.ad-mock-meta .am-body{padding:6px 9px}
-.ad-mock-meta .am-headline{font-size:.66rem;font-weight:600;color:#000;line-height:1.25;margin-bottom:2px}
-.ad-mock-meta .am-domain{font-size:.55rem;color:#737373;text-transform:uppercase;letter-spacing:.06em}
-.ad-mock-meta .am-cta{margin-top:4px;background:#0d6efd;color:#fff;font-size:.55rem;font-weight:700;padding:3px 6px;border-radius:4px;display:inline-block}
+/* === Realistic platform-accurate ad mockup cards (Creative Studio) === */
+.ad-mock{aspect-ratio:1;position:relative;background:#16161f;overflow:hidden;display:flex;flex-direction:column;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:11px}
+.ad-mock svg{display:block}
 
-.ad-mock-tt{background:#000;color:#fff;font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
-.ad-mock-tt .tt-img{flex:1;background:linear-gradient(160deg,#0ea5e9 0%,#312e81 60%,#000 100%);position:relative;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);font-size:.55rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
-.ad-mock-tt .tt-side{position:absolute;right:6px;bottom:32px;display:flex;flex-direction:column;gap:8px;align-items:center}
-.ad-mock-tt .tt-icon{width:18px;height:18px;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:.55rem}
-.ad-mock-tt .tt-cap{position:absolute;left:8px;right:38px;bottom:32px;font-size:.55rem;line-height:1.3;text-shadow:0 1px 2px rgba(0,0,0,.6)}
-.ad-mock-tt .tt-handle{font-weight:700;margin-bottom:2px}
-.ad-mock-tt .tt-cta{position:absolute;left:8px;right:38px;bottom:8px;background:#fe2c55;color:#fff;font-size:.55rem;font-weight:700;padding:5px 0;border-radius:4px;text-align:center}
-.ad-mock-tt .tt-spark{position:absolute;top:6px;left:6px;background:rgba(0,0,0,.55);color:#fff;font-size:.5rem;font-weight:700;padding:2px 5px;border-radius:3px;letter-spacing:.05em}
+/* Instagram Feed */
+.ad-ig{background:#fff;color:#262626}
+.ig-top{display:flex;align-items:center;gap:6px;padding:5px 8px}
+.ig-avatar{width:22px;height:22px;border-radius:50%;padding:1.5px;background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);flex-shrink:0;position:relative}
+.ig-avatar::before{content:'';position:absolute;inset:1.5px;background:#fff;border-radius:50%}
+.ig-avatar::after{content:'';position:absolute;inset:3px;background:linear-gradient(135deg,#8C6F2E,#1c1917);border-radius:50%}
+.ig-name{font-weight:600;font-size:11px;color:#262626;display:flex;align-items:center;gap:3px;line-height:1.2}
+.ig-verified{display:inline-flex;width:10px;height:10px;background:#0095f6;border-radius:50%;align-items:center;justify-content:center;color:#fff;font-size:7px;font-weight:900}
+.ig-sponsored{font-size:9px;color:#737373;line-height:1.1}
+.ig-name-block{display:flex;flex-direction:column}
+.ig-more{margin-left:auto;color:#262626;font-weight:700;font-size:14px;line-height:1}
+.ig-media{flex:1;position:relative;background:#fafafa}
+.ig-actions{display:flex;align-items:center;gap:10px;padding:6px 8px 2px;color:#262626}
+.ig-actions svg{width:16px;height:16px;stroke:#262626;stroke-width:1.8;fill:none}
+.ig-actions .ig-saved{margin-left:auto}
+.ig-likes{font-size:10px;font-weight:600;color:#262626;padding:0 8px;line-height:1.3}
+.ig-caption{font-size:10px;color:#262626;padding:1px 8px 4px;line-height:1.3}
+.ig-caption strong{font-weight:600}
+.ig-cta{border-top:1px solid #efefef;padding:6px 8px;color:#262626;font-size:10px;font-weight:600;display:flex;align-items:center;justify-content:space-between}
+.ig-cta::after{content:'›';font-size:14px;color:#262626}
 
-.ad-mock-g{background:#fff;color:#202124;font-family:arial,sans-serif;padding:12px;justify-content:center}
-.ad-mock-g .g-spons{font-size:.6rem;font-weight:700;color:#202124;margin-bottom:6px}
-.ad-mock-g .g-spons span{background:#e8f0fe;color:#1a73e8;font-size:.5rem;padding:1px 5px;border-radius:3px;font-weight:700;margin-right:5px}
-.ad-mock-g .g-url{font-size:.6rem;color:#202124;margin-bottom:2px}
-.ad-mock-g .g-url small{color:#5f6368;font-size:.55rem}
-.ad-mock-g .g-headline{color:#1a0dab;font-size:.78rem;font-weight:400;line-height:1.25;margin-bottom:3px;text-decoration:none}
-.ad-mock-g .g-desc{font-size:.62rem;color:#4d5156;line-height:1.4;margin-bottom:6px}
-.ad-mock-g .g-sites{display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:.55rem;color:#1a0dab;border-top:1px solid #ebebeb;padding-top:6px}
+/* Facebook Feed */
+.ad-fb{background:#fff;color:#1c1e21}
+.fb-top{display:flex;align-items:center;gap:6px;padding:7px 9px 4px}
+.fb-logo{width:24px;height:24px;border-radius:5px;background:#1877f2;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:14px;font-family:Georgia,serif}
+.fb-name{font-size:11px;font-weight:600;color:#050505;line-height:1.2}
+.fb-meta{font-size:9px;color:#65676b;display:flex;align-items:center;gap:3px}
+.fb-globe{width:8px;height:8px;border-radius:50%;border:1px solid #65676b;display:inline-block}
+.fb-caption{padding:0 9px 6px;font-size:10px;color:#050505;line-height:1.35}
+.fb-media{flex:1;position:relative}
+.fb-meta-bar{background:#f0f2f5;padding:6px 9px;display:flex;align-items:center;justify-content:space-between;font-size:9px;color:#65676b}
+.fb-meta-bar strong{color:#050505;display:block;font-size:11px;font-weight:600;line-height:1.2}
+.fb-meta-bar .fb-cta-btn{background:#e4e6e9;padding:4px 9px;border-radius:5px;color:#050505;font-weight:600;font-size:10px}
+.fb-actions{border-top:1px solid #ced0d4;display:grid;grid-template-columns:1fr 1fr 1fr;padding:3px 0;color:#65676b;font-size:10px;font-weight:600}
+.fb-act{display:flex;align-items:center;justify-content:center;gap:4px;padding:4px}
+.fb-act svg{width:13px;height:13px;fill:none;stroke:#65676b;stroke-width:1.8}
 
-.ad-mock-pn{background:#f5f5f5;color:#000;font-family:-apple-system,'Segoe UI',sans-serif}
-.ad-mock-pn .pn-img{flex:1;background:linear-gradient(135deg,#fbcfe8,#a16207);position:relative;display:flex;align-items:flex-end;padding:8px;color:#fff;font-size:.65rem;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,.5)}
-.ad-mock-pn .pn-save{position:absolute;top:6px;right:6px;background:#e60023;color:#fff;font-size:.55rem;font-weight:700;padding:3px 8px;border-radius:100px}
-.ad-mock-pn .pn-promoted{position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,.55);color:#fff;font-size:.5rem;font-weight:600;padding:2px 5px;border-radius:3px}
+/* TikTok Spark */
+.ad-tt{background:#000;color:#fff;font-family:-apple-system,'Segoe UI',Roboto,sans-serif}
+.tt-media{flex:1;position:relative;display:flex;align-items:flex-end}
+.tt-logo{position:absolute;top:6px;right:6px;font-weight:900;font-size:9px;letter-spacing:.5px;display:flex;align-items:center;gap:3px;color:#fff;font-style:italic}
+.tt-logo::before{content:'';width:10px;height:10px;background:linear-gradient(135deg,#25f4ee 30%,#fe2c55 70%);border-radius:2px;display:inline-block}
+.tt-sponsored{position:absolute;top:6px;left:6px;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);padding:2px 6px;border-radius:3px;font-size:8px;font-weight:600;letter-spacing:.3px}
+.tt-rail{position:absolute;right:5px;bottom:62px;display:flex;flex-direction:column;gap:9px;align-items:center;z-index:3}
+.tt-rail-profile{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#8C6F2E,#1c1917);border:1.5px solid #fff;position:relative}
+.tt-rail-profile::after{content:'+';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);width:11px;height:11px;background:#fe2c55;border-radius:50%;color:#fff;font-size:9px;line-height:9px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.tt-rail-stat{display:flex;flex-direction:column;align-items:center;color:#fff;font-size:8px;font-weight:700;text-shadow:0 1px 2px rgba(0,0,0,.7)}
+.tt-rail-stat svg{width:18px;height:18px;fill:#fff;filter:drop-shadow(0 1px 2px rgba(0,0,0,.7))}
+.tt-rail-disc{width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#000,#444);border:2px solid #fe2c55;position:relative;animation:tt-spin 4s linear infinite}
+.tt-rail-disc::after{content:'';position:absolute;inset:6px;background:#fff;border-radius:50%}
+@keyframes tt-spin{to{transform:rotate(360deg)}}
+.tt-text{padding:0 38px 6px 8px;position:relative;z-index:2}
+.tt-handle{font-weight:700;font-size:10px;display:flex;align-items:center;gap:2px;text-shadow:0 1px 2px rgba(0,0,0,.7);margin-bottom:2px}
+.tt-handle .ig-verified{background:#20d5ec}
+.tt-cap-text{font-size:9px;line-height:1.3;text-shadow:0 1px 2px rgba(0,0,0,.7);margin-bottom:3px}
+.tt-music{font-size:8px;display:flex;align-items:center;gap:3px;opacity:.9;text-shadow:0 1px 2px rgba(0,0,0,.7)}
+.tt-music::before{content:'♪';font-size:10px}
+.tt-cta{margin:0 8px 6px;background:linear-gradient(90deg,#fe2c55,#ff5d8a);color:#fff;font-size:10px;font-weight:700;padding:5px 0;border-radius:3px;text-align:center;display:flex;align-items:center;justify-content:center;gap:4px;position:relative;z-index:2}
+.tt-cta::after{content:'›';font-weight:900}
+
+/* Google Search RSA */
+.ad-g{background:#fff;color:#202124;font-family:arial,sans-serif;padding:11px;justify-content:flex-start;gap:2px}
+.g-spons-row{display:flex;align-items:center;gap:4px;font-size:9px;color:#202124;font-weight:700;margin-bottom:2px}
+.g-spons-row::before{content:'';width:10px;height:10px;border-radius:50%;background:conic-gradient(#4285F4 0% 25%,#EA4335 25% 50%,#FBBC05 50% 75%,#34A853 75% 100%)}
+.g-domain-row{display:flex;align-items:center;gap:4px;font-size:10px;color:#202124;font-weight:500}
+.g-favicon{width:13px;height:13px;border-radius:50%;background:linear-gradient(135deg,#8C6F2E,#4f46e5);flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:7px;font-weight:700}
+.g-breadcrumb{color:#5f6368;font-size:9px}
+.g-headline{color:#1a0dab;font-size:13px;font-weight:400;line-height:1.25;margin:3px 0;text-decoration:none;display:block}
+.g-headline:visited{color:#660099}
+.g-desc{font-size:10px;color:#4d5156;line-height:1.4;margin-bottom:5px}
+.g-sites{display:grid;grid-template-columns:1fr 1fr;gap:2px;font-size:9px;border-top:1px solid #ebebeb;padding-top:5px}
+.g-site{color:#1a0dab;line-height:1.3}
+.g-site small{display:block;color:#5f6368;font-size:8px;margin-top:1px}
+.g-stars{color:#fbbc05;font-size:9px}
+
+/* Pinterest Pin */
+.ad-pn{background:#000;position:relative}
+.pn-img{flex:1;position:relative;background:linear-gradient(160deg,#fde68a 0%,#fb923c 50%,#b45309 100%);display:flex;align-items:flex-end;padding:10px;color:#fff;font-weight:700;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.pn-save{position:absolute;top:8px;right:8px;background:#e60023;color:#fff;font-size:10px;font-weight:700;padding:6px 12px;border-radius:100px;display:flex;align-items:center;gap:3px;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.pn-save::before{content:'';width:11px;height:11px;border-radius:50%;background:#fff;display:inline-block;background-image:radial-gradient(circle,#e60023 35%,transparent 36%)}
+.pn-react{position:absolute;top:8px;left:8px;display:flex;gap:4px}
+.pn-react-pill{background:rgba(0,0,0,.5);backdrop-filter:blur(6px);color:#fff;font-size:9px;font-weight:600;padding:3px 7px;border-radius:100px;display:flex;align-items:center;gap:3px}
+.pn-promoted{position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,.65);backdrop-filter:blur(6px);color:#fff;font-size:8px;font-weight:600;padding:3px 7px;border-radius:3px;letter-spacing:.2px}
+.pn-title{font-size:11px;line-height:1.25;margin-bottom:auto;max-width:80%}
+
+/* Product image stylized fills (no real photos) */
+.pi{flex:1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pi-bamboo{background:linear-gradient(135deg,#fef3c7 0%,#fbbf24 60%,#7c2d12 100%)}
+.pi-blue-bed{background:linear-gradient(160deg,#dbeafe 0%,#60a5fa 50%,#1e3a8a 100%)}
+.pi-cotton{background:linear-gradient(135deg,#fef9c3 0%,#a3a3a3 60%,#3f3f46 100%)}
+.pi-cozy{background:linear-gradient(160deg,#fde68a 0%,#fb923c 60%,#b45309 100%)}
+.pi-dark{background:linear-gradient(135deg,#1e1b4b 0%,#4338ca 50%,#000 100%)}
+.pi-warm{background:linear-gradient(135deg,#fbbf24 0%,#dc2626 50%,#000 100%)}
+.pi-green{background:linear-gradient(135deg,#a7f3d0 0%,#10b981 50%,#064e3b 100%)}
+.pi-pink{background:linear-gradient(135deg,#fbcfe8 0%,#db2777 50%,#500724 100%)}
+.pi::after{content:'';position:absolute;inset:25% 30% 25% 30%;background:rgba(255,255,255,.18);border-radius:50% 50% 20% 20%/40% 40% 60% 60%;filter:blur(2px)}
+.pi-label{position:absolute;left:8px;bottom:8px;font-size:8px;color:rgba(255,255,255,.7);text-shadow:0 1px 2px rgba(0,0,0,.5);text-transform:uppercase;letter-spacing:.06em;font-weight:600;z-index:2}
+.pi-carousel-dots{position:absolute;top:8px;left:0;right:0;display:flex;justify-content:center;gap:3px;z-index:2}
+.pi-carousel-dots span{width:14px;height:2px;background:rgba(255,255,255,.4);border-radius:1px}
+.pi-carousel-dots span.active{background:#fff}
+.pi-video{position:absolute;bottom:8px;left:8px;color:#fff;font-size:9px;display:flex;align-items:center;gap:4px;text-shadow:0 1px 2px rgba(0,0,0,.5);z-index:2}
+.pi-video::before{content:'▶';font-size:8px}
+
+/* Chart draw-in animation */
+.chart-svg .cline-rev{stroke-dasharray:1100;stroke-dashoffset:1100;animation:chartDraw 2.2s cubic-bezier(.4,.0,.2,1) .2s forwards}
+.chart-svg .cline-spend{stroke-dasharray:900;stroke-dashoffset:900;animation:chartDraw 2.2s cubic-bezier(.4,.0,.2,1) .5s forwards}
+.chart-svg .carea-rev{opacity:0;animation:chartFade 1s ease-out 1.8s forwards}
+.chart-svg .cdot,.chart-svg circle{opacity:0;animation:chartFade .5s ease-out 2.2s forwards}
+@keyframes chartDraw{to{stroke-dashoffset:0}}
+@keyframes chartFade{to{opacity:1}}
+.chart-svg .carea-rev{opacity:.5}
+@keyframes chartFade{from{opacity:0}to{opacity:.5}}
+
+/* Activity feed slide-in for new items */
+.activity-row.new{animation:slideInRow .5s ease-out;background:rgba(140,111,46,.12)}
+@keyframes slideInRow{from{opacity:0;transform:translateX(-12px);background:rgba(140,111,46,.25)}to{opacity:1;transform:translateX(0)}}
+
 
 /* === NEW: Proper line chart === */
 .chart-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px;margin-bottom:20px;position:relative}
@@ -704,9 +790,9 @@
         <!-- ===== SYSTEM STATUS BAR (persistent across screens) ===== -->
         <div class="sysbar">
             <span class="sysbar-pill"><span class="sysbar-dot"></span>12 agents active</span>
-            <span class="sysbar-pill"><span class="num">47</span> actions / hr</span>
-            <span class="sysbar-pill"><span class="num">$182</span> / $250 today</span>
-            <span class="sysbar-thinking">Bid optimizer running &middot; 12s</span>
+            <span class="sysbar-pill"><span class="num" id="sysActions">47</span> actions / hr</span>
+            <span class="sysbar-pill"><span class="num" id="sysSpend">$182</span> / $250 today</span>
+            <span class="sysbar-thinking" id="sysThinking">Bid optimizer running &middot; <span id="sysTimer">12</span>s</span>
             <span class="sysbar-spacer"></span>
             <div class="sysbar-search">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
@@ -1137,119 +1223,207 @@
             </div>
             <div class="creative-grid">
 
+                <!-- 1. Instagram Feed -->
                 <div class="creative-card">
-                    <div class="creative-img ad-mock ad-mock-meta">
-                        <div class="am-head"><div class="am-avatar"></div><span class="am-handle">dreamhome.bedding</span><span class="am-sponsored">Sponsored</span></div>
-                        <div class="am-img">Bamboo sheet set &middot; bedroom hero</div>
-                        <div class="am-body">
-                            <div class="am-headline">Sleep cooler with bamboo</div>
-                            <div class="am-domain">dreamhome-bedding.com</div>
-                            <span class="am-cta">Shop now</span>
+                    <div class="creative-img ad-mock ad-ig">
+                        <div class="ig-top">
+                            <div class="ig-avatar"></div>
+                            <div class="ig-name-block">
+                                <div class="ig-name">dreamhome_bedding <span class="ig-verified">&#10003;</span></div>
+                                <div class="ig-sponsored">Sponsored</div>
+                            </div>
+                            <span class="ig-more">&middot;&middot;&middot;</span>
                         </div>
-                        <span class="creative-pl-tag">META &middot; Feed</span>
-                        <span class="creative-perf">+38%</span>
+                        <div class="ig-media pi pi-bamboo"><span class="pi-label">Bamboo sheet set</span></div>
+                        <div class="ig-actions">
+                            <svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M22 3 9.218 10.083"/><path d="m11.698 20.334 8.485-17.062L2.747 8.477l7.354 2.184 1.597 9.673Z"/></svg>
+                            <svg class="ig-saved" viewBox="0 0 24 24"><path d="M20 21 12 13.44 4 21V3h16Z"/></svg>
+                        </div>
+                        <div class="ig-likes">Liked by <strong>sarahkim_</strong> and <strong>2,840 others</strong></div>
+                        <div class="ig-caption"><strong>dreamhome_bedding</strong> Sleep cooler with bamboo &mdash; link in bio &#127769;</div>
+                        <div class="ig-cta">Shop now</div>
+                        <span class="creative-pl-tag" style="top:6px;right:30px;background:rgba(0,0,0,.6)">META &middot; IG</span>
+                        <span class="creative-perf" style="bottom:30px">+38%</span>
                     </div>
-                    <div class="creative-info"><div class="headline">Sleep cooler with bamboo</div><div class="meta">1:1 hero &middot; 12d live</div></div>
+                    <div class="creative-info"><div class="headline">Sleep cooler with bamboo</div><div class="meta">Instagram Feed &middot; 1:1 &middot; 12d live</div></div>
                 </div>
 
+                <!-- 2. TikTok Spark Ads UGC -->
                 <div class="creative-card">
-                    <div class="creative-img ad-mock ad-mock-tt">
-                        <div class="tt-img">Creator UGC &middot; bed reveal</div>
-                        <span class="tt-spark">Spark Ads</span>
-                        <div class="tt-side"><span class="tt-icon">&#10084;</span><span class="tt-icon">&#128172;</span><span class="tt-icon">&#10148;</span></div>
-                        <div class="tt-cap"><div class="tt-handle">@sleephome &middot; 2.1M</div>"This sheet set changed my sleep" &mdash; honest review</div>
+                    <div class="creative-img ad-mock ad-tt">
+                        <div class="tt-media pi pi-blue-bed">
+                            <span class="tt-logo">TikTok</span>
+                            <span class="tt-sponsored">Sponsored</span>
+                            <div class="tt-rail">
+                                <div class="tt-rail-profile"></div>
+                                <div class="tt-rail-stat"><svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938z"/></svg>12.4K</div>
+                                <div class="tt-rail-stat"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" fill="#fff"/></svg>284</div>
+                                <div class="tt-rail-stat"><svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" stroke="#fff" stroke-width="2" fill="none"/><polyline points="16 6 12 2 8 6" stroke="#fff" stroke-width="2" fill="none"/><line x1="12" y1="2" x2="12" y2="15" stroke="#fff" stroke-width="2"/></svg>1.1K</div>
+                                <div class="tt-rail-disc"></div>
+                            </div>
+                            <div class="tt-text">
+                                <div class="tt-handle">@sleephome <span class="ig-verified">&#10003;</span></div>
+                                <div class="tt-cap-text">"This sheet set changed my sleep" &mdash; honest 30-day review &#128150;</div>
+                                <div class="tt-music">Original sound &mdash; sleephome</div>
+                            </div>
+                        </div>
                         <div class="tt-cta">Shop the set</div>
-                        <span class="creative-pl-tag" style="top:6px;right:6px;left:auto">TIKTOK</span>
                         <span class="creative-perf">+22%</span>
                     </div>
-                    <div class="creative-info"><div class="headline">"This sheet set changed my sleep"</div><div class="meta">9:16 UGC &middot; 8d live</div></div>
+                    <div class="creative-info"><div class="headline">"This sheet set changed my sleep"</div><div class="meta">TikTok Spark &middot; UGC review &middot; 8d live</div></div>
                 </div>
 
+                <!-- 3. Facebook Feed -->
                 <div class="creative-card">
-                    <div class="creative-img ad-mock ad-mock-meta">
-                        <div class="am-head"><div class="am-avatar" style="background:linear-gradient(135deg,#10b981,#3b82f6)"></div><span class="am-handle">dreamhome.bedding</span><span class="am-sponsored">Sponsored</span></div>
-                        <div class="am-img" style="background:linear-gradient(135deg,#bae6fd,#7dd3fc);color:rgba(15,42,82,.7)">Lifestyle &middot; morning bedroom</div>
-                        <div class="am-body">
-                            <div class="am-headline">The luxury sheet under $90</div>
-                            <div class="am-domain">dreamhome-bedding.com</div>
-                            <span class="am-cta">Shop now</span>
+                    <div class="creative-img ad-mock ad-fb">
+                        <div class="fb-top">
+                            <div class="fb-logo">f</div>
+                            <div>
+                                <div class="fb-name">Dream Home Bedding</div>
+                                <div class="fb-meta">Sponsored &middot; <span class="fb-globe"></span></div>
+                            </div>
+                            <span class="ig-more" style="color:#65676b">&middot;&middot;&middot;</span>
                         </div>
-                        <span class="creative-pl-tag">META &middot; Feed</span>
-                        <span class="creative-perf">+15%</span>
+                        <div class="fb-caption">Real percale cotton, 400 thread count, OEKO-TEX certified. Free shipping on orders $75+.</div>
+                        <div class="fb-media pi pi-cotton"><span class="pi-label">Bedroom hero</span></div>
+                        <div class="fb-meta-bar">
+                            <div><strong>The luxury sheet under $90</strong>DREAMHOME-BEDDING.COM</div>
+                            <span class="fb-cta-btn">Shop now</span>
+                        </div>
+                        <div class="fb-actions">
+                            <div class="fb-act"><svg viewBox="0 0 24 24"><path d="M7 22V11M20 13V9a2 2 0 0 0-2-2h-5l1-5h-1L8 11v11"/></svg>Like</div>
+                            <div class="fb-act"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>Comment</div>
+                            <div class="fb-act"><svg viewBox="0 0 24 24"><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/></svg>Share</div>
+                        </div>
+                        <span class="creative-pl-tag" style="top:6px;right:30px;background:rgba(0,0,0,.5)">META &middot; FB</span>
+                        <span class="creative-perf" style="bottom:38px">+15%</span>
                     </div>
-                    <div class="creative-info"><div class="headline">The luxury sheet under $90</div><div class="meta">4:5 lifestyle &middot; 5d live</div></div>
+                    <div class="creative-info"><div class="headline">The luxury sheet under $90</div><div class="meta">Facebook Feed &middot; 4:5 &middot; 5d live</div></div>
                 </div>
 
+                <!-- 4. Google Search RSA -->
                 <div class="creative-card">
-                    <div class="creative-img ad-mock ad-mock-g">
-                        <div class="g-spons"><span>Sponsored</span></div>
-                        <div class="g-url">dreamhome-bedding.com <small>/ premium-cotton</small></div>
-                        <div class="g-headline">Premium Cotton Bed Sheets | Free Shipping</div>
-                        <div class="g-desc">400-thread-count, OEKO-TEX certified. 30-day money-back. Free shipping on orders over $75.</div>
-                        <div class="g-sites"><span>Queen sets</span><span>King sets</span></div>
-                        <span class="creative-pl-tag" style="top:8px;right:8px;left:auto;background:rgba(0,0,0,.7)">GOOGLE</span>
-                        <span class="creative-perf" style="bottom:8px;right:8px">+12%</span>
+                    <div class="creative-img ad-mock ad-g">
+                        <div class="g-spons-row">Sponsored</div>
+                        <div class="g-domain-row">
+                            <div class="g-favicon">d</div>
+                            <div>
+                                <div>dreamhome-bedding.com</div>
+                                <div class="g-breadcrumb">&rsaquo; premium-cotton-sheets</div>
+                            </div>
+                        </div>
+                        <a class="g-headline" href="#" onclick="return false">Premium Cotton Bed Sheets | Free Shipping Over $75</a>
+                        <div class="g-desc">400-thread-count percale, OEKO-TEX certified. 30-day money-back guarantee. Loved by 12,400+ sleepers.</div>
+                        <div class="g-sites">
+                            <div class="g-site">Queen sets &mdash; from $89<small>4.8 &#9733;&#9733;&#9733;&#9733;&#9733; (1.2k)</small></div>
+                            <div class="g-site">King sets &mdash; from $109<small>4.8 &#9733;&#9733;&#9733;&#9733;&#9733; (840)</small></div>
+                        </div>
+                        <span class="creative-pl-tag" style="top:6px;right:6px;background:rgba(0,0,0,.7)">GOOGLE</span>
+                        <span class="creative-perf" style="bottom:6px;right:6px">+12%</span>
                     </div>
                     <div class="creative-info"><div class="headline">Premium Cotton Bed Sheets | Free Shipping</div><div class="meta">Responsive Search Ad &middot; 6d live</div></div>
                 </div>
 
+                <!-- 5. Pinterest Pin -->
                 <div class="creative-card">
-                    <div class="creative-img ad-mock ad-mock-pn">
-                        <div class="pn-img" style="background:linear-gradient(160deg,#fde68a,#b45309)">
+                    <div class="creative-img ad-mock ad-pn">
+                        <div class="pn-img pi-cozy">
                             <span class="pn-save">Save</span>
-                            <div>7 cozy bedroom upgrades for under $200</div>
+                            <div class="pn-react"><span class="pn-react-pill">&#10084; 1.2k</span><span class="pn-react-pill">&#128190; 480</span></div>
                             <span class="pn-promoted">Promoted &middot; dreamhome-bedding.com</span>
+                            <div class="pn-title">7 cozy bedroom upgrades for under $200</div>
                         </div>
-                        <span class="creative-pl-tag">PINTEREST</span>
+                        <span class="creative-pl-tag" style="top:6px;right:75px">PINTEREST</span>
                         <span class="creative-perf warn">&minus;4%</span>
                     </div>
-                    <div class="creative-info"><div class="headline">7 cozy bedroom upgrades</div><div class="meta">2:3 standard &middot; 14d &middot; fatiguing</div></div>
+                    <div class="creative-info"><div class="headline">7 cozy bedroom upgrades</div><div class="meta">Pinterest Pin &middot; 14d live &middot; fatiguing</div></div>
                 </div>
 
+                <!-- 6. Meta Carousel -->
                 <div class="creative-card">
-                    <div class="creative-img ad-mock ad-mock-meta">
-                        <div class="am-head"><div class="am-avatar" style="background:linear-gradient(135deg,#a16207,#1c1917)"></div><span class="am-handle">dreamhome.bedding</span><span class="am-sponsored">Sponsored</span></div>
-                        <div class="am-img" style="background:linear-gradient(135deg,#fed7aa,#9a3412);color:rgba(255,255,255,.85);font-size:.55rem;flex-direction:column;gap:4px;display:flex">
-                            <div>3 of 5 &nbsp;&middot;&nbsp; Swipe &rarr;</div>
-                            <div style="display:flex;gap:3px"><span style="width:14px;height:2px;background:rgba(255,255,255,.4);border-radius:1px"></span><span style="width:14px;height:2px;background:rgba(255,255,255,.4);border-radius:1px"></span><span style="width:14px;height:2px;background:#fff;border-radius:1px"></span><span style="width:14px;height:2px;background:rgba(255,255,255,.4);border-radius:1px"></span><span style="width:14px;height:2px;background:rgba(255,255,255,.4);border-radius:1px"></span></div>
+                    <div class="creative-img ad-mock ad-ig">
+                        <div class="ig-top">
+                            <div class="ig-avatar"></div>
+                            <div class="ig-name-block">
+                                <div class="ig-name">dreamhome_bedding <span class="ig-verified">&#10003;</span></div>
+                                <div class="ig-sponsored">Sponsored &middot; Carousel</div>
+                            </div>
+                            <span class="ig-more">&middot;&middot;&middot;</span>
                         </div>
-                        <div class="am-body">
-                            <div class="am-headline">Compare our cotton thread counts</div>
-                            <div class="am-domain">300 vs 400 vs 600 &middot; explained</div>
-                            <span class="am-cta">Shop now</span>
+                        <div class="ig-media pi pi-warm">
+                            <div class="pi-carousel-dots"><span></span><span></span><span class="active"></span><span></span><span></span></div>
+                            <span class="pi-label">3 of 5 &middot; thread counts</span>
                         </div>
-                        <span class="creative-pl-tag">META &middot; Carousel</span>
-                        <span class="creative-perf">+41%</span>
+                        <div class="ig-actions">
+                            <svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M22 3 9.218 10.083"/><path d="m11.698 20.334 8.485-17.062L2.747 8.477l7.354 2.184 1.597 9.673Z"/></svg>
+                            <svg class="ig-saved" viewBox="0 0 24 24"><path d="M20 21 12 13.44 4 21V3h16Z"/></svg>
+                        </div>
+                        <div class="ig-likes">Liked by <strong>cozyhome</strong> and <strong>4,120 others</strong></div>
+                        <div class="ig-caption"><strong>dreamhome_bedding</strong> 300 vs 400 vs 600 thread count &mdash; explained</div>
+                        <div class="ig-cta">Shop now</div>
+                        <span class="creative-pl-tag" style="top:6px;right:30px;background:rgba(0,0,0,.6)">META &middot; Carousel</span>
+                        <span class="creative-perf" style="bottom:30px">+41%</span>
                     </div>
-                    <div class="creative-info"><div class="headline">Compare our cotton thread counts</div><div class="meta">5-card carousel &middot; 7d live</div></div>
+                    <div class="creative-info"><div class="headline">Compare our cotton thread counts</div><div class="meta">Meta Carousel &middot; 5 cards &middot; 7d live</div></div>
                 </div>
 
+                <!-- 7. TikTok Trend Hook -->
                 <div class="creative-card">
-                    <div class="creative-img ad-mock ad-mock-tt">
-                        <div class="tt-img" style="background:linear-gradient(160deg,#fbbf24 0%,#7c2d12 60%,#000 100%)">Trend hook &middot; "wait for it"</div>
-                        <span class="tt-spark">Spark Ads</span>
-                        <div class="tt-side"><span class="tt-icon">&#10084;</span><span class="tt-icon">&#128172;</span><span class="tt-icon">&#10148;</span></div>
-                        <div class="tt-cap"><div class="tt-handle">@dreamhome &middot; bed reveal</div>POV: you finally found cooling sheets</div>
+                    <div class="creative-img ad-mock ad-tt">
+                        <div class="tt-media pi pi-warm">
+                            <span class="tt-logo">TikTok</span>
+                            <span class="tt-sponsored">Sponsored</span>
+                            <div class="tt-rail">
+                                <div class="tt-rail-profile" style="background:linear-gradient(135deg,#fbbf24,#dc2626)"></div>
+                                <div class="tt-rail-stat"><svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938z"/></svg>48.2K</div>
+                                <div class="tt-rail-stat"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" fill="#fff"/></svg>1.2k</div>
+                                <div class="tt-rail-stat"><svg viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" stroke="#fff" stroke-width="2" fill="none"/><polyline points="16 6 12 2 8 6" stroke="#fff" stroke-width="2" fill="none"/><line x1="12" y1="2" x2="12" y2="15" stroke="#fff" stroke-width="2"/></svg>5.4K</div>
+                                <div class="tt-rail-disc"></div>
+                            </div>
+                            <div class="tt-text">
+                                <div class="tt-handle">@dreamhome_bedding <span class="ig-verified">&#10003;</span></div>
+                                <div class="tt-cap-text">POV: you finally found cooling sheets. Wait for the reveal &#128064;</div>
+                                <div class="tt-music">Trending audio &middot; "wait for it" &middot; 12M</div>
+                            </div>
+                        </div>
                         <div class="tt-cta">Shop the look</div>
-                        <span class="creative-pl-tag" style="top:6px;right:6px;left:auto">TIKTOK</span>
                         <span class="creative-perf">+29%</span>
                     </div>
-                    <div class="creative-info"><div class="headline">Bed reveal &middot; "wait for it"</div><div class="meta">9:16 trend hook &middot; 3d live</div></div>
+                    <div class="creative-info"><div class="headline">Bed reveal &middot; "wait for it"</div><div class="meta">TikTok Spark &middot; trend hook &middot; 3d live</div></div>
                 </div>
 
+                <!-- 8. Meta Reels Video -->
                 <div class="creative-card">
-                    <div class="creative-img ad-mock ad-mock-meta">
-                        <div class="am-head"><div class="am-avatar" style="background:linear-gradient(135deg,#0ea5e9,#1e1b4b)"></div><span class="am-handle">dreamhome.bedding</span><span class="am-sponsored">Sponsored</span></div>
-                        <div class="am-img" style="background:linear-gradient(135deg,#a7f3d0,#065f46);color:#fff;flex-direction:column;gap:4px;display:flex"><div>15s product story</div><div style="font-size:.5rem;opacity:.7">&#9654; 0:08 / 0:15</div></div>
-                        <div class="am-body">
-                            <div class="am-headline">From cotton field to your bed</div>
-                            <div class="am-domain">dreamhome-bedding.com</div>
-                            <span class="am-cta">Watch story</span>
+                    <div class="creative-img ad-mock ad-ig">
+                        <div class="ig-top">
+                            <div class="ig-avatar"></div>
+                            <div class="ig-name-block">
+                                <div class="ig-name">dreamhome_bedding <span class="ig-verified">&#10003;</span></div>
+                                <div class="ig-sponsored">Sponsored &middot; Reels</div>
+                            </div>
+                            <span class="ig-more">&middot;&middot;&middot;</span>
                         </div>
-                        <span class="creative-pl-tag">META &middot; Reels</span>
-                        <span class="creative-perf">+18%</span>
+                        <div class="ig-media pi pi-green">
+                            <span class="pi-label">15s product story</span>
+                            <span class="pi-video">0:08 / 0:15</span>
+                        </div>
+                        <div class="ig-actions">
+                            <svg viewBox="0 0 24 24"><path d="M16.792 3.904A4.989 4.989 0 0 1 21.5 9.122c0 3.072-2.652 4.959-5.197 7.222-2.512 2.243-3.865 3.469-4.303 3.752-.477-.309-2.143-1.823-4.303-3.752C5.141 14.072 2.5 12.167 2.5 9.122a4.989 4.989 0 0 1 4.708-5.218 4.21 4.21 0 0 1 3.675 1.941c.84 1.175.98 1.763 1.12 1.763s.278-.588 1.11-1.766a4.17 4.17 0 0 1 3.679-1.938z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z"/></svg>
+                            <svg viewBox="0 0 24 24"><path d="M22 3 9.218 10.083"/><path d="m11.698 20.334 8.485-17.062L2.747 8.477l7.354 2.184 1.597 9.673Z"/></svg>
+                            <svg class="ig-saved" viewBox="0 0 24 24"><path d="M20 21 12 13.44 4 21V3h16Z"/></svg>
+                        </div>
+                        <div class="ig-likes">Liked by <strong>cottonkid</strong> and <strong>1,876 others</strong></div>
+                        <div class="ig-caption"><strong>dreamhome_bedding</strong> From cotton field to your bed &mdash; the full story</div>
+                        <div class="ig-cta">Watch story</div>
+                        <span class="creative-pl-tag" style="top:6px;right:30px;background:rgba(0,0,0,.6)">META &middot; Reels</span>
+                        <span class="creative-perf" style="bottom:30px">+18%</span>
                     </div>
-                    <div class="creative-info"><div class="headline">From cotton field to your bed</div><div class="meta">15s video &middot; 9d live</div></div>
+                    <div class="creative-info"><div class="headline">From cotton field to your bed</div><div class="meta">Meta Reels &middot; 15s &middot; 9d live</div></div>
                 </div>
 
             </div>
@@ -2305,6 +2479,107 @@ function init(){
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// ----- LIVE STATUS BAR TICKERS -----
+(function liveStatusBar(){
+  var actionsEl = document.getElementById('sysActions');
+  var spendEl = document.getElementById('sysSpend');
+  var timerEl = document.getElementById('sysTimer');
+  var thinkingEl = document.getElementById('sysThinking');
+  if (!actionsEl) return;
+
+  var actions = 47;
+  var spend = 182;
+  var timer = 12;
+  var thinkingStates = [
+    'Bid optimizer running',
+    'Creative refresh cycle',
+    'Competitor scan',
+    'Profit recalc',
+    'Budget rebalance'
+  ];
+  var thinkIdx = 0;
+
+  // actions counter ticks irregularly
+  setInterval(function(){
+    if (Math.random() > 0.55) {
+      actions++;
+      actionsEl.textContent = actions;
+    }
+  }, 2200);
+
+  // spend creeps up
+  setInterval(function(){
+    if (Math.random() > 0.4) {
+      spend += Math.floor(Math.random() * 3) + 1;
+      if (spend > 250) spend = 250;
+      spendEl.textContent = '$' + spend;
+    }
+  }, 4000);
+
+  // optimizer timer ticks every second
+  setInterval(function(){
+    timer++;
+    if (timer > 28) {
+      thinkIdx = (thinkIdx + 1) % thinkingStates.length;
+      timer = 0;
+      thinkingEl.innerHTML = thinkingStates[thinkIdx] + ' &middot; <span id="sysTimer">0</span>s';
+      timerEl = document.getElementById('sysTimer');
+    } else {
+      timerEl.textContent = timer;
+    }
+  }, 1000);
+})();
+
+// ----- LIVE ACTIVITY FEED (prepends new rows) -----
+(function liveActivityFeed(){
+  var feed = document.querySelector('.activity-feed');
+  if (!feed) return;
+  var headRow = feed.querySelector('.activity-feed-head');
+  if (!headRow) return;
+
+  var pool = [
+    {icon:'act-bid', sym:'$', text:'Raised bid on <strong>"silk pillowcase set"</strong> from $1.40 → $1.65 — <em>winning auction window</em>', result:'+8% impressions', cls:''},
+    {icon:'act-dm', sym:'@', text:'Auto-replied to <strong>@cozyhome_</strong> on TikTok — shipping question, brand voice 91%', result:'sent', cls:''},
+    {icon:'act-creative', sym:'C', text:'Refreshed <strong>2 Meta carousel cards</strong> — A/B variant beat control by 22% CTR', result:'promoted', cls:''},
+    {icon:'act-post', sym:'P', text:'Published <strong>Pinterest Pin</strong> — "7 cooling sheet picks under $100"', result:'live', cls:''},
+    {icon:'act-bid', sym:'$', text:'Cut spend on <strong>Search "duvet covers"</strong> by 35% — CPA exceeded $42 threshold', result:'saved $58/day', cls:''},
+    {icon:'act-alert', sym:'!', text:'Detected <strong>Parachute</strong> dropped percale set from $185 → $169 — pricing alert', result:'monitoring', cls:'warn'},
+    {icon:'act-dm', sym:'@', text:'Auto-replied to <strong>Maria K.</strong> on Facebook — returns policy question, brand voice 96%', result:'sent', cls:''},
+    {icon:'act-creative', sym:'C', text:'Generated <strong>4 TikTok variants</strong> from top-performing "wait for it" hook', result:'queued', cls:''},
+    {icon:'act-post', sym:'P', text:'Scheduled <strong>Instagram Story</strong> — bedroom morning routine, drops at 9am window', result:'queued', cls:''},
+    {icon:'act-bid', sym:'$', text:'Promoted "weighted blanket" Pinterest to <strong>Conversions objective</strong> — clicks campaign saturated', result:'+ $24/day', cls:''}
+  ];
+  var poolIdx = 0;
+
+  function timeNow(){
+    var d = new Date();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    return (h<10?'0':'') + h + ':' + (m<10?'0':'') + m;
+  }
+
+  function addRow(){
+    var item = pool[poolIdx];
+    poolIdx = (poolIdx + 1) % pool.length;
+    var row = document.createElement('div');
+    row.className = 'activity-row new';
+    row.innerHTML =
+      '<div class="activity-time">' + timeNow() + '</div>' +
+      '<div class="activity-icon ' + item.icon + '">' + item.sym + '</div>' +
+      '<div class="activity-text">' + item.text + '</div>' +
+      '<div class="activity-result ' + item.cls + '">' + item.result + '</div>';
+    headRow.insertAdjacentElement('afterend', row);
+    setTimeout(function(){ row.classList.remove('new'); }, 1200);
+    // cap feed at ~12 rows
+    var rows = feed.querySelectorAll('.activity-row');
+    if (rows.length > 12) {
+      rows[rows.length-1].remove();
+    }
+  }
+
+  setInterval(addRow, 9000);
+})();
 </script>
 </body>
 </html>
