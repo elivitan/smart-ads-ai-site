@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" sizes="32x32" href="/bamzal-favicon-a-32.png?v=a8"><link rel="icon" type="image/png" sizes="512x512" href="/bamzal-favicon-a-512.png?v=a8"><link rel="icon" type="image/png" sizes="48x48" href="/bamzal-favicon-a-48.png?v=a8"><link rel="icon" type="image/png" sizes="180x180" href="/bamzal-favicon-a-180.png?v=a8"><link rel="icon" type="image/x-icon" href="/bamzal-favicon-a.ico?v=a8"><link rel="apple-touch-icon" href="/bamzal-favicon-a-apple.png?v=a8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bamzal</title>
-    <meta name="description" content="Try the Bamzal demo — see how AI creates and optimizes ad campaigns across Google, Meta, TikTok, Pinterest and X from your Shopify dashboard.">
+    <meta name="description" content="Try the Bamzal demo — see how an AI growth consultant finds where your Shopify store is losing money and fixes it: product pages, prices, customer retention, and ads only when ads pay off. Every move is approved by you and reversible.">
     <link rel="canonical" href="https://bamzal.com/demo">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bamzal.com/demo">
-    <meta property="og:title" content="Shopify Ads App Demo — See AI Ad Automation in Action">
-    <meta property="og:description" content="Try the Bamzal demo — see how AI creates ad campaigns across Google, Meta, TikTok, Pinterest and X.">
+    <meta property="og:title" content="Bamzal Demo — See an AI Growth Consultant in Action">
+    <meta property="og:description" content="Try the Bamzal demo — an AI that finds where your Shopify store is losing money and fixes it: pages, prices, retention, and ads only when ads pay off.">
     <meta property="og:image" content="https://bamzal.com/bamzal-favicon-a-apple.png?v=a8">
     <meta name="twitter:card" content="summary">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
@@ -720,7 +720,7 @@
     <div class="page-hero-inner">
         <div class="hero-badge">Interactive Platform Demo</div>
         <h1>See the system in motion</h1>
-        <p>Eleven screens of the actual app &mdash; the dashboard, your product catalog scored for ads, AI-built campaigns, the creative studio that designs your ads and videos, the social calendar that posts on every platform for you, the inbox that replies to DMs and comments in your voice, the competitor radar, and the autonomy controls that decide how much rope Bamzal has on each platform.</p>
+        <p>Eleven screens of the actual app. The dashboard works like a senior growth consultant &mdash; it shows where your profit is leaking and ranks the moves that fix it: sharper product pages, smarter prices, won-back customers, and ads only when ads pay off. Then explore your catalog scored for fixes, the AI-built campaigns, the creative studio that designs your ads and videos, the social calendar that posts for you, the inbox that replies in your voice, the competitor radar, and the autonomy controls that decide how much rope Bamzal has on each lever.</p>
         <div style="margin-top:24px;background:#fff;border:2px solid var(--accent);border-radius:12px;padding:20px 28px;text-align:left;max-width:620px;margin-left:auto;margin-right:auto">
             <p style="font-size:.9375rem;font-weight:700;color:var(--ink);margin-bottom:8px">&#9432; This is an interactive demo &mdash; not the production application.</p>
             <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">Bamzal is a <strong>Shopify embedded app</strong> that runs inside the Shopify Admin. Merchants install it from the Shopify App Store, and the application loads inside their Shopify admin panel &mdash; not on this marketing website.</p>
@@ -740,6 +740,10 @@
             <li><button class="active" onclick="switchScreen('dashboard')" data-screen="dashboard">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
                 Dashboard
+            </button></li>
+            <li><button onclick="switchScreen('fixes')" data-screen="fixes">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                Store Fixes <span class="sidebar-badge">5</span>
             </button></li>
             <li><button onclick="switchScreen('products')" data-screen="products">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
@@ -831,19 +835,19 @@
                     <div class="health-grade">Grade A</div>
                     <div class="sub-scores">
                         <div class="sub-score">
-                            <div class="sub-score-header"><span>Ad Quality</span><span>78%</span></div>
+                            <div class="sub-score-header"><span>Page &amp; catalog health</span><span>78%</span></div>
                             <div class="sub-score-bar"><div class="sub-score-fill" style="width:0;background:#8C6F2E" data-target="78"></div></div>
                         </div>
                         <div class="sub-score">
-                            <div class="sub-score-header"><span>Product Coverage</span><span>100%</span></div>
+                            <div class="sub-score-header"><span>Catalog coverage</span><span>100%</span></div>
                             <div class="sub-score-bar"><div class="sub-score-fill" style="width:0;background:#22c55e" data-target="100"></div></div>
                         </div>
                         <div class="sub-score">
-                            <div class="sub-score-header"><span>Competitor Intel</span><span>80%</span></div>
+                            <div class="sub-score-header"><span>Retention strength</span><span>80%</span></div>
                             <div class="sub-score-bar"><div class="sub-score-fill" style="width:0;background:#06b6d4" data-target="80"></div></div>
                         </div>
                         <div class="sub-score">
-                            <div class="sub-score-header"><span>Budget Efficiency</span><span>72%</span></div>
+                            <div class="sub-score-header"><span>Ad efficiency</span><span>72%</span></div>
                             <div class="sub-score-bar"><div class="sub-score-fill" style="width:0;background:#f59e0b" data-target="72"></div></div>
                         </div>
                     </div>
@@ -915,26 +919,32 @@
             <div class="insights-panel">
                 <div class="insights-head">
                     <span class="badge">AI insights</span>
-                    <h3>What Bamzal noticed this week</h3>
+                    <h3>This week&rsquo;s moves, ranked by money at stake</h3>
                 </div>
                 <div class="insights-grid">
                     <div class="insight-card">
-                        <div class="insight-eyebrow win">Win &middot; auto-acted</div>
-                        <div class="insight-title">TikTok co-pilot is paying off</div>
-                        <div class="insight-text">Three days after promoting TikTok from Observe to Co-Pilot, your TikTok-attributed revenue jumped from <strong>$340 to $1,180/day</strong>. The system shifted $87 from underperforming Google Search ad groups.</div>
-                        <div class="insight-foot"><span class="impact">+$5,840 / wk</span><a href="#" class="insight-act" onclick="return false">See decisions &rarr;</a></div>
+                        <div class="insight-eyebrow win">Pricing &middot; auto-acted</div>
+                        <div class="insight-title">Raised price on Linen Curtain $89 &rarr; $98</div>
+                        <div class="insight-text">Competitors price this $105&ndash;$119 and your conversion on it is strong &mdash; there was room. Capped to a safe step, never below cost. <strong>Full confidence</strong>, so the system applied it and is watching the before/after.</div>
+                        <div class="insight-foot"><span class="impact">+$640 / mo profit</span><a href="#" class="insight-act" onclick="return false">See decision &rarr;</a></div>
                     </div>
                     <div class="insight-card">
-                        <div class="insight-eyebrow warn">Heads up &middot; needs you</div>
-                        <div class="insight-title">Cozy Earth keyword war</div>
-                        <div class="insight-text">Cozy Earth is bidding aggressively on <strong>"bamboo sheets queen"</strong> &mdash; your top earner. Bamzal raised your bid cap from $1.85 to $2.20 to hold position 2. Consider raising the max to $2.60 to fight for position 1.</div>
-                        <div class="insight-foot"><span class="impact warn">$415/wk at risk</span><a href="#" class="insight-act" onclick="return false">Raise cap &rarr;</a></div>
+                        <div class="insight-eyebrow opp">Retention &middot; opportunity</div>
+                        <div class="insight-title">Win back 84 one-time buyers</div>
+                        <div class="insight-text">38% of your customers buy once and never return. A returning customer is worth <strong>2.4&times;</strong> in profit &mdash; and it costs nothing in ad spend. Bamzal drafted a win-back flow for the 84 worth reaching.</div>
+                        <div class="insight-foot"><span class="impact">+$1,450 / mo &middot; no ad spend</span><a href="#" class="insight-act" onclick="return false">Review flow &rarr;</a></div>
                     </div>
                     <div class="insight-card">
-                        <div class="insight-eyebrow opp">Opportunity</div>
-                        <div class="insight-title">Pinterest is undervalued</div>
-                        <div class="insight-text">Your Pinterest pins are getting <strong>3.2&times; the engagement</strong> of category benchmarks but you only spend $12/day there. The 14-day learning window finishes Friday &mdash; system will request promotion to Observe.</div>
-                        <div class="insight-foot"><span class="impact">+$2,100/mo forecast</span><a href="#" class="insight-act" onclick="return false">Preview plan &rarr;</a></div>
+                        <div class="insight-eyebrow warn">Store fix &middot; needs you</div>
+                        <div class="insight-title">Move the push from Beach Towels to Linen Sheet Set</div>
+                        <div class="insight-text">Beach Towels bring traffic but little profit; the Linen Sheet Set earns <strong>4&times; per visit</strong> and demand is rising. Bamzal can rewrite the pages and reorder the catalog to spotlight it &mdash; your approval needed.</div>
+                        <div class="insight-foot"><span class="impact warn">+$1,900 / mo profit</span><a href="#" class="insight-act" onclick="return false">Approve fix &rarr;</a></div>
+                    </div>
+                    <div class="insight-card">
+                        <div class="insight-eyebrow" style="color:#94a3b8;border-color:rgba(148,163,184,.4)">Considered &middot; held back</div>
+                        <div class="insight-title">Did not launch a new Google campaign</div>
+                        <div class="insight-text">Your cost to acquire a customer is <strong>$31</strong> right now &mdash; higher than the <strong>$26</strong> profit on a first order. No point pouring money into acquisition while the bucket leaks. Fixing retention and margin first; ads come after.</div>
+                        <div class="insight-foot"><span class="impact" style="color:#94a3b8">Ads are a tool, not a default</span><a href="#" class="insight-act" onclick="return false">Why &rarr;</a></div>
                     </div>
                 </div>
             </div>
@@ -959,6 +969,24 @@
                 <div class="activity-feed-head">
                     <h3>Bamzal &middot; live activity</h3>
                     <a href="#" class="activity-link" onclick="return false">View full log &rarr;</a>
+                </div>
+                <div class="activity-row">
+                    <div class="activity-time">12:51</div>
+                    <div class="activity-icon act-bid">$</div>
+                    <div class="activity-text">Applied price change on <strong>Linen Curtain Natural</strong> $89 &rarr; $98 &mdash; <em>competitors $105&ndash;119, margin confirmed</em></div>
+                    <div class="activity-result">applied</div>
+                </div>
+                <div class="activity-row">
+                    <div class="activity-time">12:48</div>
+                    <div class="activity-icon act-post">P</div>
+                    <div class="activity-text">Drafted <strong>win-back flow</strong> for 84 one-time buyers &mdash; <em>returning customer worth 2.4&times;, no ad spend</em></div>
+                    <div class="activity-result warn">awaiting approval</div>
+                </div>
+                <div class="activity-row">
+                    <div class="activity-time">12:45</div>
+                    <div class="activity-icon act-creative">C</div>
+                    <div class="activity-text">Rewrote product page for <strong>Linen Sheet Set</strong> &mdash; <em>clearer title, benefits and product type</em> &middot; previewed on your theme</div>
+                    <div class="activity-result">queued</div>
                 </div>
                 <div class="activity-row">
                     <div class="activity-time">12:42</div>
@@ -1044,12 +1072,70 @@
             </div>
         </div>
 
+        <!-- ===== STORE FIXES ===== -->
+        <div class="screen" id="screen-fixes">
+            <div class="app-topbar"><div class="app-panel-title" role="heading" aria-level="3">Store Fixes</div><div class="app-topbar-right"><span class="topbar-pill pill-green">Ranked by money at stake</span></div></div>
+            <p style="font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.5;margin-bottom:18px;max-width:760px">Bamzal ranks every fix across all five levers by the money it puts back in your pocket. Each move comes with the insight, the dollars at stake, and a cheap test that proves it before scaling. Nothing goes live until you approve it &mdash; and every change is reversible in one click.</p>
+            <div style="display:flex;flex-direction:column;gap:14px">
+
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid #06b6d4;border-radius:12px;padding:16px 18px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px">
+                        <span style="font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;font-weight:700;color:#06b6d4;border:1px solid rgba(6,182,212,.4);border-radius:100px;padding:2px 9px">Retention</span>
+                        <span style="font-size:.95rem;font-weight:700;color:#22c55e;font-variant-numeric:tabular-nums">$810<span style="font-size:.7rem;color:rgba(255,255,255,.4);font-weight:500">/mo at stake</span></span>
+                    </div>
+                    <div style="font-size:.9rem;font-weight:600;color:#fff;margin-bottom:6px">62% of buyers never order again &mdash; and winning them back is far cheaper than buying new ones.</div>
+                    <div style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.5;margin-bottom:12px"><strong style="color:#C9AA66;font-weight:600">The fix:</strong> a win-back flow that triggers 30 days after a first order. <strong style="color:#C9AA66;font-weight:600">The test:</strong> send to a 200-customer slice, measure repeat-rate lift over 2 weeks before rolling out. <span style="color:rgba(255,255,255,.45)">Confidence: High.</span></div>
+                    <div style="display:flex;gap:8px"><button onclick="this.textContent='Approved ✓';this.disabled=true;this.style.opacity=.6" style="background:#8C6F2E;color:#fff;border:none;border-radius:7px;padding:7px 16px;font-size:.78rem;font-weight:600;cursor:pointer">Approve</button><button onclick="this.closest('div[style*=border-left]').style.opacity=.4" style="background:transparent;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.2);border-radius:7px;padding:7px 16px;font-size:.78rem;cursor:pointer">Skip</button></div>
+                </div>
+
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid #C9AA66;border-radius:12px;padding:16px 18px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px">
+                        <span style="font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;font-weight:700;color:#C9AA66;border:1px solid rgba(201,170,102,.4);border-radius:100px;padding:2px 9px">Product page</span>
+                        <span style="font-size:.95rem;font-weight:700;color:#22c55e;font-variant-numeric:tabular-nums">$610<span style="font-size:.7rem;color:rgba(255,255,255,.4);font-weight:500">/mo at stake</span></span>
+                    </div>
+                    <div style="font-size:.9rem;font-weight:600;color:#fff;margin-bottom:6px">Your best-margin product earns 4&times; per visit &mdash; but its page leads with specs, not the reason to buy.</div>
+                    <div style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.5;margin-bottom:12px"><strong style="color:#C9AA66;font-weight:600">The fix:</strong> rewrite the Linen Sheet Set hero around the benefit and reorder the catalog to spotlight it. <strong style="color:#C9AA66;font-weight:600">The test:</strong> A/B the new page against the current one for 7 days. <span style="color:rgba(255,255,255,.45)">Confidence: High.</span></div>
+                    <div style="display:flex;gap:8px"><button onclick="this.textContent='Approved ✓';this.disabled=true;this.style.opacity=.6" style="background:#8C6F2E;color:#fff;border:none;border-radius:7px;padding:7px 16px;font-size:.78rem;font-weight:600;cursor:pointer">Approve</button><button onclick="this.closest('div[style*=border-left]').style.opacity=.4" style="background:transparent;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.2);border-radius:7px;padding:7px 16px;font-size:.78rem;cursor:pointer">Skip</button></div>
+                </div>
+
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid #22c55e;border-radius:12px;padding:16px 18px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px">
+                        <span style="font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;font-weight:700;color:#22c55e;border:1px solid rgba(34,197,94,.4);border-radius:100px;padding:2px 9px">Pricing</span>
+                        <span style="font-size:.95rem;font-weight:700;color:#22c55e;font-variant-numeric:tabular-nums">$480<span style="font-size:.7rem;color:rgba(255,255,255,.4);font-weight:500">/mo at stake</span></span>
+                    </div>
+                    <div style="font-size:.9rem;font-weight:600;color:#fff;margin-bottom:6px">Beach Towels are priced under the market &mdash; $89 while competitors sit at $105&ndash;119.</div>
+                    <div style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.5;margin-bottom:12px"><strong style="color:#C9AA66;font-weight:600">The fix:</strong> raise to $98, still below the field, with margin confirmed. <strong style="color:#C9AA66;font-weight:600">The test:</strong> apply to 50% of traffic and watch conversion and profit for 5 days. <span style="color:rgba(255,255,255,.45)">Confidence: Medium.</span></div>
+                    <div style="display:flex;gap:8px"><button onclick="this.textContent='Approved ✓';this.disabled=true;this.style.opacity=.6" style="background:#8C6F2E;color:#fff;border:none;border-radius:7px;padding:7px 16px;font-size:.78rem;font-weight:600;cursor:pointer">Approve</button><button onclick="this.closest('div[style*=border-left]').style.opacity=.4" style="background:transparent;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.2);border-radius:7px;padding:7px 16px;font-size:.78rem;cursor:pointer">Skip</button></div>
+                </div>
+
+                <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-left:3px solid #a78bfa;border-radius:12px;padding:16px 18px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px">
+                        <span style="font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;font-weight:700;color:#a78bfa;border:1px solid rgba(167,139,250,.4);border-radius:100px;padding:2px 9px">Design</span>
+                        <span style="font-size:.95rem;font-weight:700;color:#22c55e;font-variant-numeric:tabular-nums">$435<span style="font-size:.7rem;color:rgba(255,255,255,.4);font-weight:500">/mo at stake</span></span>
+                    </div>
+                    <div style="font-size:.9rem;font-weight:600;color:#fff;margin-bottom:6px">Your best-sellers sit below the fold &mdash; most visitors never scroll to them.</div>
+                    <div style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.5;margin-bottom:12px"><strong style="color:#C9AA66;font-weight:600">The fix:</strong> reorder the collection page to lead with the top earners. <strong style="color:#C9AA66;font-weight:600">The test:</strong> measure click-through to the product pages for a week. <span style="color:rgba(255,255,255,.45)">Confidence: Medium.</span></div>
+                    <div style="display:flex;gap:8px"><button onclick="this.textContent='Approved ✓';this.disabled=true;this.style.opacity=.6" style="background:#8C6F2E;color:#fff;border:none;border-radius:7px;padding:7px 16px;font-size:.78rem;font-weight:600;cursor:pointer">Approve</button><button onclick="this.closest('div[style*=border-left]').style.opacity=.4" style="background:transparent;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.2);border-radius:7px;padding:7px 16px;font-size:.78rem;cursor:pointer">Skip</button></div>
+                </div>
+
+                <div style="background:rgba(148,163,184,.06);border:1px dashed rgba(148,163,184,.35);border-radius:12px;padding:16px 18px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px">
+                        <span style="font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;font-weight:700;color:#94a3b8;border:1px solid rgba(148,163,184,.4);border-radius:100px;padding:2px 9px">Ads &middot; considered, held back</span>
+                        <span style="font-size:.72rem;color:rgba(255,255,255,.4)">no spend yet</span>
+                    </div>
+                    <div style="font-size:.9rem;font-weight:600;color:#fff;margin-bottom:6px">Not advertising yet &mdash; the bucket leaks first.</div>
+                    <div style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.5">Your cost to acquire a customer is <strong style="color:#fff">$31</strong> right now &mdash; higher than the <strong style="color:#fff">$26</strong> profit on a first order. Pouring money into ads today would lose money on every sale. Bamzal fixes retention and margin first; ads come online once each new customer pays for themselves.</div>
+                </div>
+
+            </div>
+        </div>
+
         <!-- ===== PRODUCT ANALYSIS ===== -->
         <div class="screen" id="screen-products">
-            <div class="app-topbar"><div class="app-panel-title">Product Analysis</div><div class="app-topbar-right"><span class="topbar-pill pill-blue">AI-Powered</span></div></div>
+            <div class="app-topbar"><div class="app-panel-title">Store Analysis</div><div class="app-topbar-right"><span class="topbar-pill pill-blue">AI-Powered</span></div></div>
             <div id="scanStateA" class="scan-cta">
-                <h3>Analyze Your Product Catalog</h3>
-                <p>Our AI will scan all 24 products, analyze competitors, generate keywords, and score each product for ad readiness.</p>
+                <h3>Analyze Your Whole Store</h3>
+                <p>Bamzal scans all 24 products, your prices, your customers and your competitors &mdash; then ranks the highest-value fix for each: a sharper page, a smarter price, a win-back send, or an ad when ads are the right lever.</p>
                 <button class="scan-btn" onclick="startScan()">Scan Your Store</button>
             </div>
             <div id="scanStateB" class="scan-anim" style="display:none">
@@ -1070,13 +1156,13 @@
                     <div class="scan-step" data-idx="0"><div class="check"></div>Connecting to Shopify store...</div>
                     <div class="scan-step" data-idx="1"><div class="check"></div>Fetching product catalog (24 items)...</div>
                     <div class="scan-step" data-idx="2"><div class="check"></div>Analyzing competitor landscape...</div>
-                    <div class="scan-step" data-idx="3"><div class="check"></div>Generating AI keywords &amp; ad copy...</div>
-                    <div class="scan-step" data-idx="4"><div class="check"></div>Scoring ad readiness for each product...</div>
-                    <div class="scan-step" data-idx="5"><div class="check"></div>Building optimization recommendations...</div>
+                    <div class="scan-step" data-idx="3"><div class="check"></div>Checking pricing, margins &amp; retention...</div>
+                    <div class="scan-step" data-idx="4"><div class="check"></div>Scoring each fix by money at stake...</div>
+                    <div class="scan-step" data-idx="5"><div class="check"></div>Ranking the highest-value fixes across all 5 levers...</div>
                 </div>
             </div>
             <div id="scanStateC" style="display:none">
-                <p style="font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:12px">Click any product to see its full ad analysis</p>
+                <p style="font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:12px">Click any product to see its highest-value fix &mdash; page, price, retention or ad</p>
                 <div class="product-grid" id="scanProductGrid"></div>
             </div>
         </div>
@@ -1920,9 +2006,13 @@
     <div class="section-inner">
         <div class="section-header">
             <h2>Demo &amp; Platform FAQ</h2>
-            <p>Common questions about Bamzal and our Google, Meta, TikTok &amp; Pinterest ad integrations</p>
+            <p>Common questions about how Bamzal grows your store &mdash; and our Google, Meta, TikTok &amp; Pinterest ad integrations</p>
         </div>
         <div class="faq-list">
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Is this just an ad dashboard?<span>+</span></div>
+                <div class="faq-a">No. The dashboard you see leads with a ranked plan of moves across your whole store &mdash; product-page and catalog fixes, price changes, customer win-back &mdash; and runs ads only when ads are the right lever. It even shows the moves Bamzal <em>considered and held back</em>, like refusing to scale ad spend when your cost to acquire a customer is higher than the profit on a first order. Advertising is one of several levers, not the whole product.</div>
+            </div>
             <div class="faq-item" onclick="this.classList.toggle('open')">
                 <div class="faq-q">How does Bamzal connect to my ad accounts?<span>+</span></div>
                 <div class="faq-a">We use the industry-standard OAuth 2.0 protocol for each network. When you click "Connect" on Google, Meta, TikTok or Pinterest, you are redirected to that platform's official consent screen where you grant permission. We never see or store your passwords. For each network we only request the minimum scopes needed (e.g. google-ads; ads_management + business_management + pages_read_engagement + instagram_basic on Meta; advertiser.read/write on TikTok; ads:read/write on Pinterest) and store encrypted refresh tokens.</div>
@@ -1953,8 +2043,8 @@
 
 <!-- CTA -->
 <section class="cta-section">
-    <h2>Like what you see? Start running AI-powered ads today.</h2>
-    <p>Join Shopify merchants who use AI to create smarter, data-driven campaigns across Google, Meta, TikTok &amp; Pinterest.</p>
+    <h2>Like what you see? Put an AI consultant on your store.</h2>
+    <p>Join Shopify merchants who let Bamzal find where they&rsquo;re losing money and fix it &mdash; pages, prices, retention, and ads only when they pay off.</p>
     <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
         <a href="/contact" class="btn btn-white">Request Early Access &rarr;</a>
         <a href="/pricing" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">See Pricing</a>
@@ -1968,7 +2058,7 @@
         <div class="footer-grid">
             <div>
                 <div class="footer-brand"><img src="/bamzal-logo-light.svg" alt="Bamzal" width="155" height="44"></div>
-                <p class="footer-desc">AI-powered multi-channel ad automation for Shopify merchants — Google, Meta (Facebook &amp; Instagram), TikTok, Pinterest and X. Scan competitors, generate ad copy and creatives, and launch campaigns from one Shopify dashboard.</p>
+                <p class="footer-desc">An autonomous AI growth consultant for Shopify merchants. Bamzal finds where your store is losing money and fixes it — product pages, store design, pricing, customer retention — and runs ads across Google, Meta (Facebook &amp; Instagram), TikTok, Pinterest and X only when ads are the right lever. Every move is approved by you and reversible.</p>
                 <p style="font-size:.8125rem; margin-top:12px;">Bamzal Ltd.<br>Nahal Besor 10/7, Beit Shemesh, Israel<br>+972-58-486-9778</p>
             </div>
             <div class="footer-col">
