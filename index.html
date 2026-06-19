@@ -843,7 +843,7 @@
     <div class="section-inner">
         <div class="section-header">
             <h2>See Bamzal in Action</h2>
-            <p>Explore our interactive platform demo. Click through the dashboard, analyze products, and create campaigns.</p>
+            <p>A static simulation of the real app. Bamzal studies your whole store, finds where you're losing money, and fixes it through the right lever &mdash; page, price, offer, retention, storefront, or ads &mdash; acting only as much as it has earned.</p>
         </div>
         <div class="app-frame">
             <!-- Sidebar -->
@@ -854,21 +854,17 @@
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
                         Dashboard
                     </button></li>
-                    <li><button onclick="switchScreen('products')" data-screen="products">
+                    <li><button onclick="switchScreen('scan')" data-screen="scan">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-                        Product Analysis
+                        Store Scan
                     </button></li>
-                    <li><button onclick="switchScreen('keywords')" data-screen="keywords">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                        Keywords <span class="sidebar-badge">AI</span>
+                    <li><button onclick="switchScreen('moves')" data-screen="moves">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        Moves &amp; Fixes <span class="sidebar-badge">6</span>
                     </button></li>
-                    <li><button onclick="switchScreen('wizard')" data-screen="wizard">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                        Campaign Wizard
-                    </button></li>
-                    <li><button onclick="switchScreen('campaigns')" data-screen="campaigns">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                        Campaigns
+                    <li><button onclick="switchScreen('autonomy')" data-screen="autonomy">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        Autonomy
                     </button></li>
                     <li><button onclick="switchScreen('settings')" data-screen="settings">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
@@ -886,7 +882,7 @@
                         <div class="app-panel-title" role="heading" aria-level="3">Dashboard</div>
                         <div class="app-topbar-right">
                             <span class="topbar-pill pill-green">Store Connected</span>
-                            <span class="topbar-pill pill-blue">Google · Meta · TikTok · Pinterest · X · X Linked</span>
+                            <span class="topbar-pill pill-blue">Google · Meta · TikTok · Pinterest · X connected</span>
                         </div>
                     </div>
                     <div class="dash-grid">
@@ -962,7 +958,7 @@
                 </div>
 
                 <!-- ===== PRODUCT ANALYSIS ===== -->
-                <div class="screen" id="screen-products">
+                <div class="screen" id="screen-scan">
                     <div class="app-topbar"><div class="app-panel-title">Product Analysis</div><div class="app-topbar-right"><span class="topbar-pill pill-blue">AI-Powered</span></div></div>
                     <div id="scanStateA" class="scan-cta">
                         <h3>Analyze Your Whole Store</h3>
@@ -985,133 +981,65 @@
                         </div>
                         <div class="scan-progress" id="scanProgress">
                             <div class="scan-step" data-idx="0"><div class="check"></div>Connecting to Shopify store...</div>
-                            <div class="scan-step" data-idx="1"><div class="check"></div>Fetching product catalog (24 items)...</div>
-                            <div class="scan-step" data-idx="2"><div class="check"></div>Analyzing competitor landscape...</div>
-                            <div class="scan-step" data-idx="3"><div class="check"></div>Generating AI keywords &amp; ad copy...</div>
-                            <div class="scan-step" data-idx="4"><div class="check"></div>Scoring ad readiness for each product...</div>
-                            <div class="scan-step" data-idx="5"><div class="check"></div>Building optimization recommendations...</div>
+                            <div class="scan-step" data-idx="1"><div class="check"></div>Reading catalog, prices &amp; inventory (24 items)...</div>
+                            <div class="scan-step" data-idx="2"><div class="check"></div>Analyzing customers, repeat-purchase &amp; traffic...</div>
+                            <div class="scan-step" data-idx="3"><div class="check"></div>Scanning competitors &amp; public demand...</div>
+                            <div class="scan-step" data-idx="4"><div class="check"></div>Ranking the highest-value fix for each product...</div>
+                            <div class="scan-step" data-idx="5"><div class="check"></div>Choosing the right lever per fix (page/price/offer/retention/design/ad)...</div>
                         </div>
                     </div>
                     <div id="scanStateC" style="display:none">
-                        <p style="font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:12px">Click any product to see its full ad analysis</p>
+                        <p style="font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:12px">Click any product to see its biggest opportunity and the recommended fix</p>
                         <div class="product-grid" id="scanProductGrid"></div>
                     </div>
                 </div>
 
-                <!-- ===== KEYWORDS ===== -->
-                <div class="screen" id="screen-keywords">
-                    <div class="app-topbar"><div class="app-panel-title">Keyword Research</div><div class="app-topbar-right"><span class="topbar-pill pill-blue">AI-Powered</span></div></div>
-                    <div class="kw-tabs">
-                        <button class="kw-tab active" onclick="switchKwTab(0)">Keyword Explorer</button>
-                        <button class="kw-tab" onclick="switchKwTab(1)">Scan Website</button>
-                        <button class="kw-tab" onclick="switchKwTab(2)">My Keywords</button>
+                <!-- ===== MOVES & FIXES ===== -->
+                <div class="screen" id="screen-moves">
+                    <div class="app-topbar"><div class="app-panel-title">Moves &amp; Fixes</div><div class="app-topbar-right"><span class="topbar-pill pill-blue">6 awaiting you</span></div></div>
+                    <div class="gap-card" style="margin-bottom:16px">
+                        <h3>Recommended moves &mdash; the right lever for each problem</h3>
+                        <table class="gap-table">
+                            <thead><tr><th>Problem</th><th>Lever</th><th>The fix</th><th>At stake/mo</th><th>Status</th></tr></thead>
+                            <tbody id="movesBody"></tbody>
+                        </table>
                     </div>
-                    <!-- Tab 0: Explorer -->
-                    <div class="kw-panel active" id="kwPanel0">
-                        <div class="kw-input-row">
-                            <input class="kw-input" placeholder="Enter a seed keyword (e.g. bed sheets)" value="bed sheets" id="kwSeedInput">
-                            <button class="kw-go" onclick="exploreKeywords()">Explore</button>
-                        </div>
-                        <div id="kwResults">
-                            <table class="kw-results-table">
-                                <thead><tr><th>Keyword</th><th>Volume</th><th>Competition</th><th>CPC</th><th>Trend</th></tr></thead>
-                                <tbody id="kwResultsBody"></tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- Tab 1: Scan Website -->
-                    <div class="kw-panel" id="kwPanel1" style="display:none">
-                        <div class="kw-input-row">
-                            <input class="kw-input" placeholder="Enter competitor URL (e.g. brooklinen.com)" value="brooklinen.com">
-                            <button class="kw-go" onclick="scanWebsite()">Scan</button>
-                        </div>
-                        <div id="websiteResults" style="display:none">
-                            <p style="font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:8px">Extracted 18 keywords from competitor page:</p>
-                            <div class="extracted-chips" id="extractedChips"></div>
-                        </div>
-                    </div>
-                    <!-- Tab 2: My Keywords -->
-                    <div class="kw-panel" id="kwPanel2" style="display:none">
-                        <p style="font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:12px">Your saved keywords across all products:</p>
-                        <ul class="saved-kw-list" id="savedKwList"></ul>
+                    <div class="settings-card">
+                        <h3>How a move runs</h3>
+                        <p class="settings-info" style="margin-top:0">Every move is proposed with its reason and the money at stake. Nothing changes your store without the authority you've granted for that lever: Bamzal starts by <strong>advising</strong>, then runs in <strong>shadow</strong> (simulated), then asks for your <strong>approval</strong>, and only after a measured track record may it run on <strong>auto</strong> &mdash; within your limits. New ad campaigns are always created <strong>paused</strong>, and every move is reversible in one click.</p>
                     </div>
                 </div>
 
-                <!-- ===== CAMPAIGN WIZARD ===== -->
-                <div class="screen" id="screen-wizard">
-                    <div class="app-topbar"><div class="app-panel-title">Campaign Wizard</div><div class="app-topbar-right"><span class="topbar-pill pill-blue">8 Steps</span></div></div>
-                    <div class="wiz-steps" id="wizSteps"></div>
-                    <div id="wizContent"></div>
-                    <div class="wiz-nav" id="wizNav">
-                        <button class="wiz-back" onclick="wizPrev()">Back</button>
-                        <button class="wiz-next" onclick="wizNext()">Next Step</button>
+                <!-- ===== AUTONOMY ===== -->
+                <div class="screen" id="screen-autonomy">
+                    <div class="app-topbar"><div class="app-panel-title">Autonomy</div><div class="app-topbar-right"><span class="topbar-pill pill-green">You stay in control</span></div></div>
+                    <div class="settings-card" style="margin-bottom:16px">
+                        <h3>Earned, lever by lever</h3>
+                        <p class="settings-info" style="margin-top:0">Bamzal earns the right to act on each lever step by step &mdash; it advises first, proves itself in shadow, asks approval, and only with a measured track record acts on its own, never beyond the limits you set. You can pause everything or pull a lever back at any time.</p>
                     </div>
-                </div>
-
-                <!-- ===== CAMPAIGNS ===== -->
-                <div class="screen" id="screen-campaigns">
-                    <div class="app-topbar"><div class="app-panel-title">Campaigns</div><div class="app-topbar-right"><span class="topbar-pill pill-green">3 Campaigns</span></div></div>
-                    <div style="margin-bottom:12px">
-                        <div style="display:grid;grid-template-columns:2fr repeat(5,1fr);gap:12px;padding:0 16px;font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.3)">
-                            <span>Campaign</span><span style="text-align:center">Status</span><span style="text-align:center">Budget</span><span style="text-align:center">Clicks</span><span style="text-align:center">CTR</span><span style="text-align:center">Conv.</span>
-                        </div>
-                    </div>
-                    <div class="campaign-list">
-                        <div class="campaign-item">
-                            <div><div class="camp-name">Bedding Essentials - Search</div><div class="camp-type">Search Campaign</div></div>
-                            <div style="text-align:center"><span class="camp-status camp-active">ACTIVE</span></div>
-                            <div class="camp-val">$25/day</div>
-                            <div class="camp-val">520</div>
-                            <div class="camp-val">4.2%</div>
-                            <div class="camp-val">18</div>
-                        </div>
-                        <div class="campaign-item">
-                            <div><div class="camp-name">Premium Sheets - PMax</div><div class="camp-type">Performance Max</div></div>
-                            <div style="text-align:center"><span class="camp-status camp-active">ACTIVE</span></div>
-                            <div class="camp-val">$40/day</div>
-                            <div class="camp-val">890</div>
-                            <div class="camp-val">3.8%</div>
-                            <div class="camp-val">24</div>
-                        </div>
-                        <div class="campaign-item">
-                            <div><div class="camp-name">Winter Blankets Sale</div><div class="camp-type">Shopping Campaign</div></div>
-                            <div style="text-align:center"><span class="camp-status camp-paused">PAUSED</span></div>
-                            <div class="camp-val">$15/day</div>
-                            <div class="camp-val">210</div>
-                            <div class="camp-val">2.9%</div>
-                            <div class="camp-val">6</div>
-                        </div>
-                    </div>
+                    <div id="autonomyList"></div>
                 </div>
 
                 <!-- ===== SETTINGS ===== -->
                 <div class="screen" id="screen-settings">
                     <div class="app-topbar"><div class="app-panel-title">Settings</div></div>
                     <div class="settings-card">
-                        <h3>Ad Network Connections</h3>
-                        <div class="settings-connected"><div class="dot"></div><span>Connected to Google, Meta, TikTok &amp; Pinterest</span></div>
-                        <div class="settings-row"><span>Customer ID</span><span>123-456-7890</span></div>
-                        <div class="settings-row"><span>Account Name</span><span>DreamHome Bedding Co.</span></div>
-                        <div class="settings-row"><span>Account Type</span><span>Standard</span></div>
-                        <div class="settings-row"><span>Connected On</span><span>January 15, 2026</span></div>
-                        <div class="settings-row"><span>OAuth Scope</span><span>google-ads (read/write)</span></div>
-                        <p class="settings-info">Bamzal connects to your Google Ads, Meta (Facebook &amp; Instagram), TikTok Ads, Pinterest Ads and X Ads accounts via each platform's official OAuth 2.0 flow. We request only the minimum permissions needed to create and manage campaigns on your behalf. You can revoke access at any time.</p>
-                        <button class="disconnect-btn" onclick="alert('This is a demo — disconnect is disabled.')">Disconnect Ad Accounts</button>
-                    </div>
-                    <div class="settings-card">
-                        <h3>Shopify Store</h3>
-                        <div class="settings-connected"><div class="dot"></div><span>Connected to Shopify</span></div>
+                        <h3>Connections</h3>
+                        <div class="settings-connected"><div class="dot"></div><span>Shopify store connected</span></div>
                         <div class="settings-row"><span>Store</span><span>dreamhome-bedding.myshopify.com</span></div>
                         <div class="settings-row"><span>Products</span><span>24 synced</span></div>
+                        <div class="settings-row"><span>Ad platforms</span><span>Google, Meta, TikTok, Pinterest, X</span></div>
+                        <div class="settings-row"><span>Analytics</span><span>GA4, Search Console, Merchant Center</span></div>
                         <div class="settings-row"><span>Plan</span><span>Starter ($49/mo)</span></div>
+                        <p class="settings-info">Bamzal connects to each platform via its official OAuth 2.0 flow and requests only the minimum permissions needed. You can revoke any connection at any time. What we access and how it is used is described in our <a href="/privacy" style="color:var(--accent-dark)">Privacy Policy</a>.</p>
                     </div>
                     <div class="settings-card">
-                        <h3>API Usage This Month</h3>
-                        <div class="settings-row"><span>Campaign Mutations</span><span>12</span></div>
-                        <div class="settings-row"><span>Ad Group Mutations</span><span>18</span></div>
-                        <div class="settings-row"><span>Keyword Mutations</span><span>156</span></div>
-                        <div class="settings-row"><span>Reporting Queries</span><span>1,240</span></div>
-                        <div class="settings-row"><span>OAuth Refreshes</span><span>48</span></div>
+                        <h3>Autonomy &amp; control</h3>
+                        <div class="settings-row"><span>Per-lever authority</span><span>You decide, lever by lever</span></div>
+                        <div class="settings-row"><span>New ad campaigns</span><span>Created paused</span></div>
+                        <div class="settings-row"><span>Every move</span><span>Reversible in one click</span></div>
+                        <div class="settings-row"><span>Kill switch</span><span>Pause everything instantly</span></div>
+                        <button class="disconnect-btn" onclick="alert('This is a demo - controls are disabled.')">Pause all automation</button>
                     </div>
                 </div>
 
@@ -1139,45 +1067,33 @@
             </div>
         </div>
         <div class="modal-section">
-            <h4>Ad Strength</h4>
-            <div class="strength-bar"><div class="strength-fill" id="strengthFill" style="width:0"></div></div>
-            <div class="strength-label" id="strengthLabel">Calculating...</div>
+            <h4>The opportunity</h4>
+            <p id="modalProblem" style="font-size:.85rem;color:rgba(255,255,255,.8);line-height:1.6"></p>
         </div>
         <div class="modal-section">
-            <h4>Google Ad Preview</h4>
-            <div class="google-ad-preview">
-                <div class="gad-sponsored"><span>Sponsored</span></div>
-                <div class="gad-url" id="gadUrl">dreamhome-bedding.com <span>/ products</span></div>
-                <a class="gad-headline" id="gadHeadline" href="#" onclick="return false">Premium Cotton Bed Sheet Set | Luxury Bedding</a>
-                <div class="gad-desc" id="gadDesc">Shop our premium 400-thread-count cotton bed sheets. Free shipping on orders over $75. 30-day money-back guarantee.</div>
+            <h4>Right lever &amp; the fix</h4>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                <span class="topbar-pill pill-blue" id="modalLever">Lever</span>
+                <span style="font-size:.7rem;color:rgba(255,255,255,.5)">Opportunity score <strong id="modalConf" style="color:#f59e0b"></strong>/100</span>
+            </div>
+            <p id="modalFix" style="font-size:.9rem;color:#fff;font-weight:600;line-height:1.5"></p>
+        </div>
+        <div class="modal-section">
+            <h4>Before &rarr; After</h4>
+            <div style="display:flex;gap:12px;flex-wrap:wrap">
+                <div style="flex:1;min-width:130px;background:rgba(255,255,255,.04);border-radius:8px;padding:10px 12px"><div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.4);margin-bottom:4px">Now</div><div id="modalBefore" style="font-size:.8rem;color:rgba(255,255,255,.75)"></div></div>
+                <div style="flex:1;min-width:130px;background:rgba(34,197,94,.08);border-radius:8px;padding:10px 12px"><div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:#22c55e;margin-bottom:4px">After the fix</div><div id="modalAfter" style="font-size:.8rem;color:#fff"></div></div>
             </div>
         </div>
         <div class="modal-section">
-            <h4>Headlines (Responsive Search Ad)</h4>
-            <ul class="headline-list" id="modalHeadlines"></ul>
-        </div>
-        <div class="modal-section">
-            <h4>Descriptions</h4>
-            <ul class="desc-list" id="modalDescs"></ul>
-        </div>
-        <div class="modal-section">
-            <h4>Keywords</h4>
-            <div class="keyword-chips" id="modalKeywords"></div>
-        </div>
-        <div class="modal-section">
-            <h4>Negative Keywords</h4>
-            <div class="keyword-chips" id="modalNegatives"></div>
-        </div>
-        <div class="modal-section">
-            <h4>Competitor Intelligence</h4>
-            <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
-                <span style="font-size:.8rem;color:rgba(255,255,255,.5)">Your Position:</span>
-                <span style="font-size:1.1rem;font-weight:700;color:#f59e0b" id="modalPosition">#3</span>
-                <span style="font-size:.7rem;padding:3px 8px;background:rgba(6,182,212,.15);color:#06b6d4;border-radius:100px;font-weight:600" id="modalStrategy">Undercut Pricing</span>
+            <h4>Impact &amp; how it runs</h4>
+            <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+                <span style="font-size:1.3rem;font-weight:800;color:#22c55e" id="modalStake"></span>
+                <span style="font-size:.7rem;color:rgba(255,255,255,.5)">at stake / month</span>
+                <span class="topbar-pill pill-green" id="modalAutonomy"></span>
             </div>
-            <div class="competitor-intel" id="modalCompetitors"></div>
         </div>
-        <button class="modal-launch-btn" onclick="closeModal();switchScreen('wizard')">Create Multi-Channel Campaign</button>
+        <button class="modal-launch-btn" onclick="closeModal();switchScreen('moves')">See this in Moves &amp; Fixes</button>
     </div>
 </div>
 
@@ -1185,7 +1101,7 @@
 <section class="api-section" id="api-usage">
     <div class="api-inner">
         <h2>How Bamzal Uses Each Ad Platform's API</h2>
-        <p class="subtitle">A detailed technical overview of our Google Ads, Meta Marketing, TikTok Marketing and Pinterest Ads API integrations for Shopify merchants</p>
+        <p class="subtitle">Advertising is one of several levers Bamzal uses to grow a store. This section is a detailed technical overview of our Google Ads, Meta Marketing, TikTok Marketing and Pinterest Ads API integrations, for platform review.</p>
 
         <div style="background:var(--accent-light);border:1px solid var(--accent);border-radius:12px;padding:20px 24px;margin-bottom:40px">
             <p style="font-size:.9375rem;font-weight:700;color:var(--ink);margin-bottom:8px">&#128736; About Our Application Architecture</p>
@@ -1461,129 +1377,75 @@
 
 // ----- DATA -----
 var PRODUCTS = [
-  {id:0,name:'Premium Cotton Bed Sheet Set',price:'$89',score:85,strength:78,color:'linear-gradient(135deg,#e0c3fc,#8ec5fc)',headlines:['Premium Cotton Bed Sheets','400-Thread-Count Sheet Set','Luxury Bed Sheets On Sale','Shop Cotton Sheets Today','Soft Cotton Bedding Set','Best Bed Sheets 2026','Free Shipping Over $75','30-Day Money Back'],descriptions:['Shop our premium 400-thread-count cotton bed sheets. Free shipping on orders over $75. 30-day guarantee.','Upgrade your bedroom with luxury cotton sheets. Available in 12 colors. Machine washable.','Premium cotton bed sheets loved by 5,000+ customers. Soft, breathable & durable. Order now.','Experience hotel-quality cotton sheets at home. Easy care, wrinkle-resistant. Shop the collection.'],keywords:[{t:'[premium cotton bed sheets]',c:'exact'},{t:'[bed sheet set queen]',c:'exact'},{t:'"cotton bed sheets"',c:'phrase'},{t:'"luxury sheet set"',c:'phrase'},{t:'best bed sheets',c:'broad'},{t:'soft cotton sheets',c:'broad'}],negatives:['cheap','used','twin xl','clearance'],competitors:[{name:'Brooklinen',rank:'#1'},{name:'Parachute',rank:'#2'},{name:'Casper',rank:'#4'}],position:'#3',strategy:'Quality Focus'},
-  {id:1,name:'Luxury Silk Pillowcase Set',price:'$49',score:72,strength:65,color:'linear-gradient(135deg,#fbc2eb,#a6c1ee)',headlines:['Silk Pillowcases for Hair','Luxury Mulberry Silk Cases','Anti-Aging Silk Pillowcase','Shop Silk Pillowcases Now','Best Silk Pillow Covers','Beauty Sleep Essentials','Hypoallergenic Silk Cases','Grade 6A Mulberry Silk'],descriptions:['Pure mulberry silk pillowcases for healthier hair and skin. Hypoallergenic, temperature-regulating. Free returns.','Upgrade your beauty sleep with grade 6A silk pillowcases. Reduces friction on hair and skin. Shop now.','Luxury silk pillowcase set — dermatologist recommended. Anti-aging, anti-frizz. Available in 8 colors.','Sleep on pure silk tonight. Our pillowcases reduce hair breakage by 40%. Money-back guarantee.'],keywords:[{t:'[silk pillowcase set]',c:'exact'},{t:'[mulberry silk pillow case]',c:'exact'},{t:'"silk pillowcase for hair"',c:'phrase'},{t:'"luxury pillowcase"',c:'phrase'},{t:'best silk pillowcases',c:'broad'},{t:'anti aging pillowcase',c:'broad'}],negatives:['satin','cheap','wholesale','bulk'],competitors:[{name:'Slip',rank:'#1'},{name:'Blissy',rank:'#2'},{name:'LilySilk',rank:'#4'}],position:'#3',strategy:'Undercut Pricing'},
-  {id:2,name:'Weighted Blanket 15lbs',price:'$129',score:90,strength:85,color:'linear-gradient(135deg,#667eea,#764ba2)',headlines:['Premium Weighted Blanket','15lb Weighted Blanket Sale','Better Sleep Guaranteed','Anxiety Relief Blanket','Cooling Weighted Blanket','Best Weighted Blanket 2026','Free Shipping + Returns','Doctor Recommended'],descriptions:['Clinically proven to reduce anxiety. Our 15lb weighted blanket promotes deeper sleep. Free shipping & 30-day trial.','Premium weighted blanket with cooling glass beads. Machine washable cover. Trusted by 10,000+ customers.','Sleep deeper with our doctor-recommended weighted blanket. Even weight distribution, breathable fabric.','Struggling to sleep? Our 15lb weighted blanket reduces tossing by 60%. Try risk-free for 30 nights.'],keywords:[{t:'[weighted blanket 15 lbs]',c:'exact'},{t:'[best weighted blanket]',c:'exact'},{t:'"weighted blanket for anxiety"',c:'phrase'},{t:'"cooling weighted blanket"',c:'phrase'},{t:'weighted blanket adults',c:'broad'},{t:'heavy blanket for sleep',c:'broad'}],negatives:['kids','cheap','DIY','wholesale'],competitors:[{name:'Bearaby',rank:'#1'},{name:'Gravity',rank:'#3'},{name:'Luna',rank:'#4'}],position:'#2',strategy:'Clinical Proof'},
-  {id:3,name:'Bamboo Duvet Cover Queen',price:'$119',score:76,strength:70,color:'linear-gradient(135deg,#a8edea,#fed6e3)',headlines:['Bamboo Duvet Cover Queen','Eco-Friendly Bedding Set','Cooling Duvet Cover','Organic Bamboo Bedding','Shop Bamboo Covers Now','Sustainable Luxury Bedding','Silky Soft Bamboo Cover','Temperature Regulating'],descriptions:['Eco-friendly bamboo duvet cover. Naturally cooling, hypoallergenic & sustainable. Free shipping over $75.','Upgrade to bamboo bedding — 3x softer than cotton. Temperature-regulating for year-round comfort.','Premium bamboo duvet cover in queen size. OEKO-TEX certified, machine washable. 15 color options.','Sleep sustainably with our organic bamboo duvet cover. Silky soft hand-feel, naturally antibacterial.'],keywords:[{t:'[bamboo duvet cover queen]',c:'exact'},{t:'[organic bamboo bedding]',c:'exact'},{t:'"bamboo duvet cover"',c:'phrase'},{t:'"eco friendly bedding"',c:'phrase'},{t:'cooling duvet cover',c:'broad'},{t:'sustainable bedding',c:'broad'}],negatives:['king','twin','cheap','used'],competitors:[{name:'Ettitude',rank:'#1'},{name:'Cariloha',rank:'#2'},{name:'Cozy Earth',rank:'#4'}],position:'#3',strategy:'Eco Messaging'},
-  {id:4,name:'Organic Cotton Towel Set',price:'$59',score:68,strength:60,color:'linear-gradient(135deg,#ffecd2,#fcb69f)',headlines:['Organic Cotton Towels','Luxury Bath Towel Set','Ultra-Absorbent Towels','Shop Organic Towels Now','Hotel-Quality Bath Towels','GOTS Certified Organic','Soft Plush Towel Set','Zero Chemical Towels'],descriptions:['GOTS-certified organic cotton towels. Ultra-absorbent, quick-drying & luxuriously soft. Set of 6 pieces.','Upgrade your bathroom with organic cotton towels. Zero harmful chemicals, sustainably sourced cotton.','Hotel-quality organic towels for your home. 600 GSM plush weight, available in 10 designer colors.','Feel the difference of truly organic cotton. Our towel sets are chemical-free, eco-friendly & super soft.'],keywords:[{t:'[organic cotton towel set]',c:'exact'},{t:'[best organic bath towels]',c:'exact'},{t:'"organic cotton towels"',c:'phrase'},{t:'"luxury bath towel set"',c:'phrase'},{t:'organic towels',c:'broad'},{t:'eco friendly bath towels',c:'broad'}],negatives:['wholesale','bulk','hand towel only','used'],competitors:[{name:'Boll & Branch',rank:'#1'},{name:'Coyuchi',rank:'#3'},{name:'Under the Canopy',rank:'#4'}],position:'#2',strategy:'Certification Trust'},
-  {id:5,name:'Memory Foam Pillow Pack',price:'$79',score:81,strength:75,color:'linear-gradient(135deg,#c3cfe2,#f5f7fa)',headlines:['Memory Foam Pillows 2-Pack','Best Pillow for Neck Pain','Cooling Gel Foam Pillow','Shop Memory Foam Now','CertiPUR-US Certified','Orthopedic Sleep Pillow','Adjustable Loft Pillow','Sleep Better Tonight'],descriptions:['CertiPUR-US certified memory foam pillows. Cooling gel layer prevents overheating. Pack of 2 with washable covers.','Say goodbye to neck pain with our orthopedic memory foam pillows. Adjustable loft for any sleep position.','Premium memory foam pillow 2-pack. Contoured support, cooling gel infused. 100-night sleep trial.','Wake up pain-free with our chiropractor-recommended memory foam pillows. Free shipping + free returns.']}
-];
-PRODUCTS[5].keywords=[{t:'[memory foam pillow]',c:'exact'},{t:'[best pillow for neck pain]',c:'exact'},{t:'"memory foam pillow pack"',c:'phrase'},{t:'"cooling gel pillow"',c:'phrase'},{t:'orthopedic pillow',c:'broad'},{t:'best sleeping pillow',c:'broad'}];
-PRODUCTS[5].negatives=['body pillow','travel','toddler','cheap'];
-PRODUCTS[5].competitors=[{name:'Tempur-Pedic',rank:'#1'},{name:'Coop Home',rank:'#2'},{name:'Purple',rank:'#4'}];
-PRODUCTS[5].position='#3';
-PRODUCTS[5].strategy='Pain Point Focus';
-
-var KW_DATA = [
-  {kw:'bed sheets queen',vol:'22,400',comp:'high',cpc:'$1.85',trend:'up'},
-  {kw:'cotton bed sheets',vol:'14,800',comp:'med',cpc:'$1.42',trend:'up'},
-  {kw:'luxury bed sheet set',vol:'8,200',comp:'high',cpc:'$2.10',trend:'up'},
-  {kw:'best bed sheets 2026',vol:'6,900',comp:'med',cpc:'$1.65',trend:'up'},
-  {kw:'soft bed sheets',vol:'5,400',comp:'low',cpc:'$0.98',trend:'flat'},
-  {kw:'400 thread count sheets',vol:'3,100',comp:'low',cpc:'$1.22',trend:'flat'},
-  {kw:'bed sheets on sale',vol:'12,600',comp:'high',cpc:'$1.90',trend:'down'},
-  {kw:'organic bed sheets',vol:'4,500',comp:'med',cpc:'$1.55',trend:'up'}
+  {id:0,name:'Premium Cotton Bed Sheet Set',price:'$89',score:86,color:'linear-gradient(135deg,#e0c3fc,#8ec5fc)',lever:'Product page',short:'Page buries the value',problem:'The product page buries the value &mdash; a generic title with the key benefits below the fold, so visitors leave before they see why it is worth $89.',fix:'Rewrite &amp; reorder the page: lead with 400-thread-count + free shipping, trust badges up top.',before:'Generic title, specs hidden low',after:'Benefit-first page, trust up top',atStake:'$610',autonomy:'Awaiting your approval'},
+  {id:1,name:'Luxury Silk Pillowcase Set',price:'$49',score:79,color:'linear-gradient(135deg,#fbc2eb,#a6c1ee)',lever:'Pricing',short:'Priced under margin',problem:'Priced under its true margin and below comparable demand &mdash; money left on every sale.',fix:'Raise $49 &rarr; $59 (still under competitors), as a measured price experiment first.',before:'$49 &mdash; under margin',after:'$59 &mdash; still below Slip &amp; Blissy',atStake:'$480',autonomy:'Running in shadow'},
+  {id:2,name:'Weighted Blanket 15lbs',price:'$129',score:88,color:'linear-gradient(135deg,#667eea,#764ba2)',lever:'Ads',short:'Best converter, under-advertised',problem:'Your best converter is under-advertised, and budget keeps running on out-of-stock SKUs.',fix:'Scale the winning creative within a capped budget; auto-pause ads for anything out of stock.',before:'Flat spend, wasted on dead SKUs',after:'Capped scale on the proven ad',atStake:'$520',autonomy:'Auto (within your cap)'},
+  {id:3,name:'Bamboo Duvet Cover Queen',price:'$119',score:73,color:'linear-gradient(135deg,#a8edea,#fed6e3)',lever:'Offer',short:'No reason to buy now',problem:'Sold alone with no reason to buy now &mdash; shoppers browse and leave.',fix:'Bundle with the matching sheet set as a limited-time offer to lift average order value.',before:'Sold alone, no urgency',after:'Bundle offer, +12% AOV',atStake:'$300',autonomy:'Awaiting your approval'},
+  {id:4,name:'Organic Cotton Towel Set',price:'$59',score:75,color:'linear-gradient(135deg,#ffecd2,#fcb69f)',lever:'Storefront',short:'Hidden below best-sellers',problem:'A strong product hidden far below your best-sellers, so most visitors never see it.',fix:'Promote it into the hero collection and reorder the storefront around proven demand.',before:'Buried on collection page 3',after:'Featured in the storefront hero',atStake:'$435',autonomy:'Advisory only'},
+  {id:5,name:'Memory Foam Pillow Pack',price:'$79',score:81,color:'linear-gradient(135deg,#c3cfe2,#f5f7fa)',lever:'Retention',short:'One-time buyers never return',problem:'One-time buyers never come back &mdash; the single biggest leak in the store.',fix:'Trigger a win-back flow to past buyers at 30 and 60 days, with a gentle incentive.',before:'No follow-up after first order',after:'30/60-day win-back send',atStake:'$810',autonomy:'Awaiting your approval'}
 ];
 
-var WEBSITE_KWS = ['luxury sheets','cotton bedding','duvet covers','pillowcase set','bed linen','thread count','queen sheets','king sheets','fitted sheet','flat sheet','percale','sateen','bamboo bedding','organic cotton','hypoallergenic','breathable sheets','hotel bedding','sheet set sale'];
-
-var SAVED_KWS = [
-  {t:'[premium cotton bed sheets]',match:'Exact'},{t:'"luxury silk pillowcase"',match:'Phrase'},{t:'weighted blanket for adults',match:'Broad'},
-  {t:'[bamboo duvet cover queen]',match:'Exact'},{t:'"organic cotton towels"',match:'Phrase'},{t:'memory foam pillow',match:'Broad'},
-  {t:'[best bed sheets 2026]',match:'Exact'},{t:'"cooling weighted blanket"',match:'Phrase'}
+var AUTONOMY_LEVELS = ['Advisory','Shadow','Approval','Auto'];
+var LEVERS = [
+  {name:'Product page',stage:2},
+  {name:'Pricing',stage:1},
+  {name:'Offer',stage:2},
+  {name:'Retention',stage:2},
+  {name:'Storefront',stage:0},
+  {name:'Ads',stage:3},
+  {name:'Social',stage:0}
 ];
-
-var WIZ_STEPS_DATA = [
-  {title:'Choose Your Goal',desc:'What do you want to achieve with this campaign?',type:'cards',items:[
-    {h:'Drive Sales',p:'Get more online purchases from your store',icon:'&#128176;'},
-    {h:'Generate Leads',p:'Collect contact information from potential customers',icon:'&#128221;'},
-    {h:'Increase Traffic',p:'Drive more visitors to your website',icon:'&#127760;'},
-    {h:'Build Brand',p:'Increase brand awareness and recognition',icon:'&#11088;'}
-  ]},
-  {title:'Campaign Type',desc:'Select the type of ad campaign to create across Google, Meta, TikTok or Pinterest.',type:'cards',items:[
-    {h:'Performance Max',p:'AI-optimized across all Google channels',icon:'&#9889;',rec:true},
-    {h:'Search',p:'Text ads on Google search results',icon:'&#128270;'},
-    {h:'Shopping',p:'Product listings with images and prices',icon:'&#128722;'},
-    {h:'Display',p:'Banner ads across Google Display Network',icon:'&#128444;'},
-    {h:'YouTube',p:'Video ads on YouTube',icon:'&#9654;'}
-  ]},
-  {title:'Bidding Strategy',desc:'How should Google optimize your bids?',type:'cards',items:[
-    {h:'Maximize Conversions',p:'Let Google AI optimize for most conversions',icon:'&#127919;',rec:true},
-    {h:'Maximize Conv. Value',p:'Optimize for highest conversion value',icon:'&#128176;'},
-    {h:'Maximize Clicks',p:'Get as many clicks as possible',icon:'&#128073;'},
-    {h:'Target CPA',p:'Set a target cost per acquisition',icon:'&#127919;'},
-    {h:'Target ROAS',p:'Set a target return on ad spend',icon:'&#128200;'}
-  ]},
-  {title:'Target Locations',desc:'Where do you want your ads to show?',type:'locations'},
-  {title:'Ad Content',desc:'Review and customize your AI-generated ad copy.',type:'adcontent'},
-  {title:'Daily Budget',desc:'Set your daily advertising budget.',type:'budget'},
-  {title:'Conversion Tracking',desc:'Track purchases from your Shopify store.',type:'conversion'},
-  {title:'Review & Launch',desc:'Review all settings before creating your campaign.',type:'review'}
-];
-
-var LOCATIONS = ['United States','Canada','United Kingdom','Australia','Germany','France','Israel'];
-var wizSelections = {goal:'Drive Sales',type:'Performance Max',bidding:'Maximize Conversions',locations:['United States','Canada'],budget:25,conversion:true};
 
 // ----- STATE -----
 var currentScreen = 'dashboard';
 var scanState = 'A';
-var currentKwTab = 0;
-var wizStep = 0;
-var launchState = 'idle';
 var animFrame = null;
 
 // ----- SCREEN SWITCHING -----
-function switchScreen(s){
-  currentScreen = s;
+function switchScreen(sc){
+  currentScreen = sc;
   document.querySelectorAll('.screen').forEach(function(el){el.classList.remove('active')});
-  document.getElementById('screen-'+s).classList.add('active');
+  var screen = document.getElementById('screen-'+sc);
+  if(screen) screen.classList.add('active');
   document.querySelectorAll('.sidebar-nav button').forEach(function(b){
-    b.classList.toggle('active', b.getAttribute('data-screen')===s);
+    b.classList.toggle('active', b.getAttribute('data-screen')===sc);
   });
-  if(s==='dashboard') animateDashboard();
-  if(s==='keywords') { populateKwResults(); populateSavedKw(); }
-  if(s==='wizard') renderWizard();
+  if(sc==='dashboard') animateDashboard();
+  if(sc==='moves') renderMoves();
+  if(sc==='autonomy') renderAutonomy();
 }
 
 // ----- DASHBOARD -----
 function animateDashboard(){
-  // Health ring
   var ring = document.getElementById('healthRing');
+  if(!ring) return;
   var target = 82;
   var circ = 2*Math.PI*56;
   ring.style.strokeDasharray = circ;
   setTimeout(function(){ ring.style.strokeDashoffset = circ - (circ * target/100); },100);
-  // Health number
   animateCounter(document.getElementById('healthNum'), 0, target, 1200);
-  // Sub score bars
   document.querySelectorAll('.sub-score-fill').forEach(function(bar){
     var t = bar.getAttribute('data-target');
     setTimeout(function(){ bar.style.width = t+'%'; },200);
   });
-  // Stat counters
   document.querySelectorAll('[data-counter]').forEach(function(el){
     animateCounter(el, 0, parseInt(el.getAttribute('data-counter')), 1500);
   });
-  // Pulse canvas
   startPulse();
 }
 
 function animateCounter(el, from, to, dur){
-  // QA 2026-05-18: if the element already shows the target value (or
-  // close to it) skip the animation. Previously the counter always
-  // started from `from` and overwrote any static pre-filled value with
-  // 0 → target, which caused a jarring 82 → 0 → 82 flash and made the
-  // static state look broken before JS ran.
+  if(!el) return;
   var existing = parseInt((el.textContent || "").replace(/[^0-9-]/g, ""), 10);
   if (!isNaN(existing) && existing === to) return;
   var start = null;
   function step(ts){
     if(!start) start=ts;
-    var p = Math.min((ts-start)/dur, 1);
-    var ease = 1 - Math.pow(1-p, 3);
+    var pr = Math.min((ts-start)/dur, 1);
+    var ease = 1 - Math.pow(1-pr, 3);
     var v = Math.round(from + (to-from)*ease);
     el.textContent = v >= 1000 ? v.toLocaleString() : v;
-    if(p<1) requestAnimationFrame(step);
+    if(pr<1) requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
 }
@@ -1594,8 +1456,6 @@ function startPulse(){
   var ctx = canvas.getContext('2d');
   var w = canvas.parentElement.clientWidth - 32;
   canvas.width = w; canvas.height = 80;
-  var pts = [];
-  for(var i=0;i<100;i++) pts.push(Math.random()*30+10);
   var offset = 0;
   function draw(){
     ctx.clearRect(0,0,w,80);
@@ -1603,7 +1463,6 @@ function startPulse(){
     ctx.strokeStyle = '#8C6F2E';
     ctx.lineWidth = 2;
     for(var i=0;i<w;i++){
-      var idx = (i+Math.floor(offset))%pts.length;
       var y = 40 + Math.sin((i+offset)*0.03)*15 + Math.sin((i+offset)*0.07)*8;
       if(i===0) ctx.moveTo(i,y); else ctx.lineTo(i,y);
     }
@@ -1624,12 +1483,13 @@ function startPulse(){
 
 function renderProductCards(containerId, clickable){
   var c = document.getElementById(containerId);
+  if(!c) return;
   c.innerHTML = '';
   PRODUCTS.forEach(function(p){
     var card = document.createElement('div');
     card.className = 'product-card';
     if(clickable) card.onclick = function(){ openModal(p.id); };
-    card.innerHTML = '<div class="product-img" style="background:'+p.color+'"><div class="score-badge '+(p.score>=80?'score-high':'score-mid')+'">'+p.score+'/100</div></div><div class="product-info"><h4>'+p.name+'</h4><div class="price">'+p.price+'</div></div>';
+    card.innerHTML = '<div class="product-img" style="background:'+p.color+'"><div class="score-badge '+(p.score>=80?'score-high':'score-mid')+'">'+p.score+'/100</div></div><div class="product-info"><h4>'+p.name+'</h4><div class="price">'+p.price+'</div><div style="margin-top:6px"><span class="topbar-pill pill-blue" style="font-size:.6rem">'+p.lever+'</span></div></div>';
     c.appendChild(card);
   });
 }
@@ -1644,7 +1504,7 @@ function startScan(){
   var iv = setInterval(function(){
     if(i>0) steps[i-1].classList.remove('active');
     if(i>0) steps[i-1].classList.add('done');
-    if(i>0) steps[i-1].querySelector('.check').textContent='\u2713';
+    if(i>0) steps[i-1].querySelector('.check').textContent='✓';
     if(i<steps.length){
       steps[i].classList.add('active');
       i++;
@@ -1660,59 +1520,26 @@ function startScan(){
   },1300);
 }
 
-// ----- MODAL -----
+// ----- MODAL (whole-store fix card) -----
 function openModal(id){
   var p = PRODUCTS[id];
   document.getElementById('modalImg').style.background = p.color;
   document.getElementById('modalTitle').textContent = p.name;
   document.getElementById('modalPrice').textContent = p.price;
-  // Score ring
   var ring = document.getElementById('modalRing');
   var circ = 2*Math.PI*24;
   ring.style.strokeDasharray = circ;
   ring.style.strokeDashoffset = circ;
   setTimeout(function(){ ring.style.strokeDashoffset = circ - (circ*p.score/100); ring.style.transition='stroke-dashoffset 1s ease'; },50);
   document.getElementById('modalScore').textContent = p.score;
-  // Strength
-  document.getElementById('strengthFill').style.width = p.strength+'%';
-  document.getElementById('strengthLabel').textContent = p.strength >= 80 ? 'Excellent' : p.strength >= 60 ? 'Good' : 'Needs Work';
-  // Google ad preview
-  var slug = p.name.toLowerCase().replace(/\s+/g,'-');
-  document.getElementById('gadUrl').innerHTML = 'dreamhome-bedding.com <span>/ products / '+slug+'</span>';
-  document.getElementById('gadHeadline').textContent = p.headlines[0]+' | '+p.headlines[1];
-  document.getElementById('gadDesc').textContent = p.descriptions[0];
-  // Headlines
-  var hl = document.getElementById('modalHeadlines');
-  hl.innerHTML = '';
-  p.headlines.forEach(function(h){
-    hl.innerHTML += '<li><span>'+h+'</span><span class="counter">'+h.length+'/30</span></li>';
-  });
-  // Descriptions
-  var dl = document.getElementById('modalDescs');
-  dl.innerHTML = '';
-  p.descriptions.forEach(function(d){
-    dl.innerHTML += '<li><span style="font-size:.75rem">'+d+'</span><span class="counter">'+d.length+'/90</span></li>';
-  });
-  // Keywords
-  var kc = document.getElementById('modalKeywords');
-  kc.innerHTML = '';
-  p.keywords.forEach(function(k){
-    kc.innerHTML += '<span class="kw-chip kw-'+k.c+'">'+k.t+'</span>';
-  });
-  // Negatives
-  var nc = document.getElementById('modalNegatives');
-  nc.innerHTML = '';
-  p.negatives.forEach(function(n){
-    nc.innerHTML += '<span class="kw-chip kw-negative">-'+n+'</span>';
-  });
-  // Competitors
-  document.getElementById('modalPosition').textContent = p.position;
-  document.getElementById('modalStrategy').textContent = p.strategy;
-  var ci = document.getElementById('modalCompetitors');
-  ci.innerHTML = '';
-  p.competitors.forEach(function(c){
-    ci.innerHTML += '<div class="comp-item"><div class="rank">'+c.rank+'</div><div class="name">'+c.name+'</div></div>';
-  });
+  document.getElementById('modalProblem').innerHTML = p.problem;
+  document.getElementById('modalLever').textContent = p.lever;
+  document.getElementById('modalConf').textContent = p.score;
+  document.getElementById('modalFix').innerHTML = p.fix;
+  document.getElementById('modalBefore').innerHTML = p.before;
+  document.getElementById('modalAfter').innerHTML = p.after;
+  document.getElementById('modalStake').textContent = p.atStake;
+  document.getElementById('modalAutonomy').textContent = p.autonomy;
   document.getElementById('productModal').classList.add('open');
   document.body.style.overflow='hidden';
 }
@@ -1722,212 +1549,44 @@ function closeModal(){
   document.getElementById('modalRing').style.transition='none';
 }
 
-// ----- KEYWORDS -----
-function switchKwTab(idx){
-  currentKwTab = idx;
-  document.querySelectorAll('.kw-tab').forEach(function(t,i){t.classList.toggle('active',i===idx)});
-  document.querySelectorAll('.kw-panel').forEach(function(p,i){p.style.display = i===idx?'block':'none'});
-}
-
-function populateKwResults(){
-  var tbody = document.getElementById('kwResultsBody');
-  tbody.innerHTML = '';
-  KW_DATA.forEach(function(k){
-    var compClass = k.comp==='low'?'comp-low':k.comp==='med'?'comp-med':'comp-high';
-    var trendIcon = k.trend==='up'?'&#8593;':k.trend==='flat'?'&#8594;':'&#8595;';
-    var trendClass = 'trend-'+k.trend;
-    tbody.innerHTML += '<tr><td>'+k.kw+'</td><td>'+k.vol+'</td><td><span class="comp-badge '+compClass+'">'+k.comp.toUpperCase()+'</span></td><td>'+k.cpc+'</td><td class="'+trendClass+'">'+trendIcon+'</td></tr>';
+// ----- MOVES -----
+function renderMoves(){
+  var tb = document.getElementById('movesBody');
+  if(!tb) return;
+  tb.innerHTML='';
+  PRODUCTS.forEach(function(p){
+    var a=p.autonomy, col;
+    if(a.indexOf('Auto')===0) col='#22c55e';
+    else if(a.indexOf('shadow')>=0) col='#06b6d4';
+    else if(a.indexOf('Advisory')===0) col='rgba(255,255,255,.5)';
+    else col='#f59e0b';
+    tb.innerHTML += '<tr><td>'+p.short+'</td><td>'+p.lever+'</td><td>'+p.fix+'</td><td class="loss">'+p.atStake+'</td><td style="color:'+col+';font-weight:600">'+a+'</td></tr>';
   });
 }
 
-function exploreKeywords(){
-  populateKwResults();
-}
-
-function scanWebsite(){
-  var c = document.getElementById('extractedChips');
-  c.innerHTML = '';
-  WEBSITE_KWS.forEach(function(k){
-    c.innerHTML += '<span class="ext-chip">'+k+'</span>';
-  });
-  document.getElementById('websiteResults').style.display='block';
-}
-
-function populateSavedKw(){
-  var list = document.getElementById('savedKwList');
-  list.innerHTML = '';
-  SAVED_KWS.forEach(function(k){
-    var cls = k.match==='Exact'?'kw-exact':k.match==='Phrase'?'kw-phrase':'kw-broad';
-    list.innerHTML += '<li><span>'+k.t+'</span><span class="kw-chip '+cls+'" style="font-size:.65rem">'+k.match+'</span></li>';
-  });
-}
-
-// ----- CAMPAIGN WIZARD -----
-function renderWizard(){
-  // Step dots
-  var stepsEl = document.getElementById('wizSteps');
-  stepsEl.innerHTML = '';
-  for(var i=0;i<8;i++){
-    var cls = i<wizStep?'done':i===wizStep?'active':'';
-    var dot = document.createElement('div');
-    dot.className='wiz-step-dot '+cls;
-    dot.textContent = i<wizStep?'\u2713':(i+1);
-    dot.onclick = (function(idx){ return function(){ if(idx<=wizStep) {wizStep=idx; renderWizard();} }; })(i);
-    stepsEl.appendChild(dot);
-  }
-  // Content
-  var content = document.getElementById('wizContent');
-  var data = WIZ_STEPS_DATA[wizStep];
-  var html = '<div class="wiz-title">Step '+(wizStep+1)+': '+data.title+'</div><div class="wiz-desc">'+data.desc+'</div>';
-
-  if(data.type==='cards'){
-    html += '<div class="wiz-cards">';
-    data.items.forEach(function(item,idx){
-      var selKey = wizStep===0?'goal':wizStep===1?'type':'bidding';
-      var selected = wizSelections[selKey]===item.h?'selected':'';
-      html += '<div class="wiz-card '+selected+'" onclick="wizSelect('+wizStep+',\''+item.h+'\')">';
-      if(item.rec) html += '<span class="rec">Recommended</span>';
-      html += '<h4>'+item.icon+' '+item.h+'</h4><p>'+item.p+'</p></div>';
-    });
-    html += '</div>';
-  }
-  else if(data.type==='locations'){
-    html += '<div class="wiz-locations">';
-    LOCATIONS.forEach(function(loc){
-      var checked = wizSelections.locations.indexOf(loc)>=0?'checked':'';
-      html += '<label><input type="checkbox" '+checked+' onchange="wizToggleLoc(\''+loc+'\')"> '+loc+'</label>';
-    });
-    html += '</div>';
-  }
-  else if(data.type==='adcontent'){
-    html += '<div class="wiz-ad-editor"><label style="font-size:.75rem;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Headlines</label>';
-    html += '<textarea rows="3" id="wizHeadlines">Premium Cotton Bed Sheets | 400 Thread Count\nLuxury Bed Sheet Set | Free Shipping\nShop Cotton Sheets | 30-Day Guarantee</textarea>';
-    html += '<label style="font-size:.75rem;color:rgba(255,255,255,.4);display:block;margin-bottom:4px">Descriptions</label>';
-    html += '<textarea rows="3" id="wizDescs">Shop our premium 400-thread-count cotton bed sheets. Free shipping on orders over $75. 30-day money-back guarantee.\nUpgrade your bedroom with luxury cotton sheets. Available in 12 colors. Machine washable & durable.</textarea>';
-    html += '</div>';
-    html += '<div style="margin-top:12px"><h4 style="font-size:.75rem;color:rgba(255,255,255,.4);margin-bottom:8px">Live Ad Preview</h4><div class="google-ad-preview"><div class="gad-sponsored"><span>Sponsored</span></div><div class="gad-url">dreamhome-bedding.com <span>/ products</span></div><a class="gad-headline" href="#" onclick="return false">Premium Cotton Bed Sheets | 400 Thread Count</a><div class="gad-desc">Shop our premium 400-thread-count cotton bed sheets. Free shipping on orders over $75. 30-day money-back guarantee.</div></div></div>';
-  }
-  else if(data.type==='budget'){
-    html += '<div class="wiz-budget-display"><div class="amount" id="budgetAmount">$'+wizSelections.budget+'</div><div class="monthly">~$'+(wizSelections.budget*30)+'/month estimated</div></div>';
-    html += '<input type="range" class="wiz-budget-slider" min="5" max="500" step="5" value="'+wizSelections.budget+'" oninput="wizBudget(this.value)">';
-    html += '<div style="display:flex;justify-content:space-between;font-size:.7rem;color:rgba(255,255,255,.3)"><span>$5/day</span><span>$500/day</span></div>';
-  }
-  else if(data.type==='conversion'){
-    html += '<div class="wiz-toggle"><input type="checkbox" '+(wizSelections.conversion?'checked':'')+' onchange="wizSelections.conversion=this.checked"><span style="font-size:.85rem">Enable Conversion Tracking</span></div>';
-    html += '<p style="font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.5;margin-top:8px">When enabled, Bamzal creates a "Purchase" conversion action across your connected ad networks — via Google Ads <strong style="color:rgba(255,255,255,.7)">ConversionActionService</strong>, the Meta Conversions API, TikTok Events API and Pinterest Conversions API. This tracks Shopify checkout completions and reports unified ROAS across Google, Meta, TikTok, Pinterest and X. Conversion tags are automatically injected into your Shopify checkout.</p>';
-  }
-  else if(data.type==='review'){
-    html += '<ul class="wiz-summary">';
-    html += '<li><span>Goal</span><span>'+wizSelections.goal+'</span></li>';
-    html += '<li><span>Campaign Type</span><span>'+wizSelections.type+'</span></li>';
-    html += '<li><span>Bidding Strategy</span><span>'+wizSelections.bidding+'</span></li>';
-    html += '<li><span>Locations</span><span>'+wizSelections.locations.join(', ')+'</span></li>';
-    html += '<li><span>Daily Budget</span><span>$'+wizSelections.budget+'/day (~$'+(wizSelections.budget*30)+'/mo)</span></li>';
-    html += '<li><span>Conversion Tracking</span><span>'+(wizSelections.conversion?'Enabled':'Disabled')+'</span></li>';
-    html += '<li><span>Initial Status</span><span style="color:#f59e0b">PAUSED</span></li>';
-    html += '</ul>';
-    if(launchState==='idle'){
-      html += '<button class="launch-btn" onclick="launchCampaign()">Create Campaign (PAUSED)</button>';
-    } else if(launchState==='launching'){
-      html += '<div class="launch-timeline" id="launchTimeline"></div>';
-    } else if(launchState==='done'){
-      html += '<div class="launch-timeline" id="launchTimeline"></div>';
-      html += '<div class="launch-success" id="launchSuccess" style="display:block"><h3>Campaign Created Successfully!</h3><p>Your campaign has been created in PAUSED state across your connected ad networks (Google, Meta, TikTok, Pinterest). Review it in each platform\'s native dashboard before enabling.</p></div>';
-    }
-  }
-
-  content.innerHTML = html;
-
-  // Nav buttons visibility
-  var nav = document.getElementById('wizNav');
-  if(launchState!=='idle' && wizStep===7) { nav.style.display='none'; } else { nav.style.display='flex'; }
-
-  // Render launch timeline if needed
-  if((launchState==='launching' || launchState==='done') && wizStep===7){
-    renderLaunchTimeline();
-  }
-}
-
-function wizSelect(step, val){
-  if(step===0) wizSelections.goal=val;
-  else if(step===1) wizSelections.type=val;
-  else if(step===2) wizSelections.bidding=val;
-  renderWizard();
-}
-function wizToggleLoc(loc){
-  var idx=wizSelections.locations.indexOf(loc);
-  if(idx>=0) wizSelections.locations.splice(idx,1); else wizSelections.locations.push(loc);
-}
-function wizBudget(val){
-  wizSelections.budget=parseInt(val);
-  document.getElementById('budgetAmount').textContent='$'+val;
-  document.querySelector('.wiz-budget-display .monthly').textContent='~$'+(val*30)+'/month estimated';
-}
-function wizNext(){
-  if(wizStep<7){wizStep++;renderWizard();}
-}
-function wizPrev(){
-  if(wizStep>0){wizStep--;renderWizard();}
-}
-
-var LAUNCH_STEPS = ['QUEUED','VALIDATING','CREATING_BUDGET','CREATING_CAMPAIGN','UPLOADING_ASSETS','LINKING_CONVERSIONS','ENABLING','ENABLED'];
-var launchIdx = -1;
-
-function launchCampaign(){
-  launchState='launching';
-  launchIdx=-1;
-  renderWizard();
-  var iv=setInterval(function(){
-    launchIdx++;
-    if(launchIdx >= LAUNCH_STEPS.length){
-      clearInterval(iv);
-      launchState='done';
-      renderWizard();
-      fireConfetti();
-      return;
-    }
-    renderLaunchTimeline();
-  },800);
-}
-
-function renderLaunchTimeline(){
-  var el = document.getElementById('launchTimeline');
+// ----- AUTONOMY -----
+function renderAutonomy(){
+  var el = document.getElementById('autonomyList');
   if(!el) return;
-  var html='';
-  LAUNCH_STEPS.forEach(function(s,i){
-    var cls = i<launchIdx?'done':i===launchIdx?'active':'';
-    var icon = i<launchIdx?'\u2713':i===launchIdx?'...':'';
-    html += '<div class="lt-step '+cls+'"><div class="lt-icon">'+icon+'</div><span>'+s+'</span></div>';
+  el.innerHTML='';
+  LEVERS.forEach(function(l){
+    var steps='';
+    for(var i=0;i<4;i++){
+      var on=i<=l.stage, cur=i===l.stage;
+      steps += '<div style="flex:1;text-align:center"><div style="height:6px;border-radius:3px;background:'+(on?(cur?'#22c55e':'#8C6F2E'):'rgba(255,255,255,.1)')+'"></div><div style="font-size:.6rem;margin-top:5px;color:'+(cur?'#22c55e':on?'rgba(255,255,255,.6)':'rgba(255,255,255,.3)')+'">'+AUTONOMY_LEVELS[i]+'</div></div>';
+    }
+    var card=document.createElement('div');
+    card.className='settings-card'; card.style.marginBottom='12px';
+    card.innerHTML='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><h3 style="margin:0">'+l.name+'</h3><span class="topbar-pill '+(l.stage===3?'pill-green':'pill-blue')+'">'+AUTONOMY_LEVELS[l.stage]+'</span></div><div style="display:flex;gap:8px">'+steps+'</div>';
+    el.appendChild(card);
   });
-  el.innerHTML = html;
-}
-
-function fireConfetti(){
-  var colors = ['#8C6F2E','#22c55e','#f59e0b','#06b6d4','#ef4444','#ec4899'];
-  for(var i=0;i<60;i++){
-    var c = document.createElement('div');
-    c.className='confetti-piece';
-    c.style.left = Math.random()*100+'vw';
-    c.style.top = '-10px';
-    c.style.background = colors[Math.floor(Math.random()*colors.length)];
-    c.style.borderRadius = Math.random()>.5?'50%':'2px';
-    c.style.width = (Math.random()*8+4)+'px';
-    c.style.height = (Math.random()*8+4)+'px';
-    c.style.animationDuration = (Math.random()*2+2)+'s';
-    c.style.animationDelay = Math.random()*1+'s';
-    document.body.appendChild(c);
-    setTimeout(function(el){return function(){el.remove()}}(c),5000);
-  }
 }
 
 // ----- INIT -----
 function init(){
   renderProductCards('dashProductGrid', true);
   animateDashboard();
-  populateKwResults();
-  populateSavedKw();
 }
-
 document.addEventListener('DOMContentLoaded', init);
 </script>
 </body>
