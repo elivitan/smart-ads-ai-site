@@ -2,3 +2,10 @@ node_modules/
 .tmp-uploads/
 *.log
 .DS_Store
+
+# Bamzal guide builder scratch (not for deploy)
+_build_guides.py
+_guides_content.py
+__pycache__/
+_perm_test_tree
+.git/_perm_test
