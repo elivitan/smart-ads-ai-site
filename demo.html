@@ -289,9 +289,9 @@
 .faq-item{border-bottom:1px solid var(--border);overflow:hidden}
 .faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-size:1rem;font-weight:600;color:var(--ink)}
 .faq-q span{transition:transform .2s}
-.faq-item.open .faq-q span{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:.9rem;color:var(--slate);line-height:1.7}
-.faq-item.open .faq-a{max-height:300px;padding-bottom:20px}
+.faq-item[open] .faq-q span{transform:rotate(45deg)}
+.faq-a{font-size:.9rem;color:var(--slate);line-height:1.7;overflow-wrap:anywhere}
+.faq-item[open] .faq-a{padding-bottom:20px}
 
 /* --- Confetti --- */
 .confetti-piece{position:fixed;width:8px;height:8px;z-index:300;pointer-events:none;animation:confettiFall 3s ease-in forwards}
@@ -2028,34 +2028,34 @@
             <p>Common questions about how Bamzal grows your store &mdash; and our Google, Meta, TikTok &amp; Pinterest ad integrations</p>
         </div>
         <div class="faq-list">
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">Is this just an ad dashboard?<span>+</span></div>
+            <details class="faq-item">
+                <summary class="faq-q">Is this just an ad dashboard?<span aria-hidden="true">+</span></summary>
                 <div class="faq-a">No. The dashboard you see leads with a ranked plan of moves across your whole store &mdash; product-page and catalog fixes, price changes, customer win-back &mdash; and runs ads only when ads are the right lever. It even shows the moves Bamzal <em>considered and held back</em>, like refusing to scale ad spend when your cost to acquire a customer is higher than the profit on a first order. Advertising is one of several levers, not the whole product.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">How does Bamzal connect to my ad accounts?<span>+</span></div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">How does Bamzal connect to my ad accounts?<span aria-hidden="true">+</span></summary>
                 <div class="faq-a">We use the industry-standard OAuth 2.0 protocol for each network. When you click "Connect" on Google, Meta, TikTok or Pinterest, you are redirected to that platform's official consent screen where you grant permission. We never see or store your passwords. For each network we only request the minimum scopes needed (e.g. google-ads; ads_management + business_management + pages_read_engagement + instagram_basic on Meta; advertiser.read/write on TikTok; ads:read/write on Pinterest) and store encrypted refresh tokens.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">Will Bamzal spend my money without my permission?<span>+</span></div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">Will Bamzal spend my money without my permission?<span aria-hidden="true">+</span></summary>
                 <div class="faq-a">No. All campaigns created by Bamzal are initially set to PAUSED status on every network. You must explicitly review and enable each campaign before any ad spend occurs. You retain full control over your budget and campaigns at all times.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">Which ad platform APIs does Bamzal use?<span>+</span></div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">Which ad platform APIs does Bamzal use?<span aria-hidden="true">+</span></summary>
                 <div class="faq-a">On Google Ads: CampaignService, CampaignBudgetService, AdGroupCriterionService, AdGroupAdService, GoogleAdsService.Search and ConversionActionService. On Meta (Facebook &amp; Instagram): the Meta Marketing API (adaccount/campaigns/adsets/ads/creatives), Pages API and Instagram Business API for catalog and creative assets, plus the Leads API for retrieving lead-gen form submissions. On TikTok: the TikTok Marketing API (campaign/adgroup/ad/creative/reporting). On Pinterest: the Pinterest Ads API (ad_accounts, campaigns, ad_groups, pins, analytics).</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">Can I revoke Bamzal's access to my ad accounts?<span>+</span></div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">Can I revoke Bamzal's access to my ad accounts?<span aria-hidden="true">+</span></summary>
                 <div class="faq-a">Yes, at any time and per network. You can disconnect any individual network (Google, Meta, TikTok, Pinterest) from within our app's Settings page, or revoke access directly from each platform's account security settings. Revoking access will not delete any campaigns already created in those accounts.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">How does the AI generate ad copy and creatives?<span>+</span></div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">How does the AI generate ad copy and creatives?<span aria-hidden="true">+</span></summary>
                 <div class="faq-a">Our AI analyzes your product titles, descriptions, and images, then studies competitor ads on each network to understand what performs well in your niche. For Google it generates optimized headlines (up to 30 characters) and descriptions (up to 90 characters) with exact/phrase/broad match keywords. For Meta, TikTok and Pinterest it generates primary text, headlines, descriptions and creative concepts (image + short-form video) that match each platform's native best practices and audience-targeting style.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">Is my data secure?<span>+</span></div>
-                <div class="faq-a">Absolutely. All data transmission uses TLS 1.2+ encryption. OAuth refresh tokens are AES-256 encrypted at rest. We follow Google's API Services User Data Policy and only access the data necessary to provide our service. We never share your data with third parties.</div>
-            </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">Is my data secure?<span aria-hidden="true">+</span></summary>
+                <div class="faq-a">Connections use encrypted transport, and account access is subject to the permissions you grant. Our <a href="/privacy">Privacy Policy</a> explains the data we process, the service providers involved and the controls available to you.</div>
+            </details>
         </div>
     </div>
 </section>
