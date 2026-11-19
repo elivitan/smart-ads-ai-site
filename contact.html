@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" sizes="32x32" href="/bamzal-favicon-a-32.png?v=a8"><link rel="icon" type="image/png" sizes="512x512" href="/bamzal-favicon-a-512.png?v=a8"><link rel="icon" type="image/png" sizes="48x48" href="/bamzal-favicon-a-48.png?v=a8"><link rel="icon" type="image/png" sizes="180x180" href="/bamzal-favicon-a-180.png?v=a8"><link rel="icon" type="image/x-icon" href="/bamzal-favicon-a.ico?v=a8"><link rel="apple-touch-icon" href="/bamzal-favicon-a-apple.png?v=a8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Bamzal — AI Growth Consultant for Shopify</title>
-    <meta name="description" content="Get in touch with Bamzal — your autonomous AI growth team for Shopify. Support, onboarding, partnerships, or early access requests.">
+    <meta name="description" content="Get in touch with Bamzal — your autonomous AI growth team for Shopify. Support, onboarding help, or partnership enquiries.">
     <link rel="canonical" href="https://bamzal.com/contact">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bamzal.com/contact">
@@ -20,7 +20,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://bamzal.com/bamzal-og.png?v=og1">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/shared.css?v=brand-lockup-20260518">
+    <link rel="stylesheet" href="/shared.css?v=launch-readiness-20261119">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -31,16 +31,17 @@
       ]
     }
     </script>
+    <script src="/site-navigation.js" defer></script>
 </head>
 <body>
 
 <nav class="nav">
     <div class="nav-inner">
         <a href="/" class="nav-logo" aria-label="Bamzal home"><img class="brand-mark" src="/bamzal-header-mark-full.png" alt="" width="32" height="48" aria-hidden="true"><span class="brand-wordmark" aria-hidden="true"><span class="brand-b">B</span><svg class="brand-a" viewBox="0 0 64 64" focusable="false"><path d="M8 56 C18 22 30 10 42 16 C50 20 56 38 60 56" fill="none" stroke="currentColor" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><circle class="brand-dot" cx="31" cy="50" r="6.5"/></svg><span class="brand-rest">mzal</span></span></a>
-        <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <button class="mobile-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
             <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="site-navigation">
             <li><a href="/product">Product</a></li>
             <li><a href="/demo">Demo</a></li>
             <li><a href="/pricing">Pricing</a></li>
@@ -49,7 +50,7 @@
             <li><a href="/contact" class="active">Contact</a></li>
             <li><a href="/privacy">Privacy</a></li>
             <li><a href="/terms">Terms</a></li>
-            <li><a href="/contact" class="nav-cta">Get Started</a></li>
+            <li><a href="https://apps.shopify.com/bamzal" class="nav-cta">Get Started</a></li>
         </ul>
     </div>
 </nav>
@@ -79,7 +80,7 @@
             <p style="color:var(--slate);margin:0 0 20px;font-size:.9375rem;">We typically reply within 24 hours. For urgent technical issues, email <a href="mailto:support@bamzal.com">support@bamzal.com</a> directly.</p>
 
             <div style="display:grid;gap:14px;">
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                <div class="contact-identity">
                     <label style="display:flex;flex-direction:column;gap:6px;font-size:.8125rem;font-weight:600;color:var(--ink);">
                         Name
                         <input type="text" name="name" required placeholder="Jane Cohen" style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;">
@@ -97,7 +98,7 @@
                     What do you need?
                     <select name="topic" required style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;">
                         <option value="">Choose one…</option>
-                        <option value="early-access">Early access — I want to try Bamzal</option>
+                        <option value="onboarding-help">Onboarding help — I want to try Bamzal</option>
                         <option value="support">Support — I'm already using Bamzal</option>
                         <option value="partnership">Partnership / integration</option>
                         <option value="press">Press / media inquiry</option>
@@ -154,8 +155,8 @@
     <p>See the product, try the demo, or check our pricing.</p>
     <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
         <a href="/product" class="btn btn-white">See the Product →</a>
-        <a href="/demo" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">Try the Demo</a>
-        <a href="/pricing" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">View Pricing</a>
+        <a href="/demo" class="btn btn-outline">Try the Demo</a>
+        <a href="/pricing" class="btn btn-outline">View Pricing</a>
     </div>
 </section>
 
@@ -164,7 +165,7 @@
         <div class="footer-grid">
             <div>
                 <div class="footer-brand"><img src="/bamzal-logo-light.svg" alt="Bamzal" width="155" height="44"></div>
-                <p class="footer-desc">An autonomous AI growth team for Shopify — store fixes, pricing, retention and ads, with every move reversible and under your control.</p>
+                <p class="footer-desc">AI assistance for Shopify: catalog insights and supported store and marketing actions. You control permissions and limits. Recovery options depend on the action; completed ad spend and delivered messages cannot be undone.</p>
                 <p style="font-size:.8125rem; margin-top:12px;">Vitan Yazmut (Bamzal)<br>35 Arlozorov St., Haifa 3365113, Israel<br>+972-58-486-9778</p>
             </div>
             <div class="footer-col">

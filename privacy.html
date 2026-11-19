@@ -20,17 +20,18 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://bamzal.com/bamzal-og.png?v=og1">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/shared.css?v=brand-lockup-20260518">
+    <link rel="stylesheet" href="/shared.css?v=launch-readiness-20261119">
+    <script src="/site-navigation.js" defer></script>
 </head>
 <body>
 
 <nav class="nav">
     <div class="nav-inner">
         <a href="/" class="nav-logo" aria-label="Bamzal home"><img class="brand-mark" src="/bamzal-header-mark-full.png" alt="" width="32" height="48" aria-hidden="true"><span class="brand-wordmark" aria-hidden="true"><span class="brand-b">B</span><svg class="brand-a" viewBox="0 0 64 64" focusable="false"><path d="M8 56 C18 22 30 10 42 16 C50 20 56 38 60 56" fill="none" stroke="currentColor" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><circle class="brand-dot" cx="31" cy="50" r="6.5"/></svg><span class="brand-rest">mzal</span></span></a>
-        <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <button class="mobile-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
             <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="site-navigation">
             <li><a href="/product">Product</a></li>
             <li><a href="/demo">Demo</a></li>
             <li><a href="/pricing">Pricing</a></li>
@@ -39,7 +40,7 @@
             <li><a href="/contact">Contact</a></li>
             <li><a href="/privacy">Privacy</a></li>
             <li><a href="/terms">Terms</a></li>
-            <li><a href="/contact" class="nav-cta">Get Started</a></li>
+            <li><a href="https://apps.shopify.com/bamzal" class="nav-cta">Get Started</a></li>
         </ul>
     </div>
 </nav>
@@ -149,7 +150,7 @@
         <p>Inside the embedded app we use strictly-necessary cookies and session tokens for authentication and security, not advertising or cross-site tracking cookies. The Bamzal website (bamzal.com) may use strictly-necessary cookies plus, where you consent as required, analytics and content-delivery providers (for example, web fonts, product analytics, and session-quality tools). You can control cookies through your browser settings; blocking strictly-necessary cookies may break core functionality. Advertising platforms you connect may set their own cookies or pixels on your storefront under your control and their policies.</p>
 
         <h2>17. Automated Decision-Making &amp; AI</h2>
-        <p>The Service uses automated processing and artificial intelligence to analyze data, generate recommendations, and — where you enable it — take actions within the limits you configure. These automated actions operate on your store and advertising and remain subject to your settings, approval controls, and your ability to pause, override, and reverse them. We do not use this automation to make decisions producing legal or similarly significant effects about your individual customers without a lawful basis; you remain responsible, as controller, for any automated processing of your customers' data, and you or an affected individual may request human review or contest an automated decision by contacting <a href="mailto:legal@bamzal.com">legal@bamzal.com</a>.</p>
+        <p>The Service uses automated processing and artificial intelligence to analyze data, generate recommendations, and — where you enable it — take actions within the limits you configure. These automated actions operate on your store and advertising and remain subject to your settings, approval controls, and your ability to pause future activity and use recovery controls for supported actions. Completed ad spend and delivered messages cannot be undone. We do not use this automation to make decisions producing legal or similarly significant effects about your individual customers without a lawful basis; you remain responsible, as controller, for any automated processing of your customers' data, and you or an affected individual may request human review or contest an automated decision by contacting <a href="mailto:legal@bamzal.com">legal@bamzal.com</a>.</p>
 
         <h2>18. U.S. State Privacy Rights</h2>
         <p>If you are covered by a U.S. state privacy law (such as the CCPA/CPRA, or the Virginia, Colorado, Connecticut, or Utah acts): the <strong>categories of personal information</strong> we may process include identifiers (e.g., name, email, phone, IP address), commercial information (orders and transactions), internet or network activity, geolocation, and inferences, collected from you, your Shopify store and connected platforms, and public sources, for the business purposes described above. <strong>We do not sell personal information and do not "share" it for cross-context behavioral advertising.</strong> Subject to law, you may request to know, access, delete, or correct personal information, and to opt out, without unlawful discrimination for exercising these rights. To make a request, contact <a href="mailto:legal@bamzal.com">legal@bamzal.com</a>; where the merchant is the controller, we route or assist the request as their processor.</p>
@@ -171,7 +172,7 @@
         <div class="footer-grid">
             <div>
                 <div class="footer-brand"><img src="/bamzal-logo-light.svg" alt="Bamzal" width="155" height="44"></div>
-                <p class="footer-desc">An autonomous AI growth team for Shopify — store fixes, pricing, retention and ads, with every move reversible and under your control.</p>
+                <p class="footer-desc">AI assistance for Shopify: catalog insights and supported store and marketing actions. You control permissions and limits. Recovery options depend on the action; completed ad spend and delivered messages cannot be undone.</p>
                 <p style="font-size:.8125rem; margin-top:12px;">Vitan Yazmut (Bamzal)<br>35 Arlozorov St., Haifa 3365113, Israel<br>+972-58-486-9778</p>
             </div>
             <div class="footer-col">

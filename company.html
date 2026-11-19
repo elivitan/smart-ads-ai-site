@@ -19,7 +19,7 @@
       "name": "Bamzal",
       "url": "https://bamzal.com",
       "logo": "https://bamzal.com/bamzal-favicon-a-512.png",
-      "description": "An autonomous AI growth consultant for Shopify merchants — fixing product pages, pricing, retention, catalog and ads across five levers, with every move reversible and approved by the merchant.",
+      "description": "An autonomous AI growth consultant for Shopify merchants — fixing product pages, pricing, retention, catalog and ads across five levers, with supported actions subject to merchant approval and configured limits.",
       "foundingDate": "2025",
       "founder": {
         "@type": "Person",
@@ -50,7 +50,7 @@
     }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/shared.css?v=brand-lockup-20260518">
+    <link rel="stylesheet" href="/shared.css?v=launch-readiness-20261119">
     <style>
         .story-section { max-width: 760px; margin: 0 auto; }
         .story-section h2 { font-family: var(--font-display); font-size: clamp(1.875rem, 3.4vw, 2.5rem); line-height: 1.15; letter-spacing: -0.015em; font-weight: 700; margin: 48px 0 20px; clear: both; }
@@ -262,16 +262,17 @@
       ]
     }
     </script>
+    <script src="/site-navigation.js" defer></script>
 </head>
 <body>
 
 <nav class="nav">
     <div class="nav-inner">
         <a href="/" class="nav-logo" aria-label="Bamzal home"><img class="brand-mark" src="/bamzal-header-mark-full.png" alt="" width="32" height="48" aria-hidden="true"><span class="brand-wordmark" aria-hidden="true"><span class="brand-b">B</span><svg class="brand-a" viewBox="0 0 64 64" focusable="false"><path d="M8 56 C18 22 30 10 42 16 C50 20 56 38 60 56" fill="none" stroke="currentColor" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><circle class="brand-dot" cx="31" cy="50" r="6.5"/></svg><span class="brand-rest">mzal</span></span></a>
-        <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <button class="mobile-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
             <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="site-navigation">
             <li><a href="/product">Product</a></li>
             <li><a href="/demo">Demo</a></li>
             <li><a href="/pricing">Pricing</a></li>
@@ -279,7 +280,7 @@
             <li><a href="/contact">Contact</a></li>
             <li><a href="/privacy">Privacy</a></li>
             <li><a href="/terms">Terms</a></li>
-            <li><a href="/contact" class="nav-cta">Get Started</a></li>
+            <li><a href="https://apps.shopify.com/bamzal" class="nav-cta">Get Started</a></li>
         </ul>
     </div>
 </nav>
@@ -311,7 +312,7 @@
             <figcaption>Bamzal's growth advisor — store analysis, pricing, retention, catalog and ad channels in one view.</figcaption>
         </figure>
         <p>Bamzal is an autonomous growth consultant that studies the <strong>whole store</strong> — product pages, pricing, customer retention, catalog merchandising, and paid ads — and works across all five levers. Before spending a penny on ads, it checks whether the store is ready: if margin is thin, pages are weak, or retention is broken, it fixes those first.</p>
-        <p>When ads are the right lever, Bamzal runs them across Google, Meta, TikTok, Pinterest and X, optimized to <strong>net profit per order</strong>. Every move comes with a plain-English explanation, the money at stake, and a cheap proving experiment. The merchant approves. Everything is reversible. The accounts stay yours.</p>
+        <p>When ads are the right lever, Bamzal runs them across Google, Meta, TikTok, Pinterest and X, optimized to <strong>net profit per order</strong>. Each recommendation includes an explanation, estimated impact and a proposed way to measure the result. The merchant approves. Recovery controls depend on the action; completed ad spend and delivered messages cannot be undone. The accounts stay yours.</p>
         <p>You set how much autonomy it has — shadow, observe, or co-pilot, per area. Every decision lands in an audit log you can review or roll back. One click removes access entirely.</p>
     </div>
 </section>
@@ -331,7 +332,7 @@
                     <div class="founder-title">Founder &amp; CEO</div>
                     <blockquote class="founder-quote">&ldquo;The merchants who need a real growth consultant most can&rsquo;t afford one. That&rsquo;s what I&rsquo;m fixing.&rdquo;</blockquote>
                     <p class="founder-bio">Before Bamzal, Eli spent fifteen years inside performance marketing &mdash; running SEO programs, managing Google and Meta budgets, and building campaigns across every major paid channel. Mostly on the agency side, watching stores spend on ads while the real problems &mdash; weak pages, thin margins, no retention &mdash; went unfixed.</p>
-                    <p class="founder-bio">He founded Bamzal to give small and mid-sized Shopify stores the kind of whole-store growth thinking that used to cost $5K a month in agency retainers &mdash; autonomous, honest, and with every move reversible.</p>
+                    <p class="founder-bio">He founded Bamzal to give small and mid-sized Shopify stores the kind of whole-store growth thinking that used to cost $5K a month in agency retainers &mdash; autonomous, honest, and with permissions and limits under merchant control.</p>
                 </div>
             </div>
 
@@ -476,8 +477,8 @@
     <p>See the product in action, check our pricing, or get in touch with our team.</p>
     <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
         <a href="/demo" class="btn btn-white">View Demo &#8594;</a>
-        <a href="/pricing" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">See Pricing</a>
-        <a href="/contact" class="btn" style="background:rgba(255,255,255,.15); color:#fff; border:1.5px solid rgba(255,255,255,.3);">Contact Us</a>
+        <a href="/pricing" class="btn btn-outline">See Pricing</a>
+        <a href="/contact" class="btn btn-outline">Contact Us</a>
     </div>
 </section>
 
@@ -487,7 +488,7 @@
         <div class="footer-grid">
             <div>
                 <div class="footer-brand"><img src="/bamzal-logo-light.svg" alt="Bamzal" width="155" height="44"></div>
-                <p class="footer-desc">An autonomous AI growth team for Shopify — store fixes, pricing, retention and ads, with every move reversible and under your control.</p>
+                <p class="footer-desc">AI assistance for Shopify: catalog insights and supported store and marketing actions. You control permissions and limits. Recovery options depend on the action; completed ad spend and delivered messages cannot be undone.</p>
                 <p style="font-size:.8125rem; margin-top:12px;">Vitan Yazmut (Bamzal)<br>35 Arlozorov St., Haifa 3365113, Israel<br>+972-58-486-9778</p>
             </div>
             <div class="footer-col">
