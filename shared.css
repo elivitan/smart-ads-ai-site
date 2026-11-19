@@ -341,3 +341,30 @@ details.faq-item[open] .faq-a { display: block; }
 
 .layer .layer-num { opacity: 1; }
 .flow-box.flow-shopify, .flow-box.flow-google, .flow-box.flow-merchant { color: #0A0A0F; }
+
+/* Keep long examples readable at 320px without hiding page content. */
+.section code, .api-section code { overflow-wrap: anywhere; word-break: break-word; }
+.stat, .app-main, .gap-card { min-width: 0; }
+.stat { overflow-wrap: anywhere; }
+.gap-table-wrap { max-width: 100%; overflow-x: auto; }
+
+/* Narrow demo cards and footer keep their content in the viewport. */
+.app-frame .dash-grid > *, .app-frame .stat-card { min-width: 0; }
+.app-frame .chart-kpis { flex-wrap: wrap; }
+@media (max-width: 768px) {
+    .app-frame .dash-grid { grid-template-columns: minmax(0, 1fr); }
+    .app-frame .stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 420px) {
+    .footer .footer-grid { grid-template-columns: minmax(0, 1fr); }
+    .app-frame .chart-head { flex-wrap: wrap; }
+    .app-frame .stat-card { overflow-wrap: anywhere; }
+}
+
+.api-flow-summary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; overflow-wrap: anywhere; }
+@media (max-width: 768px) {
+    .app-frame .hm-grid { grid-template-columns: 32px repeat(12, minmax(0, 1fr)); }
+}
+@media (max-width: 540px) {
+    .api-flow-summary { grid-template-columns: minmax(0, 1fr); }
+}
