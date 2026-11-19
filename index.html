@@ -76,7 +76,7 @@
         {"@type": "Offer", "name": "Free Preview", "price": "0", "priceCurrency": "USD"},
         {"@type": "Offer", "name": "Starter", "price": "49", "priceCurrency": "USD"},
         {"@type": "Offer", "name": "Pro", "price": "79", "priceCurrency": "USD"},
-        {"@type": "Offer", "name": "Premium", "price": "149", "priceCurrency": "USD"},
+        {"@type": "Offer", "name": "Agency", "price": "149", "priceCurrency": "USD"},
         {"@type": "Offer", "name": "Enterprise", "price": "499", "priceCurrency": "USD"}
       ],
       "publisher": {
@@ -167,7 +167,7 @@
     }
     </script>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/shared.css?v=brand-lockup-20260518">
+    <link rel="stylesheet" href="/shared.css?v=launch-readiness-20261119">
     <style>
         :root {
             --ink: #0A0A0F;
@@ -176,7 +176,7 @@
             --accent-dark: #6D551F;
             --accent-light: #F2EBD8;
             --slate: #3A2E13;
-            --muted: #8B7F6B;
+            --muted: #6B6052;
             --border: #E5DCC1;
             --surface: #F5EDD8;
             --success: #2F8F6B;
@@ -279,7 +279,7 @@
         /* ---- CTA ---- */
         .cta-section { background: var(--accent); color: #fff; text-align: center; padding: 80px 24px; }
         .cta-section h2 { font-family: var(--font-display); font-size: clamp(1.875rem, 3.4vw, 2.5rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; margin-bottom: 16px; }
-        .cta-section p { font-size: 1.0625rem; opacity: .85; margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .cta-section p { font-size: 1.0625rem; opacity: 1; margin-bottom: 28px; max-width: 500px; margin-left: auto; margin-right: auto; }
         .btn-white { background: #fff; color: var(--accent); }
         .btn-white:hover { background: rgba(255,255,255,.9); transform: translateY(-1px); }
 
@@ -294,7 +294,7 @@
         .footer-col a { display: block; font-size: .875rem; color: rgba(255,255,255,.6); text-decoration: none; padding: 4px 0; transition: color .2s; }
         .footer-col a:hover { color: #fff; }
         .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); padding-top: 24px; display: flex; justify-content: space-between; align-items: center; font-size: .8125rem; flex-wrap: wrap; gap: 12px; }
-        .footer-legal a { color: rgba(255,255,255,.5); text-decoration: none; margin-left: 20px; }
+        .footer-legal a { color:rgba(255,255,255,.72); text-decoration: none; margin-left: 20px; }
         .footer-legal a:hover { color: #fff; }
 
         /* ============ DEMO / APP FRAME STYLES ============ */
@@ -306,7 +306,7 @@
         .app-sidebar-brand em{color:#8C6F2E;font-style:normal}
         .sidebar-nav{list-style:none;padding:0;margin:0}
         .sidebar-nav li{padding:0}
-        .sidebar-nav button{width:100%;text-align:left;padding:10px 16px;background:none;border:none;color:rgba(255,255,255,.55);font-size:.8125rem;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .15s;font-family:inherit}
+        .sidebar-nav button{width:100%;text-align:left;padding:10px 16px;background:none;border:none;color:rgba(255,255,255,.72);font-size:.8125rem;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:10px;transition:all .15s;font-family:inherit}
         .sidebar-nav button:hover{background:rgba(255,255,255,.06);color:rgba(255,255,255,.85)}
         .sidebar-nav button.active{background:rgba(140,111,46,.15);color:#C9AA66;border-right:2px solid #8C6F2E}
         .sidebar-nav button svg{width:16px;height:16px;opacity:.6;flex-shrink:0}
@@ -325,15 +325,15 @@
         /* --- Dashboard --- */
         .dash-grid{display:grid;grid-template-columns:280px 1fr;gap:20px;margin-bottom:24px}
         .health-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;text-align:center}
-        .health-card h3{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-bottom:12px}
+        .health-card h3{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.72);margin-bottom:12px}
         .health-ring{position:relative;width:130px;height:130px;margin:0 auto 12px}
         .health-ring svg{transform:rotate(-90deg)}
         .health-ring-bg{fill:none;stroke:rgba(255,255,255,.08);stroke-width:8}
         .health-ring-fill{fill:none;stroke:#8C6F2E;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.5s ease}
         .health-score{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
         .health-score strong{font-family:var(--font-display);font-size:2rem;font-weight:700;color:#fff;line-height:1}
-        .health-score span{font-size:.7rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
-        .health-grade{display:inline-block;background:#22c55e;color:#fff;font-size:.7rem;font-weight:700;padding:2px 10px;border-radius:100px;margin-top:4px}
+        .health-score span{font-size:.7rem;color:rgba(255,255,255,.72);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+        .health-grade{display:inline-block;background:#22c55e;color:#0a0a1a;font-size:.7rem;font-weight:700;padding:2px 10px;border-radius:100px;margin-top:4px}
         .sub-scores{margin-top:16px}
         .sub-score{margin-bottom:10px}
         .sub-score-header{display:flex;justify-content:space-between;font-size:.7rem;margin-bottom:4px}
@@ -343,14 +343,14 @@
         .sub-score-fill{height:100%;border-radius:2px;transition:width 1s ease}
         .stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
         .stat-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px;text-align:center}
-        .stat-card .label{font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.4);margin-bottom:4px}
+        .stat-card .label{font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.72);margin-bottom:4px}
         .stat-card .value{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:#fff}
         .stat-card .delta{font-size:.65rem;color:#22c55e;margin-top:2px}
         .pulse-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;margin-bottom:20px}
-        .pulse-card h3{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-bottom:12px}
+        .pulse-card h3{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.72);margin-bottom:12px}
         .pulse-canvas{width:100%;height:80px;display:block}
         .pulse-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
-        .pulse-metric .pm-label{font-size:.6rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.04em}
+        .pulse-metric .pm-label{font-size:.6rem;color:rgba(255,255,255,.72);text-transform:uppercase;letter-spacing:.04em}
         .pulse-metric .pm-value{font-size:.9rem;font-weight:700;color:#fff;margin-top:2px}
         .product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}
         .product-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s}
@@ -361,18 +361,18 @@
         .score-mid{border:1px solid #f59e0b}
         .product-info{padding:10px 12px}
         .product-info h4{font-size:.8rem;font-weight:600;color:#fff;margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-        .product-info .price{font-size:.75rem;color:rgba(255,255,255,.5)}
+        .product-info .price{font-size:.75rem;color:rgba(255,255,255,.72)}
         .gap-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
-        .gap-card h3{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-bottom:12px}
+        .gap-card h3{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.72);margin-bottom:12px}
         .gap-table{width:100%;border-collapse:collapse}
-        .gap-table th{text-align:left;font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.3);padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.08)}
+        .gap-table th{text-align:left;font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.72);padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.08)}
         .gap-table td{padding:8px;font-size:.8rem;color:rgba(255,255,255,.75);border-bottom:1px solid rgba(255,255,255,.04)}
         .gap-table .loss{color:#ef4444;font-weight:600}
 
         /* --- Product Analysis --- */
         .scan-cta{text-align:center;padding:80px 20px}
         .scan-cta h3{font-size:1.25rem;font-weight:700;color:#fff;margin-bottom:8px}
-        .scan-cta p{color:rgba(255,255,255,.5);font-size:.875rem;margin-bottom:24px}
+        .scan-cta p{color:rgba(255,255,255,.72);font-size:.875rem;margin-bottom:24px}
         .scan-btn{background:#8C6F2E;color:#fff;border:none;padding:14px 36px;border-radius:10px;font-size:.9375rem;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit}
         .scan-btn:hover{background:#4f46e5;transform:translateY(-1px)}
         .scan-anim{text-align:center;padding:40px 20px}
@@ -384,9 +384,9 @@
         .radar-dot{position:absolute;width:8px;height:8px;background:#8C6F2E;border-radius:50%;box-shadow:0 0 12px #8C6F2E}
         @keyframes radarPulse{0%{opacity:1;transform:scale(.8)}100%{opacity:0;transform:scale(1.3)}}
         @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-        .word-particle{position:absolute;font-size:.65rem;color:rgba(255,255,255,.4);animation:float 3s ease-in-out infinite}
+        .word-particle{position:absolute;font-size:.65rem;color:rgba(255,255,255,.72);animation:float 3s ease-in-out infinite}
         .scan-progress{max-width:400px;margin:0 auto}
-        .scan-step{display:flex;align-items:center;gap:10px;padding:6px 0;font-size:.8rem;color:rgba(255,255,255,.35);transition:color .3s}
+        .scan-step{display:flex;align-items:center;gap:10px;padding:6px 0;font-size:.8rem;color:rgba(255,255,255,.72);transition:color .3s}
         .scan-step.done{color:#22c55e}
         .scan-step.active{color:#C9AA66}
         .scan-step .check{width:18px;height:18px;border-radius:50%;border:1.5px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:.6rem;flex-shrink:0;transition:all .3s}
@@ -397,20 +397,20 @@
         .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
         .modal-overlay.open{display:flex}
         .modal{background:#12121f;border:1px solid rgba(255,255,255,.1);border-radius:16px;width:100%;max-width:700px;max-height:90vh;overflow-y:auto;padding:28px;color:rgba(255,255,255,.85);position:relative}
-        .modal-close{position:absolute;top:12px;right:16px;background:none;border:none;color:rgba(255,255,255,.4);font-size:1.25rem;cursor:pointer;padding:4px 8px}
+        .modal-close{position:absolute;top:12px;right:16px;background:none;border:none;color:rgba(255,255,255,.72);font-size:1.25rem;cursor:pointer;padding:4px 8px}
         .modal-close:hover{color:#fff}
         .modal-header{display:flex;gap:16px;margin-bottom:20px;align-items:center}
         .modal-product-img{width:80px;height:80px;border-radius:10px;flex-shrink:0}
         .modal-product-info h3{font-size:1rem;font-weight:700;color:#fff;margin-bottom:2px}
-        .modal-product-info .price{font-size:.875rem;color:rgba(255,255,255,.5)}
+        .modal-product-info .price{font-size:.875rem;color:rgba(255,255,255,.72)}
         .modal-ring{width:60px;height:60px;margin-left:auto;flex-shrink:0;position:relative}
         .modal-ring svg{transform:rotate(-90deg)}
         .modal-ring-score{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:700;color:#fff}
         .modal-section{margin-bottom:20px}
-        .modal-section h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.4);margin-bottom:10px}
+        .modal-section h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.72);margin-bottom:10px}
         .strength-bar{height:8px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;margin-bottom:4px}
         .strength-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e);transition:width 1s ease}
-        .strength-label{font-size:.7rem;color:rgba(255,255,255,.5);text-align:right}
+        .strength-label{font-size:.7rem;color:rgba(255,255,255,.72);text-align:right}
         .google-ad-preview{background:#fff;border-radius:10px;padding:16px;font-family:Arial,sans-serif;margin-bottom:4px}
         .gad-sponsored{font-size:.7rem;color:#202124;font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:6px}
         .gad-sponsored span{background:#e8f0fe;color:#1a73e8;font-size:.6rem;padding:1px 6px;border-radius:3px;font-weight:700}
@@ -420,7 +420,7 @@
         .gad-desc{font-size:.8rem;color:#4d5156;line-height:1.4}
         .headline-list,.desc-list{list-style:none}
         .headline-list li,.desc-list li{display:flex;justify-content:space-between;align-items:center;padding:6px 10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:6px;margin-bottom:4px;font-size:.8rem}
-        .headline-list li .counter,.desc-list li .counter{font-size:.65rem;color:rgba(255,255,255,.3);flex-shrink:0;margin-left:8px}
+        .headline-list li .counter,.desc-list li .counter{font-size:.65rem;color:rgba(255,255,255,.72);flex-shrink:0;margin-left:8px}
         .keyword-chips{display:flex;flex-wrap:wrap;gap:6px}
         .kw-chip{font-size:.75rem;padding:4px 10px;border-radius:6px;font-weight:500}
         .kw-exact{background:rgba(140,111,46,.15);color:#C9AA66;border:1px solid rgba(140,111,46,.3)}
@@ -436,14 +436,14 @@
 
         /* --- Keywords --- */
         .kw-tabs{display:flex;gap:4px;margin-bottom:20px}
-        .kw-tab{padding:8px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;color:rgba(255,255,255,.5);font-size:.8rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all .15s}
+        .kw-tab{padding:8px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;color:rgba(255,255,255,.72);font-size:.8rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:all .15s}
         .kw-tab.active{background:rgba(140,111,46,.15);color:#C9AA66}
         .kw-input-row{display:flex;gap:8px;margin-bottom:16px}
         .kw-input{flex:1;padding:10px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#fff;font-size:.875rem;font-family:inherit}
-        .kw-input::placeholder{color:rgba(255,255,255,.3)}
+        .kw-input::placeholder{color:rgba(255,255,255,.72)}
         .kw-go{padding:10px 20px;background:#8C6F2E;color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-size:.8rem;font-family:inherit}
         .kw-results-table{width:100%;border-collapse:collapse}
-        .kw-results-table th{text-align:left;font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.3);padding:8px;border-bottom:1px solid rgba(255,255,255,.08)}
+        .kw-results-table th{text-align:left;font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.72);padding:8px;border-bottom:1px solid rgba(255,255,255,.08)}
         .kw-results-table td{padding:10px 8px;font-size:.8rem;color:rgba(255,255,255,.75);border-bottom:1px solid rgba(255,255,255,.04)}
         .comp-badge{font-size:.65rem;padding:2px 8px;border-radius:100px;font-weight:600}
         .comp-low{background:rgba(34,197,94,.15);color:#22c55e}
@@ -459,19 +459,19 @@
 
         /* --- Campaign Wizard --- */
         .wiz-steps{display:flex;gap:4px;margin-bottom:20px;overflow-x:auto;padding-bottom:4px}
-        .wiz-step-dot{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.65rem;color:rgba(255,255,255,.3);font-weight:700;flex-shrink:0;transition:all .2s;cursor:pointer}
+        .wiz-step-dot{width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.65rem;color:rgba(255,255,255,.72);font-weight:700;flex-shrink:0;transition:all .2s;cursor:pointer}
         .wiz-step-dot.active{background:rgba(140,111,46,.2);border-color:#8C6F2E;color:#C9AA66}
         .wiz-step-dot.done{background:#22c55e;border-color:#22c55e;color:#fff}
         .wiz-screen{display:none}
         .wiz-screen.active{display:block}
         .wiz-title{font-size:1rem;font-weight:700;color:#fff;margin-bottom:4px}
-        .wiz-desc{font-size:.8rem;color:rgba(255,255,255,.45);margin-bottom:16px}
+        .wiz-desc{font-size:.8rem;color:rgba(255,255,255,.72);margin-bottom:16px}
         .wiz-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
         .wiz-card{background:rgba(255,255,255,.04);border:2px solid rgba(255,255,255,.08);border-radius:10px;padding:16px;cursor:pointer;transition:all .15s;position:relative}
         .wiz-card:hover{border-color:rgba(140,111,46,.3)}
         .wiz-card.selected{border-color:#8C6F2E;background:rgba(140,111,46,.08)}
         .wiz-card h4{font-size:.85rem;font-weight:600;color:#fff;margin-bottom:2px}
-        .wiz-card p{font-size:.7rem;color:rgba(255,255,255,.4);line-height:1.4}
+        .wiz-card p{font-size:.7rem;color:rgba(255,255,255,.72);line-height:1.4}
         .wiz-card .rec{position:absolute;top:8px;right:8px;font-size:.55rem;background:#8C6F2E;color:#fff;padding:2px 6px;border-radius:4px;font-weight:700;text-transform:uppercase}
         .wiz-nav{display:flex;justify-content:space-between;margin-top:20px}
         .wiz-back,.wiz-next{padding:10px 24px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.8rem;font-family:inherit;transition:all .15s}
@@ -485,19 +485,19 @@
         .wiz-budget-slider{width:100%;margin:16px 0;accent-color:#8C6F2E}
         .wiz-budget-display{text-align:center}
         .wiz-budget-display .amount{font-family:var(--font-display);font-size:2rem;font-weight:700;color:#fff}
-        .wiz-budget-display .monthly{font-size:.8rem;color:rgba(255,255,255,.4)}
+        .wiz-budget-display .monthly{font-size:.8rem;color:rgba(255,255,255,.72)}
         .wiz-toggle{display:flex;align-items:center;gap:12px;margin:12px 0}
         .wiz-toggle input[type=checkbox]{width:40px;height:22px;accent-color:#8C6F2E}
         .wiz-summary{list-style:none}
         .wiz-summary li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.85rem}
-        .wiz-summary li span:first-child{color:rgba(255,255,255,.45)}
+        .wiz-summary li span:first-child{color:rgba(255,255,255,.72)}
         .wiz-summary li span:last-child{color:#fff;font-weight:600}
         .launch-btn{width:100%;padding:14px;background:#22c55e;color:#fff;border:none;border-radius:10px;font-size:.9375rem;font-weight:700;cursor:pointer;font-family:inherit;margin-top:16px;transition:all .2s}
         .launch-btn:hover{background:#16a34a}
 
         /* --- Launch Timeline --- */
         .launch-timeline{max-width:400px;margin:20px auto 0;padding:0}
-        .lt-step{display:flex;align-items:center;gap:12px;padding:8px 0;font-size:.8rem;color:rgba(255,255,255,.3);transition:all .4s}
+        .lt-step{display:flex;align-items:center;gap:12px;padding:8px 0;font-size:.8rem;color:rgba(255,255,255,.72);transition:all .4s}
         .lt-step.active{color:#f59e0b}
         .lt-step.done{color:#22c55e}
         .lt-icon{width:24px;height:24px;border-radius:50%;border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.55rem;flex-shrink:0;transition:all .4s}
@@ -505,18 +505,18 @@
         .lt-step.done .lt-icon{border-color:#22c55e;background:#22c55e;color:#fff}
         .launch-success{text-align:center;padding:24px;display:none}
         .launch-success h3{font-size:1.25rem;font-weight:700;color:#22c55e;margin-bottom:8px}
-        .launch-success p{font-size:.85rem;color:rgba(255,255,255,.5)}
+        .launch-success p{font-size:.85rem;color:rgba(255,255,255,.72)}
 
         /* --- Campaigns --- */
         .campaign-list{display:grid;gap:12px}
         .campaign-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px;display:grid;grid-template-columns:2fr repeat(5,1fr);gap:12px;align-items:center}
         .campaign-item .camp-name{font-weight:600;color:#fff;font-size:.85rem}
-        .campaign-item .camp-type{font-size:.7rem;color:rgba(255,255,255,.4)}
+        .campaign-item .camp-type{font-size:.7rem;color:rgba(255,255,255,.72)}
         .camp-status{font-size:.65rem;padding:3px 10px;border-radius:100px;font-weight:700;display:inline-block}
         .camp-paused{background:rgba(245,158,11,.15);color:#f59e0b}
         .camp-active{background:rgba(34,197,94,.15);color:#22c55e}
         .campaign-item .camp-val{font-size:.85rem;color:rgba(255,255,255,.7);text-align:center}
-        .campaign-item .camp-label{font-size:.6rem;color:rgba(255,255,255,.3);text-transform:uppercase;text-align:center}
+        .campaign-item .camp-label{font-size:.6rem;color:rgba(255,255,255,.72);text-transform:uppercase;text-align:center}
 
         /* --- Settings --- */
         .settings-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;margin-bottom:16px}
@@ -525,9 +525,9 @@
         .settings-connected .dot{width:8px;height:8px;background:#22c55e;border-radius:50%;flex-shrink:0}
         .settings-connected span{font-size:.85rem;color:#22c55e;font-weight:600}
         .settings-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.85rem}
-        .settings-row span:first-child{color:rgba(255,255,255,.45)}
+        .settings-row span:first-child{color:rgba(255,255,255,.72)}
         .settings-row span:last-child{color:#fff}
-        .settings-info{font-size:.8rem;color:rgba(255,255,255,.4);line-height:1.5;margin:12px 0}
+        .settings-info{font-size:.8rem;color:rgba(255,255,255,.72);line-height:1.5;margin:12px 0}
         .disconnect-btn{padding:8px 20px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);color:#ef4444;border-radius:8px;font-size:.8rem;font-weight:600;cursor:pointer;font-family:inherit}
 
         /* --- API Technical Section --- */
@@ -564,9 +564,9 @@
         .faq-item{border-bottom:1px solid var(--border);overflow:hidden}
         .faq-q{display:flex;justify-content:space-between;align-items:center;padding:20px 0;cursor:pointer;font-size:1rem;font-weight:600;color:var(--ink)}
         .faq-q span{transition:transform .2s}
-        .faq-item.open .faq-q span{transform:rotate(45deg)}
+        .faq-item[open] .faq-q span{transform:rotate(45deg)}
         .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease;font-size:.9rem;color:var(--slate);line-height:1.7}
-        .faq-item.open .faq-a{max-height:300px;padding-bottom:20px}
+        .faq-item[open] .faq-a{max-height:300px;padding-bottom:20px}
 
         /* --- Confetti --- */
         .confetti-piece{position:fixed;width:8px;height:8px;z-index:300;pointer-events:none;animation:confettiFall 3s ease-in forwards}
@@ -611,6 +611,7 @@
             .modal{padding:16px}
         }
     </style>
+    <script src="/site-navigation.js" defer></script>
 </head>
 <body>
 
@@ -618,10 +619,10 @@
 <nav class="nav">
     <div class="nav-inner">
         <a href="/" class="nav-logo" aria-label="Bamzal home"><img class="brand-mark" src="/bamzal-header-mark-full.png" alt="" width="32" height="48" aria-hidden="true"><span class="brand-wordmark" aria-hidden="true"><span class="brand-b">B</span><svg class="brand-a" viewBox="0 0 64 64" focusable="false"><path d="M8 56 C18 22 30 10 42 16 C50 20 56 38 60 56" fill="none" stroke="currentColor" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/><circle class="brand-dot" cx="31" cy="50" r="6.5"/></svg><span class="brand-rest">mzal</span></span></a>
-        <button class="mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <button class="mobile-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
             <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links">
+        <ul class="nav-links" id="site-navigation">
             <li><a href="/product">Product</a></li>
             <li><a href="/demo">Demo</a></li>
             <li><a href="/pricing">Pricing</a></li>
@@ -630,7 +631,7 @@
             <li><a href="/contact">Contact</a></li>
             <li><a href="/privacy">Privacy</a></li>
             <li><a href="/terms">Terms</a></li>
-            <li><a href="/contact" class="nav-cta">Get Started</a></li>
+            <li><a href="https://apps.shopify.com/bamzal" class="nav-cta">Get Started</a></li>
         </ul>
     </div>
 </nav>
@@ -640,9 +641,9 @@
     <div class="hero-inner">
         <div class="hero-badge">For Shopify merchants &middot; From $49 / month</div>
         <h1>Stop guessing what to fix. <em>Let an AI grow your store.</em></h1>
-        <p>Bamzal is an autonomous growth consultant for your Shopify store. It studies your whole business &mdash; products, prices, customers and traffic &mdash; finds where you&rsquo;re leaving money on the table, and fixes it: sharper product pages, smarter prices, won-back customers, a better-converting storefront, and ads <em>only when ads are the right move</em>. Every move comes with the reason and the money at stake. You set the rules, new campaigns start paused, and you can pause or undo anything in one click.</p>
+        <p>Bamzal helps you understand your Shopify catalog and review opportunities across product pages, pricing, retention and advertising. Start with a catalog diagnosis, see the evidence behind each finding, and decide which supported changes to approve. You set the permissions and budget limits for your connected accounts.</p>
         <div class="hero-actions">
-            <a href="/contact" class="btn btn-primary">Start Free Trial →</a>
+            <a href="https://apps.shopify.com/bamzal" class="btn btn-primary">Start Free Trial →</a>
             <a href="/demo" class="btn btn-outline">See it Working</a>
         </div>
         <!-- Trust strip: rewritten for general Shopify-merchant audience.
@@ -653,7 +654,7 @@
             <li><span aria-hidden="true">✓</span> Tells you what to fix &mdash; and why</li>
             <li><span aria-hidden="true">✓</span> You approve before any change goes live</li>
             <li><span aria-hidden="true">✓</span> Built-in budget caps</li>
-            <li><span aria-hidden="true">✓</span> Every change reversible in one click</li>
+            <li><span aria-hidden="true">✓</span> Review results and stop future actions</li>
         </ul>
     </div>
 </section>
@@ -662,15 +663,15 @@
 .hero-trust { list-style: none; display: flex; flex-wrap: wrap; gap: 12px 22px; justify-content: center; padding: 0; margin: 32px 0 0; font-size: .8125rem; color: rgba(20, 20, 35, .72); }
 .hero-trust li { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
 .hero-trust li span { color: #22a06b; font-weight: 800; }
-@media (prefers-color-scheme: dark) { .hero-trust { color: rgba(255,255,255,.78); } }
+
 </style>
 
 <!-- STATS -->
 <section class="stats">
     <div class="stats-inner">
         <div class="stat">
-            <div class="stat-num">$5K</div>
-            <div class="stat-label">Agency + consultant work, replaced monthly</div>
+            <div class="stat-num">Your store</div>
+            <div class="stat-label">Recommendations based on your catalog</div>
         </div>
         <div class="stat">
             <div class="stat-num">5 levers</div>
@@ -678,11 +679,11 @@
         </div>
         <div class="stat">
             <div class="stat-num">1-click</div>
-            <div class="stat-label">Approve, pause or undo anything</div>
+            <div class="stat-label">Review, approve and monitor supported actions</div>
         </div>
         <div class="stat">
             <div class="stat-num">$49</div>
-            <div class="stat-label">Monthly &mdash; cheaper than one freelancer hour</div>
+            <div class="stat-label">Per month for Starter, plus any ad spend</div>
         </div>
     </div>
 </section>
@@ -964,7 +965,7 @@
             </div>
 
             <!-- Main Content -->
-            <div class="app-main">
+            <div class="app-main" tabindex="0" role="region" aria-label="Interactive product demonstration">
 
                 <!-- ===== DASHBOARD ===== -->
                 <div class="screen active" id="screen-dashboard">
@@ -1030,7 +1031,7 @@
                             </div>
                         </div>
                     </div>
-                    <h3 style="font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:12px">Your Products</h3>
+                    <h3 style="font-size:.85rem;color:rgba(255,255,255,.72);margin-bottom:12px">Your Products</h3>
                     <div class="product-grid" id="dashProductGrid"></div>
                     <div class="gap-card">
                         <h3>Biggest Profit Leaks</h3>
@@ -1079,7 +1080,7 @@
                         </div>
                     </div>
                     <div id="scanStateC" style="display:none">
-                        <p style="font-size:.85rem;color:rgba(255,255,255,.5);margin-bottom:12px">Click any product to see its biggest opportunity and the recommended fix</p>
+                        <p style="font-size:.85rem;color:rgba(255,255,255,.72);margin-bottom:12px">Click any product to see its biggest opportunity and the recommended fix</p>
                         <div class="product-grid" id="scanProductGrid"></div>
                     </div>
                 </div>
@@ -1164,14 +1165,14 @@
             <h4>Right lever &amp; the fix</h4>
             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
                 <span class="topbar-pill pill-blue" id="modalLever">Lever</span>
-                <span style="font-size:.7rem;color:rgba(255,255,255,.5)">Opportunity score <strong id="modalConf" style="color:#f59e0b"></strong>/100</span>
+                <span style="font-size:.7rem;color:rgba(255,255,255,.72)">Opportunity score <strong id="modalConf" style="color:#f59e0b"></strong>/100</span>
             </div>
             <p id="modalFix" style="font-size:.9rem;color:#fff;font-weight:600;line-height:1.5"></p>
         </div>
         <div class="modal-section">
             <h4>Before &rarr; After</h4>
             <div style="display:flex;gap:12px;flex-wrap:wrap">
-                <div style="flex:1;min-width:130px;background:rgba(255,255,255,.04);border-radius:8px;padding:10px 12px"><div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.4);margin-bottom:4px">Now</div><div id="modalBefore" style="font-size:.8rem;color:rgba(255,255,255,.75)"></div></div>
+                <div style="flex:1;min-width:130px;background:rgba(255,255,255,.04);border-radius:8px;padding:10px 12px"><div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.72);margin-bottom:4px">Now</div><div id="modalBefore" style="font-size:.8rem;color:rgba(255,255,255,.75)"></div></div>
                 <div style="flex:1;min-width:130px;background:rgba(34,197,94,.08);border-radius:8px;padding:10px 12px"><div style="font-size:.6rem;text-transform:uppercase;letter-spacing:.05em;color:#22c55e;margin-bottom:4px">After the fix</div><div id="modalAfter" style="font-size:.8rem;color:#fff"></div></div>
             </div>
         </div>
@@ -1179,7 +1180,7 @@
             <h4>Impact &amp; how it runs</h4>
             <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
                 <span style="font-size:1.3rem;font-weight:800;color:#22c55e" id="modalStake"></span>
-                <span style="font-size:.7rem;color:rgba(255,255,255,.5)">at stake / month</span>
+                <span style="font-size:.7rem;color:rgba(255,255,255,.72)">at stake / month</span>
                 <span class="topbar-pill pill-green" id="modalAutonomy"></span>
             </div>
         </div>
@@ -1219,7 +1220,7 @@
         </div>
 
         <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:16px">Ad Platform API Operations (Google, Meta, TikTok, Pinterest)</h3>
-        <div class="api-table-wrap">
+        <div class="api-table-wrap" tabindex="0" role="region" aria-label="Integration details">
             <table class="api-table">
                 <thead><tr><th>Operation</th><th>API Resource (per platform)</th><th>When Used</th></tr></thead>
                 <tbody>
@@ -1307,42 +1308,42 @@
             <p>Common questions about how Bamzal grows your store &mdash; and our Google, Meta, TikTok &amp; Pinterest ad integrations</p>
         </div>
         <div class="faq-list">
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">Is Bamzal just an ad tool?<span>+</span></div>
+            <details class="faq-item">
+                <summary class="faq-q">Is Bamzal just an ad tool?<span>+</span></summary>
                 <div class="faq-a">No. Bamzal is an autonomous growth consultant for your whole Shopify store. It diagnoses where you&rsquo;re losing money, then pulls whichever lever helps most &mdash; rewriting product pages, improving your store design, tuning prices, winning back one-time customers, and running ads. Advertising is one of several levers, not the whole product.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">What if ads aren&rsquo;t the right move for my store?<span>+</span></div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">What if ads aren&rsquo;t the right move for my store?<span>+</span></summary>
                 <div class="faq-a">Then it won&rsquo;t run them. Bamzal has a built-in &ldquo;don&rsquo;t advertise yet&rdquo; gate: if your cost to acquire a customer is higher than the profit on a first order, it refuses to scale ad spend and fixes the leak first &mdash; margins, pricing, retention or the product pages themselves. It will tell you, in plain language, why it&rsquo;s holding back.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">Will Bamzal change my product pages or prices without asking?<span>+</span></div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">Will Bamzal change my product pages or prices without asking?<span>+</span></summary>
                 <div class="faq-a">You&rsquo;re always in control. Every change &mdash; a rewritten product page, a price move, a win-back send, an ad &mdash; is proposed first, with the reason and the money at stake. You approve what you want, you can hand it more autonomy per area as it earns your trust, and every change made to your store is logged and reversible in one click.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">How does Bamzal connect to my ad accounts?<span>+</span></div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">How does Bamzal connect to my ad accounts?<span>+</span></summary>
                 <div class="faq-a">We use the industry-standard OAuth 2.0 protocol for each network. When you click "Connect" on Google, Meta, TikTok or Pinterest, you are redirected to that platform's official consent screen where you grant permission. We never see or store your passwords. For each network we only request the minimum scopes needed (e.g. google-ads, ads_management + pages_read_engagement + instagram_basic on Meta, advertiser.read/write on TikTok, ads:read/write on Pinterest) and store encrypted refresh tokens.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">Will Bamzal spend my money without my permission?<span>+</span></div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">Will Bamzal spend my money without my permission?<span>+</span></summary>
                 <div class="faq-a">No. All campaigns created by Bamzal are initially set to PAUSED status. You must explicitly review and enable each campaign before any ad spend occurs. You retain full control over your budget and campaigns at all times.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">Which ad platform APIs does Bamzal use?<span>+</span></div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">Which ad platform APIs does Bamzal use?<span>+</span></summary>
                 <div class="faq-a">On Google Ads: CampaignService, CampaignBudgetService, AdGroupCriterionService, AdGroupAdService, GoogleAdsService.Search and ConversionActionService. On Meta (Facebook &amp; Instagram): the Meta Marketing API (adaccount/campaigns/adsets/ads/creatives), Pages API and Instagram Business API for catalog and creative assets. On TikTok: the TikTok Marketing API (campaign/adgroup/ad/creative/reporting). On Pinterest: the Pinterest Ads API (ad_accounts, campaigns, ad_groups, pins, analytics).</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">Can I revoke Bamzal's access to my ad accounts?<span>+</span></div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">Can I revoke Bamzal's access to my ad accounts?<span>+</span></summary>
                 <div class="faq-a">Yes, at any time and per network. You can disconnect any individual network (Google, Meta, TikTok, Pinterest) from within our app's Settings page, or revoke access directly from each platform's account security settings (Google Account permissions, Meta Business Integrations, TikTok authorized apps, Pinterest connected apps). Revoking access will not delete any campaigns already created in those accounts.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">How does the AI generate ad copy and keywords?<span>+</span></div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">How does the AI generate ad copy and keywords?<span>+</span></summary>
                 <div class="faq-a">Our AI analyzes your product titles, descriptions, and images, then studies competitor ads on each network to understand what performs well in your niche. For Google it generates optimized headlines (up to 30 characters) and descriptions (up to 90 characters) with exact/phrase/broad match keywords. For Meta, TikTok and Pinterest it generates primary text, headlines, descriptions and creative concepts (image + short-form video) that match each platform's native best practices and audience-targeting style.</div>
-            </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">Is my data secure?<span>+</span></div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-q">Is my data secure?<span>+</span></summary>
                 <div class="faq-a">Absolutely. All data transmission uses TLS 1.2+ encryption. OAuth refresh tokens are AES-256 encrypted at rest. We follow Google's API Services User Data Policy and only access the data necessary to provide our service. We never share your data with third parties.</div>
-            </div>
+            </details>
         </div>
     </div>
 </section>
@@ -1362,11 +1363,12 @@
                 <ul class="price-features">
                     <li>Scan up to 3 products</li>
                     <li>AI ad score &amp; keywords</li>
-                    <li>Competitor preview</li>
+                    <li>No active campaigns</li>
+                    <li>No monthly AI credits</li>
                     <li>Budget simulator</li>
                     <li>Google rank tracking</li>
                 </ul>
-                <a href="/contact" class="price-btn price-btn-outline">Get Started Free</a>
+                <a href="https://apps.shopify.com/bamzal" class="price-btn price-btn-outline">Get Started Free</a>
             </div>
             <div class="price-card featured">
                 <div class="price-badge">Most Popular</div>
@@ -1379,11 +1381,11 @@
                     <li>Store &amp; product-page fixes</li>
                     <li>Price &amp; retention recommendations</li>
                     <li>5 campaigns + AI ad copy</li>
-                    <li>Multi-channel ads (Google, Meta, TikTok, Pinterest, X)</li>
-                    <li>30 AI image generations / month</li>
+                    <li>Paid campaigns on eligible connected accounts</li>
+                    <li>5 AI credits / month</li>
                     <li>Email support</li>
                 </ul>
-                <a href="/contact" class="price-btn price-btn-primary">Start Free Trial</a>
+                <a href="https://apps.shopify.com/bamzal" class="price-btn price-btn-primary">Start Free Trial</a>
             </div>
             <div class="price-card">
                 <div class="price-name">Pro</div>
@@ -1391,13 +1393,14 @@
                 <div class="price-desc">For serious growth</div>
                 <ul class="price-features">
                     <li>Everything in Starter</li>
-                    <li>Unlimited products &amp; campaigns</li>
+                    <li>Up to 200 products</li>
+                    <li>Up to 25 active campaigns</li>
                     <li>200 AI credits / month</li>
                     <li>Advanced competitor analysis</li>
-                    <li>Priority support</li>
+                    <li>Email support</li>
                     <li>Performance Max campaigns</li>
                 </ul>
-                <a href="/contact" class="price-btn price-btn-outline">Start Free Trial</a>
+                <a href="https://apps.shopify.com/bamzal" class="price-btn price-btn-outline">Start Free Trial</a>
             </div>
         </div>
     </div>
@@ -1406,8 +1409,8 @@
 <!-- CTA -->
 <section class="cta-section">
     <h2>Ready to find where your store is losing money?</h2>
-    <p>Join Shopify merchants who let an AI consultant grow their store &mdash; fixing pages, tuning prices, winning back customers, and running ads only when they pay off.</p>
-    <a href="/contact" class="btn btn-white">Request Early Access →</a>
+    <p>Install Bamzal to explore your catalog, review recommendations and see which actions are available for your store.</p>
+    <a href="https://apps.shopify.com/bamzal" class="btn btn-white">Install Bamzal →</a>
 </section>
 
 <!-- FOOTER -->
@@ -1416,7 +1419,7 @@
         <div class="footer-grid">
             <div>
                 <div class="footer-brand"><img src="/bamzal-logo-light.svg" alt="Bamzal" width="155" height="44"></div>
-                <p class="footer-desc">An autonomous AI growth consultant for Shopify merchants. Bamzal finds where your store is losing money and fixes it — product pages, store design, pricing, customer retention — and runs ads across Google, Meta (Facebook &amp; Instagram), TikTok, Pinterest and X only when ads are the right lever. Every move is under your control and reversible.</p>
+                <p class="footer-desc">An autonomous AI growth consultant for Shopify merchants. Bamzal finds where your store is losing money and fixes it — product pages, store design, pricing, customer retention — and helps you review supported actions for eligible connected accounts. You control permissions and limits. Delivered messages and completed ad spend cannot be reversed.</p>
                 <p style="font-size:.8125rem; margin-top:12px;">Vitan Yazmut (Bamzal)<br>35 Arlozorov St., Haifa 3365113, Israel<br>+972-58-486-9778</p>
             </div>
             <!-- QA 2026-05-18: footer column headings raised from h4 → h3.
