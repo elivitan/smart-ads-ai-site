@@ -15,7 +15,7 @@
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
-    <meta property="og:image:alt" content="Bamzal — autonomous AI growth team for Shopify.">
+    <meta property="og:image:alt" content="Bamzal — AI growth advisor for Shopify.">
     <meta property="og:site_name" content="Bamzal">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://bamzal.com/bamzal-og.png?v=og1">
@@ -73,6 +73,8 @@
         /* ---- CALCULATOR ---- */
         .calc-container { max-width: 960px; margin: 0 auto; }
         .calc-card {
+            --result-positive: #17613f;
+            --result-negative: #a92328;
             background: #fff;
             border: 1px solid var(--border);
             border-radius: var(--radius);
@@ -190,8 +192,8 @@
             font-weight: 700;
             color: var(--ink);
         }
-        .result-value.positive { color: var(--success); }
-        .result-value.negative { color: #ef4444; }
+        .result-value.positive { color: var(--result-positive); }
+        .result-value.negative { color: var(--result-negative); }
 
         /* ROAS Gauge */
         .gauge-container {
@@ -237,9 +239,9 @@
             border-radius: 100px;
             display: inline-block;
         }
-        .gauge-rating.poor { background: #fef2f2; color: #ef4444; }
-        .gauge-rating.average { background: #fffbeb; color: #d97706; }
-        .gauge-rating.good { background: #f0fdf4; color: #16a34a; }
+        .gauge-rating.poor { background: #fef2f2; color: var(--result-negative); }
+        .gauge-rating.average { background: #fffbeb; color: #804800; }
+        .gauge-rating.good { background: #f0fdf4; color: var(--result-positive); }
         .gauge-rating.excellent { background: var(--accent-light); color: var(--accent-dark); }
         .gauge-rating-wrap { text-align: center; }
 
@@ -370,8 +372,8 @@
         /* Internal link inline styling */
         .content-block a,
         .tip-card a {
-            color: var(--accent);
-            text-decoration: none;
+            color: var(--accent-dark);
+            text-decoration: underline;
             font-weight: 500;
         }
         .content-block a:hover,
@@ -436,7 +438,7 @@
 <!-- POSITIONING BANNER -->
 <section class="section" style="background: var(--accent-light); padding: 0;">
     <div class="section-inner" style="max-width: 860px; padding: 28px 24px;">
-        <p style="margin: 0; font-size: .9375rem; color: var(--ink); line-height: 1.7;"><strong>ROAS is one signal Bamzal weighs — not the only one.</strong> Bamzal is an autonomous AI growth team for Shopify stores. It studies your whole store — product pages, pricing, customer retention, catalog, and paid ads — to find where money is leaking. Before it green-lights any ad spend, it checks whether fixing your conversion rate, pricing, or product pages would deliver a better return first. Good ROAS often comes from getting those foundations right, not from spending more.</p>
+        <p style="margin: 0; font-size: .9375rem; color: var(--ink); line-height: 1.7;">Return on ad spend compares attributed revenue with advertising spend. Enter product cost to estimate how much remains for shipping, fees and other expenses.</p>
     </div>
 </section>
 
@@ -462,7 +464,7 @@
                         <div class="form-group">
                             <label for="productCost">Product Cost (%)</label>
                             <input type="number" id="productCost" placeholder="e.g. 35" min="0" max="100" step="0.1">
-                            <div class="input-hint">Cost of goods sold as a percentage of revenue</div>
+                            <div class="input-hint">Enter a product cost to estimate contribution after product cost and ad spend. Other expenses are excluded.</div>
                         </div>
                         <div class="form-group">
                             <label for="conversions">Number of Conversions</label>
@@ -556,11 +558,11 @@
                                 <span class="result-value" id="resultRoas">--</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Net Profit</span>
+                                <span class="result-label">Contribution after ads</span>
                                 <span class="result-value" id="resultProfit">--</span>
                             </div>
                             <div class="result-item">
-                                <span class="result-label">Profit Margin</span>
+                                <span class="result-label">Contribution margin</span>
                                 <span class="result-value" id="resultMargin">--</span>
                             </div>
                             <div class="result-item">
@@ -574,7 +576,7 @@
                             <div class="channel-result-row">
                                 <span>Channel</span>
                                 <span>ROAS</span>
-                                <span>Net Profit</span>
+                                <span>Contribution</span>
                             </div>
                             <div class="channel-result-row" id="googleResult">
                                 <span class="channel-result-name">Google</span>
@@ -730,7 +732,7 @@
             </li>
             <li>
                 <span class="check-icon">&#10003;</span>
-                <span><strong>Diversify across channels before maxing out one.</strong> If Google Ads is performing well, test Meta or TikTok with a small budget. Cross-channel presence reduces risk and captures different audience segments. <a href="/pricing" style="color:var(--accent);text-decoration:none;font-weight:500;">See our pricing plans</a> that support multi-channel campaigns.</span>
+                <span><strong>Diversify across channels before maxing out one.</strong> If Google Ads is performing well, test Meta or TikTok with a small budget. Cross-channel presence reduces risk and captures different audience segments. <a href="/pricing" style="color:var(--accent-dark);text-decoration:underline;font-weight:500;">See our pricing plans</a> that support multi-channel campaigns.</span>
             </li>
         </ul>
     </div>
@@ -770,7 +772,7 @@
 <!-- CTA -->
 <section class="cta-section">
     <h2>Good ROAS starts with a healthy store.</h2>
-    <p>Bamzal is an autonomous AI growth team for Shopify. It finds where your store is leaking money — product pages, pricing, retention, catalog, ads — and fixes it, with permissions and limits under your control and recovery options for supported changes.</p>
+    <p>Use the calculator to explore a scenario, then review your catalog and marketing recommendations in Bamzal. Profit depends on the costs and sales you enter.</p>
     <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
         <a href="/demo" class="btn btn-white">View Live Demo &#8594;</a>
         <a href="/pricing" class="btn btn-outline">See Pricing</a>
@@ -872,17 +874,23 @@
     }
 
     function calcChannel(spend, rev, costPct) {
-        if (!spend || spend <= 0) return { roas: null, profit: null };
-        var roas = rev / spend;
-        var cogs = rev * (costPct / 100);
-        var profit = rev - cogs - spend;
-        return { roas: roas, profit: profit };
+        if (!Number.isFinite(spend) || spend <= 0 || !Number.isFinite(rev) || rev < 0) {
+            return { roas: null, profit: null };
+        }
+        var costKnown = Number.isFinite(costPct) && costPct >= 0 && costPct <= 100;
+        return { roas: rev / spend, profit: costKnown ? rev * (1 - costPct / 100) - spend : null };
+    }
+
+    function showMoney(element, amount) {
+        element.textContent = amount === null ? '--' : (amount >= 0 ? '$' : '-$') + fmt(Math.abs(amount));
+        element.style.color = amount === null ? '' : amount >= 0 ? 'var(--result-positive)' : 'var(--result-negative)';
     }
 
     function calculate() {
-        var spend = parseFloat(adSpend.value) || 0;
-        var rev = parseFloat(revenue.value) || 0;
-        var costPct = parseFloat(productCost.value) || 0;
+        var spend = adSpend.valueAsNumber;
+        var rev = revenue.valueAsNumber;
+        var costPct = productCost.valueAsNumber;
+        var totals = calcChannel(spend, rev, costPct);
         var conv = parseInt(conversions.value) || 0;
 
         var resultRoas = document.getElementById('resultRoas');
@@ -892,7 +900,8 @@
         var gaugeMarker = document.getElementById('gaugeMarker');
         var gaugeRating = document.getElementById('gaugeRating');
 
-        if (spend <= 0 || rev <= 0) {
+        if (totals.roas === null) {
+            showMoney(resultProfit, null);
             resultRoas.textContent = '--';
             resultRoas.className = 'result-value';
             resultProfit.textContent = '--';
@@ -908,20 +917,17 @@
             return;
         }
 
-        var roas = rev / spend;
-        var cogs = rev * (costPct / 100);
-        var netProfit = rev - cogs - spend;
-        var margin = (netProfit / rev) * 100;
+        var roas = totals.roas;
+        var netProfit = totals.profit;
+        var margin = rev > 0 && netProfit !== null ? (netProfit / rev) * 100 : null;
         var cpa = conv > 0 ? spend / conv : null;
 
         resultRoas.textContent = roas.toFixed(2) + 'x';
         resultRoas.className = 'result-value' + (roas >= 2 ? ' positive' : ' negative');
 
-        resultProfit.textContent = (netProfit >= 0 ? '$' : '-$') + fmt(Math.abs(netProfit));
-        resultProfit.className = 'result-value' + (netProfit >= 0 ? ' positive' : ' negative');
-
-        resultMargin.textContent = margin.toFixed(1) + '%';
-        resultMargin.className = 'result-value' + (margin >= 0 ? ' positive' : ' negative');
+        showMoney(resultProfit, netProfit);
+        resultMargin.textContent = margin === null ? '--' : margin.toFixed(1) + '%';
+        resultMargin.className = 'result-value' + (margin === null ? '' : margin >= 0 ? ' positive' : ' negative');
 
         if (cpa !== null) {
             resultCpa.textContent = '$' + fmt(cpa);
@@ -956,10 +962,10 @@
         // Channel breakdown
         if (channelsOpen) {
             var channels = [
-                { id: 'googleResult', spend: parseFloat(document.getElementById('googleSpend').value) || 0, rev: parseFloat(document.getElementById('googleRevenue').value) || 0 },
-                { id: 'metaResult', spend: parseFloat(document.getElementById('metaSpend').value) || 0, rev: parseFloat(document.getElementById('metaRevenue').value) || 0 },
-                { id: 'tiktokResult', spend: parseFloat(document.getElementById('tiktokSpend').value) || 0, rev: parseFloat(document.getElementById('tiktokRevenue').value) || 0 },
-                { id: 'pinterestResult', spend: parseFloat(document.getElementById('pinterestSpend').value) || 0, rev: parseFloat(document.getElementById('pinterestRevenue').value) || 0 }
+                { id: 'googleResult', spend: document.getElementById('googleSpend').valueAsNumber, rev: document.getElementById('googleRevenue').valueAsNumber },
+                { id: 'metaResult', spend: document.getElementById('metaSpend').valueAsNumber, rev: document.getElementById('metaRevenue').valueAsNumber },
+                { id: 'tiktokResult', spend: document.getElementById('tiktokSpend').valueAsNumber, rev: document.getElementById('tiktokRevenue').valueAsNumber },
+                { id: 'pinterestResult', spend: document.getElementById('pinterestSpend').valueAsNumber, rev: document.getElementById('pinterestRevenue').valueAsNumber }
             ];
 
             channels.forEach(function(ch) {
@@ -968,10 +974,8 @@
                 var result = calcChannel(ch.spend, ch.rev, costPct);
                 if (result.roas !== null) {
                     cells[1].textContent = result.roas.toFixed(2) + 'x';
-                    cells[1].style.color = result.roas >= 2 ? 'var(--success)' : '#ef4444';
-                    var p = result.profit;
-                    cells[2].textContent = (p >= 0 ? '$' : '-$') + fmt(Math.abs(p));
-                    cells[2].style.color = p >= 0 ? 'var(--success)' : '#ef4444';
+                    cells[1].style.color = result.roas >= 2 ? 'var(--result-positive)' : 'var(--result-negative)';
+                    showMoney(cells[2], result.profit);
                 } else {
                     cells[1].textContent = '--';
                     cells[1].style.color = '';

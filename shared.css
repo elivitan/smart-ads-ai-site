@@ -284,7 +284,7 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--paper
 
 /* Subtle reveal on scroll for premium feel */
 @media (prefers-reduced-motion: no-preference){
-    .feature-card,.tech-item,.pillar{animation:fadeUp .6s ease-out backwards;}
+    .feature-card,.tech-item,.pillar{animation:slideUp .6s ease-out backwards;}
     .feature-card:nth-child(1),.tech-item:nth-child(1),.pillar:nth-child(1){animation-delay:.05s;}
     .feature-card:nth-child(2),.tech-item:nth-child(2),.pillar:nth-child(2){animation-delay:.12s;}
     .feature-card:nth-child(3),.tech-item:nth-child(3),.pillar:nth-child(3){animation-delay:.19s;}
@@ -294,9 +294,9 @@ body { font-family: var(--font-body); color: var(--ink); background: var(--paper
     .feature-card:nth-child(7),.tech-item:nth-child(7){animation-delay:.47s;}
     .feature-card:nth-child(8),.tech-item:nth-child(8){animation-delay:.54s;}
 }
-@keyframes fadeUp{
-    from{opacity:0;transform:translateY(12px);}
-    to{opacity:1;transform:translateY(0);}
+@keyframes slideUp{
+    from{transform:translateY(12px);}
+    to{transform:translateY(0);}
 }
 
 /* ---- LAYER LIST — editorial how-it-works detail ---- */
@@ -368,3 +368,8 @@ details.faq-item[open] .faq-a { display: block; }
 @media (max-width: 540px) {
     .api-flow-summary { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Accessible article links and dark-section links. */
+body .article-body a, .legal-content a { color: var(--accent-dark); text-decoration: underline; text-underline-offset: .15em; }
+.flow-step p a { color: #f2ebd8; text-decoration: underline; text-underline-offset: .15em; }
+.how-bg :focus-visible { outline-color: #e5c980; }
