@@ -1284,7 +1284,7 @@
                 <div class="settings-row"><span>Pinterest Ad Account</span><span>549876543210</span></div>
                 <div class="settings-row"><span>Connected On</span><span>January 15, 2026</span></div>
                 <div class="settings-row"><span>OAuth Scopes</span><span>google-ads · ads_management, business_management, pages_read_engagement, instagram_basic · advertiser.read/write · ads:read/write</span></div>
-                <p class="settings-info">Bamzal connects to your Google Ads, Meta (Facebook &amp; Instagram), TikTok Ads, Pinterest Ads and X Ads accounts via each platform's official OAuth 2.0 flow. We request only the minimum permissions needed to create and manage campaigns on your behalf. You can revoke access per network at any time.</p>
+                <p class="settings-info">Connected ad accounts belong to your business. Bamzal uses each provider's official authorization flow for the access needed by supported actions. X Ads requires separate authorization from X posting, and paid actions depend on your account and feature eligibility. You can revoke access in the connected provider.</p>
                 <button class="disconnect-btn" onclick="alert('This is a demo — disconnect is disabled.')">Disconnect Ad Networks</button>
             </div>
             <div class="settings-card">
@@ -1920,10 +1920,10 @@
             <ul style="font-size:.875rem;color:var(--slate);line-height:1.65;margin:0 0 0 20px">
                 <li><strong>Frontend:</strong> React 18 + React Router 7 + Shopify Polaris design system + Shopify App Bridge</li>
                 <li><strong>Backend:</strong> Node.js server with React Router server-side rendering</li>
-                <li><strong>Database:</strong> Prisma ORM (SQLite in development, PostgreSQL/MySQL in production)</li>
+                <li><strong>Database:</strong> PostgreSQL through Prisma</li>
                 <li><strong>AI Engine:</strong> Anthropic Claude API for product analysis, ad copy generation, and competitor intelligence</li>
                 <li><strong>Ads Integrations:</strong> Google Ads API v22 (REST &amp; gRPC), Meta Marketing API (Facebook &amp; Instagram, incl. Pages + Instagram Business), TikTok Marketing API, and Pinterest Ads API &mdash; for campaign creation, management, and performance tracking across every channel</li>
-                <li><strong>Authentication:</strong> Shopify OAuth for app installation + official OAuth 2.0 flows for Google Ads, Meta, TikTok and Pinterest ad-account linking</li>
+                <li><strong>Authentication:</strong> Shopify authorization for installation, with provider-specific authorization for eligible ad accounts.</li>
             </ul>
         </div>
 
@@ -1985,7 +1985,7 @@
         <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:16px;text-align:center">Campaign Lifecycle</h3>
         <div class="lifecycle-steps">
             <div class="lc-step"><div class="lc-num">1</div><h4>Install on Shopify</h4><p>Merchant installs Bamzal from the Shopify App Store</p></div>
-            <div class="lc-step"><div class="lc-num">2</div><h4>Connect Ad Networks</h4><p>OAuth 2.0 flows authenticate Google, Meta, TikTok, Pinterest and X ad accounts</p></div>
+            <div class="lc-step"><div class="lc-num">2</div><h4>Connect Ad Networks</h4><p>Connect eligible accounts using each provider's authorization flow</p></div>
             <div class="lc-step"><div class="lc-num">3</div><h4>AI Scans Products</h4><p>AI analyzes products, competitors, and keyword landscape</p></div>
             <div class="lc-step"><div class="lc-num">4</div><h4>Generate Ad Copy</h4><p>AI creates optimized headlines, descriptions, and keywords</p></div>
             <div class="lc-step"><div class="lc-num">5</div><h4>Review in Wizard</h4><p>Merchant reviews and customizes all campaign settings</p></div>
@@ -2034,11 +2034,11 @@
             </details>
             <details class="faq-item">
                 <summary class="faq-q">How does Bamzal connect to my ad accounts?<span aria-hidden="true">+</span></summary>
-                <div class="faq-a">We use the industry-standard OAuth 2.0 protocol for each network. When you click "Connect" on Google, Meta, TikTok or Pinterest, you are redirected to that platform's official consent screen where you grant permission. We never see or store your passwords. For each network we only request the minimum scopes needed (e.g. google-ads; ads_management + business_management + pages_read_engagement + instagram_basic on Meta; advertiser.read/write on TikTok; ads:read/write on Pinterest) and store encrypted refresh tokens.</div>
+                <div class="faq-a">Connected ad accounts belong to your business. Bamzal uses each provider's official authorization flow for the access needed by supported actions. X Ads requires separate authorization from X posting, and paid actions depend on your account and feature eligibility. You can revoke access in the connected provider.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Will Bamzal spend my money without my permission?<span aria-hidden="true">+</span></summary>
-                <div class="faq-a">No. All campaigns created by Bamzal are initially set to PAUSED status on every network. You must explicitly review and enable each campaign before any ad spend occurs. You retain full control over your budget and campaigns at all times.</div>
+                <div class="faq-a">Supported campaign creation starts paused. Activation and later campaign changes depend on the authority and limits you configure. Pausing Bamzal automation does not itself stop campaigns that are already running. Check their status in the ad platform.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Which ad platform APIs does Bamzal use?<span aria-hidden="true">+</span></summary>
