@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" sizes="32x32" href="/bamzal-favicon-a-32.png?v=a8"><link rel="icon" type="image/png" sizes="512x512" href="/bamzal-favicon-a-512.png?v=a8"><link rel="icon" type="image/png" sizes="48x48" href="/bamzal-favicon-a-48.png?v=a8"><link rel="icon" type="image/png" sizes="180x180" href="/bamzal-favicon-a-180.png?v=a8"><link rel="icon" type="image/x-icon" href="/bamzal-favicon-a.ico?v=a8"><link rel="apple-touch-icon" href="/bamzal-favicon-a-apple.png?v=a8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Bamzal — AI Growth Consultant for Shopify</title>
-    <meta name="description" content="Get in touch with Bamzal — your autonomous AI growth team for Shopify. Support, onboarding help, or partnership enquiries.">
+    <meta name="description" content="Contact Bamzal for help with installation, catalog reviews, billing or partnerships.">
     <link rel="canonical" href="https://bamzal.com/contact">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bamzal.com/contact">
     <meta property="og:title" content="Contact Bamzal — Support & Inquiries">
-    <meta property="og:description" content="Get help from your autonomous AI growth team for Shopify — covering store fixes, pricing, retention, catalog, and paid ads.">
+    <meta property="og:description" content="Send the Bamzal team a support or onboarding request.">
     <meta property="og:image" content="https://bamzal.com/bamzal-og.png?v=og1">
     <meta property="og:image:secure_url" content="https://bamzal.com/bamzal-og.png?v=og1">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
-    <meta property="og:image:alt" content="Bamzal — autonomous AI growth team for Shopify.">
+    <meta property="og:image:alt" content="Bamzal — AI growth advisor for Shopify.">
     <meta property="og:site_name" content="Bamzal">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://bamzal.com/bamzal-og.png?v=og1">
@@ -59,40 +59,36 @@
     <div class="page-hero-inner">
         <div class="hero-badge">Contact</div>
         <h1>Get in Touch</h1>
-        <p>We'd love to hear from you. Reach out for support, partnerships, or to get your store's autonomous growth team up and running.</p>
+        <p>We'd love to hear from you. Reach out for support, partnerships, or to get your store's growth advisor up and running.</p>
     </div>
 </section>
 
 <section class="section">
     <div class="section-inner">
-        <!-- QA 2026-05-18: real contact form. Default action is `mailto:` so it works
-             on a static host with no signup or backend dependency. To swap to a
-             Formspree / Web3Forms / Netlify backend, change the `action` attribute
-             and the `method` to "POST" (and remove `enctype="text/plain"`). -->
         <form
             id="contact-form"
             method="POST"
-            action="mailto:hello@bamzal.com"
-            enctype="text/plain"
+            action="https://app.bamzal.com/api/contact"
             style="max-width:680px;margin:0 auto 56px;background:rgba(255,255,255,.6);border:1px solid var(--border, rgba(0,0,0,.08));border-radius:14px;padding:28px;"
         >
             <h3 style="font-family:var(--font-display);font-size:1.25rem;margin:0 0 8px;">Send us a message</h3>
-            <p style="color:var(--slate);margin:0 0 20px;font-size:.9375rem;">We typically reply within 24 hours. For urgent technical issues, email <a href="mailto:support@bamzal.com">support@bamzal.com</a> directly.</p>
+            <p style="color:var(--slate);margin:0 0 20px;font-size:.9375rem;">Submit the form to receive a support reference. We reply to the email address you provide. You can also email <a href="mailto:support@bamzal.com">support@bamzal.com</a> directly.</p>
 
             <div style="display:grid;gap:14px;">
+                <label hidden>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
                 <div class="contact-identity">
                     <label style="display:flex;flex-direction:column;gap:6px;font-size:.8125rem;font-weight:600;color:var(--ink);">
                         Name
-                        <input type="text" name="name" required placeholder="Jane Cohen" style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;">
+                        <input type="text" name="name" maxlength="100" autocomplete="name" required placeholder="Jane Cohen" style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;">
                     </label>
                     <label style="display:flex;flex-direction:column;gap:6px;font-size:.8125rem;font-weight:600;color:var(--ink);">
                         Email
-                        <input type="email" name="email" required placeholder="you@store.com" style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;">
+                        <input type="email" name="email" maxlength="254" autocomplete="email" required placeholder="you@store.com" style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;">
                     </label>
                 </div>
                 <label style="display:flex;flex-direction:column;gap:6px;font-size:.8125rem;font-weight:600;color:var(--ink);">
                     Shopify store URL (optional)
-                    <input type="url" name="store" placeholder="https://yourstore.myshopify.com" style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;">
+                    <input type="url" name="store" maxlength="300" placeholder="https://yourstore.myshopify.com" style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;">
                 </label>
                 <label style="display:flex;flex-direction:column;gap:6px;font-size:.8125rem;font-weight:600;color:var(--ink);">
                     What do you need?
@@ -107,7 +103,7 @@
                 </label>
                 <label style="display:flex;flex-direction:column;gap:6px;font-size:.8125rem;font-weight:600;color:var(--ink);">
                     Message
-                    <textarea name="message" required rows="5" placeholder="Tell us about your store, ad spend, and what you're hoping Bamzal can help with…" style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;resize:vertical;min-height:120px;"></textarea>
+                    <textarea name="message" maxlength="4000" required rows="5" placeholder="Tell us about your store, ad spend, and what you're hoping Bamzal can help with…" style="padding:10px 12px;border:1px solid var(--border, rgba(0,0,0,.12));border-radius:8px;font-size:.9375rem;font-family:inherit;background:#fff;resize:vertical;min-height:120px;"></textarea>
                 </label>
                 <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
                     <p style="margin:0;font-size:.75rem;color:var(--muted);max-width:340px;">By submitting, you agree we'll email you back. We never sell your data — see <a href="/privacy">privacy</a>.</p>
