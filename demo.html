@@ -1143,7 +1143,7 @@
                         <span style="font-size:.72rem;color:rgba(255,255,255,.72)">no spend yet</span>
                     </div>
                     <div style="font-size:.9rem;font-weight:600;color:#fff;margin-bottom:6px">Not advertising yet &mdash; the bucket leaks first.</div>
-                    <div style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.5">Your cost to acquire a customer is <strong style="color:#fff">$31</strong> right now &mdash; higher than the <strong style="color:#fff">$26</strong> profit on a first order. Pouring money into ads today would lose money on every sale. Bamzal fixes retention and margin first; ads come online once each new customer pays for themselves.</div>
+                    <div style="font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.5">Your cost to acquire a customer is <strong style="color:#fff">$31</strong> right now &mdash; higher than the <strong style="color:#fff">$26</strong> profit on a first order. Pouring money into ads today would lose money on every sale. This sample suggests reviewing costs and retention before advertising. It does not enable campaigns or establish profitability for your store.</div>
                 </div>
 
             </div>
@@ -1915,7 +1915,7 @@
 
         <div style="background:var(--accent-light);border:1px solid var(--accent);border-radius:12px;padding:20px 24px;margin-bottom:40px">
             <p style="font-size:.9375rem;font-weight:700;color:var(--ink);margin-bottom:8px">&#128736; About Our Application Architecture</p>
-            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">Bamzal is a <strong>Shopify embedded application</strong> &mdash; it runs as an iframe inside the Shopify Admin dashboard, not as a standalone website. Merchants install the app from the Shopify App Store, and the app loads within their existing Shopify admin panel at <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px;font-size:.8125rem">https://admin.shopify.com/store/{shop}/apps/v-40</code>.</p>
+            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">Bamzal is a <strong>Shopify embedded application</strong> &mdash; it runs as an iframe inside the Shopify Admin dashboard, not as a standalone website. Merchants install the app from the Shopify App Store, and the app loads within their existing Shopify admin panel at <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px;font-size:.8125rem">Shopify Admin &rarr; Apps &rarr; Bamzal</code>.</p>
             <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px"><strong>This website (bamzal.com) is our marketing and information site only.</strong> The demo above is a static HTML/CSS/JavaScript simulation of the actual app interface, created to showcase the platform features and our multi-channel ad API usage (Google, Meta, TikTok, Pinterest). The production application is a full-stack Node.js app built with:</p>
             <ul style="font-size:.875rem;color:var(--slate);line-height:1.65;margin:0 0 0 20px">
                 <li><strong>Frontend:</strong> React 18 + React Router 7 + Shopify Polaris design system + Shopify App Bridge</li>
@@ -2030,27 +2030,27 @@
         <div class="faq-list">
             <details class="faq-item">
                 <summary class="faq-q">Is this just an ad dashboard?<span aria-hidden="true">+</span></summary>
-                <div class="faq-a">No. The dashboard you see leads with a ranked plan of moves across your whole store &mdash; product-page and catalog fixes, price changes, customer win-back &mdash; and runs ads only when ads are the right lever. It even shows the moves Bamzal <em>considered and held back</em>, like refusing to scale ad spend when your cost to acquire a customer is higher than the profit on a first order. Advertising is one of several levers, not the whole product.</div>
+                <div class="faq-a">This sample illustrates catalog checks and growth recommendations across several areas of a store. Its figures and controls use sample data and do not operate a live account. Available merchant actions depend on account access, permissions and rollout; paid advertising is advisory at launch.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">How does Bamzal connect to my ad accounts?<span aria-hidden="true">+</span></summary>
-                <div class="faq-a">We use the industry-standard OAuth 2.0 protocol for each network. When you click "Connect" on Google, Meta, TikTok or Pinterest, you are redirected to that platform's official consent screen where you grant permission. We never see or store your passwords. For each network we only request the minimum scopes needed (e.g. google-ads; ads_management + business_management + pages_read_engagement + instagram_basic on Meta; advertiser.read/write on TikTok; ads:read/write on Pinterest) and store encrypted refresh tokens.</div>
+                <div class="faq-a">Use the connection flow shown in Bamzal for an available network. Sign in on the provider’s official consent screen and review the requested permissions before approving access. Availability depends on the network, your account and provider permissions.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Will Bamzal spend my money without my permission?<span aria-hidden="true">+</span></summary>
-                <div class="faq-a">No. All campaigns created by Bamzal are initially set to PAUSED status on every network. You must explicitly review and enable each campaign before any ad spend occurs. You retain full control over your budget and campaigns at all times.</div>
+                <div class="faq-a">Paid advertising is advisory at launch. A zero advertising budget keeps paid campaigns off. Review campaign settings, spending limits and actual status directly in your advertising account. Disconnecting Bamzal does not by itself pause campaigns already running in that account.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Which ad platform APIs does Bamzal use?<span aria-hidden="true">+</span></summary>
-                <div class="faq-a">On Google Ads: CampaignService, CampaignBudgetService, AdGroupCriterionService, AdGroupAdService, GoogleAdsService.Search and ConversionActionService. On Meta (Facebook &amp; Instagram): the Meta Marketing API (adaccount/campaigns/adsets/ads/creatives), Pages API and Instagram Business API for catalog and creative assets, plus the Leads API for retrieving lead-gen form submissions. On TikTok: the TikTok Marketing API (campaign/adgroup/ad/creative/reporting). On Pinterest: the Pinterest Ads API (ad_accounts, campaigns, ad_groups, pins, analytics).</div>
+                <div class="faq-a">Bamzal has integrations for Google Ads, Meta, TikTok, Pinterest and X. Available operations depend on provider approval, account permissions and rollout. Check which actions are available for your store before relying on an integration.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Can I revoke Bamzal's access to my ad accounts?<span aria-hidden="true">+</span></summary>
-                <div class="faq-a">Yes, at any time and per network. You can disconnect any individual network (Google, Meta, TikTok, Pinterest) from within our app's Settings page, or revoke access directly from each platform's account security settings. Revoking access will not delete any campaigns already created in those accounts.</div>
+                <div class="faq-a">Use the disconnect option for an available connection in Bamzal, or revoke access through the advertising platform. Check active campaigns separately in that platform: revoking access does not by itself delete campaigns or stop their spending.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">How does the AI generate ad copy and creatives?<span aria-hidden="true">+</span></summary>
-                <div class="faq-a">Our AI analyzes your product titles, descriptions, and images, then studies competitor ads on each network to understand what performs well in your niche. For Google it generates optimized headlines (up to 30 characters) and descriptions (up to 90 characters) with exact/phrase/broad match keywords. For Meta, TikTok and Pinterest it generates primary text, headlines, descriptions and creative concepts (image + short-form video) that match each platform's native best practices and audience-targeting style.</div>
+                <div class="faq-a">AI can draft suggestions using available product information and connected research. Review the wording, claims, keywords and landing page before using a draft. Generated suggestions and estimated impact do not establish how a live campaign will perform.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Is my data secure?<span aria-hidden="true">+</span></summary>
@@ -2476,7 +2476,7 @@ function renderWizard(){
   }
   else if(data.type==='conversion'){
     html += '<div class="wiz-toggle"><input type="checkbox" '+(wizSelections.conversion?'checked':'')+' onchange="wizSelections.conversion=this.checked"><span style="font-size:.85rem">Enable Conversion Tracking</span></div>';
-    html += '<p style="font-size:.8rem;color:rgba(255,255,255,.72);line-height:1.5;margin-top:8px">When enabled, Bamzal creates a "Purchase" conversion action across your connected ad networks — via Google Ads <strong style="color:rgba(255,255,255,.7)">ConversionActionService</strong>, the Meta Conversions API, TikTok Events API and Pinterest Conversions API. This tracks Shopify checkout completions and reports unified ROAS across Google, Meta, TikTok, Pinterest and X. Conversion tags are automatically injected into your Shopify checkout.</p>';
+    html += '<p style="font-size:.8rem;color:rgba(255,255,255,.72);line-height:1.5;margin-top:8px">This sample illustrates conversion reporting across advertising platforms. Actual coverage depends on the connected account, permissions, tracking configuration and data supplied by each provider. Verify event delivery, deduplication and attribution in the provider before relying on a report. The demo does not install checkout tags or create live conversion actions.</p>';
   }
   else if(data.type==='review'){
     html += '<ul class="wiz-summary">';
