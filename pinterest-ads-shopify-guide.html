@@ -95,13 +95,13 @@
             height: 24px;
             border-radius: 6px;
             background: var(--accent-light);
-            color: var(--accent);
+            color: var(--accent-dark);
             font-size: .75rem;
             font-weight: 700;
             flex-shrink: 0;
         }
         .guide-toc ol li a:hover {
-            color: var(--accent);
+            color: var(--accent-dark);
         }
 
         .guide-body h2 {
@@ -125,12 +125,13 @@
         .guide-body strong {
             color: var(--ink);
         }
-        .guide-body a {
-            color: var(--accent);
-            text-decoration: none;
+        .guide-body a:not(.btn) {
+            color: var(--accent-dark);
+            text-decoration: underline;
+            text-underline-offset: .15em;
             font-weight: 500;
         }
-        .guide-body a:hover {
+        .guide-body a:not(.btn):hover {
             text-decoration: underline;
         }
         .guide-body ul, .guide-body ol {
@@ -340,7 +341,7 @@
 
             <p>Choosing where to spend your ad budget means understanding how each platform behaves. The table below compares Pinterest Ads with the other major channels Shopify merchants typically use.</p>
 
-            <div class="guide-table-wrap">
+            <div class="guide-table-wrap" role="region" aria-labelledby="comparison" tabindex="0">
                 <table class="guide-table">
                     <thead>
                         <tr>
@@ -556,7 +557,7 @@
 
             <p>Understanding what Pinterest Ads actually cost is essential for budgeting and setting realistic expectations. These benchmarks are based on aggregated ecommerce data for the Shopify merchant segment.</p>
 
-            <div class="guide-table-wrap">
+            <div class="guide-table-wrap" role="region" aria-labelledby="cost-benchmarks" tabindex="0">
                 <table class="guide-table">
                     <thead>
                         <tr>
@@ -656,7 +657,7 @@
             <p>Compare which products and audiences you would test on Pinterest, Meta or Google.</p>
 
             <h3>Review settings in Pinterest</h3>
-            <p>Paid advertising is advisory at launch. Use Pinterest Ads Manager to create a campaign, set limits and check its status.</p>
+            <p>Paid campaign execution, including X Ads, requires an eligible connected account and your approval. Use Pinterest Ads Manager to create a campaign, set limits and check its status.</p>
 
             <h3>Competitive Intelligence</h3>
             <p>Compare the draft with examples from your own market before deciding what to publish.</p>

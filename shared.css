@@ -368,3 +368,8 @@ details.faq-item[open] .faq-a { display: block; }
 @media (max-width: 540px) {
     .api-flow-summary { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Accessible article links and dark-section links. */
+body .article-body a, .legal-content a { color: var(--accent-dark); text-decoration: underline; text-underline-offset: .15em; }
+.flow-step p a { color: #f2ebd8; text-decoration: underline; text-underline-offset: .15em; }
+.how-bg :focus-visible { outline-color: #e5c980; }

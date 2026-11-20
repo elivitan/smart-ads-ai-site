@@ -103,7 +103,7 @@
         .verdict-box p:last-child { margin-bottom: 0; }
 
         /* ---- ROAS MINI TABLE ---- */
-        .roas-table { width: 100%; border-collapse: collapse; font-size: .875rem; margin: 16px 0 28px; }
+        .roas-table { width: 100%; border-collapse: collapse; font-size: .875rem; margin: 0; }
         .roas-table th { background: var(--surface); font-weight: 600; color: var(--ink); padding: 10px 14px; text-align: left; border-bottom: 2px solid var(--border); }
         .roas-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--slate); }
         .roas-table tr:last-child td { border-bottom: none; }
@@ -197,7 +197,7 @@
 
     <p>Before diving into the details, here is how the two platforms compare across the metrics that matter most to ecommerce operators.</p>
 
-    <div class="comparison-table-wrap">
+    <div class="comparison-table-wrap" role="region" aria-label="Comparison table" tabindex="0">
         <table class="comparison-table">
             <thead>
                 <tr>
@@ -337,7 +337,7 @@
 
     <p>Meta Ads ecommerce CPA averages <strong>$18 to $55</strong>. The lower floor reflects Meta's ability to find impulse buyers for lower-priced products ($20-$60 AOV range). For higher-AOV products ($150+), Google's CPA advantage narrows because Google captures buyers who are already comparison-shopping and ready to commit.</p>
 
-    <div class="comparison-table-wrap">
+    <div class="comparison-table-wrap" role="region" aria-label="Comparison table" tabindex="0">
         <table class="comparison-table">
             <thead>
                 <tr>
@@ -386,78 +386,80 @@
 
     <p>ROAS varies dramatically by industry, and the platform that delivers better ROAS shifts depending on the niche. Here is a breakdown based on aggregated 2025-2026 ecommerce benchmarks.</p>
 
-    <table class="roas-table">
-        <thead>
-            <tr>
-                <th>Industry / Niche</th>
-                <th>Google Ads ROAS</th>
-                <th>Meta Ads ROAS</th>
-                <th>Recommended Lead</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Fashion &amp; Apparel</td>
-                <td>3.0x &ndash; 5.0x</td>
-                <td>4.0x &ndash; 7.0x</td>
-                <td>Meta</td>
-            </tr>
-            <tr>
-                <td>Beauty &amp; Skincare</td>
-                <td>3.5x &ndash; 5.5x</td>
-                <td>4.5x &ndash; 8.0x</td>
-                <td>Meta</td>
-            </tr>
-            <tr>
-                <td>Home &amp; Garden</td>
-                <td>4.0x &ndash; 8.0x</td>
-                <td>3.0x &ndash; 5.5x</td>
-                <td>Google</td>
-            </tr>
-            <tr>
-                <td>Electronics &amp; Gadgets</td>
-                <td>5.0x &ndash; 9.0x</td>
-                <td>2.5x &ndash; 4.5x</td>
-                <td>Google</td>
-            </tr>
-            <tr>
-                <td>Health &amp; Supplements</td>
-                <td>3.0x &ndash; 5.0x</td>
-                <td>3.5x &ndash; 6.0x</td>
-                <td>Meta</td>
-            </tr>
-            <tr>
-                <td>Pet Products</td>
-                <td>3.5x &ndash; 6.0x</td>
-                <td>4.0x &ndash; 7.0x</td>
-                <td>Meta</td>
-            </tr>
-            <tr>
-                <td>Jewelry &amp; Accessories</td>
-                <td>2.5x &ndash; 4.5x</td>
-                <td>3.5x &ndash; 6.5x</td>
-                <td>Meta</td>
-            </tr>
-            <tr>
-                <td>Sports &amp; Outdoors</td>
-                <td>4.0x &ndash; 7.0x</td>
-                <td>3.0x &ndash; 5.0x</td>
-                <td>Google</td>
-            </tr>
-            <tr>
-                <td>Food &amp; Beverage</td>
-                <td>2.0x &ndash; 3.5x</td>
-                <td>3.0x &ndash; 5.5x</td>
-                <td>Meta</td>
-            </tr>
-            <tr>
-                <td>B2B / Industrial</td>
-                <td>5.0x &ndash; 10.0x</td>
-                <td>1.5x &ndash; 3.0x</td>
-                <td>Google</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="comparison-table-wrap" role="region" aria-label="ROAS comparison by industry" tabindex="0">
+        <table class="roas-table">
+            <thead>
+                <tr>
+                    <th>Industry / Niche</th>
+                    <th>Google Ads ROAS</th>
+                    <th>Meta Ads ROAS</th>
+                    <th>Recommended Lead</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fashion &amp; Apparel</td>
+                    <td>3.0x &ndash; 5.0x</td>
+                    <td>4.0x &ndash; 7.0x</td>
+                    <td>Meta</td>
+                </tr>
+                <tr>
+                    <td>Beauty &amp; Skincare</td>
+                    <td>3.5x &ndash; 5.5x</td>
+                    <td>4.5x &ndash; 8.0x</td>
+                    <td>Meta</td>
+                </tr>
+                <tr>
+                    <td>Home &amp; Garden</td>
+                    <td>4.0x &ndash; 8.0x</td>
+                    <td>3.0x &ndash; 5.5x</td>
+                    <td>Google</td>
+                </tr>
+                <tr>
+                    <td>Electronics &amp; Gadgets</td>
+                    <td>5.0x &ndash; 9.0x</td>
+                    <td>2.5x &ndash; 4.5x</td>
+                    <td>Google</td>
+                </tr>
+                <tr>
+                    <td>Health &amp; Supplements</td>
+                    <td>3.0x &ndash; 5.0x</td>
+                    <td>3.5x &ndash; 6.0x</td>
+                    <td>Meta</td>
+                </tr>
+                <tr>
+                    <td>Pet Products</td>
+                    <td>3.5x &ndash; 6.0x</td>
+                    <td>4.0x &ndash; 7.0x</td>
+                    <td>Meta</td>
+                </tr>
+                <tr>
+                    <td>Jewelry &amp; Accessories</td>
+                    <td>2.5x &ndash; 4.5x</td>
+                    <td>3.5x &ndash; 6.5x</td>
+                    <td>Meta</td>
+                </tr>
+                <tr>
+                    <td>Sports &amp; Outdoors</td>
+                    <td>4.0x &ndash; 7.0x</td>
+                    <td>3.0x &ndash; 5.0x</td>
+                    <td>Google</td>
+                </tr>
+                <tr>
+                    <td>Food &amp; Beverage</td>
+                    <td>2.0x &ndash; 3.5x</td>
+                    <td>3.0x &ndash; 5.5x</td>
+                    <td>Meta</td>
+                </tr>
+                <tr>
+                    <td>B2B / Industrial</td>
+                    <td>5.0x &ndash; 10.0x</td>
+                    <td>1.5x &ndash; 3.0x</td>
+                    <td>Google</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <p>The pattern is clear. <strong>Google Ads dominates when the product solves a known problem</strong> &mdash; the buyer searches for a solution (electronics, home improvement, B2B tools, sports equipment). <strong>Meta Ads dominates when the product is visually compelling and emotionally driven</strong> &mdash; the buyer discovers it while browsing (fashion, beauty, jewelry, food).</p>
 
@@ -520,7 +522,7 @@
     <p><strong>Carousel Ads:</strong> 2-10 cards, each with its own image, headline, description, and link. Excellent for showcasing product variations, telling a brand story, or highlighting multiple products from a collection.</p>
     <p><strong>Creative Volume:</strong> Meta's algorithm needs creative variety to test and optimize. Best practice in 2026 is launching with 4-8 unique creative concepts per ad set, refreshing every 2-4 weeks as creative fatigue sets in.</p>
 
-    <div class="comparison-table-wrap">
+    <div class="comparison-table-wrap" role="region" aria-label="Comparison table" tabindex="0">
         <table class="comparison-table">
             <thead>
                 <tr>
@@ -654,7 +656,7 @@
     <p>Estimate the result at different spending levels using your own sales and margin assumptions.</p>
 
     <h3>Verify live campaign settings</h3>
-    <p>Paid advertising is advisory at launch. Create or pause campaigns and confirm their status directly in Google Ads or Meta.</p>
+    <p>Paid campaign execution, including X Ads, requires an eligible connected account and your approval. Create or pause campaigns and confirm their status directly in Google Ads or Meta.</p>
 
     <h3>Consolidated Reporting</h3>
     <p>See Google Ads, Meta Ads, TikTok Ads, and Pinterest Ads performance side by side inside your Shopify admin. Compare ROAS, CPA, and conversion rates across platforms without opening four separate dashboards. Spot which platform is outperforming for which products and reallocate budget accordingly.</p>

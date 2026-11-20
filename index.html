@@ -6,12 +6,12 @@
     <meta name="google-site-verification" content="fZkN1ASC85TdFlqB5fG5f3R10V6CZP9dG9iUCF8uXhM" />
     <link rel="icon" type="image/png" sizes="32x32" href="/bamzal-favicon-a-32.png?v=a8"><link rel="icon" type="image/png" sizes="512x512" href="/bamzal-favicon-a-512.png?v=a8"><link rel="icon" type="image/png" sizes="48x48" href="/bamzal-favicon-a-48.png?v=a8"><link rel="icon" type="image/png" sizes="180x180" href="/bamzal-favicon-a-180.png?v=a8"><link rel="icon" type="image/x-icon" href="/bamzal-favicon-a.ico?v=a8"><link rel="apple-touch-icon" href="/bamzal-favicon-a-apple.png?v=a8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bamzal | Shopify catalog and growth recommendations</title>
-    <meta name="description" content="Review your Shopify catalog, spot product-page issues and compare marketing recommendations. You choose which supported changes to approve. Paid advertising starts in advisory mode.">
+    <meta name="description" content="Review your Shopify catalog, spot product-page issues and compare marketing recommendations. You choose which supported changes to approve. Review and approve campaign settings before activation.">
     <link rel="canonical" href="https://bamzal.com/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bamzal.com/">
     <meta property="og:title" content="Bamzal | Growth recommendations for Shopify">
-    <meta property="og:description" content="Review your Shopify catalog, spot product-page issues and compare marketing recommendations. You choose which supported changes to approve. Paid advertising starts in advisory mode.">
+    <meta property="og:description" content="Review your Shopify catalog, spot product-page issues and compare marketing recommendations. You choose which supported changes to approve. Review and approve campaign settings before activation.">
     <meta property="og:image" content="https://bamzal.com/bamzal-og.png?v=og1">
     <meta property="og:image:secure_url" content="https://bamzal.com/bamzal-og.png?v=og1">
     <meta property="og:image:width" content="1200">
@@ -21,7 +21,7 @@
     <meta property="og:site_name" content="Bamzal">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Bamzal | Growth recommendations for Shopify">
-    <meta name="twitter:description" content="Review your Shopify catalog, spot product-page issues and compare marketing recommendations. You choose which supported changes to approve. Paid advertising starts in advisory mode.">
+    <meta name="twitter:description" content="Review your Shopify catalog, spot product-page issues and compare marketing recommendations. You choose which supported changes to approve. Review and approve campaign settings before activation.">
     <meta name="twitter:image" content="https://bamzal.com/bamzal-og.png?v=og1">
     <meta name="twitter:image:alt" content="Bamzal for Shopify">
     <script type="application/ld+json">
@@ -32,7 +32,7 @@
       "legalName": "Vitan Yazmut",
       "url": "https://bamzal.com",
       "logo": "https://bamzal.com/bamzal-header-mark-full.png",
-      "description": "Review your Shopify catalog, spot product-page issues and compare marketing recommendations. You choose which supported changes to approve. Paid advertising starts in advisory mode.",
+      "description": "Review your Shopify catalog, spot product-page issues and compare marketing recommendations. You choose which supported changes to approve. Review and approve campaign settings before activation.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "35 Arlozorov St.",
@@ -104,7 +104,7 @@
           "name": "What if ads aren't the right move for my store?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "You can review advertising ideas without starting a campaign. Paid advertising is advisory at launch. Manage active campaigns and spending limits directly in your ad account."
+            "text": "You can use catalog and store recommendations without starting ads. For paid campaigns, connect an eligible ad account, review the proposed audience, creative, currency and spending limits, and approve activation. Availability is shown for each connected channel, including X Ads."
           }
         },
         {
@@ -120,7 +120,7 @@
           "name": "How does Bamzal connect to my ad accounts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We use the industry-standard OAuth 2.0 protocol for each network. When you click Connect on Google, Meta, TikTok or Pinterest, you are redirected to that platform's official consent screen where you grant permission. We never see or store your passwords. For each network we only request the minimum scopes needed and store encrypted refresh tokens."
+            "text": "We use each platform's official authorization flow. X Ads requires a separate OAuth 1.0a advertising connection; an X posting connection alone does not grant advertising access. When you click Connect on Google, Meta, TikTok or Pinterest, you are redirected to that platform's official consent screen where you grant permission. We never see or store your passwords. For each network we only request the minimum scopes needed and store encrypted refresh tokens."
           }
         },
         {
@@ -128,7 +128,7 @@
           "name": "Will Bamzal spend my money without my permission?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. All campaigns created by Bamzal are initially set to PAUSED status. You must explicitly review and enable each campaign before any ad spend occurs. You retain full control over your budget and campaigns at all times."
+            "text": "New campaigns start paused. Activation needs your approval and eligible provider access. Pausing stops future delivery once the provider confirms it; ad spend already incurred cannot be undone."
           }
         },
         {
@@ -136,7 +136,7 @@
           "name": "Which ad platform APIs does Bamzal use?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "On Google Ads: CampaignService, CampaignBudgetService, AdGroupCriterionService, AdGroupAdService, GoogleAdsService.Search and ConversionActionService. On Meta (Facebook & Instagram): the Meta Marketing API, Pages API and Instagram Business API for catalog and creative assets. On TikTok: the TikTok Marketing API. On Pinterest: the Pinterest Ads API."
+            "text": "On Google Ads: CampaignService, CampaignBudgetService, AdGroupCriterionService, AdGroupAdService, GoogleAdsService.Search and ConversionActionService. On Meta (Facebook & Instagram): the Meta Marketing API, Pages API and Instagram Business API for catalog and creative assets. On TikTok: the TikTok Marketing API. On Pinterest: the Pinterest Ads API. On X: the X Ads API for promoted posts, campaign controls and reporting."
           }
         },
         {
@@ -160,7 +160,7 @@
           "name": "Is my data secure?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "All data transmission uses TLS 1.2+ encryption. OAuth refresh tokens are AES-256 encrypted at rest. We follow Google's API Services User Data Policy and only access the data necessary to provide our service. We never share your data with third parties."
+            "text": "We use encryption for data in transit and stored credentials. We share the data needed to operate the service with the platforms you connect and the service providers described in our Privacy Policy. We do not sell your business or personal data. No service can guarantee absolute security."
           }
         }
       ]
@@ -780,7 +780,7 @@
                 <div class="layer-num">05</div>
                 <div class="layer-body">
                     <h3>Paid acquisition &mdash; one lever, not the default</h3>
-                    <p>You can review advertising ideas without starting a campaign. Paid advertising is advisory at launch. Manage active campaigns and spending limits directly in your ad account.</p>
+                    <p>You can use catalog and store recommendations without starting ads. For paid campaigns, connect an eligible ad account, review the proposed audience, creative, currency and spending limits, and approve activation. Availability is shown for each connected channel, including X Ads.</p>
                 </div>
             </article>
             <article class="layer">
@@ -865,7 +865,7 @@
     <div class="section-inner">
         <div class="section-header">
             <h2>Advertising channels</h2>
-            <p>The examples cover major ad networks. Account access, permissions and available actions vary by channel. Paid advertising is advisory at launch.</p>
+            <p>The examples cover major ad networks. Account access, permissions and available actions vary by channel. Paid campaign execution, including X Ads, requires an eligible connected account and your approval.</p>
         </div>
         <h3 style="font-family:var(--font-display);font-size:1.125rem;font-weight:600;margin:0 0 20px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;">Paid media</h3>
         <div class="features-grid">
@@ -892,7 +892,7 @@
             <div class="feature-card">
                 <div class="feature-icon"><svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18M21 3 3 21"/></svg></div>
                 <h3>X Ads</h3>
-                <p>Promoted posts and Takeover campaigns via the X Ads API. Short-form copy generation tuned to the platform's voice.</p>
+                <p>Promoted posts with an approved destination, audience, campaign duration and budget. Availability depends on X Ads account access and funding.</p>
             </div>
         </div>
         <h3 style="font-family:var(--font-display);font-size:1.125rem;font-weight:600;margin:48px 0 20px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;">Organic social</h3>
@@ -1106,7 +1106,7 @@
                     <div class="app-topbar"><div class="app-panel-title">Autonomy</div><div class="app-topbar-right"><span class="topbar-pill pill-green">You stay in control</span></div></div>
                     <div class="settings-card" style="margin-bottom:16px">
                         <h3>Earned, lever by lever</h3>
-                        <p class="settings-info" style="margin-top:0">These sample settings show the design of the review and approval controls. Paid advertising is advisory at launch.</p>
+                        <p class="settings-info" style="margin-top:0">These sample settings show the design of the review and approval controls. Paid campaign execution, including X Ads, requires an eligible connected account and your approval.</p>
                     </div>
                     <div id="autonomyList"></div>
                 </div>
@@ -1122,7 +1122,7 @@
                         <div class="settings-row"><span>Ad platforms</span><span>Google, Meta, TikTok, Pinterest, X</span></div>
                         <div class="settings-row"><span>Analytics</span><span>GA4, Search Console, Merchant Center</span></div>
                         <div class="settings-row"><span>Plan</span><span>Starter ($49/mo)</span></div>
-                        <p class="settings-info">Bamzal connects to each platform via its official OAuth 2.0 flow and requests only the minimum permissions needed. You can revoke any connection at any time. What we access and how it is used is described in our <a href="/privacy" style="color:var(--accent-dark)">Privacy Policy</a>.</p>
+                        <p class="settings-info">Bamzal uses each platform's supported authorization flow and requests the permissions needed for the features you enable. X Ads requires a separate advertising connection from X posting. You can revoke any connection at any time. What we access and how it is used is described in our <a href="/privacy" style="color:var(--accent-dark)">Privacy Policy</a>.</p>
                     </div>
                     <div class="settings-card">
                         <h3>Autonomy &amp; control</h3>
@@ -1214,7 +1214,7 @@
             <div class="flow-arr">&rarr;</div>
             <div class="flow-box flow-smart">Bamzal<br><small style="font-weight:400;font-size:.7rem">AI analysis &amp; optimization</small></div>
             <div class="flow-arr">&rarr;</div>
-            <div class="flow-box flow-google">Ad Platform APIs<br><small style="font-weight:400;font-size:.7rem">Google · Meta · TikTok · Pinterest · X · X</small></div>
+            <div class="flow-box flow-google">Ad Platform APIs<br><small style="font-weight:400;font-size:.7rem">Google · Meta · TikTok · Pinterest · X</small></div>
             <div class="flow-arr">&rarr;</div>
             <div class="flow-box flow-merchant">Merchant's Account<br><small style="font-weight:400;font-size:.7rem">Campaigns &amp; ads live here</small></div>
         </div>
@@ -1265,12 +1265,12 @@
         <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:16px;text-align:center">Campaign Lifecycle</h3>
         <div class="lifecycle-steps">
             <div class="lc-step"><div class="lc-num">1</div><h4>Install on Shopify</h4><p>Merchant installs Bamzal from the Shopify App Store</p></div>
-            <div class="lc-step"><div class="lc-num">2</div><h4>Connect Ad Networks</h4><p>OAuth 2.0 flows authenticate Google, Meta, TikTok, Pinterest and X ad accounts</p></div>
+            <div class="lc-step"><div class="lc-num">2</div><h4>Connect Ad Networks</h4><p>Connect Google, Meta, TikTok and Pinterest through OAuth 2.0, and X Ads through its separate OAuth 1.0a advertising authorization</p></div>
             <div class="lc-step"><div class="lc-num">3</div><h4>AI Scans Products</h4><p>AI analyzes products, competitors, and keyword landscape</p></div>
             <div class="lc-step"><div class="lc-num">4</div><h4>Generate Ad Copy</h4><p>AI creates optimized headlines, descriptions, and keywords</p></div>
             <div class="lc-step"><div class="lc-num">5</div><h4>Review in Wizard</h4><p>Merchant reviews and customizes all campaign settings</p></div>
             <div class="lc-step"><div class="lc-num">6</div><h4>Create PAUSED</h4><p>Campaigns created via Google, Meta, TikTok, Pinterest and X APIs in PAUSED state</p></div>
-            <div class="lc-step"><div class="lc-num">7</div><h4>Review in Native UI</h4><p>Merchant reviews campaign in Google Ads, Meta Ads Manager, TikTok Ads or Pinterest Ads Manager</p></div>
+            <div class="lc-step"><div class="lc-num">7</div><h4>Review in Native UI</h4><p>Merchant reviews campaign in Google Ads, Meta Ads Manager, TikTok Ads, Pinterest Ads Manager or X Ads</p></div>
             <div class="lc-step"><div class="lc-num">8</div><h4>Enable When Ready</h4><p>Merchant enables campaign when satisfied with setup</p></div>
         </div>
 
@@ -1278,8 +1278,8 @@
             <h4 style="font-size:.9rem;font-weight:700;margin-bottom:12px">Technical Implementation Details</h4>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:.85rem;color:var(--slate);line-height:1.6">
                 <div>
-                    <strong style="color:var(--ink)">Authentication Flow:</strong><br>
-                    1. Merchant clicks "Connect Ad Networks" (Google / Meta / TikTok / Pinterest)<br>
+                    <strong style="color:var(--ink)">Google Ads authorization example:</strong><br>
+                    1. Merchant clicks "Connect Google Ads"<br>
                     2. Redirect to Google OAuth consent screen<br>
                     3. Merchant grants google-ads scope<br>
                     4. Authorization code exchanged for tokens<br>
@@ -1305,7 +1305,7 @@
     <div class="section-inner">
         <div class="section-header">
             <h2>Frequently Asked Questions</h2>
-            <p>Common questions about how Bamzal grows your store &mdash; and our Google, Meta, TikTok &amp; Pinterest ad integrations</p>
+            <p>Common questions about how Bamzal grows your store &mdash; and our Google, Meta, TikTok, Pinterest &amp; X ad integrations</p>
         </div>
         <div class="faq-list">
             <details class="faq-item">
@@ -1314,7 +1314,7 @@
             </details>
             <details class="faq-item">
                 <summary class="faq-q">What if ads aren&rsquo;t the right move for my store?<span>+</span></summary>
-                <div class="faq-a">You can review advertising ideas without starting a campaign. Paid advertising is advisory at launch. Manage active campaigns and spending limits directly in your ad account.</div>
+                <div class="faq-a">You can use catalog and store recommendations without starting ads. For paid campaigns, connect an eligible ad account, review the proposed audience, creative, currency and spending limits, and approve activation. Availability is shown for each connected channel, including X Ads.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Will Bamzal change my product pages or prices without asking?<span>+</span></summary>
@@ -1322,15 +1322,15 @@
             </details>
             <details class="faq-item">
                 <summary class="faq-q">How does Bamzal connect to my ad accounts?<span>+</span></summary>
-                <div class="faq-a">We use the industry-standard OAuth 2.0 protocol for each network. When you click "Connect" on Google, Meta, TikTok or Pinterest, you are redirected to that platform's official consent screen where you grant permission. We never see or store your passwords. For each network we only request the minimum scopes needed (e.g. google-ads, ads_management + pages_read_engagement + instagram_basic on Meta, advertiser.read/write on TikTok, ads:read/write on Pinterest) and store encrypted refresh tokens.</div>
+                <div class="faq-a">We use each platform's official authorization flow. X Ads requires a separate OAuth 1.0a advertising connection; an X posting connection alone does not grant advertising access. When you click "Connect" on Google, Meta, TikTok or Pinterest, you are redirected to that platform's official consent screen where you grant permission. We never see or store your passwords. For each network we only request the minimum scopes needed (e.g. google-ads, ads_management + pages_read_engagement + instagram_basic on Meta, advertiser.read/write on TikTok, ads:read/write on Pinterest) and store encrypted refresh tokens.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Will Bamzal spend my money without my permission?<span>+</span></summary>
-                <div class="faq-a">No. All campaigns created by Bamzal are initially set to PAUSED status. You must explicitly review and enable each campaign before any ad spend occurs. You retain full control over your budget and campaigns at all times.</div>
+                <div class="faq-a">New campaigns start paused. Activation needs your approval and eligible provider access. Pausing stops future delivery once the provider confirms it; ad spend already incurred cannot be undone.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Which ad platform APIs does Bamzal use?<span>+</span></summary>
-                <div class="faq-a">On Google Ads: CampaignService, CampaignBudgetService, AdGroupCriterionService, AdGroupAdService, GoogleAdsService.Search and ConversionActionService. On Meta (Facebook &amp; Instagram): the Meta Marketing API (adaccount/campaigns/adsets/ads/creatives), Pages API and Instagram Business API for catalog and creative assets. On TikTok: the TikTok Marketing API (campaign/adgroup/ad/creative/reporting). On Pinterest: the Pinterest Ads API (ad_accounts, campaigns, ad_groups, pins, analytics).</div>
+                <div class="faq-a">On Google Ads: CampaignService, CampaignBudgetService, AdGroupCriterionService, AdGroupAdService, GoogleAdsService.Search and ConversionActionService. On Meta (Facebook &amp; Instagram): the Meta Marketing API (adaccount/campaigns/adsets/ads/creatives), Pages API and Instagram Business API for catalog and creative assets. On TikTok: the TikTok Marketing API (campaign/adgroup/ad/creative/reporting). On Pinterest: the Pinterest Ads API (ad_accounts, campaigns, ad_groups, pins, analytics). On X: the X Ads API for promoted posts, campaign controls and reporting.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Can I revoke Bamzal's access to my ad accounts?<span>+</span></summary>
@@ -1342,7 +1342,7 @@
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Is my data secure?<span>+</span></summary>
-                <div class="faq-a">Absolutely. All data transmission uses TLS 1.2+ encryption. OAuth refresh tokens are AES-256 encrypted at rest. We follow Google's API Services User Data Policy and only access the data necessary to provide our service. We never share your data with third parties.</div>
+                <div class="faq-a">We use encryption for data in transit and stored credentials. We share the data needed to operate the service with the platforms you connect and the service providers described in our Privacy Policy. We do not sell your business or personal data. No service can guarantee absolute security.</div>
             </details>
         </div>
     </div>
