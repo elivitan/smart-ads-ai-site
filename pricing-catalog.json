@@ -1,0 +1,41 @@
+{
+  "source": {
+    "commit": "582db67f3a682ba9b35faa330e4e3aaa8dcb9f15",
+    "plans": "app/utils/billing/plans.ts",
+    "monthlyCredits": "app/utils/billing/plan-credits.ts",
+    "updateNote": "Public snapshot of the application catalog. Update these values from the approved application catalog when plans change, then run node scripts/sync-pricing.cjs --write."
+  },
+  "firstPaidTrialDays": 7,
+  "plans": {
+    "free": {
+      "monthlyUsd": 0,
+      "maxProducts": 3,
+      "maxActiveCampaigns": 0,
+      "monthlyAiCredits": 0
+    },
+    "starter": {
+      "monthlyUsd": 49,
+      "maxProducts": 25,
+      "maxActiveCampaigns": 5,
+      "monthlyAiCredits": 5
+    },
+    "pro": {
+      "monthlyUsd": 79,
+      "maxProducts": 200,
+      "maxActiveCampaigns": 25,
+      "monthlyAiCredits": 200
+    },
+    "premium": {
+      "monthlyUsd": 149,
+      "maxProducts": 1000,
+      "maxActiveCampaigns": 100,
+      "monthlyAiCredits": 1000
+    },
+    "enterprise": {
+      "monthlyUsd": 499,
+      "maxProducts": null,
+      "maxActiveCampaigns": null,
+      "monthlyAiCredits": 5000
+    }
+  }
+}
