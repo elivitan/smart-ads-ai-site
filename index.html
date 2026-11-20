@@ -71,7 +71,7 @@
       "applicationCategory": "BusinessApplication",
       "applicationSubCategory": "Store Growth Automation",
       "operatingSystem": "Web (Shopify embedded app)",
-      "description": "Bamzal grows your Shopify store across every lever, not just ads: it diagnoses where profit is leaking, then fixes product pages and store design, tunes prices (never below cost), wins back one-time customers, and runs paid media across Google, Meta, TikTok, Pinterest and X — but only when ads are the right move. Plus organic social across Instagram, TikTok, X, Facebook, Threads and YouTube; an AI creative studio; real-time community replies; and continuous net-profit-ROAS optimization. Review the reason, estimated impact and required permissions before approving a supported action. Recovery options depend on the action and connected provider.",
+      "description": "Bamzal provides Shopify catalog checks and growth recommendations using available store data. Review supported store and marketing actions, required permissions, configured limits and estimated impact before approval. Advertising recommendations can cover Google, Meta, TikTok, Pinterest and X; verify account access and live settings in the provider. Availability and recovery options depend on the action and connected platform.",
       "offers": [
         {"@type": "Offer", "name": "Free Preview", "price": "0", "priceCurrency": "USD"},
         {"@type": "Offer", "name": "Starter", "price": "49", "priceCurrency": "USD"},
@@ -120,7 +120,7 @@
           "name": "How does Bamzal connect to my ad accounts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We use the industry-standard OAuth 2.0 protocol for each network. When you click Connect on Google, Meta, TikTok or Pinterest, you are redirected to that platform's official consent screen where you grant permission. We never see or store your passwords. For each network we only request the minimum scopes needed and store encrypted refresh tokens."
+            "text": "Use the connection flow shown in Bamzal for an available network. Sign in on the provider’s official consent screen and review the requested permissions before approving access. Availability depends on the network, your account and provider permissions."
           }
         },
         {
@@ -128,7 +128,7 @@
           "name": "Will Bamzal spend my money without my permission?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. All campaigns created by Bamzal are initially set to PAUSED status. You must explicitly review and enable each campaign before any ad spend occurs. You retain full control over your budget and campaigns at all times."
+            "text": "Paid advertising is advisory at launch. A zero advertising budget keeps paid campaigns off. Review campaign settings, spending limits and actual status directly in your advertising account. Disconnecting Bamzal does not by itself pause campaigns already running in that account."
           }
         },
         {
@@ -136,7 +136,7 @@
           "name": "Which ad platform APIs does Bamzal use?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "On Google Ads: CampaignService, CampaignBudgetService, AdGroupCriterionService, AdGroupAdService, GoogleAdsService.Search and ConversionActionService. On Meta (Facebook & Instagram): the Meta Marketing API, Pages API and Instagram Business API for catalog and creative assets. On TikTok: the TikTok Marketing API. On Pinterest: the Pinterest Ads API."
+            "text": "Bamzal has integrations for Google Ads, Meta, TikTok, Pinterest and X. Available operations depend on provider approval, account permissions and rollout. Check which actions are available for your store before relying on an integration."
           }
         },
         {
@@ -144,7 +144,7 @@
           "name": "Can I revoke Bamzal's access to my ad accounts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes, at any time and per network. You can disconnect any individual network from within our app's Settings page, or revoke access directly from each platform's account security settings. Revoking access will not delete any campaigns already created in those accounts."
+            "text": "Use the disconnect option for an available connection in Bamzal, or revoke access through the advertising platform. Check active campaigns separately in that platform: revoking access does not by itself delete campaigns or stop their spending."
           }
         },
         {
@@ -152,7 +152,7 @@
           "name": "How does the AI generate ad copy and keywords?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Our AI analyzes your product titles, descriptions, and images, then studies competitor ads on each network to understand what performs well in your niche. For Google it generates optimized headlines and descriptions with exact/phrase/broad match keywords. For Meta, TikTok and Pinterest it generates primary text, headlines, descriptions and creative concepts that match each platform's native best practices."
+            "text": "AI can draft suggestions using available product information and connected research. Review the wording, claims, keywords and landing page before using a draft. Generated suggestions and estimated impact do not establish how a live campaign will perform."
           }
         },
         {
@@ -160,7 +160,7 @@
           "name": "Is my data secure?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "All data transmission uses TLS 1.2+ encryption. OAuth refresh tokens are AES-256 encrypted at rest. We follow Google's API Services User Data Policy and only access the data necessary to provide our service. We never share your data with third parties."
+            "text": "Access depends on the permissions you grant and the available security controls. Processing can involve Shopify, connected advertising platforms and service providers described in our Privacy Policy. Review that policy and connected permissions, and contact support for security or deletion requests."
           }
         }
       ]
@@ -1097,7 +1097,7 @@
                     </div>
                     <div class="settings-card">
                         <h3>How a move runs</h3>
-                        <p class="settings-info" style="margin-top:0">Every move is proposed with its reason and the money at stake. Nothing changes your store without the authority you've granted for that lever: Bamzal starts by <strong>advising</strong>, then runs in <strong>shadow</strong> (simulated), then asks for your <strong>approval</strong>, and only after a measured track record may it run on <strong>auto</strong> &mdash; within your limits. New ad campaigns are always created <strong>paused</strong>, and recovery controls are available for supported actions; completed ad spend and delivered messages cannot be undone.</p>
+                        <p class="settings-info" style="margin-top:0">Review the available data, reason, estimated impact and required permissions before approving a supported change. Capabilities depend on your account, connected platforms and configured limits. Paid advertising is advisory at launch; verify live campaign settings in the provider. Recovery controls depend on the action; completed ad spend and delivered messages cannot be undone.</p>
                     </div>
                 </div>
 
@@ -1196,7 +1196,7 @@
 
         <div style="background:var(--accent-light);border:1px solid var(--accent);border-radius:12px;padding:20px 24px;margin-bottom:40px">
             <p style="font-size:.9375rem;font-weight:700;color:var(--ink);margin-bottom:8px">&#128736; About Our Application Architecture</p>
-            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">Bamzal is a <strong>Shopify embedded application</strong> &mdash; it runs as an iframe inside the Shopify Admin dashboard, not as a standalone website. Merchants install the app from the Shopify App Store, and the app loads within their existing Shopify admin panel at <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px;font-size:.8125rem">https://admin.shopify.com/store/{shop}/apps/v-40</code>.</p>
+            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">Bamzal is a <strong>Shopify embedded application</strong> &mdash; it runs as an iframe inside the Shopify Admin dashboard, not as a standalone website. Merchants install the app from the Shopify App Store, and the app loads within their existing Shopify admin panel at <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px;font-size:.8125rem">Shopify Admin &rarr; Apps &rarr; Bamzal</code>.</p>
             <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px"><strong>This website (bamzal.com) is our marketing and information site only.</strong> The demo above is a static HTML/CSS/JavaScript simulation of the actual app interface, created to showcase the platform features and our multi-channel ad API usage (Google, Meta, TikTok, Pinterest). The production application is a full-stack Node.js app built with:</p>
             <ul style="font-size:.875rem;color:var(--slate);line-height:1.65;margin:0 0 0 20px">
                 <li><strong>Frontend:</strong> React 18 + React Router 7 + Shopify Polaris design system + Shopify App Bridge</li>
@@ -1322,27 +1322,27 @@
             </details>
             <details class="faq-item">
                 <summary class="faq-q">How does Bamzal connect to my ad accounts?<span>+</span></summary>
-                <div class="faq-a">We use the industry-standard OAuth 2.0 protocol for each network. When you click "Connect" on Google, Meta, TikTok or Pinterest, you are redirected to that platform's official consent screen where you grant permission. We never see or store your passwords. For each network we only request the minimum scopes needed (e.g. google-ads, ads_management + pages_read_engagement + instagram_basic on Meta, advertiser.read/write on TikTok, ads:read/write on Pinterest) and store encrypted refresh tokens.</div>
+                <div class="faq-a">Use the connection flow shown in Bamzal for an available network. Sign in on the provider’s official consent screen and review the requested permissions before approving access. Availability depends on the network, your account and provider permissions.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Will Bamzal spend my money without my permission?<span>+</span></summary>
-                <div class="faq-a">No. All campaigns created by Bamzal are initially set to PAUSED status. You must explicitly review and enable each campaign before any ad spend occurs. You retain full control over your budget and campaigns at all times.</div>
+                <div class="faq-a">Paid advertising is advisory at launch. A zero advertising budget keeps paid campaigns off. Review campaign settings, spending limits and actual status directly in your advertising account. Disconnecting Bamzal does not by itself pause campaigns already running in that account.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Which ad platform APIs does Bamzal use?<span>+</span></summary>
-                <div class="faq-a">On Google Ads: CampaignService, CampaignBudgetService, AdGroupCriterionService, AdGroupAdService, GoogleAdsService.Search and ConversionActionService. On Meta (Facebook &amp; Instagram): the Meta Marketing API (adaccount/campaigns/adsets/ads/creatives), Pages API and Instagram Business API for catalog and creative assets. On TikTok: the TikTok Marketing API (campaign/adgroup/ad/creative/reporting). On Pinterest: the Pinterest Ads API (ad_accounts, campaigns, ad_groups, pins, analytics).</div>
+                <div class="faq-a">Bamzal has integrations for Google Ads, Meta, TikTok, Pinterest and X. Available operations depend on provider approval, account permissions and rollout. Check which actions are available for your store before relying on an integration.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Can I revoke Bamzal's access to my ad accounts?<span>+</span></summary>
-                <div class="faq-a">Yes, at any time and per network. You can disconnect any individual network (Google, Meta, TikTok, Pinterest) from within our app's Settings page, or revoke access directly from each platform's account security settings (Google Account permissions, Meta Business Integrations, TikTok authorized apps, Pinterest connected apps). Revoking access will not delete any campaigns already created in those accounts.</div>
+                <div class="faq-a">Use the disconnect option for an available connection in Bamzal, or revoke access through the advertising platform. Check active campaigns separately in that platform: revoking access does not by itself delete campaigns or stop their spending.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">How does the AI generate ad copy and keywords?<span>+</span></summary>
-                <div class="faq-a">Our AI analyzes your product titles, descriptions, and images, then studies competitor ads on each network to understand what performs well in your niche. For Google it generates optimized headlines (up to 30 characters) and descriptions (up to 90 characters) with exact/phrase/broad match keywords. For Meta, TikTok and Pinterest it generates primary text, headlines, descriptions and creative concepts (image + short-form video) that match each platform's native best practices and audience-targeting style.</div>
+                <div class="faq-a">AI can draft suggestions using available product information and connected research. Review the wording, claims, keywords and landing page before using a draft. Generated suggestions and estimated impact do not establish how a live campaign will perform.</div>
             </details>
             <details class="faq-item">
                 <summary class="faq-q">Is my data secure?<span>+</span></summary>
-                <div class="faq-a">Absolutely. All data transmission uses TLS 1.2+ encryption. OAuth refresh tokens are AES-256 encrypted at rest. We follow Google's API Services User Data Policy and only access the data necessary to provide our service. We never share your data with third parties.</div>
+                <div class="faq-a">Access depends on the permissions you grant and the available security controls. Processing can involve Shopify, connected advertising platforms and service providers described in our <a href="/privacy">Privacy Policy</a>. Review that policy and connected permissions, and contact support for security or deletion requests.</div>
             </details>
         </div>
     </div>
