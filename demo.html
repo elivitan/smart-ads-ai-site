@@ -20,7 +20,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://bamzal.com/bamzal-og.png?v=og1">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/shared.css?v=launch-readiness-20261119">
+    <link rel="stylesheet" href="/shared.css?v=product-details-20261122">
     <style>
 /* ============ DEMO PAGE STYLES ============ */
 
@@ -120,7 +120,7 @@
 
 /* --- Product Modal --- */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
-.modal-overlay.open{display:flex}
+.modal-overlay[open]{display:flex}
 .modal{background:#12121f;border:1px solid rgba(255,255,255,.1);border-radius:16px;width:100%;max-width:700px;max-height:90vh;overflow-y:auto;padding:28px;color:rgba(255,255,255,.85);position:relative}
 .modal-close{position:absolute;top:12px;right:16px;background:none;border:none;color:rgba(255,255,255,.72);font-size:1.25rem;cursor:pointer;padding:4px 8px}
 .modal-close:hover{color:#fff}
@@ -744,7 +744,7 @@
             <p style="font-size:.9375rem;font-weight:700;color:var(--ink);margin-bottom:8px">&#9432; This is an interactive demo &mdash; not the production application.</p>
             <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">Bamzal is a <strong>Shopify embedded app</strong> that runs inside the Shopify Admin. Merchants install it from the Shopify App Store, and the application loads inside their Shopify admin panel &mdash; not on this marketing website.</p>
             <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">The demo below is a <strong>static simulation</strong> of the actual application screens, built so you can see the layout, the data flow and the decision surfaces. All numbers are illustrative.</p>
-            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin:0">Connects directly to your <strong>Google, Meta, TikTok, Pinterest and X</strong> ad accounts &mdash; in your name, with your billing. Powered by <strong>Anthropic Claude</strong> for the creative and copy work. Your ad accounts stay yours; cancel anytime and the system disconnects cleanly.</p>
+            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin:0">Connects directly to your <strong>Google, Meta, TikTok, Microsoft Advertising and Pinterest</strong> ad accounts &mdash; in your name, with your billing. Powered by <strong>Anthropic Claude</strong> for the creative and copy work. Your ad accounts stay yours; cancelling your subscription leaves active campaigns running until you pause them with the provider.</p>
         </div>
     </div>
 </section>
@@ -834,7 +834,7 @@
                 <div class="app-panel-title" role="heading" aria-level="3">Dashboard</div>
                 <div class="app-topbar-right">
                     <span class="topbar-pill pill-green">Store Connected</span>
-                    <span class="topbar-pill pill-blue">Google · Meta · TikTok · Pinterest · X Linked</span>
+                    <span class="topbar-pill pill-blue">Google · Meta · TikTok · Microsoft Advertising · Pinterest Linked</span>
                 </div>
             </div>
             <div class="dash-grid">
@@ -1284,7 +1284,7 @@
                 <div class="settings-row"><span>Pinterest Ad Account</span><span>549876543210</span></div>
                 <div class="settings-row"><span>Connected On</span><span>January 15, 2026</span></div>
                 <div class="settings-row"><span>OAuth Scopes</span><span>google-ads · ads_management, business_management, pages_read_engagement, instagram_basic · advertiser.read/write · ads:read/write</span></div>
-                <p class="settings-info">Bamzal connects to your Google Ads, Meta (Facebook &amp; Instagram), TikTok Ads, Pinterest Ads and X Ads accounts via each platform's official OAuth 2.0 flow. We request only the minimum permissions needed to create and manage campaigns on your behalf. You can revoke access per network at any time.</p>
+                <p class="settings-info">Bamzal connects to your Google Ads, Meta (Facebook &amp; Instagram), TikTok Ads, Microsoft Advertising and Pinterest Ads accounts via each platform's official OAuth 2.0 flow. We request only the minimum permissions needed to create and manage campaigns on your behalf. You can revoke access per network at any time.</p>
                 <button class="disconnect-btn" onclick="alert('This is a demo — disconnect is disabled.')">Disconnect Ad Networks</button>
             </div>
             <div class="settings-card">
@@ -1847,9 +1847,9 @@
 </section>
 
 <!-- PRODUCT MODAL -->
-<div class="modal-overlay" id="productModal">
+<dialog class="modal-overlay" id="productModal" aria-labelledby="modalTitle">
     <div class="modal">
-        <button class="modal-close" onclick="closeModal()">&times;</button>
+        <button type="button" class="modal-close" aria-label="Close product details" autofocus onclick="closeModal()">&times;</button>
         <div class="modal-header">
             <div class="modal-product-img" id="modalImg"></div>
             <div class="modal-product-info">
@@ -1905,17 +1905,17 @@
         </div>
         <button class="modal-launch-btn" onclick="closeModal();switchScreen('wizard')">Create Multi-Channel Campaign</button>
     </div>
-</div>
+</dialog>
 
 <!-- API TECHNICAL SECTION -->
 <section class="api-section" id="api-usage">
     <div class="api-inner">
-        <h2>How Bamzal uses the Google, Meta, TikTok, Pinterest &amp; X Ad APIs</h2>
+        <h2>How Bamzal uses the Google, Meta, TikTok, Microsoft Advertising and Pinterest ad APIs</h2>
         <p class="subtitle">A detailed technical overview of our multi-channel ad API integrations for Shopify merchants</p>
 
         <div style="background:var(--accent-light);border:1px solid var(--accent);border-radius:12px;padding:20px 24px;margin-bottom:40px">
             <p style="font-size:.9375rem;font-weight:700;color:var(--ink);margin-bottom:8px">&#128736; About Our Application Architecture</p>
-            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">Bamzal is a <strong>Shopify embedded application</strong> &mdash; it runs as an iframe inside the Shopify Admin dashboard, not as a standalone website. Merchants install the app from the Shopify App Store, and the app loads within their existing Shopify admin panel at <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px;font-size:.8125rem">https://admin.shopify.com/store/{shop}/apps/v-40</code>.</p>
+            <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px">Bamzal is a <strong>Shopify embedded application</strong> &mdash; it runs as an iframe inside the Shopify Admin dashboard, not as a standalone website. Merchants install the app from the Shopify App Store, and the app loads within their existing Shopify admin panel at <code style="background:rgba(0,0,0,.06);padding:2px 6px;border-radius:4px;font-size:.8125rem">Shopify Admin → Apps → Bamzal</code>.</p>
             <p style="font-size:.875rem;color:var(--slate);line-height:1.65;margin-bottom:8px"><strong>This website (bamzal.com) is our marketing and information site only.</strong> The demo above is a static HTML/CSS/JavaScript simulation of the actual app interface, created to showcase the platform features and our multi-channel ad API usage (Google, Meta, TikTok, Pinterest). The production application is a full-stack Node.js app built with:</p>
             <ul style="font-size:.875rem;color:var(--slate);line-height:1.65;margin:0 0 0 20px">
                 <li><strong>Frontend:</strong> React 18 + React Router 7 + Shopify Polaris design system + Shopify App Bridge</li>
@@ -1933,7 +1933,7 @@
             <div class="flow-arr">&rarr;</div>
             <div class="flow-box flow-smart">Bamzal<br><small style="font-weight:400;font-size:.7rem">AI analysis &amp; optimization</small></div>
             <div class="flow-arr">&rarr;</div>
-            <div class="flow-box flow-google">Ad Platform APIs<br><small style="font-weight:400;font-size:.7rem">Google · Meta · TikTok · Pinterest · X</small></div>
+            <div class="flow-box flow-google">Ad Platform APIs<br><small style="font-weight:400;font-size:.7rem">Google · Meta · TikTok · Microsoft Advertising · Pinterest</small></div>
             <div class="flow-arr">&rarr;</div>
             <div class="flow-box flow-merchant">Merchant's Account<br><small style="font-weight:400;font-size:.7rem">Campaigns &amp; ads live here</small></div>
         </div>
@@ -1949,7 +1949,7 @@
                     <tr><td>Ad Creative Upload</td><td>Google AdGroupAdService (ResponsiveSearchAd) + Meta /act_{id}/adcreatives + TikTok /creative/upload + Pinterest /pins, /ads</td><td>Uploads AI-generated headlines, descriptions, images and short-form video adapted per network's native best practices.</td></tr>
                     <tr><td>Meta Pages &amp; Instagram</td><td>Meta Pages API + Instagram Business API (instagram_basic, pages_read_engagement, pages_show_list)</td><td>Reads the merchant's Facebook Pages and Instagram Business account to attach as ad identities for Facebook &amp; Instagram placements.</td></tr>
                     <tr><td>Meta Lead Retrieval</td><td>Meta Marketing API /leadgen_forms, /leads (leads_retrieval)</td><td>Retrieves leads generated by Facebook/Instagram lead-gen forms so merchants can view and export them inside Bamzal.</td></tr>
-                    <tr><td>Performance Data</td><td>GoogleAdsService.Search (GAQL) + Meta Insights API + TikTok Reporting API + Pinterest Analytics API</td><td>Dashboard metrics: impressions, clicks, CTR, conversions, cost, ROAS &mdash; unified across Google, Meta, TikTok, Pinterest and X with per-network and blended views.</td></tr>
+                    <tr><td>Performance Data</td><td>GoogleAdsService.Search (GAQL) + Meta Insights API + TikTok Reporting API + Pinterest Analytics API</td><td>Dashboard metrics: impressions, clicks, CTR, conversions, cost, ROAS &mdash; available for connected networks that return measurement data, with per-network and blended views.</td></tr>
                     <tr><td>Campaign Control</td><td>Per-network status mutation (PAUSED &harr; ACTIVE)</td><td>When merchant pauses or enables a campaign on any connected network.</td></tr>
                     <tr><td>Conversion Tracking</td><td>Google ConversionActionService + Meta Conversions API + TikTok Events API + Pinterest Conversions API</td><td>Sets up purchase conversion tracking linked to Shopify checkout events for unified ROAS measurement.</td></tr>
                     <tr><td>Catalog &amp; Shopping</td><td>Google Merchant Center feed + Meta Commerce/Catalog API + TikTok Catalog + Pinterest Catalogs</td><td>Syncs the merchant's Shopify product catalog into each network so Shopping / Advantage+ / Catalog campaigns can run.</td></tr>
@@ -1978,18 +1978,18 @@
             <div class="sec-card">
                 <div class="sec-icon">&#128100;</div>
                 <h4>Merchant Retains Control</h4>
-                <p>Merchants retain full ownership and control of their Google, Meta, TikTok, Pinterest and X ad accounts. They can revoke access or disconnect any network at any time.</p>
+                <p>Merchants retain full ownership and control of their Google, Meta, TikTok, Microsoft Advertising and Pinterest ad accounts. They can revoke access or disconnect any network at any time.</p>
             </div>
         </div>
 
         <h3 style="font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin-bottom:16px;text-align:center">Campaign Lifecycle</h3>
         <div class="lifecycle-steps">
             <div class="lc-step"><div class="lc-num">1</div><h4>Install on Shopify</h4><p>Merchant installs Bamzal from the Shopify App Store</p></div>
-            <div class="lc-step"><div class="lc-num">2</div><h4>Connect Ad Networks</h4><p>OAuth 2.0 flows authenticate Google, Meta, TikTok, Pinterest and X ad accounts</p></div>
+            <div class="lc-step"><div class="lc-num">2</div><h4>Connect Ad Networks</h4><p>Connect the account for a supported paid channel and check the permissions and actions available to your store.</p></div>
             <div class="lc-step"><div class="lc-num">3</div><h4>AI Scans Products</h4><p>AI analyzes products, competitors, and keyword landscape</p></div>
             <div class="lc-step"><div class="lc-num">4</div><h4>Generate Ad Copy</h4><p>AI creates optimized headlines, descriptions, and keywords</p></div>
             <div class="lc-step"><div class="lc-num">5</div><h4>Review in Wizard</h4><p>Merchant reviews and customizes all campaign settings</p></div>
-            <div class="lc-step"><div class="lc-num">6</div><h4>Create PAUSED</h4><p>Campaigns created via Google, Meta, TikTok, Pinterest and X APIs in PAUSED state</p></div>
+            <div class="lc-step"><div class="lc-num">6</div><h4>Create PAUSED</h4><p>Eligible campaigns are created paused in your connected ad account.</p></div>
             <div class="lc-step"><div class="lc-num">7</div><h4>Review in Native UI</h4><p>Merchant reviews campaign in Google Ads, Meta Ads Manager, TikTok Ads or Pinterest Ads Manager</p></div>
             <div class="lc-step"><div class="lc-num">8</div><h4>Enable When Ready</h4><p>Merchant enables campaign when satisfied with setup</p></div>
         </div>
@@ -2290,8 +2290,17 @@ function renderProductCards(containerId, clickable){
   PRODUCTS.forEach(function(p){
     var card = document.createElement('div');
     card.className = 'product-card';
-    if(clickable) card.onclick = function(){ openModal(p.id); };
     card.innerHTML = '<div class="product-img" style="background:'+p.color+'"><div class="score-badge '+(p.score>=80?'score-high':'score-mid')+'">'+p.score+'/100</div></div><div class="product-info"><h4>'+p.name+'</h4><div class="price">'+p.price+'</div></div>';
+    if (clickable) {
+      var details = document.createElement('button');
+      details.type = 'button';
+      details.className = 'product-details-trigger';
+      details.setAttribute('aria-label', 'View details for ' + p.name);
+      details.setAttribute('aria-haspopup', 'dialog');
+      details.setAttribute('aria-controls', 'productModal');
+      details.onclick = function(){ openModal(p.id); };
+      card.appendChild(details);
+    }
     c.appendChild(card);
   });
 }
@@ -2375,14 +2384,16 @@ function openModal(id){
   p.competitors.forEach(function(c){
     ci.innerHTML += '<div class="comp-item"><div class="rank">'+c.rank+'</div><div class="name">'+c.name+'</div></div>';
   });
-  document.getElementById('productModal').classList.add('open');
+  document.getElementById('productModal').showModal();
   document.body.style.overflow='hidden';
 }
 function closeModal(){
-  document.getElementById('productModal').classList.remove('open');
+  document.getElementById('productModal').close();
+}
+document.getElementById('productModal').addEventListener('close', function(){
   document.body.style.overflow='';
   document.getElementById('modalRing').style.transition='none';
-}
+});
 
 // ----- KEYWORDS -----
 function switchKwTab(idx){
@@ -2476,7 +2487,7 @@ function renderWizard(){
   }
   else if(data.type==='conversion'){
     html += '<div class="wiz-toggle"><input type="checkbox" '+(wizSelections.conversion?'checked':'')+' onchange="wizSelections.conversion=this.checked"><span style="font-size:.85rem">Enable Conversion Tracking</span></div>';
-    html += '<p style="font-size:.8rem;color:rgba(255,255,255,.72);line-height:1.5;margin-top:8px">When enabled, Bamzal creates a "Purchase" conversion action across your connected ad networks — via Google Ads <strong style="color:rgba(255,255,255,.7)">ConversionActionService</strong>, the Meta Conversions API, TikTok Events API and Pinterest Conversions API. This tracks Shopify checkout completions and reports unified ROAS across Google, Meta, TikTok, Pinterest and X. Conversion tags are automatically injected into your Shopify checkout.</p>';
+    html += '<p style="font-size:.8rem;color:rgba(255,255,255,.72);line-height:1.5;margin-top:8px">When enabled, Bamzal creates a "Purchase" conversion action across your connected ad networks — via Google Ads <strong style="color:rgba(255,255,255,.7)">ConversionActionService</strong>, the Meta Conversions API, TikTok Events API and Pinterest Conversions API. This tracks Shopify checkout completions and reports unified ROAS across Google, Meta, TikTok, Microsoft Advertising and Pinterest. Conversion tags are automatically injected into your Shopify checkout.</p>';
   }
   else if(data.type==='review'){
     html += '<ul class="wiz-summary">';
