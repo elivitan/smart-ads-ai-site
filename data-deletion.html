@@ -54,15 +54,15 @@
 
 <section class="section">
     <div class="legal-content">
-        <p class="legal-updated">Last updated: October 23, 2026</p>
+        <p class="legal-updated">Last updated: November 22, 2026</p>
 
         <h2>1. Overview</h2>
         <p>Vitan Yazmut, an Israeli sole proprietorship trading as Bamzal ("Bamzal," "we," "us," or "our"), gives you several ways to delete the data we hold. This page covers (a) deletion of your store data when you uninstall the Shopify app, and (b) deletion of Meta-derived data for Facebook, Instagram, and WhatsApp users. For the full picture of what we collect and why, see our <a href="/privacy">Privacy Policy</a>.</p>
 
         <h2>2. Deleting your Shopify store data</h2>
         <ul>
-            <li><strong>Uninstall:</strong> when you uninstall Bamzal from your Shopify admin, your sessions and kill-switch state are removed and connected-platform tokens are revoked and deleted.</li>
-            <li><strong>Shop deletion:</strong> on Shopify's <em>shop/redact</em> request (about 48 hours after uninstall), we delete your shop's data across our systems.</li>
+            <li><strong>Uninstall:</strong> After Bamzal receives and processes the uninstall notification, it blocks new app actions and queues credential and store-data cleanup. Previously created campaigns can remain active: pause them in each advertising platform and verify their status before uninstalling.</li>
+            <li><strong>Shop deletion:</strong> Shopify's <em>shop/redact</em> request also enters the shop-deletion workflow. Processing and provider cleanup may need retries; receipt of a request is not a completion confirmation.</li>
             <li><strong>Customer deletion / access:</strong> on Shopify's <em>customers/redact</em> request we delete the identified customer's records, and on <em>customers/data_request</em> we compile the data we hold about that customer so you can fulfill the request.</li>
             <li>Limited records may be retained where required for legal, security, audit, or fraud-prevention purposes, and aggregated/de-identified data may be retained as described in our Privacy Policy.</li>
         </ul>
@@ -75,32 +75,32 @@
             <li>The IDs of the connected Facebook Page, Instagram Business Account, Meta Ad Account, Meta Business, Pixel, and WhatsApp Business Account</li>
             <li>Operational metadata: timestamps of OAuth events, audit logs of mutations performed on the merchant's behalf, and rate-limit/kill-switch counters</li>
         </ul>
-        <p>Through Meta Login we do <strong>not</strong> store the content of private messages, the email addresses of end-customers who message the merchant's Page, or personal information about people who follow / comment on the merchant's accounts. (Where you separately enable features that process public social or competitor data, that processing is described in our <a href="/privacy">Privacy Policy</a>.)</p>
+        <p>Depending on the permissions and features you enable, connected social and coupon features may also store comments, author or recipient identifiers, lead details, message content, and related delivery records. These records are included in the applicable erasure workflows. See our <a href="/privacy">Privacy Policy</a> for the processing associated with each feature.</p>
 
-        <h2>4. Request deletion of Meta data — Option A (in-app, fastest)</h2>
+        <h2>4. Request deletion of Meta data — Option A (in the app)</h2>
         <ol>
             <li>Open Bamzal inside your Shopify admin.</li>
-            <li>Go to <strong>Settings &rarr; Integrations</strong>.</li>
-            <li>On the Facebook / Instagram / WhatsApp card, click <strong>Disconnect &amp; delete my Meta data</strong>.</li>
-            <li>The app immediately revokes the access token at Meta, deletes the encrypted token, and erases the associated Meta identifiers (page, IG account, business, pixel, WhatsApp account, and ad account IDs) from our database.</li>
-            <li>You will land on a confirmation page with a deletion confirmation code.</li>
+            <li>Open the connected-platform cards and locate your Meta connection.</li>
+            <li>In the Meta connection's disconnect dialog, choose <strong>Disconnect &amp; delete my Meta data</strong> to include the stored merchant configuration.</li>
+            <li>Bamzal attempts revocation at Meta and removes the local connection, stored credentials, associated identifiers and derived data. Provider-side revocation or cleanup may need retries. Check the result shown in the app; if the request fails, retry or contact support.</li>
+            <li>This in-app flow does not issue a deletion confirmation code. Codes and status URLs belong to the signed Meta callback described below.</li>
         </ol>
 
         <h2>5. Request deletion of Meta data — Option B (via Facebook)</h2>
         <ol>
             <li>Open <strong>Facebook &rarr; Settings &amp; privacy &rarr; Settings &rarr; Apps and websites</strong>.</li>
             <li>Find <strong>Bamzal</strong> and click <strong>Remove</strong>.</li>
-            <li>Facebook sends a data-deletion request to our server. We delete all data associated with your Meta user ID and respond with a confirmation URL and a unique deletion code.</li>
+            <li>If Meta offers a data-deletion request for Bamzal, use that option. When Meta sends a verified signed request, Bamzal processes the data linked to the original connection. A confirmation URL and deletion code are returned only after the recorded request completes. A pending or failed attempt is not a completed deletion; any later connection requires its own request.</li>
         </ol>
 
         <h2>6. Request deletion — Option C (by email)</h2>
-        <p>If neither option works, email <a href="mailto:legal@bamzal.com">legal@bamzal.com</a> from the email address associated with your Meta account, include your Facebook user ID (or Page name and URL) and a short statement that you want your Meta-derived data deleted from Bamzal. We will complete the deletion within <strong>30 days</strong> and reply with a deletion confirmation code.</p>
+        <p>If neither option works, email <a href="mailto:legal@bamzal.com">legal@bamzal.com</a> from the email address associated with your Meta account, include your Facebook user ID (or Page name and URL) and a short statement that you want your Meta-derived data deleted from Bamzal. We will reply with the request status and any information needed to process it, under the response deadlines in our Privacy Policy. Email requests do not automatically create a Meta deletion confirmation code.</p>
 
         <h2>7. After deletion</h2>
         <ul>
-            <li>The encrypted access token is removed and Bamzal can no longer call any Meta API on your behalf.</li>
-            <li>All associated Meta identifiers are erased.</li>
-            <li>Operational audit log entries are retained for up to 90 days for security and abuse-prevention, then purged automatically.</li>
+            <li>The affected local connection and its stored credentials are removed. Check the connected account in Meta if you also need to confirm provider-side permission revocation.</li>
+            <li>The affected grant's identifiers and derived personal data are erased; a later connection is separate from the completed request.</li>
+            <li>Minimal non-personal recovery records can remain while discount cleanup or an uncertain delivery outcome is unresolved. A deletion request is not marked complete while required cleanup is unconfirmed. Other retention is described in our Privacy Policy.</li>
             <li>Aggregated, non-identifying metrics may be retained.</li>
         </ul>
 
